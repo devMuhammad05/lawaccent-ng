@@ -172,18 +172,39 @@
                     <span>Checklists</span>
                 </a>
             </li> --}}
-            {{-- <li class="{{ $currentRoute === 'scholarships' ? 'active' : '' }}">
-                <a href="" class="nav-link">
-                    <i class="fas fa-columns"></i></i>
-                    <span>Scholarship Applications</span>
+
+            <li class="dropdown {{ $currentRoute === 'scholarship-applications' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-columns"></i>
+                    <span>
+                        Scholarship Applications
+                        @if ($unreadMessagesCount > 0)
+                            <button type="button" class="btn btn-danger">
+                                !
+                            </button>
+                        @endif
+                    </span>
                 </a>
-            </li> --}}
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.scholarship-applications.unread') }}">
+                            Unread Applications
+                            @if ($unreadMessagesCount > 0)
+                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @endif
+                        </a>
+                    </li>
+                    <li><a class="nav-link" href="{{ route('admin.scholarship-applications.index') }}">All Applications</a></li>
+                </ul>
+            </li>
+
             <li class="{{ $currentRoute === 'newletters' ? 'active' : '' }}">
                 <a href="{{ route('admin.newsletters.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Newsletters</span>
                 </a>
             </li>
+
             <li class="dropdown {{ $currentRoute === 'contact-us' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-columns"></i>

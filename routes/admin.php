@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\ScholarshipApplicationController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\OurTeamController;
 use App\Http\Controllers\Admin\CaseStudyController;
@@ -40,4 +41,6 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::get('consultations/{consultations}/mark-as-read', [ConsultationController::class, 'markAsRead'])->name('consultations.markAsRead');
     Route::get('consultation/unread', [ConsultationController::class, 'unread'])->name('consultations.unread');
     Route::resource('our-teams', OurTeamController::class);
+    Route::resource('scholarship-applications', ScholarshipApplicationController::class);
+    Route::get('scholarship-application/unread', [ScholarshipApplicationController::class, 'unread'])->name('scholarship-applications.unread');
 });
