@@ -1,0 +1,286 @@
+<nav class="navbar navbar-expand-lg main-navbar">
+    <form class="mr-auto form-inline">
+        <ul class="mr-3 navbar-nav">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a></li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                        class="fas fa-search"></i></a></li>
+        </ul>
+    </form>
+    <ul class="navbar-nav navbar-right">
+        <div class="dropdown-menu dropdown-list dropdown-menu-right">
+            <div class="dropdown-header">Messages
+                <div class="float-right">
+                    <a href="#">Mark All As Read</a>
+                </div>
+            </div>
+            <div class="dropdown-list-content dropdown-list-message">
+                <a href="#" class="dropdown-item dropdown-item-unread">
+                    <div class="dropdown-item-avatar">
+                        <img alt="image" src="" class="rounded-circle">
+                        <div class="is-online"></div>
+                    </div>
+                    <div class="dropdown-item-desc">
+                        <b>Kusnaedi</b>
+                        <p>Hello, Bro!</p>
+                        <div class="time">10 Hours Ago</div>
+                    </div>
+                </a>
+                <a href="#" class="dropdown-item dropdown-item-unread">
+                    <div class="dropdown-item-avatar">
+                        <img alt="image" src="" class="rounded-circle">
+                    </div>
+                    <div class="dropdown-item-desc">
+                        <b>Dedik Sugiharto</b>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                        <div class="time">12 Hours Ago</div>
+                    </div>
+                </a>
+                <a href="#" class="dropdown-item dropdown-item-unread">
+                    <div class="dropdown-item-avatar">
+                        <img alt="image" src="" class="rounded-circle">
+                        <div class="is-online"></div>
+                    </div>
+                    <div class="dropdown-item-desc">
+                        <b>Agung Ardiansyah</b>
+                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <div class="time">12 Hours Ago</div>
+                    </div>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <div class="dropdown-item-avatar">
+                        <img alt="image" src="" class="rounded-circle">
+                    </div>
+                    <div class="dropdown-item-desc">
+                        <b>Ardian Rahardiansyah</b>
+                        <p>Duis aute irure dolor in reprehenderit in voluptate velit ess</p>
+                        <div class="time">16 Hours Ago</div>
+                    </div>
+                </a>
+                <a href="#" class="dropdown-item">
+                    <div class="dropdown-item-avatar">
+                        <img alt="image" src="" class="rounded-circle">
+                    </div>
+                    <div class="dropdown-item-desc">
+                        <b>Alfa Zulkarnain</b>
+                        <p>Exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+                        <div class="time">Yesterday</div>
+                    </div>
+                </a>
+            </div>
+            <div class="text-center dropdown-footer">
+                <a href="#">View All <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+        </li>
+        <li class="dropdown"><a href="#" data-toggle="dropdown"
+                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <img alt="image" src="{{ asset('admin/assets/img/avatar/avatar-2.png') }}"
+                    class="mr-1 rounded-circle">
+                <div class="d-sm-none d-lg-inline-block">Hi, Admin</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                {{-- <div class="dropdown-title">Logged in 5 min ago</div> --}}
+                {{-- <a href="" class="dropdown-item has-icon">
+                    <i class="far fa-user"></i> Profile
+                </a>
+                <a href="features-settings.html" class="dropdown-item has-icon">
+                    <i class="fas fa-cog"></i> Settings
+                </a> --}}
+                <div class="dropdown-divider"></div>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+
+                    <a href="#"
+                        onclick="event.preventDefault();
+                        this.closest('form').submit();"
+                        class="dropdown-item has-icon text-danger">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </a>
+
+                </form>
+            </div>
+        </li>
+    </ul>
+</nav>
+<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+            <img src="{{ asset('web/assets/images/logo.webp') }}" alt="logo" width="100" />
+        </div>
+        <div class="sidebar-brand sidebar-brand-sm">
+            <a href="{{ route('admin.dashboard') }}">LA UK</a>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="{{ $currentRoute === 'dashboard' ? 'active' : '' }}">
+                <a href="{{ route('admin.dashboard') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'faqs' ? 'active' : '' }}">
+                <a href="{{ route('admin.faqs.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Faqs</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'partners-logo' ? 'active' : '' }}">
+                <a href="{{ route('admin.partners-logo.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Partners Logo</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'privacy-policy' ? 'active' : '' }}">
+                <a href="{{ route('admin.privacy-policy.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Privacy Notice</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'cookies-policy' ? 'active' : '' }}">
+                <a href="{{ route('admin.cookies-policy.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Cookie Notice</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'job-opening' ? 'active' : '' }}">
+                <a href="{{ route('admin.job-opening.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Job Openings</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+                <a href="{{ route('admin.blogs.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Blogs</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'downloadable-resources' ? 'active' : '' }}">
+                <a href="{{ route('admin.downloadable-resources.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Downloadable Resources</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'esource-downloaders' ? 'active' : '' }}">
+                <a href="{{ route('admin.resource-downloaders.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Resource Downloader</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'case-study' ? 'active' : '' }}">
+                <a href="{{ route('admin.case-study.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Case Study</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'slider-testimonials' ? 'active' : '' }}">
+                <a href="{{ route('admin.slider-testimonials.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Slider Testimonials</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'home-testimonials' ? 'active' : '' }}">
+                <a href="{{ route('admin.home-testimonials.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Home Testimonials</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'our-teams' ? 'active' : '' }}">
+                <a href="{{ route('admin.our-teams.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Our Teams</span>
+                </a>
+            </li>
+            <li class="dropdown {{ $currentRoute === 'enquiries' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-columns"></i>
+                    <span>
+                        Enquiries
+                        @if ($unreadEnquiriesCount > 0)
+                            <button type="button" class="btn btn-danger">
+                                !
+                            </button>
+                        @endif
+                    </span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.enquiries.unread') }}">
+                            <span>Unread Enquiries</span>
+                            @if ($unreadEnquiriesCount > 0)
+                                <span class="counter">{{ $unreadEnquiriesCount }}</span>
+                            @endif
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.enquiries.index') }}">
+                            <span>All Enquiries</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown {{ $currentRoute === 'contact-us' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-columns"></i>
+                    <span>
+                        Contact us
+                        @if ($unreadMessagesCount > 0)
+                            <button type="button" class="btn btn-danger">
+                                !
+                            </button>
+                        @endif
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.contact-us.unread') }}">
+                            Unread Messages
+                            @if ($unreadMessagesCount > 0)
+                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @endif
+                        </a>
+                    </li>
+                    <li><a class="nav-link" href="{{ route('admin.contact-us.index') }}">All Messages</a></li>
+                </ul>
+            </li>
+            <li class="{{ $currentRoute === 'socials' ? 'active' : '' }}">
+                <a href="{{ route('admin.socials.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Socials</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'socials' ? 'active' : '' }}">
+                <a href="{{ route('admin.site-settings.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Site Settings</span>
+                </a>
+            </li>
+        </ul>
+
+    </aside>
+</div>
+
+
+<style>
+    .notice{
+        padding: 0px 7px !important;
+        width: 20px !important
+    }
+
+    .counter{
+        color: white;
+        background-color: #fc544b;
+        padding: 0px 7px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        font-size: 9px;
+        border-radius: 3px;
+        margin-left: 5px;
+    }
+
+    .btn{
+        padding: 0px 7px;
+        font-size: 13px;
+        font-weight: bold;
+    }
+</style>
