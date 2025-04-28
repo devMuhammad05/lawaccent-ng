@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
     Route::post('login-verify', [VerifyAuthenticatedSessionController::class, 'verify'])->name('login.verify');
 });
 
-Route::middleware(['auth', 'verifiedOtp'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 
     Route::put('change-password', [NewPasswordController::class, 'update'])
         ->name('password.update');

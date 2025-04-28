@@ -119,18 +119,18 @@
                 </a>
             </li>
             <li class="{{ $currentRoute === 'faqs' ? 'active' : '' }}">
-                <a href="{{ route('admin.faqs.index') }}" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Faqs</span>
                 </a>
             </li>
             <li class="{{ $currentRoute === 'partners-logo' ? 'active' : '' }}">
-                <a href="{{ route('admin.partners-logo.index') }}" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Partners Logo</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'privacy-policy' ? 'active' : '' }}">
+            {{-- <li class="{{ $currentRoute === 'privacy-policy' ? 'active' : '' }}">
                 <a href="{{ route('admin.privacy-policy.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Privacy Notice</span>
@@ -255,7 +255,7 @@
                     <i class="fas fa-columns"></i></i>
                     <span>Site Settings</span>
                 </a>
-            </li>
+            </li> --}}
         </ul>
 
     </aside>
