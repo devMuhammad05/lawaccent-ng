@@ -118,43 +118,74 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li class="{{ $currentRoute === 'partners-logo' ? 'active' : '' }}">
+                <a href="" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Abous Us Metrics</span>
+                </a>
+            </li>
             <li class="{{ $currentRoute === 'faqs' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Faqs</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'partners-logo' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'privacy-policy' ? 'active' : '' }}">
                 <a href="" class="nav-link">
-                    <i class="fas fa-columns"></i></i>
-                    <span>Partners Logo</span>
-                </a>
-            </li>
-            {{-- <li class="{{ $currentRoute === 'privacy-policy' ? 'active' : '' }}">
-                <a href="{{ route('admin.privacy-policy.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Privacy Notice</span>
                 </a>
             </li>
             <li class="{{ $currentRoute === 'cookies-policy' ? 'active' : '' }}">
-                <a href="{{ route('admin.cookies-policy.index') }}" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Cookie Notice</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'job-opening' ? 'active' : '' }}">
-                <a href="{{ route('admin.job-opening.index') }}" class="nav-link">
+            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+                <a href="" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Blogs</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+                <a href="" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Case studies</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+                <a href="" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Assessments</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+                <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Job Openings</span>
                 </a>
             </li>
             <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
-                <a href="{{ route('admin.blogs.index') }}" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
-                    <span>Blogs</span>
+                    <span>Checklists</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'downloadable-resources' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+                <a href="" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Scholarship Applications</span>
+                </a>
+            </li>
+            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+                <a href="" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Newsletters</span>
+                </a>
+            </li>
+
+            {{-- <li class="{{ $currentRoute === 'downloadable-resources' ? 'active' : '' }}">
                 <a href="{{ route('admin.downloadable-resources.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Downloadable Resources</span>
@@ -243,19 +274,19 @@
                     </li>
                     <li><a class="nav-link" href="{{ route('admin.contact-us.index') }}">All Messages</a></li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="{{ $currentRoute === 'socials' ? 'active' : '' }}">
-                <a href="{{ route('admin.socials.index') }}" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Socials</span>
                 </a>
             </li>
             <li class="{{ $currentRoute === 'socials' ? 'active' : '' }}">
-                <a href="{{ route('admin.site-settings.index') }}" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Site Settings</span>
                 </a>
-            </li> --}}
+            </li>
         </ul>
 
     </aside>
