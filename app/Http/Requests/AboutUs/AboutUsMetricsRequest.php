@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Faq;
+namespace App\Http\Requests\AboutUs;
 
-use App\Rules\MaxWords;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreFaqRequest extends FormRequest
+class AboutUsMetricsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +22,10 @@ class StoreFaqRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'question' => ['required', 'string', new MaxWords(30)],
-            'answer' => ['required', 'string', new MaxWords(200)],
-            'show_on_home_page' => ['required', 'string', Rule::in([1, 0])],
-            'status' => ['required', 'string', Rule::in([1, 0])],
+            'year' => 'required|digits:4|integer',
+            'number_of_offices' => 'required|integer',
+            'number_of_clients' => 'required|integer',
+            'number_of_scholarships' => 'required|integer',
         ];
     }
 }

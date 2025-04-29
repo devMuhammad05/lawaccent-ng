@@ -25,4 +25,5 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('case-studies', CaseStudyController::class);
     Route::resource('assessments', AssessmentController::class);
     Route::resource('newsletters', NewsletterController::class);
+    Route::resource('socials', SocialController::class);
 });

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Admin\Privacy;
 
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StorePrivacyNoticeRequest extends FormRequest
@@ -11,7 +12,7 @@ class StorePrivacyNoticeRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +23,9 @@ class StorePrivacyNoticeRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'question' => ['required', 'string', 'max:100'],
+            'answer' => ['required', 'string'],
+            'status' => ['required', 'string', Rule::in([1, 0])],
         ];
     }
 }

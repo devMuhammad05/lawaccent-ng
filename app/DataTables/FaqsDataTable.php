@@ -20,6 +20,7 @@ class FaqsDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable(model: $query))
+            ->addIndexColumn()
             ->addColumn('action', function ($query) {
                 $edit = "<a href='".route('admin.faqs.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
                 $delete = "<a href='".route('admin.faqs.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";

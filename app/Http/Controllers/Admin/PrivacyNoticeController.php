@@ -32,7 +32,7 @@ class PrivacyNoticeController extends Controller
         $validatedData = $request->validated();
         $faq = PrivacyNotice::create($validatedData);
 
-        flash()->success('Privacy Notice added successfully');
+        // flash()->success('Privacy Notice added successfully');
 
         return redirect()->route('admin.privacy-notice.index');
     }

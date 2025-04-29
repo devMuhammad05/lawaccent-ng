@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Models\AboutUsMetric;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\AboutUs\AboutUsMetricsRequest;
 
 class AbouUsMetricsController extends Controller
 {
@@ -12,7 +14,8 @@ class AbouUsMetricsController extends Controller
      */
     public function index()
     {
-        //
+        $aboutUsMetrics = AboutUsMetric::first();
+        return view('admin.about-us.index', compact('aboutUsMetrics'));
     }
 
     /**
@@ -26,9 +29,13 @@ class AbouUsMetricsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AboutUsMetricsRequest $request)
     {
-        //
+        // dd($request);
+
+        $data = $request->validated();
+
+        AboutUsMetric::update($data);
     }
 
     /**
@@ -50,9 +57,10 @@ class AbouUsMetricsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(AboutUsMetricsRequest $request, AboutUsMetric $aboutUsMetric)
     {
-        //
+        $data = $request->validated();
+        $aboutUsMetric->update($data);
     }
 
     /**
