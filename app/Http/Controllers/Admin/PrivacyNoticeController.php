@@ -58,7 +58,7 @@ class PrivacyNoticeController extends Controller
 
         $PrivacyNotice->update($validatedData);
 
-        flash()->success('Privacy Notice updated successfully');
+        // flash()->success('Privacy Notice updated successfully');
 
         return redirect()->back();
     }
@@ -72,7 +72,7 @@ class PrivacyNoticeController extends Controller
 
         $PrivacyNotice->delete();
 
-        flash()->deleted('Privacy Notice deleted successfully');
+        // flash()->deleted('Privacy Notice deleted successfully');
 
         return redirect()->back();
     }

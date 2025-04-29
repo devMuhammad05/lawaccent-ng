@@ -10,25 +10,25 @@
 
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.privacy-notice.update', ['privacy_policy' => $privacyPolicy]) }}" method="POST">
+                <form action="{{ route('admin.privacy-notice.update',  $PrivacyNotice) }}" method="POST">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
                         <label>Title</label>
                         <input type='text' class='form-control' placeholder='Question' name='question'
-                            value='{{ $privacyPolicy->question }}'>
+                            value='{{ $PrivacyNotice->question }}'>
                     </div>
 
                     <div class="form-group">
                         <label class="form-control">Answer</label>
-                          <textarea class="summernote" name="answer">{!! $privacyPolicy->answer !!}</textarea>
+                          <textarea class="summernote" name="answer">{!! $PrivacyNotice->answer !!}</textarea>
                     </div>
 
                     <div class="form-group">
                         <label>Status</label>
                         <select type='text' class='form-control' name='status'>
-                            <option value="1" {{ $privacyPolicy->status === 1 ? 'selected' : '' }}>Active</option>
-                            <option value="0" {{ $privacyPolicy->status === 0 ? 'selected' : '' }}>Inactive</option>
+                            <option value="1" {{ $PrivacyNotice->status === 1 ? 'selected' : '' }}>Active</option>
+                            <option value="0" {{ $PrivacyNotice->status === 0 ? 'selected' : '' }}>Inactive</option>
                         </select>
                     </div>
 

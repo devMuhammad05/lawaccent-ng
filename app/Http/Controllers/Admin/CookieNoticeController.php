@@ -32,7 +32,7 @@ class CookieNoticeController extends Controller
         $validatedData = $request->validated();
         $faq = CookieNotice::create($validatedData);
 
-        // flash()->success('Cookie Notice added successfully');
+        flash()->success('Cookie Notice added successfully');
 
         return redirect()->route('admin.cookie-notice.index');
     }

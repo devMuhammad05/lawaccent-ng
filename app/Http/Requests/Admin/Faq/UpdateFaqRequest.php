@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Faq;
+namespace App\Http\Requests\Admin\Faq;
 
 use App\Rules\MaxWords;
 use Illuminate\Foundation\Http\FormRequest;

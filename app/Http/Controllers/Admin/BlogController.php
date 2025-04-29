@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\DataTables\BlogsDataTable;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Blog\StoreBlogRequest;
-use App\Http\Requests\Blog\UpdateBlogRequest;
+use Storage;
 use App\Models\Blog;
 use Illuminate\Support\Str;
-use Storage;
+use App\DataTables\BlogsDataTable;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\Blog\StoreBlogRequest;
+use App\Http\Requests\Admin\Blog\UpdateBlogRequest;
 
 class BlogController extends Controller
 {
@@ -47,7 +47,8 @@ class BlogController extends Controller
 
         flash()->success('Blog created successfully');
 
-        return redirect()->route('admin.blogs.index');
+
+        return to_route('admin.blogs.index');
     }
 
     /**
@@ -87,7 +88,7 @@ class BlogController extends Controller
 
         flash()->success('Blog updated successfully');
 
-        return redirect()->back();
+        return to_route('admin.blogs.index');
     }
 
     /**

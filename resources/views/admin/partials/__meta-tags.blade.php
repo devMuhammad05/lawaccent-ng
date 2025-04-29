@@ -22,13 +22,13 @@
     <!--=============================
         DISPLAY ANY ERROR START
     ==============================-->
-    {{-- @if ($errors->any())
+    @if ($errors->any())
         @foreach ($errors->all() as $error)
         @php
           flash()->error("$error")
         @endphp
         @endforeach
-    @endif --}}
+    @endif
     <!--=============================
        DISPLAY ANY ERROR END
     ==============================-->

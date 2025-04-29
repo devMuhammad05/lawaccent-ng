@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Faq;
 use App\DataTables\FaqsDataTable;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Faq\UpdateFaqRequest;
 use App\Http\Requests\Admin\Faq\StoreFaqRequest;
+use App\Http\Requests\Admin\Faq\UpdateFaqRequest;
 
 class FaqController extends Controller
 {
@@ -31,12 +31,10 @@ class FaqController extends Controller
      */
     public function store(StoreFaqRequest $request)
     {
-        // dd($request->all());
-
         $validatedData = $request->validated();
         $faq = Faq::create($validatedData);
 
-        // flash()->success('Faq created successfully');
+        flash()->success('Faq created successfully');
 
         return to_route('admin.faqs.index');
     }
