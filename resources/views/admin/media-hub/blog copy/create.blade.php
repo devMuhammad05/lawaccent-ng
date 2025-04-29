@@ -2,22 +2,28 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Case Study</h1>
+            <h1>Blogs</h1>
         </div>
         <div class="card card-primary">
             <div class="card-header">
-                <h4>Create Case Study</h4>
+                <h4>Create Blog</h4>
 
             </div>
             <div class="card-body">
-                <form enctype="multipart/form-data" action="{{ route('admin.case-studies.store') }}" method="POST"
+                <form enctype="multipart/form-data" action="{{ route('admin.blogs.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
-                        <label>Case Study Name</label>
-                        <input type='text' class='form-control' placeholder='Question' name='name'
-                            value='{{ old('name') }}'>
+                        <label>Title</label>
+                        <input type='text' class='form-control' placeholder='Enter blog title' name='title'
+                            value='{{ old('title') }}'>
+                    </div>
+
+                    <div class="form-group">
+                        <label>SubTitle</label>
+                        <input type='text' class='form-control' placeholder='Enter subtitle' name='sub_heading'
+                            value='{{ old('sub_heading') }}'>
                     </div>
 
                     <div class="form-group">
@@ -30,12 +36,6 @@
                             @endforeach
                         </select>
                     </div>
-                    
-                    <div class="form-group">
-                        <label>Sector</label>
-                        <input type='text' class='form-control' placeholder='Short Answer' name='sector'
-                            value='{{ old('sector') }}'>
-                    </div>
 
                     <div class="form-group">
                         <label>Thumbnail</label>
@@ -46,16 +46,16 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Primary Challenges</label>
-                        <textarea name="challenges" style="width: 100%; height: 200px;">
-                            {{ old('challenges') }}
+                        <label>Short Body</label>
+                        <textarea name="short_body" style="width: 100%; height: 200px;">
+                            {{ old('short_body') }}
                         </textarea>
                     </div>
 
                     <div class="form-group">
-                        <label>Services Provided</label>
-                        <textarea name="services" style="width: 100%; height: 200px;">
-                            {{ old('services') }}
+                        <label>Body</label>
+                        <textarea name="body" style="width: 100%; height: 200px;">
+                            {{ old('body') }}
                         </textarea>
                     </div>
 

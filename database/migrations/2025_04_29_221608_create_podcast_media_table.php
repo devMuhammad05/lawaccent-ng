@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('assessments', function (Blueprint $table) {
+        Schema::create('podcast_media', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('thumbnail');
-            $table->string('description');
-            $table->json('question_set');
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('assessments');
+        Schema::dropIfExists('podcast_media');
     }
 };

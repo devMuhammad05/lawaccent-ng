@@ -208,6 +208,20 @@
                     <li><a class="nav-link" href="{{ route('admin.contact-us.index') }}">All Messages</a></li>
                 </ul>
             </li>
+            <li class="dropdown {{ $currentRoute === 'videos' ? 'active' : '' }} {{ $currentRoute === 'podcasts' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-columns"></i>
+                    <span>
+                        Media Hub
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.videos.index') }}">Videos</a>
+                    </li>
+                    <li><a class="nav-link" href="{{ route('admin.podcasts.index') }}">Podcast</a></li>
+                </ul>
+            </li>
             <li class="{{ $currentRoute === 'socials' ? 'active' : '' }}">
                 <a href="{{ route('admin.socials.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
