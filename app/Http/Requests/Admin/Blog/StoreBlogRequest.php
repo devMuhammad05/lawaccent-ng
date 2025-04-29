@@ -24,6 +24,7 @@ class StoreBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'category_id' => ['required', 'exists:blog_categories,id'],
             'title' => ['required', 'string'],
             'sub_heading' => ['required', 'string'],
             'thumbnail' => ['required', 'image'],

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\BlogCategory;
 use Storage;
 use App\Models\Blog;
 use Illuminate\Support\Str;
@@ -25,7 +26,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('admin.blog.create');
+        $categories = BlogCategory::all();
+        return view('admin.blog.create', compact('categories'));
     }
 
     /**

@@ -27,6 +27,17 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Select Category</label>
+                        <select type='text' class='form-control' name='category_id'>
+                            <option selected disabled>Select Category</option>
+
+                            @foreach ($categories as $category)
+                                <option value="{{ old('category_id', $category->id) }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label>Thumbnail</label>
                         <div id="image-preview" class="image-preview">
                             <label for="image-upload" id="image-label">Choose File</label>

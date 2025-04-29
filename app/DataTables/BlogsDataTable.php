@@ -28,9 +28,12 @@ class BlogsDataTable extends DataTable
                 return $edit.$delete;
 
             })
-            ->addColumn('Thumbnail', function ($query) {
+            ->addColumn('category', function ($query) {
+                return $query->category->name;
+            })
+            ->addColumn('thumbnail', function ($query) {
                 return "<img src='".asset($query->thumbnail)."' width='100'>";
-            })->rawColumns(['logo', 'action'])
+            })->rawColumns(['thumbnail', 'category', 'action'])
             ->setRowId('id');
     }
 
@@ -71,9 +74,10 @@ class BlogsDataTable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
-            Column::make('Thumbnail'),
+            Column::make('thumbnail'),
             Column::make('title'),
             Column::make('sub_heading'),
+            Column::make('category'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

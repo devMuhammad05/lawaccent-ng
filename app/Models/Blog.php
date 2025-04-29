@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Blog extends Model
 {
@@ -16,4 +17,9 @@ class Blog extends Model
         'status',
         'slug',
     ];
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(BlogCategory::class);
+    }
 }
