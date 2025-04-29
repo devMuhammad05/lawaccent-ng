@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\AboutUsMetric;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Database\Factories\SocialFactory;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,6 +26,8 @@ class DatabaseSeeder extends Seeder
         ]);
 
         AboutUsMetric::create();
+
+        SocialFactory::times(1)->create();
 
     }
 }

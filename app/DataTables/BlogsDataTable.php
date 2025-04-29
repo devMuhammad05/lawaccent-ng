@@ -28,7 +28,7 @@ class BlogsDataTable extends DataTable
                 return $edit.$delete;
 
             })
-            ->addColumn('logo', function ($query) {
+            ->addColumn('Thumbnail', function ($query) {
                 return "<img src='".asset($query->thumbnail)."' width='100'>";
             })->rawColumns(['logo', 'action'])
             ->setRowId('id');
@@ -71,7 +71,7 @@ class BlogsDataTable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
-            Column::make('logo'),
+            Column::make('Thumbnail'),
             Column::make('title'),
             Column::make('sub_heading'),
             Column::computed('action')
