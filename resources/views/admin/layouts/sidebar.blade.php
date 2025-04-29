@@ -125,7 +125,7 @@
                 </a>
             </li>
             <li class="{{ $currentRoute === 'faqs' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+                <a href="{{ route('admin.faqs.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Faqs</span>
                 </a>
@@ -136,49 +136,49 @@
                     <span>Privacy Notice</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'cookies-policy' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+            <li class="{{ $currentRoute === 'cookie-notice' ? 'active' : '' }}">
+                <a href="{{ route('admin.cookie-notice.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Cookie Notice</span>
                 </a>
             </li>
             <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+                <a href="{{ route('admin.blogs.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Blogs</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+            <li class="{{ $currentRoute === 'case-studies' ? 'active' : '' }}">
+                <a href="{{ route('admin.case-studies.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Case studies</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'assessments' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Assessments</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'job-openings' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Job Openings</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'checklists' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Checklists</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'scholarships' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Scholarship Applications</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'newletters' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Newsletters</span>

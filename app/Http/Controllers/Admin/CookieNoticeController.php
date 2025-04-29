@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\DataTables\CookiesPolicyDataTable;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreCookiePolicyRequest;
-use App\Http\Requests\UpdateCookiePolicyRequest;
-use App\Models\CookiesPolicy;
+use App\DataTables\CookieNoticeDataTable;
 
-class CookiesPolicyController extends Controller
+class CookieNoticeController extends Controller
 {
-    /**
+        /**
      * Display a listing of the resource.
      */
-    public function index(CookiesPolicyDataTable $cookiesPolicyDataTable)
+    public function index(CookieNoticeDataTable $cookiesPolicyDataTable)
     {
-        return $cookiesPolicyDataTable->render('admin.cookies-policy.index');
+        return $cookiesPolicyDataTable->render('admin.cookies-notice.index');
     }
 
     /**
@@ -23,17 +21,17 @@ class CookiesPolicyController extends Controller
      */
     public function create()
     {
-        return view('admin.cookies-policy.create');
+        return view('admin.cookies-notice.create');
     }
 
-    public function store(StoreCookiePolicyRequest $request)
+    public function store(StoreCookieNoticeRequest $request)
     {
         $validatedData = $request->validated();
         $faq = CookiesPolicy::create($validatedData);
 
         flash()->success('Cookie Notice added successfully');
 
-        return redirect()->route('admin.cookies-policy.index');
+        return redirect()->route('admin.cookies-notice.index');
     }
 
     /**
@@ -41,17 +39,17 @@ class CookiesPolicyController extends Controller
      */
     public function edit(string $id)
     {
-        $cookiePolicy = CookiesPolicy::find($id);
+        $CookieNotice = CookiesPolicy::find($id);
 
-        return view('admin.cookies-policy.edit', [
-            'cookiesPolicy' => $cookiePolicy,
+        return view('admin.cookies-notice.edit', [
+            'cookiesPolicy' => $CookieNotice,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCookiePolicyRequest $request, CookiesPolicy $cookiesPolicy)
+    public function update(UpdateCookieNoticeRequest $request, CookiesPolicy $cookiesPolicy)
     {
         $validatedData = $request->validated();
 
@@ -67,9 +65,9 @@ class CookiesPolicyController extends Controller
      */
     public function destroy(string $id)
     {
-        $cookiePolicy = CookiesPolicy::find($id);
+        $CookieNotice = CookiesPolicy::find($id);
 
-        $cookiePolicy->delete();
+        $CookieNotice->delete();
 
         flash()->deleted('Cookie Notice deleted successfully');
 

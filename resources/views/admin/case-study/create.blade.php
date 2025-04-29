@@ -10,7 +10,7 @@
 
             </div>
             <div class="card-body">
-                <form enctype="multipart/form-data" action="{{ route('admin.case-study.store') }}" method="POST"
+                <form enctype="multipart/form-data" action="{{ route('admin.case-studies.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
 

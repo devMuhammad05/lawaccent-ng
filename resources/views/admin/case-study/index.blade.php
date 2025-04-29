@@ -9,7 +9,7 @@
             <div class="card-header">
                 <h4>All Case Studies</h4>
                 <div class="card-header-action">
-                    <a href="{{ route('admin.case-study.create') }}" class="btn btn-primary">
+                    <a href="{{ route('admin.case-studies.create') }}" class="btn btn-primary">
                         Create new
                     </a>
                 </div>
