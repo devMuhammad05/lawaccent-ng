@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Privacy;
+namespace App\Http\Requests\CaseStudy;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class UpdatePrivacyPolicyRequest extends FormRequest
+class UpdateCaseStudyRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,9 +22,12 @@ class UpdatePrivacyPolicyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'question' => ['required', 'string', 'max:100'],
-            'answer' => ['required', 'string'],
-            'status' => ['required', 'string', Rule::in([1, 0])],
+            'name' => ['required', 'string'],
+            'thumbnail' => ['sometimes', 'image'],
+            'sector' => ['required', 'string'],
+            'challenges' => ['required', 'string'],
+            'services' => ['required', 'string'],
+            'status' => ['required'],
         ];
     }
 }

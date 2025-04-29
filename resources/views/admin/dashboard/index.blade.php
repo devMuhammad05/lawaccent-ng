@@ -72,7 +72,7 @@
                                                 <i class="fas fa-file-alt text-secondary fa-2x mb-3"></i>
                                                 <h6>Page Management</h6>
                                                 <p class="small">Edit static pages like Privacy Notice, Cookie Notice and Terms of Service with an intuitive editor.</p>
-                                                <a href="{{ route('admin.privacy-policy.index') }}" class="btn btn-sm btn-outline-secondary">Edit Pages</a>
+                                                <a href="{{ route('admin.privacy-notice.index') }}" class="btn btn-sm btn-outline-secondary">Edit Pages</a>
                                             </div>
                                         </div>
 
@@ -125,7 +125,7 @@
             </div>
         </div>
     </div> --}}
-    
+
 </section>
 @endsection
 

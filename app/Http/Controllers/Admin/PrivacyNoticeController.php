@@ -2,18 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\DataTables\PrivacyPolicyDataTable;
+use Illuminate\Http\Request;
+use App\Models\PrivacyNotice;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Privacy\StorePrivacyPolicyRequest;
-use App\Http\Requests\Privacy\UpdatePrivacyPolicyRequest;
-use App\Models\PrivacyPolicy;
+use App\DataTables\PrivacyNoticeDataTable;
+use App\Http\Requests\Admin\Privacy\StorePrivacyNoticeRequest;
+use App\Http\Requests\Admin\Privacy\UpdatePrivacyNoticeRequest;
 
-class PrivacyPolicyController extends Controller
+class PrivacyNoticeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(PrivacyPolicyDataTable $dataTable)
+    public function index(PrivacyNoticeDataTable $dataTable)
     {
         return $dataTable->render('admin.privacy-notice.index');
     }
@@ -26,10 +27,10 @@ class PrivacyPolicyController extends Controller
         return view('admin.privacy-notice.create');
     }
 
-    public function store(StorePrivacyPolicyRequest $request)
+    public function store(StorePrivacyNoticeRequest $request)
     {
         $validatedData = $request->validated();
-        $faq = PrivacyPolicy::create($validatedData);
+        $faq = PrivacyNotice::create($validatedData);
 
         flash()->success('Privacy Notice added successfully');
 
@@ -41,21 +42,21 @@ class PrivacyPolicyController extends Controller
      */
     public function edit(string $id)
     {
-        $privacyPolicy = PrivacyPolicy::find($id);
+        $PrivacyNotice = PrivacyNotice::find($id);
 
         return view('admin.privacy-notice.edit', [
-            'privacyPolicy' => $privacyPolicy,
+            'PrivacyNotice' => $PrivacyNotice,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePrivacyPolicyRequest $request, PrivacyPolicy $privacyPolicy)
+    public function update(UpdatePrivacyNoticeRequest $request, PrivacyNotice $PrivacyNotice)
     {
         $validatedData = $request->validated();
 
-        $privacyPolicy->update($validatedData);
+        $PrivacyNotice->update($validatedData);
 
         flash()->success('Privacy Notice updated successfully');
 
@@ -67,9 +68,9 @@ class PrivacyPolicyController extends Controller
      */
     public function destroy(string $id)
     {
-        $privacyPolicy = PrivacyPolicy::find($id);
+        $PrivacyNotice = PrivacyNotice::find($id);
 
-        $privacyPolicy->delete();
+        $PrivacyNotice->delete();
 
         flash()->deleted('Privacy Notice deleted successfully');
 

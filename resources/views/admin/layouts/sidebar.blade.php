@@ -130,8 +130,8 @@
                     <span>Faqs</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'privacy-policy' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+            <li class="{{ $currentRoute === 'privacy-notice' ? 'active' : '' }}">
+                <a href="{{ route('admin.privacy-notice.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Privacy Notice</span>
                 </a>
