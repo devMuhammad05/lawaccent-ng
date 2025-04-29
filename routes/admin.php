@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ConsultationController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\PodcastMediaController;
@@ -34,4 +35,8 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::get('contact-us/{contact_us}/mark-as-read', [ContactUsController::class, 'markAsRead'])->name('contact-us.markAsRead');
     Route::resource('media-hub/videos', VideoMediaController::class);
     Route::resource('media-hub/podcasts', PodcastMediaController::class);
+    Route::resource('consultations', ConsultationController::class)->except('post',);
+    Route::get('consultations/{consultations}/mark-as-read', [ConsultationController::class, 'markAsRead'])->name('consultations.markAsRead');
+    Route::get('consultations/unread', [ConsultationController::class, 'unread'])->name('consultations.unread');
+
 });

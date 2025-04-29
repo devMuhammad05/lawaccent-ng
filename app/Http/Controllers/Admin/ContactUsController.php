@@ -46,7 +46,7 @@ class ContactUsController extends Controller
     {
         $contact = ContactUs::find($id);
 
-        $contact->update(['read' => true]);
+        $contact->markAsRead();
 
         return view('admin.contact-us.show', [
             'contact' => $contact,

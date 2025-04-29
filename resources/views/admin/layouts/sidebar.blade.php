@@ -222,12 +222,46 @@
                     <li><a class="nav-link" href="{{ route('admin.podcasts.index') }}">Podcast</a></li>
                 </ul>
             </li>
+
+            <li class="dropdown {{ $currentRoute === 'consultations' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-columns"></i>
+                    <span>
+                        Consultations
+                        @if ($unreadMessagesCount > 0)
+                            <button type="button" class="btn btn-danger">
+                                !
+                            </button>
+                        @endif
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.consultations.unread') }}">
+                            Unread Consultations
+                            @if ($unreadMessagesCount > 0)
+                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @endif
+                        </a>
+                    </li>
+                    <li><a class="nav-link" href="{{ route('admin.consultations.index') }}">All Consultations</a></li>
+                </ul>
+            </li>
+
+
             <li class="{{ $currentRoute === 'socials' ? 'active' : '' }}">
                 <a href="{{ route('admin.socials.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Socials</span>
                 </a>
             </li>
+
+
+
+
+
+
+
             {{-- <li class="{{ $currentRoute === 'site-settings' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
