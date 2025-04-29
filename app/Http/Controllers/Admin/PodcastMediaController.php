@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\DataTables\PodcastsMediaDataTable;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -10,9 +11,9 @@ class PodcastMediaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(PodcastsMediaDataTable $podcastsMediaDataTable)
     {
-        //
+        return $podcastsMediaDataTable->render('admin.media-hub.podcast.index');
     }
 
     /**

@@ -9,7 +9,7 @@
         <div class="card-header">
           <h4>All Videos</h4>
           <div class="card-header-action">
-            <a href="{{ route('admin.blogs.create')}}" class="btn btn-primary">
+            <a href="{{ route('admin.videos.create')}}" class="btn btn-primary">
               Create new
             </a>
           </div>

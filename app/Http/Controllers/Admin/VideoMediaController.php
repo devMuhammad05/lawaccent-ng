@@ -15,6 +15,7 @@ class VideoMediaController extends Controller
     {
         return $videoMediasDataTable->render('admin.media-hub.video.index');
     }
+    
     /**
      * Show the form for creating a new resource.
      */
