@@ -61,6 +61,11 @@
   box-shadow: none !important;
   outline: none; }
 
+
+.admin-text:focus{
+    color: white !important;
+}
+
 a {
   color: #126b02;
   font-weight: 500;

@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\AbouUsMetricsController;
 use App\Http\Controllers\Admin\DashboardController;
 
 
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('faqs', FaqController::class);
+    Route::resource('about-us-metrics', AbouUsMetricsController::class);
 });

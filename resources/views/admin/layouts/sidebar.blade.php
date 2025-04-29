@@ -76,7 +76,7 @@
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="{{ asset('admin/assets/img/avatar/avatar-2.png') }}"
                     class="mr-1 rounded-circle">
-                <div class="d-sm-none d-lg-inline-block">Hi, Admin</div>
+                <div class="d-sm-none d-lg-inline-block"><p class="admin-text">Hi, Admin</p></div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 {{-- <div class="dropdown-title">Logged in 5 min ago</div> --}}
@@ -118,8 +118,8 @@
                     <span>Dashboard</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'partners-logo' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+            <li class="{{ $currentRoute === 'about-us-metrics' ? 'active' : '' }}">
+                <a href="{{ route('admin.about-us-metrics.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Abous Us Metrics</span>
                 </a>

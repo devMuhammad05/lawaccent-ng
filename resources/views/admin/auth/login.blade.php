@@ -58,7 +58,8 @@
                             </div>
                         </div>
                         <div class="simple-footer">
-                            Copyright &copy;  {{ currentYear() }} {{ config('app.name') }}
+                            {{-- Copyright &copy;  {{ currentYear() }} {{ config('app.name') }} --}}
+                            {{-- Copyright &copy;  {{new date() }} {{ config('app.name') }} --}}
                         </div>
                     </div>
                 </div>
