@@ -155,7 +155,7 @@
                 </a>
             </li>
             <li class="{{ $currentRoute === 'assessments' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+                <a href="{{ route('admin.assessments.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Assessments</span>
                 </a>
@@ -179,7 +179,7 @@
                 </a>
             </li>
             <li class="{{ $currentRoute === 'newletters' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+                <a href="{{ route('admin.newsletters.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Newsletters</span>
                 </a>

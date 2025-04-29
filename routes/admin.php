@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AssessmentController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\AbouUsMetricsController;
 use App\Http\Controllers\Admin\CaseStudyController;
@@ -21,4 +23,6 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('socials', SocialController::class);
     Route::resource('site-settings', SiteSettingController::class);
     Route::resource('case-studies', CaseStudyController::class);
+    Route::resource('assessments', AssessmentController::class);
+    Route::resource('newsletters', NewsletterController::class);
 });
