@@ -8,6 +8,7 @@ use App\Models\AboutUsMetric;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 use Database\Factories\SocialFactory;
+use Database\Seeders\CaseStudyCategorySeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,6 +29,11 @@ class DatabaseSeeder extends Seeder
         AboutUsMetric::create();
 
         SocialFactory::times(1)->create();
+
+        $this->call([
+            BlogCategorySeeder::class,
+            CaseStudyCategorySeeder::class,
+        ]);
 
     }
 }
