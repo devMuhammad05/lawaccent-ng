@@ -29,12 +29,10 @@ class ConsultationController extends Controller
      */
     public function show(string $id)
     {
-        $contact = Consultation::find($id);
+        $consultation = Consultation::find($id);
 
-        $contact->update(['read' => true]);
-
-        return view('admin.contact-us.show', [
-            'contact' => $contact,
+        return view('admin.consultation.show', [
+            'contact' => $consultation,
         ]);
     }
 

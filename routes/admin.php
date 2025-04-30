@@ -38,6 +38,6 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('media-hub/podcasts', PodcastMediaController::class);
     Route::resource('consultations', ConsultationController::class)->except('post',);
     Route::get('consultations/{consultations}/mark-as-read', [ConsultationController::class, 'markAsRead'])->name('consultations.markAsRead');
-    Route::get('consultations/unread', [ConsultationController::class, 'unread'])->name('consultations.unread');
+    Route::get('consultation/unread', [ConsultationController::class, 'unread'])->name('consultations.unread');
     Route::resource('our-teams', OurTeamController::class);
 });
