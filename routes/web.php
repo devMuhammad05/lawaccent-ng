@@ -13,6 +13,9 @@ Route::get('clear', function () {
     return 'Cache, config cleared and storage linked successfully!';
 });
 
+
+
+
 Route::get('/', function () {
     return view('welcome');
 });

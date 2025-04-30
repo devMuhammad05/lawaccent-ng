@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\CaseStudy;
+namespace App\Http\Requests\Admin\CaseStudy;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,12 +22,11 @@ class UpdateCaseStudyRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string'],
+            'case_study_category_id' => ['required', 'exists:case_study_categories,id'],
+            'title' => ['required', 'string'],
             'thumbnail' => ['sometimes', 'image'],
-            'sector' => ['required', 'string'],
-            'challenges' => ['required', 'string'],
-            'services' => ['required', 'string'],
-            'status' => ['required'],
+            'legal_issues_explored' => ['required', 'string'],
+            'body' => ['required', 'string'],
         ];
     }
 }

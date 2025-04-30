@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\CaseStudiesDataTable;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CaseStudy\StoreCaseStudyRequest;
-use App\Http\Requests\CaseStudy\UpdateCaseStudyRequest;
+use App\Http\Requests\Admin\CaseStudy\StoreCaseStudyRequest;
+use App\Http\Requests\Admin\CaseStudy\UpdateCaseStudyRequest;
 use App\Models\CaseStudy;
 use App\Models\CaseStudyCategory;
 use Illuminate\Support\Str;
@@ -43,7 +43,7 @@ class CaseStudyController extends Controller
             $validatedData['thumbnail'] = (string) 'storage/'.$imagePath;
         }
 
-        $validatedData['slug'] = Str::slug(title: __($validatedData['name'].now()));
+        $validatedData['slug'] = Str::slug(title: __($validatedData['title'].now()));
 
         CaseStudy::create($validatedData);
 
@@ -66,8 +66,9 @@ class CaseStudyController extends Controller
     public function edit(string $id)
     {
         $case = CaseStudy::find($id);
+        $categories = CaseStudyCategory::all();
 
-        return view('admin.case-study.edit', compact('case'));
+        return view('admin.case-study.edit', compact('case', 'categories'));
     }
 
     /**
@@ -83,7 +84,7 @@ class CaseStudyController extends Controller
             $validatedData['thumbnail'] = (string) 'storage/'.$imagePath;
         }
 
-        $validatedData['slug'] = Str::slug(__($validatedData['name'].now()));
+        $validatedData['slug'] = Str::slug(__($validatedData['title'].now()));
 
         CaseStudy::find($id)->update($validatedData);
 

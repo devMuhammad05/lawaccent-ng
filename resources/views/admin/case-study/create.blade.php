@@ -15,26 +15,26 @@
                     @csrf
 
                     <div class="form-group">
-                        <label>Case Study Name</label>
-                        <input type='text' class='form-control' placeholder='Question' name='name'
-                            value='{{ old('name') }}'>
+                        <label>Case Study Title</label>
+                        <input type='text' class='form-control' placeholder='Enter case study title' name='title'
+                            value='{{ old('title') }}'>
                     </div>
 
                     <div class="form-group">
                         <label>Select Category</label>
-                        <select type='text' class='form-control' name='category_id'>
+                        <select type='text' class='form-control' name='case_study_category_id'>
                             <option selected disabled>Select Category</option>
 
                             @foreach ($categories as $category)
-                                <option value="{{ old('category_id', $category->id) }}">{{ $category->name }}</option>
+                                <option value="{{ old('case_study_category_id', $category->id) }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
-                        <label>Sector</label>
-                        <input type='text' class='form-control' placeholder='Short Answer' name='sector'
-                            value='{{ old('sector') }}'>
+                        <label>Legal Issues Explored</label>
+                        <input type='text' class='form-control' placeholder='Enter legal issues' name='legal_issues_explored'
+                            value='{{ old('legal_issues_explored') }}'>
                     </div>
 
                     <div class="form-group">
@@ -46,26 +46,19 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Primary Challenges</label>
-                        <textarea name="challenges" style="width: 100%; height: 200px;">
-                            {{ old('challenges') }}
+                        <label>Body</label>
+                        <textarea name="body" style="width: 100%; height: 200px;">
+                            {{ old('body') }}
                         </textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label>Services Provided</label>
-                        <textarea name="services" style="width: 100%; height: 200px;">
-                            {{ old('services') }}
-                        </textarea>
-                    </div>
-
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Status</label>
                         <select type='text' class='form-control' name='status'>
                             <option value="1">Active</option>
                             <option value="0">Inactive</option>
                         </select>
-                    </div>
+                    </div> --}}
 
                      <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
                 </form>

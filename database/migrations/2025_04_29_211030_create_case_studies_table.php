@@ -14,14 +14,13 @@ return new class extends Migration
         Schema::create('case_studies', function (Blueprint $table) {
             $table->id();
             $table->foreignId('case_study_category_id');
-            $table->string('name');
-            $table->text(column: 'sector');
-            $table->text('challenges');
-            $table->text('services');
+            $table->string('title');
+            $table->text( 'legal_issues_explored');
             $table->string('thumbnail');
+            $table->longText('body');
             $table->string('slug');
             $table->boolean('status')->default(true);
-            $table->fullText(['name', 'sector', 'challenges', 'services']);
+            $table->fullText(['title', 'legal_issues_explored', 'body']);
             $table->timestamps();
         });
     }

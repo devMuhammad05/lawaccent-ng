@@ -22,15 +22,18 @@ class CaseStudiesDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addIndexColumn()
             ->addColumn('action', function ($query) {
-                $edit = "<a href='".route('admin.case-study.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
-                $delete = "<a href='".route('admin.case-study.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
+                $edit = "<a href='".route('admin.case-studies.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='".route('admin.case-studies.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
 
                 return $edit.$delete;
 
             })
-            ->addColumn('logo', function ($query) {
-                return "<img src='".asset($query->thumbnail)."' width='100'>";
-            })->rawColumns(['logo', 'action'])
+            ->addColumn('category', function($query){
+                return $query->category->name;
+            })
+            ->addColumn('thumbnail', function ($query) {
+                return "<img src='".asset($query->thumbnail)."' width='90'>";
+            })->rawColumns(['thumbnail', 'category', 'action'])
             ->setRowId('id');
     }
 
@@ -71,8 +74,9 @@ class CaseStudiesDataTable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
-            Column::make('logo'),
-            Column::make('name'),
+            Column::make('thumbnail'),
+            Column::make('title'),
+            Column::make('category'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
