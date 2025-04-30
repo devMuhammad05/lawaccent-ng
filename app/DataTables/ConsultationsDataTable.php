@@ -22,7 +22,12 @@ class ConsultationsDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'consultations.action')
+            ->addIndexColumn()
+            ->addColumn('action', function ($query) {
+                $view = "<a href='".route('admin.consultations.show', $query->id)."' class='btn btn-primary'><i class='fas fa-eye'></i></a>";
+
+                return $view;
+            })->rawColumns(['action'])
             ->setRowId('id');
     }
 
@@ -63,15 +68,14 @@ class ConsultationsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('name'),
+            Column::make('email'),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(60)
-                  ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(100)
+                ->addClass('text-center'),
         ];
     }
 

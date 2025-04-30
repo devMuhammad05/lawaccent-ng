@@ -160,10 +160,10 @@
                     <span>Assessments</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'job-openings' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'our-teams' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
-                    <span>Job Openings</span>
+                    <span>Our Teams</span>
                 </a>
             </li>
             <li class="{{ $currentRoute === 'checklists' ? 'active' : '' }}">
