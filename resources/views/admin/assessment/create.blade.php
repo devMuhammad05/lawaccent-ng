@@ -10,20 +10,20 @@
 
             </div>
             <div class="card-body">
-                {{-- <form enctype="multipart/form-data" action="{{ route('admin.blogs.store') }}" method="POST"
+                <form enctype="multipart/form-data" action="{{ route('admin.assessments.store') }}" method="POST"
                     enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
                         <label>Title</label>
-                        <input type='text' class='form-control' placeholder='Enter blog title' name='title'
+                        <input type='text' class='form-control' placeholder='Enter assessment title' name='title'
                             value='{{ old('title') }}'>
                     </div>
 
                     <div class="form-group">
-                        <label>SubTitle</label>
-                        <input type='text' class='form-control' placeholder='Enter subtitle' name='sub_heading'
-                            value='{{ old('sub_heading') }}'>
+                        <label>Description</label>
+                        <input type='text' class='form-control' placeholder='Enter description' name='description'
+                            value='{{ old('description') }}'>
                     </div>
 
                     <div class="form-group">
@@ -35,20 +35,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Short Body</label>
-                        <textarea name="short_body" style="width: 100%; height: 200px;">
-                            {{ old('short_body') }}
-                        </textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Body</label>
-                        <textarea name="body" style="width: 100%; height: 200px;">
-                            {{ old('body') }}
-                        </textarea>
-                    </div>
-
-                    <div class="form-group">
                         <label>Status</label>
                         <select type='text' class='form-control' name='status'>
                             <option value="1">Active</option>
@@ -57,7 +43,7 @@
                     </div>
 
                      <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
-                </form> --}}
+                </form>
             </div>
         </div>
     </section>

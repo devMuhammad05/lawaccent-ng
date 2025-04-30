@@ -166,18 +166,18 @@
                     <span>Our Teams</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'checklists' ? 'active' : '' }}">
+            {{-- <li class="{{ $currentRoute === 'checklists' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Checklists</span>
                 </a>
-            </li>
-            <li class="{{ $currentRoute === 'scholarships' ? 'active' : '' }}">
+            </li> --}}
+            {{-- <li class="{{ $currentRoute === 'scholarships' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Scholarship Applications</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="{{ $currentRoute === 'newletters' ? 'active' : '' }}">
                 <a href="{{ route('admin.newsletters.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
