@@ -8,7 +8,7 @@
             <h1>Cookie Notice</h1>
         </div>
 
-        {{-- <div class="card card-primary">
+        <div class="card card-primary">
             <div class="card-header">
               <h4>Cookie Notice Effective Date</h4>
             </div>
@@ -37,7 +37,7 @@
                 </form>
 
             </div>
-        </div> --}}
+        </div>
 
         <div class="card card-primary">
             <div class="card-header">

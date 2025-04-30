@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\SiteSetting;
 use App\Models\AboutUsMetric;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -29,6 +30,8 @@ class DatabaseSeeder extends Seeder
         AboutUsMetric::create();
 
         SocialFactory::times(1)->create();
+
+        SiteSetting::create();
 
         $this->call([
             BlogCategorySeeder::class,

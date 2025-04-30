@@ -8,7 +8,7 @@
         <div class="section-header">
           <h1>Privacy Notice</h1>
         </div>
-        {{-- <div class="card card-primary">
+        <div class="card card-primary">
             <div class="card-header">
               <h4>Privacy Notice Effective Date</h4>
             </div>
@@ -37,7 +37,7 @@
                 </form>
 
             </div>
-        </div> --}}
+        </div>
 
         <div class="card card-primary">
             <div class="card-header">

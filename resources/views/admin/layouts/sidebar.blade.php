@@ -161,7 +161,7 @@
                 </a>
             </li>
             <li class="{{ $currentRoute === 'our-teams' ? 'active' : '' }}">
-                <a href="" class="nav-link">
+                <a href="{{ route("admin.our-teams.index") }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Our Teams</span>
                 </a>

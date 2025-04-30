@@ -24,8 +24,8 @@ class SiteSettingController extends Controller
     public function update(Request $request, SiteSetting $site_setting)
     {
         $validatedData = $request->validate([
-            'recaptcha_status' => ['sometimes', 'boolean'],
-            'display_cookies_consent_banner' => ['sometimes', 'boolean'],
+            // 'recaptcha_status' => ['sometimes', 'boolean'],
+            // 'display_cookies_consent_banner' => ['sometimes', 'boolean'],
             'privacy_notice_effective_date' => ['sometimes', 'date'],
             'cookie_notice_effective_date' => ['sometimes', 'date'],
         ]);

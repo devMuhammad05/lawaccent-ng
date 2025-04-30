@@ -1,20 +1,21 @@
 <?php
 
-use App\Http\Controllers\Admin\ConsultationController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\PodcastMediaController;
 use App\Http\Controllers\Admin\SocialController;
+use App\Http\Controllers\Admin\OurTeamController;
 use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AssessmentController;
 use App\Http\Controllers\Admin\NewsletterController;
+use App\Http\Controllers\Admin\VideoMediaController;
 use App\Http\Controllers\Admin\SiteSettingController;
+use App\Http\Controllers\Admin\ConsultationController;
 use App\Http\Controllers\Admin\CookieNoticeController;
+use App\Http\Controllers\Admin\PodcastMediaController;
 use App\Http\Controllers\Admin\PrivacyNoticeController;
 use App\Http\Controllers\Admin\AboutUsMetricsController;
-use App\Http\Controllers\Admin\VideoMediaController;
 
 
 Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->group(function () {
@@ -38,5 +39,5 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('consultations', ConsultationController::class)->except('post',);
     Route::get('consultations/{consultations}/mark-as-read', [ConsultationController::class, 'markAsRead'])->name('consultations.markAsRead');
     Route::get('consultations/unread', [ConsultationController::class, 'unread'])->name('consultations.unread');
-
+    Route::resource('our-teams', OurTeamController::class);
 });

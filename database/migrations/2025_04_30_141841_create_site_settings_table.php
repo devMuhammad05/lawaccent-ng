@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('newsletters', function (Blueprint $table) {
+        Schema::create('site_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
+            $table->date('privacy_notice_effective_date')->default(now());
+            $table->date('cookie_notice_effective_date')->default(now());
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('newsletters');
+        Schema::dropIfExists('site_settings');
     }
 };
