@@ -152,7 +152,7 @@
                         institution.
                     </p>
                     <button class="btn btn-read-mobile">
-                        <a href="aboutus.html">Read More About Us</a>
+                        <a href="{{ route("about-us") }}">Read More About Us</a>
                     </button>
                 </div>
 
@@ -160,7 +160,7 @@
                     <img src="assets/images/officewoman.webp" alt="image" class="aboutusimage" />
                 </div>
                 <button class="btn btn-read-more">
-                    <a href="aboutus.html">Read More About Us</a>
+                    <a href="{{ route("about-us") }}">Read More About Us</a>
                 </button>
             </div>
         </div>

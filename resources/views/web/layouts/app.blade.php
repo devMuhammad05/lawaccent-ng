@@ -36,7 +36,7 @@
           <div class="footer-section">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="aboutus.html">About Us</a></li>
+              <li><a href="{{ route("about-us") }}">About Us</a></li>
               <li><a href="resources.html">Resources</a></li>
               <li><a href="practicearea.html">Practice Areas</a></li>
               <li><a href="career.html">Career</a></li>
