@@ -6,7 +6,7 @@
             <div class="col-md-6 dataprotectiontext">
               <div>
                 <img
-                  src="assets/images/expertise.svg"
+                  src="{{ asset("web/assets/images/expertise.svg") }}"
                   alt=""
                   class="dataprotectiontext-img"
                 />
@@ -17,7 +17,7 @@
               </div>
             </div>
             <div class="col-md-6 smillingman">
-              <img src="assets/images/smillingman.webp" alt="" />
+              <img src="{{ asset("web/assets/images/smillingman.webp") }}" alt="" />
             </div>
           </div>
         </div>
@@ -77,12 +77,12 @@
         </div>
         <div class="col-md-3 otherimg col-12">
             <div class="otherimg-img">
-            <img src="assets/images/consult.webp" alt="" />
+            <img src="{{ asset("web/assets/images/consult.webp") }}" alt="" />
             </div>
             <div class="otherimgdiv">
             <div class="contactdiv">
                 <span>CONTACT</span>
-                <img src="assets/images/line.svg" alt="" />
+                <img src="{{ asset("web/assets/images/line.svg") }}" alt="" />
             </div>
             <h5>Get a Free Consultation Call!</h5>
             <p>
@@ -129,7 +129,7 @@
             >
         </div>
         <div class="col-md-6 scaleimg">
-            <img src="assets/images/scale.webp" alt="" />
+            <img src="{{ asset("web/assets/images/scale.webp") }}" alt="" />
         </div>
         </div>
     </div>

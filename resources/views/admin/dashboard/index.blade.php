@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="text-center mb-4">
-                        <img src="{{ asset('web/assets/images/logo.webp') }}" alt="Logo" class="img-fluid mb-3" style="max-height: 120px;">
+                        <img src="{{ asset('web/{{ asset("web/assets/images/logo.webp') }}" alt="Logo" class="img-fluid mb-3" style="max-height: 120px;">
                         <h2 class="welcome-heading">Welcome back, {{ Auth::user()->name }}!</h2>
                         <p class="text-muted">It's great to see you again. Today is {{ date('l, F d, Y') }}</p>
                     </div>

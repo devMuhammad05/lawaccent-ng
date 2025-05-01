@@ -4,7 +4,7 @@
             <div class="row dataprotectionrow">
                 <div class="col-md-6 dataprotectiontext">
                     <div>
-                        <img src="assets/images/resourcesvg.svg" alt="" />
+                        <img src="{{ asset("web/assets/images/resourcesvg.svg") }}" alt="" />
                         <h3>Media Hub</h3>
                         <p>
                             Explore our library of legal videos and <br />
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 smillingman">
-                    <img src="assets/images/mediaguy.webp" alt="" />
+                    <img src="{{ asset("web/assets/images/mediaguy.webp") }}" alt="" />
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
             <div class="row podcastsectionrow">
                 <div class="col-md-4">
                     <div class="podcastsectionrowcard">
-                        <img src="assets/images/podcast.webp" alt="" />
+                        <img src="{{ asset("web/assets/images/podcast.webp") }}" alt="" />
                         <div class="podcastsectionrowcard-body">
                             <h5>
                                 Know Your Rights: Arrests & Police Encounters in Nigeria
@@ -123,7 +123,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="podcastsectionrowcard">
-                        <img src="assets/images/podcast.webp" alt="" />
+                        <img src="{{ asset("web/assets/images/podcast.webp") }}" alt="" />
                         <div class="podcastsectionrowcard-body">
                             <h5>
                                 Know Your Rights: Arrests & Police Encounters in Nigeria
@@ -152,7 +152,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="podcastsectionrowcard">
-                        <img src="assets/images/podcast.webp" alt="" />
+                        <img src="{{ asset("web/assets/images/podcast.webp") }}" alt="" />
                         <div class="podcastsectionrowcard-body">
                             <h5>
                                 Know Your Rights: Arrests & Police Encounters in Nigeria
@@ -181,7 +181,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="podcastsectionrowcard">
-                        <img src="assets/images/podcast.webp" alt="" />
+                        <img src="{{ asset("web/assets/images/podcast.webp") }}" alt="" />
                         <div class="podcastsectionrowcard-body">
                             <h5>
                                 Know Your Rights: Arrests & Police Encounters in Nigeria
@@ -209,7 +209,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="podcastsectionrowcard">
-                        <img src="assets/images/podcast.webp" alt="" />
+                        <img src="{{ asset("web/assets/images/podcast.webp") }}" alt="" />
                         <div class="podcastsectionrowcard-body">
                             <h5>
                                 Know Your Rights: Arrests & Police Encounters in Nigeria
@@ -238,7 +238,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="podcastsectionrowcard">
-                        <img src="assets/images/podcast.webp" alt="" />
+                        <img src="{{ asset("web/assets/images/podcast.webp") }}" alt="" />
                         <div class="podcastsectionrowcard-body">
                             <h5>
                                 Know Your Rights: Arrests & Police Encounters in Nigeria

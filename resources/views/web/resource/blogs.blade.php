@@ -5,7 +5,7 @@
             <div class="row dataprotectionrow">
                 <div class="col-md-6 dataprotectiontext">
                     <div>
-                        <img src="assets/images/resourcesvg.svg" alt="" />
+                        <img src="{{ asset("web/assets/images/resourcesvg.svg") }}" alt="" />
                         <h3>Blog Posts</h3>
                         <p>
                             Stay updated with expert insights <br />
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 smillingman">
-                    <img src="assets/images/officewoman.webp" alt="" />
+                    <img src="{{ asset("web/assets/images/officewoman.webp") }}" alt="" />
                 </div>
             </div>
         </div>
@@ -50,7 +50,7 @@
                 <div class="row recent-blogrow" data-category="all">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Business Registration in Nigeria: A
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Contract Law in Nigeria: Key Elements & Common
@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Intellectual Property Protection in Nigeria: How to
@@ -114,7 +114,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Business Registration in Nigeria: A
@@ -136,7 +136,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Contract Law in Nigeria: Key Elements & Common
@@ -157,7 +157,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Intellectual Property Protection in Nigeria: How to
@@ -181,7 +181,7 @@
                 <div class="row recent-blogrow" data-category="data-protection">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Data Protection Blog Post</h5>
                                 <p>
@@ -200,7 +200,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Data Protection Blog Post</h5>
                                 <p>
@@ -218,7 +218,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Data Protection Blog Post</h5>
                                 <p>
@@ -236,7 +236,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Data Protection Blog Post</h5>
                                 <p>
@@ -255,7 +255,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Data Protection Blog Post</h5>
                                 <p>
@@ -273,7 +273,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Data Protection Blog Post</h5>
                                 <p>
@@ -294,7 +294,7 @@
                 <div class="row recent-blogrow" data-category="corporate-law">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Corporate law Blog Post</h5>
                                 <p>
@@ -313,7 +313,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Corporate law Blog Post</h5>
                                 <p>
@@ -331,7 +331,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Corporate law Blog Post</h5>
                                 <p>
@@ -349,7 +349,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Corporate law Blog Post</h5>
                                 <p>
@@ -368,7 +368,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Corporate law Blog Post</h5>
                                 <p>
@@ -386,7 +386,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Corporate law Blog Post</h5>
                                 <p>
@@ -407,7 +407,7 @@
                 <div class="row recent-blogrow" data-category="family-law">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Family Law Blog Post</h5>
                                 <p>
@@ -426,7 +426,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Family Law Blog Post</h5>
                                 <p>
@@ -444,7 +444,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Family Law Blog Post</h5>
                                 <p>
@@ -462,7 +462,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Family Law Blog Post</h5>
                                 <p>
@@ -481,7 +481,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Family Law Blog Post</h5>
                                 <p>
@@ -499,7 +499,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Family Law Blog Post</h5>
                                 <p>
@@ -520,7 +520,7 @@
                 <div class="row recent-blogrow" data-category="litigation">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>litigation blog post</h5>
                                 <p>
@@ -539,7 +539,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>litigation blog post</h5>
                                 <p>
@@ -557,7 +557,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>litigation blog post</h5>
                                 <p>
@@ -575,7 +575,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>litigation blog post</h5>
                                 <p>
@@ -594,7 +594,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>litigation blog post</h5>
                                 <p>
@@ -612,7 +612,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>litigation blog post</h5>
                                 <p>
@@ -633,7 +633,7 @@
                 <div class="row recent-blogrow" data-category="real-estate">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Real Estate blog post</h5>
                                 <p>
@@ -652,7 +652,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Real Estate blog post</h5>
                                 <p>
@@ -670,7 +670,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Real Estate blog post</h5>
                                 <p>
@@ -688,7 +688,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Real Estate blog post</h5>
                                 <p>
@@ -707,7 +707,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Real Estate blog post</h5>
                                 <p>
@@ -725,7 +725,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Real Estate blog post</h5>
                                 <p>
@@ -746,7 +746,7 @@
                 <div class="row recent-blogrow" data-category="debt-recovery">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Debt Recovery blog post</h5>
                                 <p>
@@ -765,7 +765,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Debt Recovery blog post</h5>
                                 <p>
@@ -783,7 +783,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Debt Recovery blog post</h5>
                                 <p>
@@ -801,7 +801,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Debt Recovery blog post</h5>
                                 <p>
@@ -820,7 +820,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Debt Recovery blog post</h5>
                                 <p>
@@ -838,7 +838,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Debt Recovery blog post</h5>
                                 <p>
@@ -859,7 +859,7 @@
                 <div class="row recent-blogrow" data-category="banking-finance">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Banking and Finance Blog Post</h5>
                                 <p>
@@ -878,7 +878,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Banking and Finance Blog Post</h5>
                                 <p>
@@ -896,7 +896,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Banking and Finance Blog Post</h5>
                                 <p>
@@ -914,7 +914,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Banking and Finance Blog Post</h5>
                                 <p>
@@ -933,7 +933,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Banking and Finance Blog Post</h5>
                                 <p>
@@ -951,7 +951,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Banking and Finance Blog Post</h5>
                                 <p>
@@ -972,7 +972,7 @@
                 <div class="row recent-blogrow" data-category="others">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Other Blog Post</h5>
                                 <p>
@@ -991,7 +991,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Other Blog Post</h5>
                                 <p>
@@ -1009,7 +1009,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Other Blog Post</h5>
                                 <p>
@@ -1027,7 +1027,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Other Blog Post</h5>
                                 <p>
@@ -1046,7 +1046,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Other Blog Post</h5>
                                 <p>
@@ -1064,7 +1064,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>Other Blog Post</h5>
                                 <p>

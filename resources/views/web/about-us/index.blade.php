@@ -1,7 +1,7 @@
 <x-app-layout>
     <section class="aboutlawaccent">
         <div class="container">
-          <img src="assets/images/lan-bordered.svg" alt="image" />
+          <img src="{{ asset("web/assets/images/lan-bordered.svg") }}" alt="image" />
           <h2>About Law Accent</h2>
           <p>
             At Law Accent, we simplify legal principles through expert legal
@@ -13,7 +13,7 @@
           </p>
           <div class="row aboutrow">
             <div class="col-md-5">
-              <img src="assets/images/lawbook.webp" alt="image" width="100%" />
+              <img src="{{ asset("web/assets/images/lawbook.webp") }}" alt="image" width="100%" />
             </div>
             <div class="col-md-6 mobile">
               <div class="row">
@@ -74,15 +74,15 @@
       <section class="mission">
         <div class="container">
           <div class="missionwrapper">
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Vision</div>
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Mission</div>
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Core Values</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Vision</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Mission</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Core Values</div>
           </div>
           <div class="missionwrappermobile">
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Mission</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Mission</div>
           </div>
           <div class="row missionrow">
-            <img src="assets/images/halfpattern.webp" alt="" class="missionimg" />
+            <img src="{{ asset("web/assets/images/halfpattern.webp") }}" alt="" class="missionimg" />
             <div class="missioncontent">
               <div class="row missioncontentrow">
                 <div class="col-md-4"><h2>Our Mission</h2></div>
@@ -123,15 +123,15 @@
       <section class="vision">
         <div class="container">
           <div class="vissionwrapper">
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Vision</div>
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Mission</div>
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Core Values</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Vision</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Mission</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Core Values</div>
           </div>
           <div class="visionwrappermobile">
-            <div><img src="assets/images/aboutsvg.svg" alt="" /> Our Vission</div>
+            <div><img src="{{ asset("web/assets/images/aboutsvg.svg") }}" alt="" /> Our Vission</div>
           </div>
           <div class="row visionrow">
-            <img src="assets/images/halfpattern.webp" alt="" class="visionimg" />
+            <img src="{{ asset("web/assets/images/halfpattern.webp") }}" alt="" class="visionimg" />
             <div class="visioncontent">
               <div class="row missioncontentrow">
                 <div class="col-md-4"><h2>Our Vision</h2></div>
@@ -150,7 +150,7 @@
 
       <!-- <div class="missionrow">
             <div class="col-md-4 col-12">
-              <img src="assets/images/mission.webp" alt="image" />
+              <img src="{{ asset("web/assets/images/mission.webp") }}" alt="image" />
               <h4>Our Mission</h4>
               <p>
                 To be the leading Pan-African law firm with a global footprint,
@@ -159,7 +159,7 @@
               </p>
             </div>
             <div class="col-md-7 col-12">
-              <img src="assets/images/vision.webp" alt="image" class="missionimg" />
+              <img src="{{ asset("web/assets/images/vision.webp") }}" alt="image" class="missionimg" />
               <h4>Our Vision</h4>
               <ul class="visionul">
                 <li>
@@ -191,7 +191,7 @@
             <div class="row corevaluerow">
               <div class="col-md-3">
                 <div class="corevaluecard">
-                  <img src="assets/images/scale.svg" alt="image" />
+                  <img src="{{ asset("web/assets/images/scale.svg") }}" alt="image" />
                   <h4>Fairness</h4>
                   <p>
                     We are committed to fairness, honesty, and ethical conduct in
@@ -203,7 +203,7 @@
               </div>
               <div class="col-md-3">
                 <div class="corevaluecard">
-                  <img src="assets/images/bulb.svg" alt="image" />
+                  <img src="{{ asset("web/assets/images/bulb.svg") }}" alt="image" />
                   <h4>Innovation</h4>
                   <p>
                     We are committed to innovation, continuously exploring
@@ -214,7 +214,7 @@
               </div>
               <div class="col-md-3">
                 <div class="corevaluecard">
-                  <img src="assets/images/ethic.svg" alt="image" />
+                  <img src="{{ asset("web/assets/images/ethic.svg") }}" alt="image" />
                   <h4>Work Ethics</h4>
                   <p>
                     We possess a work ethic that is devoted to giving our clients
@@ -225,7 +225,7 @@
               </div>
               <div class="col-md-3">
                 <div class="corevaluecard">
-                  <img src="assets/images/puzzle.svg" alt="image" />
+                  <img src="{{ asset("web/assets/images/puzzle.svg") }}" alt="image" />
                   <h4>Coordination</h4>
                   <p>
                     We are a well managed productive law firm that is poised to
@@ -259,7 +259,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="https://www.linkedin.com/company/law-accent"
-                      ><img src="assets/images/ogun.webp" alt="Eyitayo Ogunyemi"
+                      ><img src="{{ asset("web/assets/images/ogun.webp") }}" alt="Eyitayo Ogunyemi"
                     /></a>
                     <span class="tooltiptext"
                       >Click the Image <br class="br" />
@@ -275,7 +275,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="/https://www.linkedin.com/company/law-accent"
-                      ><img src="assets/images/ojo.webp" alt="Ojo Adedamola" /></a
+                      ><img src="{{ asset("web/assets/images/ojo.webp") }}" alt="Ojo Adedamola" /></a
                     ><span class="tooltiptext"
                       >Click the Image <br class="br" />
                       to visit Linkedin <br class="br" />
@@ -290,7 +290,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="https://www.linkedin.com/company/law-accent/"
-                      ><img src="assets/images/olu.webp" alt="Olumide Oyeleke" /></a
+                      ><img src="{{ asset("web/assets/images/olu.webp") }}" alt="Olumide Oyeleke" /></a
                     ><span class="tooltiptext"
                       >Click the Image <br class="br" />
                       to visit Linkedin <br class="br" />
@@ -305,7 +305,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="https://www.linkedin.com/company/law-accent/"
-                      ><img src="assets/images/bola.webp" alt="Adeola Bola" /></a
+                      ><img src="{{ asset("web/assets/images/bola.webp") }}" alt="Adeola Bola" /></a
                     ><span class="tooltiptext"
                       >Click the Image <br class="br" />
                       to visit Linkedin <br class="br" />
@@ -323,7 +323,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="https://www.linkedin.com/company/law-accent/"
-                      ><img src="assets/images/munachi.webp" alt="Munachi" /></a
+                      ><img src="{{ asset("web/assets/images/munachi.webp") }}" alt="Munachi" /></a
                     ><span class="tooltiptext"
                       >Click the Image <br class="br" />
                       to visit Linkedin <br class="br" />
@@ -338,7 +338,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="https://www.linkedin.com/company/law-accent/"
-                      ><img src="assets/images/iyanu.webp" alt="Iyanu Oluwatayo" /></a
+                      ><img src="{{ asset("web/assets/images/iyanu.webp") }}" alt="Iyanu Oluwatayo" /></a
                     ><span class="tooltiptext"
                       >Click the Image <br class="br" />
                       to visit Linkedin <br class="br" />
@@ -353,7 +353,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="https://www.linkedin.com/company/law-accent/"
-                      ><img src="assets/images/rotimi.webp" alt="Rotimi" /></a
+                      ><img src="{{ asset("web/assets/images/rotimi.webp") }}" alt="Rotimi" /></a
                     ><span class="tooltiptext"
                       >Click the Image <br class="br" />
                       to visit Linkedin <br class="br" />
@@ -368,7 +368,7 @@
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="https://www.linkedin.com/company/law-accent/"
-                      ><img src="assets/images/toyin.webp" alt="Toyin" /></a
+                      ><img src="{{ asset("web/assets/images/toyin.webp") }}" alt="Toyin" /></a
                     ><span class="tooltiptext"
                       >Click the Image <br class="br" />
                       to visit Linkedin <br class="br" />

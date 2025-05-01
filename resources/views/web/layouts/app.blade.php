@@ -13,7 +13,7 @@
       content="Law Accent (NG) is dedicated to simplifying the complexities of data protection and privacy for organisations across industries."
     />
     <title>Law Accent NG</title>
-    <link rel="icon" href="assets/images/ng.webp" />
+    <link rel="icon" href="{{ asset("web/assets/images/ng.webp") }}"" />
     <link rel="stylesheet" href="{{ asset("web/assets/css/style.css") }}" />
     <link rel="stylesheet" href="{{ asset("web/assets/css/mobile.css") }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -104,14 +104,14 @@
         </div>
         <div class="bottom-row">
           <div class="footerlogo">
-            <img src="assets/images/logo.webp" alt="Law Accent Logo" />
+            <img src="{{ asset("web/assets/images/logo.webp") }}" alt="Law Accent Logo" />
             <p>(C) 2025 LAW ACCENT NIGERIA. ALL RIGHTS RESERVED.</p>
           </div>
           <div class="social-icons">
-            <a href=""><img src="assets/images/linkedin.svg" alt="LinkedIn" /></a>
-            <a href=""><img src="assets/images/x.svg" alt="X (Twitter)" /></a>
-            <a href=""><img src="assets/images/fb.svg" alt="Facebook" /></a>
-            <a href=""><img src="assets/images/insta.svg" alt="Instagram" /></a>
+            <a href=""><img src="{{ asset("web/assets/images/linkedin.svg") }}" alt="LinkedIn" /></a>
+            <a href=""><img src="{{ asset("web/assets/images/x.svg") }}" alt="X (Twitter)" /></a>
+            <a href=""><img src="{{ asset("web/assets/images/fb.svg") }}" alt="Facebook" /></a>
+            <a href=""><img src="{{ asset("web/assets/images/insta.svg") }}" alt="Instagram" /></a>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
     <section class="heroImage">
         <div class="container">
             <div class="row heroImageBottom">
-                <img src="assets/images/lan.svg" alt="image" />
+                <img src="{{ asset("web/assets/images/lan.svg") }}" alt="image" />
                 <h1>
                     Trusted Legal Expertise, <br />
                     Tailored to Your Needs
@@ -40,7 +40,7 @@
             <div class="row servicerow justify-content-center">
                 <div class="col-md-4">
                     <div class="serviceCard">
-                        <img src="assets/images/robot.webp" class="card-img-top" alt="..." />
+                        <img src="{{ asset("web/assets/images/robot.webp") }}" class="card-img-top" alt="..." />
                         <div class="cardBody">
                             <h5>Data Protection and Advisory Services</h5>
                             <p>Expert guidance on compliance and data security.</p>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="serviceCard">
-                        <img src="assets/images/law.webp" class="card-img-top" alt="..." />
+                        <img src="{{ asset("web/assets/images/law.webp") }}" class="card-img-top" alt="..." />
                         <div class="cardBody">
                             <h5>Corporate Law</h5>
                             <p>
@@ -63,7 +63,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="serviceCard">
-                        <img src="assets/images/family.webp" class="card-img-top" alt="..." />
+                        <img src="{{ asset("web/assets/images/family.webp") }}" class="card-img-top" alt="..." />
                         <div class="cardBody">
                             <h5>Family Law</h5>
                             <p>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="serviceCard">
-                        <img src="assets/images/judge.webp" class="card-img-top" alt="..." />
+                        <img src="{{ asset("web/assets/images/judge.webp") }}" class="card-img-top" alt="..." />
                         <div class="cardBody">
                             <h5>Litigation</h5>
                             <p>
@@ -89,7 +89,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="serviceCard">
-                        <img src="assets/images/realestate.webp" class="card-img-top" alt="..." />
+                        <img src="{{ asset("web/assets/images/realestate.webp") }}" class="card-img-top" alt="..." />
                         <div class="cardBody">
                             <h5>Real Estate Law</h5>
                             <p>
@@ -102,7 +102,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="serviceCard">
-                        <img src="assets/images/debt.webp" class="card-img-top" alt="..." />
+                        <img src="{{ asset("web/assets/images/debt.webp") }}" class="card-img-top" alt="..." />
                         <div class="cardBody">
                             <h5>Debt Recovery</h5>
                             <p>
@@ -115,7 +115,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="serviceCard">
-                        <img src="assets/images/calculator.webp" class="card-img-top" alt="..." />
+                        <img src="{{ asset("web/assets/images/calculator.webp") }}" class="card-img-top" alt="..." />
                         <div class="cardBody">
                             <h5>Banking and Finance Law</h5>
                             <p>
@@ -134,7 +134,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="assets/images/about.svg" alt="image" />
+                    <img src="{{ asset("web/assets/images/about.svg") }}" alt="image" />
                     <h2>About Law Accent</h2>
                     <p>
                         A Pan-African Law Firm, strategically positioned as the vital
@@ -157,7 +157,7 @@
                 </div>
 
                 <div class="col-md-6">
-                    <img src="assets/images/officewoman.webp" alt="image" class="aboutusimage" />
+                    <img src="{{ asset("web/assets/images/officewoman.webp") }}" alt="image" class="aboutusimage" />
                 </div>
                 <button class="btn btn-read-more">
                     <a href="{{ route("about-us") }}">Read More About Us</a>
@@ -169,7 +169,7 @@
 
     <section class="chooseus">
       <div class="container">
-        <img src="assets/images/chooseus.svg" alt="image" class="chooseimg" />
+        <img src="{{ asset("web/assets/images/chooseus.svg") }}" alt="image" class="chooseimg" />
         <h2>
           What sets Law Accent apart in <br />
           today's legal landscape
@@ -177,7 +177,7 @@
         <div class="row chooserow">
           <div class="col-md-3">
             <div class="chooseuscard">
-              <img src="assets/images/global.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/global.svg") }}" alt="image" />
               <h4>Global Presence</h4>
               <p>
                 With offices in the UK, Africa and synergies across Europe, we
@@ -187,7 +187,7 @@
           </div>
           <div class="col-md-3">
             <div class="chooseuscard">
-              <img src="assets/images/chat.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/chat.svg") }}" alt="image" />
               <h4>Plain Language Advocacy</h4>
               <p>
                 We explain legal matters in clear, everyday terms — no jargon.
@@ -196,7 +196,7 @@
           </div>
           <div class="col-md-3">
             <div class="chooseuscard">
-              <img src="assets/images/legal.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/legal.svg") }}" alt="image" />
               <h4>Legal Education Tools</h4>
               <p>
                 Access videos, checklists, and webinars to stay informed,
@@ -206,7 +206,7 @@
           </div>
           <div class="col-md-3">
             <div class="chooseuscard">
-              <img src="assets/images/service.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/service.svg") }}" alt="image" />
               <h4>Diverse and Inclusive Legal Services</h4>
               <p>
                 We cover a wide range of practice areas that reflect the diverse
@@ -221,7 +221,7 @@
 
     <section class="explore">
       <div class="container">
-        <img src="assets/images/explore.svg" alt="image" class="chooseimg" />
+        <img src="{{ asset("web/assets/images/explore.svg") }}" alt="image" class="chooseimg" />
         <h2>
           Discover tools, insights, and services that put <br />
           the law within your reach.
@@ -233,7 +233,7 @@
               >Webinars and resources for growing your legal knowledge.</span
             >
             <span class="legal-arrow">
-              <img src="assets/images/arrow.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
             </span>
           </a>
 
@@ -243,7 +243,7 @@
               >Articles, explainers, and case studies on key legal issues.</span
             >
             <span class="legal-arrow">
-              <img src="assets/images/arrow.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
             </span>
           </a>
 
@@ -253,7 +253,7 @@
               >Watch sessions led by experts on general legal topics</span
             >
             <span class="legal-arrow">
-              <img src="assets/images/arrow.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
             </span>
           </a>
 
@@ -264,7 +264,7 @@
               laws.</span
             >
             <span class="legal-arrow">
-              <img src="assets/images/arrow.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
             </span>
           </a>
 
@@ -272,7 +272,7 @@
             <span class="legal-title">Legal Checklists and Assessment</span>
             <span class="legal-description">Identify legal risks and gap</span>
             <span class="legal-arrow">
-              <img src="assets/images/arrow.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
             </span>
           </a>
 
@@ -282,7 +282,7 @@
               >Empowering the next generation of lawyers.</span
             >
             <span class="legal-arrow">
-              <img src="assets/images/arrow.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
             </span>
           </a>
         </div>
@@ -304,7 +304,7 @@
       </div>
       <div class="scroll-container">
         <div class="casestudycard">
-          <img src="assets/images/stickynote.webp" alt="Sticky notes" />
+          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
           <div class="casestudycard-body">
             <div class="casestudycard-title">
               Data Privacy Compliance<br />Under the NDPR
@@ -322,7 +322,7 @@
         </div>
 
         <div class="casestudycard">
-          <img src="assets/images/stickynote.webp" alt="Sticky notes" />
+          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
           <div class="casestudycard-body">
             <div class="casestudycard-title">
               Data Privacy Compliance<br />Under the NDPR
@@ -340,7 +340,7 @@
         </div>
 
         <div class="casestudycard">
-          <img src="assets/images/stickynote.webp" alt="Sticky notes" />
+          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
           <div class="casestudycard-body">
             <div class="casestudycard-title">
               Data Privacy Compliance<br />Under the NDPR
@@ -358,7 +358,7 @@
         </div>
 
         <div class="casestudycard">
-          <img src="assets/images/stickynote.webp" alt="Sticky notes" />
+          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
           <div class="casestudycard-body">
             <div class="casestudycard-title">
               Data Privacy Compliance<br />Under the NDPR
@@ -376,7 +376,7 @@
         </div>
 
         <div class="casestudycard">
-          <img src="assets/images/stickynote.webp" alt="Sticky notes" />
+          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
           <div class="casestudycard-body">
             <div class="casestudycard-title">
               Data Privacy Compliance<br />Under the NDPR
@@ -393,7 +393,7 @@
           </div>
         </div>
         <div class="casestudycard">
-          <img src="assets/images/stickynote.webp" alt="Sticky notes" />
+          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
           <div class="casestudycard-body">
             <div class="casestudycard-title">
               Data Privacy Compliance<br />Under the NDPR
@@ -410,7 +410,7 @@
           </div>
         </div>
         <div class="casestudycard">
-          <img src="assets/images/stickynote.webp" alt="Sticky notes" />
+          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
           <div class="casestudycard-body">
             <div class="casestudycard-title">
               Data Privacy Compliance<br />Under the NDPR

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\AboutUsController;
 use App\Http\Controllers\Web\CareerController;
+use App\Http\Controllers\web\OurImpactController;
 use App\Http\Controllers\Web\ResourceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\HomeController;
@@ -45,9 +46,15 @@ Route::prefix('resources')->name('resources.')->controller(ResourceController::c
     Route::get('legal-checklist-and-assessment-tool', 'assessmentTool')->name('assessment.tool');
 });
 
+Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('legal-literacy-and-public-education', 'legalLiteracy')->name('legal.literacy');
+    Route::get('law-school-scholarship-programme', 'scholarship')->name('scholarship');
+});
 
 Route::get('career', [CareerController::class, 'index'])->name('career');
 Route::get('contact-us', [AboutUsController::class, 'index'])->name('contact-us');
+Route::get('consultation', [AboutUsController::class, 'index'])->name('consultation');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

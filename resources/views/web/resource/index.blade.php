@@ -3,14 +3,14 @@
     <section class="resources">
         <div class="container">
             <div class="resources-header">
-                <img src="assets/images/lan-bordered.svg" alt="image" />
+                <img src="{{ asset("web/assets/images/lan-bordered.svg") }}" alt="image" />
                 <h2>Resources</h2>
             </div>
 
             <div class="row chooserow justify-content-center">
                 <div class="col-md-4">
                     <div class="resources-card">
-                        <img src="assets/images/blog.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/blog.svg") }}" alt="image" />
                         <a href="blogpost.html">
                             <h4>Blog Posts / Articles</h4>
                         </a>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="resources-card">
-                        <img src="assets/images/faq.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/faq.svg") }}" alt="image" />
                         <a href="faq.html">
                             <h4>FAQs</h4>
                         </a>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="resources-card">
-                        <img src="assets/images/note.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/note.svg") }}" alt="image" />
                         <a href="casestudies.html">
                             <h4>Case Studies</h4>
                         </a>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="resources-card">
-                        <img src="assets/images/video.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/video.svg") }}" alt="image" />
                         <a href="mediahub.html">
                             <h4>Media Hub</h4>
                         </a>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="resources-card">
-                        <img src="assets/images/briefcase.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/briefcase.svg") }}" alt="image" />
                         <a href="doingbusiness.html">
                             <h4>Doing Business in Nigeria</h4>
                         </a>
@@ -70,7 +70,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="resources-card">
-                        <img src="assets/images/cross.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/cross.svg") }}" alt="image" />
                         <a href="crossborder.html">
                             <h4>Cross Border Legal Services</h4>
                         </a>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="resources-card">
-                        <img src="assets/images/settings.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/settings.svg") }}" alt="image" />
                         <a href="legalchecklist.html">
                             <h4>Legal Checklist and Assessment Tool</h4>
                         </a>

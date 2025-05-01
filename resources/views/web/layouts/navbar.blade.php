@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light">
 <div class="container">
 <a class="navbar-brand" href="{{ route("home") }}">
-    <img src="assets/images/logo.webp" alt="brand logo" />
-    <img src="assets/images/ng.svg" alt="brand logo" />
+    <img src="{{ asset("web/assets/images/logo.webp") }}" alt="brand logo" />
+    <img src="{{ asset("web/assets/images/ng.svg") }}" alt="brand logo" />
 </a>
 <button
     class="navbar-toggler"
@@ -59,7 +59,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
         >
-            <img src="assets/images/arrow-down.svg" alt="arrow" width="90%" />
+            <img src="{{ asset("web/assets/images/arrow-down.svg") }}" alt="arrow" width="90%" />
         </a>
         </div>
         <ul class="dropdown-menu" aria-labelledby="dropdownToggleIcon">
@@ -115,7 +115,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
         >
-            <img src="assets/images/arrow-down.svg" alt="arrow" width="90%" />
+            <img src="{{ asset("web/assets/images/arrow-down.svg") }}" alt="arrow" width="90%" />
         </a>
         </div>
 
@@ -158,7 +158,7 @@
         <div class="svg-dropdown d-flex align-items-center">
         <a
             class="nav-link navlinks"
-            href="ourimpact.html"
+            href="{{ route('our-impact.index') }}"
             id="ourImpactLink"
         >
             Our Impact
@@ -172,17 +172,17 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
         >
-            <img src="assets/images/arrow-down.svg" alt="arrow" width="90%" />
+            <img src="{{ asset("web/assets/images/arrow-down.svg") }}" alt="arrow" width="90%" />
         </a>
         </div>
         <ul class="dropdown-menu" aria-labelledby="dropdownToggleIcon">
         <li>
-            <a class="dropdown-item" href="legalliteracy.html"
+            <a class="dropdown-item" href="{{ route('our-impact.legal.literacy') }}"
             >Legal Literacy & Public Education</a
             >
         </li>
         <li>
-            <a class="dropdown-item" href="lawschoolscholarship.html"
+            <a class="dropdown-item" href="{{ route('our-impact.scholarship') }}"
             >Law School Scholarship Programme</a
             >
         </li>
@@ -190,22 +190,22 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link navlinks" href="career.html"
+        <a class="nav-link navlinks" href="{{ route('career') }}"
         >Career <span class="sr-only"></span
         ></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link navlinks" href="contactus.html">Contact</a>
+        <a class="nav-link navlinks" href="{{ route('contact-us') }}">Contact</a>
     </li>
     </ul>
     <div class="join-container">
     <button aria-label="Name" class="btn btn-consult">
-        <a href="scheduleconversation.html">Schedule a Consultation</a>
+        <a href="{{ route('consultation') }}">Schedule a Consultation</a>
     </button>
     <a href="search.html"
         ><button aria-label="Name" class="btn btn-search">
-        <img src="assets/images/search.svg" alt="image" /></button
+        <img src="{{ asset("web/assets/images/search.svg") }}" alt="image" /></button
     ></a>
     </div>
 </div>

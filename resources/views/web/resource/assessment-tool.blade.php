@@ -5,7 +5,7 @@
           <div class="row dataprotectionrow">
             <div class="col-md-6 dataprotectiontext">
               <div>
-                <img src="assets/images/resourcesvg.svg" alt="" />
+                <img src="{{ asset("web/assets/images/resourcesvg.svg") }}" alt="" />
                 <h3>
                   Legal Checklist and <br />
                   Assessment Tool
@@ -18,7 +18,7 @@
               </div>
             </div>
             <div class="col-md-6 smillingman">
-              <img src="assets/images/legal.webp" alt="" />
+              <img src="{{ asset("web/assets/images/legal.webp") }}" alt="" />
             </div>
           </div>
         </div>
@@ -45,9 +45,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlayimg.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
                     <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
                   </div>
                 </div>
@@ -67,9 +67,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlayimg.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
                     <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
                   </div>
                 </div>
@@ -89,9 +89,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlayimg.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
                     <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
                   </div>
                 </div>
@@ -111,9 +111,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlayimg.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
                     <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
                   </div>
                 </div>
@@ -133,9 +133,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlayimg.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
                     <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
                   </div>
                 </div>
@@ -155,9 +155,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlayimg.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
                     <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
                   </div>
                 </div>
@@ -190,9 +190,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlaycheck.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlaycheck.svg") }}" alt="" />
                     <p>HOW TO REGISTRER YOUR BUSINESS LEGALLY</p>
                   </div>
                 </div>
@@ -211,9 +211,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlaycheck.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlaycheck.svg") }}" alt="" />
                     <p>HOW TO REGISTRER YOUR BUSINESS LEGALLY</p>
                   </div>
                 </div>
@@ -232,9 +232,9 @@
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
-                  <img src="assets/images/assessment.webp" alt="" />
+                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
                   <div class="overlay">
-                    <img src="assets/images/overlaycheck.svg" alt="" />
+                    <img src="{{ asset("web/assets/images/overlaycheck.svg") }}" alt="" />
                     <p>HOW TO REGISTRER YOUR BUSINESS LEGALLY</p>
                   </div>
                 </div>

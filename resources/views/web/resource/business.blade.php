@@ -3,7 +3,7 @@
 
     <section class="aboutlawaccent">
         <div class="container">
-            <img src="assets/images/resourcesvg.svg" alt="image" />
+            <img src="{{ asset("web/assets/images/resourcesvg.svg") }}" alt="image" />
             <h2>Doing Business In Nigeria</h2>
         </div>
     </section>
@@ -24,10 +24,10 @@
                     </p>
                 </div>
                 <div class="col-md-6">
-                    <img src="assets/images/flag.webp" alt="" />
+                    <img src="{{ asset("web/assets/images/flag.webp") }}" alt="" />
                 </div>
                 <div class="col-md-6 mobilescale">
-                    <img src="assets/images/scale.webp" alt="" class="scale-img" />
+                    <img src="{{ asset("web/assets/images/scale.webp") }}" alt="" class="scale-img" />
                 </div>
                 <div class="col-md-6">
                     <p>
@@ -55,7 +55,7 @@
                 <div class="row recent-blogrow" data-category="all">
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Business Registration in Nigeria: A
@@ -77,7 +77,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Contract Law in Nigeria: Key Elements & Common
@@ -98,7 +98,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Intellectual Property Protection in Nigeria: How to
@@ -119,7 +119,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Business Registration in Nigeria: A
@@ -141,7 +141,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/smilinghandshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Understanding Contract Law in Nigeria: Key Elements & Common
@@ -162,7 +162,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentblogcard">
-                            <img src="assets/images/corporateshake.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
                             <div class="recentblogcard-body">
                                 <h5>
                                     Intellectual Property Protection in Nigeria: How to

@@ -5,12 +5,12 @@
           <div class="row dataprotectionrow">
             <div class="col-md-6 dataprotectiontext">
               <div>
-                <img src="assets/images/expertise.svg" alt="" />
+                <img src="{{ asset("web/assets/images/expertise.svg") }}" alt="" />
                 <h3>Debt Recovery</h3>
               </div>
             </div>
             <div class="col-md-6 smillingman">
-              <img src="assets/images/laptop.webp" alt="" />
+              <img src="{{ asset("web/assets/images/laptop.webp") }}" alt="" />
             </div>
           </div>
         </div>
@@ -71,12 +71,12 @@
             </div>
             <div class="col-md-3 otherimg col-12">
               <div class="otherimg-img">
-                <img src="assets/images/consult.webp" alt="" />
+                <img src="{{ asset("web/assets/images/consult.webp") }}" alt="" />
               </div>
               <div class="otherimgdiv">
                 <div class="contactdiv">
                   <span>CONTACT</span>
-                  <img src="assets/images/line.svg" alt="" />
+                  <img src="{{ asset("web/assets/images/line.svg") }}" alt="" />
                 </div>
                 <h5>Get a Free Consultation Call!</h5>
                 <p>
@@ -111,11 +111,11 @@
               ><br />
               <div class="buttonspread">
                 <button class="btn">
-                  <img src="assets/images/calling.svg" alt="image" />
+                  <img src="{{ asset("web/assets/images/calling.svg") }}" alt="image" />
                   <a href="tel:+2347040092801">Call Us</a></button
                 ><br />
                 <button class="btn">
-                  <a href="mailto:info@lawaccent.com"><img src="assets/images/mail.svg" alt="image" /> Email Us</a>
+                  <a href="mailto:info@lawaccent.com"><img src="{{ asset("web/assets/images/mail.svg") }}" alt="image" /> Email Us</a>
                 </button>
               </div>
             </div>

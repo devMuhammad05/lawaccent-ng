@@ -5,7 +5,7 @@
             <div class="row dataprotectionrow">
                 <div class="col-md-6 dataprotectiontext">
                     <div>
-                        <img src="assets/images/resourcesvg.svg" alt="" />
+                        <img src="{{ asset("web/assets/images/resourcesvg.svg") }}" alt="" />
                         <h3>Case Studies</h3>
                         <p>
                             Find quick answers to common legal <br />
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 smillingman">
-                    <img src="assets/images/officewoman.webp" alt="" />
+                    <img src="{{ asset("web/assets/images/officewoman.webp") }}" alt="" />
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
                 <div class="row recent-caserow" data-category="all">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Resolving a Breach of Contract for a Tech Startup</h5>
                                 <b>Legal Issues Explored</b>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>
                                     Helping a Fintech Company Achieve Data Protection Compliance
@@ -87,7 +87,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>
                                     Securing Intellectual Property Rights for a Fashion Brand
@@ -108,7 +108,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Resolving a Breach of Contract for a Tech Startup</h5>
                                 <b>Legal Issues Explored</b>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>
                                     Helping a Fintech Company Achieve Data Protection Compliance
@@ -147,7 +147,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>
                                     Securing Intellectual Property Rights for a Fashion Brand
@@ -171,7 +171,7 @@
                 <div class="row recent-caserow" data-category="data-protection">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Data Protection Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -190,7 +190,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Data Protection Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -208,7 +208,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Data Protection Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -227,7 +227,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Data Protection Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -246,7 +246,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Data Protection Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -264,7 +264,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Data Protection Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -286,7 +286,7 @@
                 <div class="row recent-caserow" data-category="corporate-law">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Corporate law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -305,7 +305,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Corporate law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -323,7 +323,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Corporate law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -342,7 +342,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Corporate law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -361,7 +361,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Corporate law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -379,7 +379,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Corporate law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -401,7 +401,7 @@
                 <div class="row recent-caserow" data-category="family-law">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Family Law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -420,7 +420,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Family Law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -438,7 +438,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Family Law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -457,7 +457,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Family Law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -476,7 +476,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Family Law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -494,7 +494,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Family Law Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -516,7 +516,7 @@
                 <div class="row recent-caserow" data-category="litigation">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>litigation Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -535,7 +535,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>litigation Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -553,7 +553,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>litigation Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -572,7 +572,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>litigation Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -591,7 +591,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>litigation Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -609,7 +609,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>litigation Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -631,7 +631,7 @@
                 <div class="row recent-caserow" data-category="real-estate">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Real Estate Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -650,7 +650,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Real Estate Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -668,7 +668,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Real Estate Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -687,7 +687,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Real Estate Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -706,7 +706,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Real Estate Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -724,7 +724,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Real Estate Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -746,7 +746,7 @@
                 <div class="row recent-caserow" data-category="debt-recovery">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Debt Recovery Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -765,7 +765,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Debt Recovery Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -783,7 +783,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Debt Recovery Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -802,7 +802,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Debt Recovery Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -821,7 +821,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Debt Recovery Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -839,7 +839,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Debt Recovery Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -861,7 +861,7 @@
                 <div class="row recent-caserow" data-category="banking-finance">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Banking and Finance Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -880,7 +880,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Banking and Finance Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -898,7 +898,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Banking and Finance Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -917,7 +917,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Banking and Finance Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -936,7 +936,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Banking and Finance Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -954,7 +954,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Banking and Finance Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -976,7 +976,7 @@
                 <div class="row recent-caserow" data-category="others">
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Other Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -995,7 +995,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Other Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -1013,7 +1013,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Other Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -1032,7 +1032,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Other Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -1051,7 +1051,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Other Case Study</h5>
                                 <b>Legal Issues Explored</b>
@@ -1069,7 +1069,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="recentcasestudycard">
-                            <img src="assets/images/stickynote.webp" alt="" />
+                            <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="" />
                             <div class="recentcasestudycard-body">
                                 <h5>Other Case Study</h5>
                                 <b>Legal Issues Explored</b>

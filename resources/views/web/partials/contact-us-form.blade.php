@@ -8,10 +8,10 @@
                     <a href="scheduleconversation.html">Schedule a Consultation</a></button><br />
                 <div class="buttonspread">
                     <button class="btn">
-                        <img src="assets/images/calling.svg" alt="image" />
+                        <img src="{{ asset("web/assets/images/calling.svg") }}" alt="image" />
                         <a href="tel:+2347040092801">Call Us</a></button><br />
                     <button class="btn">
-                        <a href="mailto:info@lawaccent.com"><img src="assets/images/mail.svg" alt="image" /> Email
+                        <a href="mailto:info@lawaccent.com"><img src="{{ asset("web/assets/images/mail.svg") }}" alt="image" /> Email
                             Us</a>
                     </button>
                 </div>

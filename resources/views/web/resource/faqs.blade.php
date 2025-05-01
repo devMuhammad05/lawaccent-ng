@@ -5,7 +5,7 @@
             <div class="row dataprotectionrow">
                 <div class="col-md-6 dataprotectiontext">
                     <div>
-                        <img src="assets/images/resourcesvg.svg" alt="" />
+                        <img src="{{ asset("web/assets/images/resourcesvg.svg") }}" alt="" />
                         <h3>Frequently Asked Questions</h3>
                         <p>
                             Find quick answers to common legal <br />
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 smillingman">
-                    <img src="assets/images/officewoman.webp" alt="" />
+                    <img src="{{ asset("web/assets/images/officewoman.webp") }}" alt="" />
                 </div>
             </div>
         </div>
