@@ -1,0 +1,1193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Extra small devices (phones, 0 - 575px) */
+@media (max-width: 767.98px) {
+
+    /* HOME PAGE */
+    p {
+        font-size: 13px !important;
+    }
+
+    span {
+        font-size: 13px !important;
+    }
+
+    br {
+        display: none;
+    }
+
+    .navbar {
+        margin: 5px 20px;
+        height: 100%;
+    }
+
+    .navbar-nav {
+        gap: 10px;
+        display: flex;
+        align-items: normal;
+    }
+
+    .svg-dropdown {
+        justify-content: space-between;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    .navbar-toggler {
+        background: #114906 !important;
+    }
+
+    .navbar-brand> :nth-child(1) {
+        width: 80px;
+    }
+
+    .navbar-brand> :nth-child(2) {
+        width: 60%;
+    }
+
+    .heroImage {
+        height: 60vh;
+        border-radius: 20px;
+    }
+
+    .heroImageBottom {
+        padding-bottom: 2rem;
+        padding-left: 10px;
+    }
+
+    .heroImageBottom p {
+        font-size: 13px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .heroImageBottom h1 {
+        color: white;
+        font-size: 25px;
+    }
+
+    .heroImageBottom img {
+        width: 50%;
+    }
+
+    .service {
+        margin-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .service-text h1 {
+        padding-top: 30px;
+        font-size: 25px;
+    }
+
+    .service-text p {
+        font-size: 13px;
+        padding: 5px 0px;
+    }
+
+    .service-text button {
+        width: 50%;
+        font-size: 13px;
+        margin-bottom: 40px;
+    }
+
+    .cardBody p {
+        font-size: 13px;
+    }
+
+    .cardBody button {
+        font-size: 13px;
+    }
+
+    .aboutus {
+        padding: 30px 0;
+    }
+
+    .aboutus h2 {
+        padding: 10px 0;
+    }
+
+    .aboutusimage {
+        width: 100%;
+    }
+
+    .btn-read-more {
+        width: 45% !important;
+        display: block !important;
+    }
+
+    .btn-read-mobile {
+        display: none !important;
+    }
+
+    /* .chooserow .col-md-3 {
+        margin-top: 20px;
+    } */
+
+    .chooseuscard img {
+        width: 15%;
+    }
+
+    .chooseuscard h4 {
+        font-size: 18px;
+    }
+
+    .chooseuscard p {
+        font-size: 13px;
+    }
+
+    .legal-grid {
+        width: 95%;
+        margin-top: 20px;
+    }
+
+    .legal-arrow img {
+        margin-left: 0px;
+    }
+
+    .explore {
+        padding-bottom: 0px !important;
+    }
+
+    .casestudy {
+        margin-top: 20px !important;
+        background: #EAEAEA;
+        padding-bottom: 40px;
+    }
+
+    .btn-case-study {
+        width: 45% !important;
+        margin-bottom: 40px !important;
+    }
+
+    .scroll-container {
+        margin-left: 10px;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .casestudycard {
+        flex: 0 0 300px;
+    }
+
+    .casestudyread-more-btn {
+        width: 50%;
+        font-size: 13px;
+    }
+
+    .contact-row {
+        color: white;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact-info {
+        max-width: 100%;
+        text-align: center;
+        width: 100% !important;
+    }
+
+    .contact-info h1 {
+        margin-bottom: 10px;
+        font-size: 25px;
+    }
+
+    .contact-info p {
+        padding: 5px 0;
+        font-size: 14px;
+    }
+
+    .contact-info .btn {
+        margin-top: 10px;
+        margin: auto;
+    }
+
+    .buttonspread {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center !important;
+    }
+
+    .contact-form {
+        padding: 15px;
+        width: 95%;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .contact-form button {
+        font-size: 13px;
+    }
+
+    .subscribe-text p {
+        font-size: 14px;
+    }
+
+    .subscribe-wrapper input {
+        font-size: 14px;
+    }
+
+    .subscribe-wrapper input::placeholder {
+        font-size: 13px;
+    }
+
+    .subscribe-wrapper button {
+        font-size: 14px;
+        width: 35%;
+    }
+
+    .subscribe-wrapper button:hover {
+        background-color: #0a310a;
+    }
+
+    .footer {
+        padding-bottom: 20px;
+    }
+
+    .footer-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .footer-section {
+        flex: 1 1 45%;
+        margin-bottom: 20px;
+    }
+
+    .bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .footerlogo {
+        text-align: left;
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+    }
+
+    .footerp span {
+        padding-left: 10px;
+    }
+
+    /* ABOUT US PAGE */
+    .missionwrapper,
+    .vissionwrapper {
+        display: none;
+    }
+
+    .mission {
+        margin-top: 0px !important;
+        margin-bottom: 10px;
+    }
+
+    .missionwrappermobile,
+    .visionwrappermobile {
+        display: block !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .missionwrappermobile div,
+    .visionwrappermobile div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        border: 1px solid #686868;
+        padding: 7px 40px;
+        border-radius: 10px;
+        width: 60%;
+        color: #114906;
+        margin: auto;
+        font-weight: 500;
+    }
+
+    .missionrow,
+    .visionrow {
+        margin-top: 30px !important;
+    }
+
+    .missionimg,
+    .visionimg {
+        border-radius: 15px 15px 0 0 !important;
+    }
+
+    .missioncontent,
+    .visioncontent {
+        height: 100% !important;
+        width: 95% !important;
+    }
+
+    .missioncontentrow {
+        height: 100%;
+        padding: 50px 20px;
+    }
+
+    .missioncontentrow ul li {
+        text-align: center !important;
+    }
+
+    .missioncontentrow h2 {
+        padding-bottom: 20px;
+    }
+
+    .missioncontentrow p {
+        text-align: center !important;
+    }
+
+    .aboutlawaccent p {
+        padding: 10px 0;
+        font-size: 14px;
+    }
+
+    .mobile {
+        margin-top: 30px !important;
+    }
+
+    .box {
+        height: 18vh;
+        background: white;
+        box-shadow: 0 8px 16px #44444440;
+        border-radius: 10px;
+        text-align: center;
+        width: 45% !important;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .box h3 {
+        font-size: 25px;
+    }
+
+    .box p {
+        font-size: 13px;
+    }
+
+    .story {
+        margin-top: 10px;
+        padding-bottom: 40px !important;
+    }
+
+    .story h3 {
+        color: #114906;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .visionul {
+        width: 90%;
+    }
+
+    .missionimgvalue {
+        width: 15% !important;
+    }
+
+    .corevalue h4 {
+        color: #114906;
+        padding: 15px 0 0 0;
+    }
+
+    .ourteam {
+        background: #EAEAEA;
+        padding: 20px 0 70px 0;
+    }
+
+    .ourteam h2 {
+        color: #114906;
+        text-align: center;
+    }
+
+    .ourteam p {
+        color: black;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .teamrow {
+        padding: 10px;
+        padding-bottom: 0 !important;
+        border-radius: 15px;
+        margin-top: 0px !important;
+    }
+
+    .team-member h6 {
+        font-size: 25px;
+        font-weight: 700;
+        color: #114906;
+    }
+
+    .team-member span {
+        font-size: 15px;
+        color: #114906;
+    }
+
+    .tooltiptext {
+        bottom: 5%;
+        left: 20%;
+    }
+
+    /* PRACTICE AREA PAGE */
+    .legalexpertise {
+        margin-top: 50px;
+        padding-top: 130px;
+        padding-bottom: 50px;
+    }
+
+    .legalrow img {
+        width: 95%;
+        height: 20vh;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .greenlegalcontainer {
+        height: 100%;
+        margin-top: 40px !important;
+        border-radius: 15px;
+        padding: 20px;
+        width: 90%;
+        margin: auto;
+    }
+
+    .containerrow p {
+        color: white;
+        font-size: 13px !important;
+        width: 100% !important;
+    }
+
+    .legalcard {
+        width: 60%;
+        border-radius: 10px;
+    }
+
+    .legalcard p {
+        color: #555555;
+    }
+
+    .legalcard h3 {
+        color: #114906;
+        font-weight: 600;
+    }
+
+    .legalimg> :nth-child(1) {
+        width: 100%;
+        height: 40vh;
+        border-radius: 20px;
+        object-fit: cover;
+    }
+
+    .legalrowcontainer {
+        margin-top: 30px;
+    }
+
+    /* CAREER */
+    .legalexpertiseimg img {
+        width: 100%;
+        height: 40vh;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .careercol h3 {
+        color: #114906;
+        font-weight: 600;
+        padding-bottom: 10px;
+        padding-top: 20px;
+    }
+
+    .careerp {
+        padding: 0px 0;
+    }
+
+    .careerrow {
+        margin: 30px 0 0 0 !important;
+    }
+
+    .legal-grid-career {
+        width: 95%;
+        max-width: 800px;
+        margin: 0 auto;
+        margin-top: 0px !important;
+    }
+
+    .scrolling-container {
+        background: #114906;
+        padding: 10px 0 40px 0;
+    }
+
+    .scholarshiptext {
+        text-align: center;
+        color: white;
+        padding: 20px 0 30px 0;
+    }
+
+    .scholarshiptext h2 {
+        padding-top: 15px;
+    }
+
+    .scrolling-card {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+
+
+    .scrolling-card::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scroll-img {
+        height: 430px;
+        border-radius: 12px;
+        object-fit: cover;
+        flex-shrink: 0;
+        width: 80%;
+    }
+
+    .scroll-text-card {
+        height: 430px;
+        background-color: white;
+        color: black;
+        padding: 10px;
+        border-radius: 12px;
+        max-width: 400px;
+        min-width: 400px;
+        white-space: normal;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .scroll-text-card p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .badge {
+        display: inline-block;
+        background-color: #0f4216;
+        color: white;
+        padding: 6px 16px;
+        font-size: 12px;
+        border-radius: 50px;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        background-color: #0f4216;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    .apply {
+        padding: 30px 0;
+    }
+
+    .applyrow {
+        align-items: center;
+    }
+
+    .applyrow p {
+        padding-top: 20px;
+        font-style: 14px;
+    }
+
+    .btn-apply {
+        background: #114906 !important;
+        color: white !important;
+    }
+
+    /* CONTACT */
+    .contact {
+        grid-template-columns: 1fr;
+        width: 95% !important;
+    }
+
+    .servicecard {
+        border-right: none !important;
+        border-bottom: 1px solid #ccc !important;
+        padding-left: 80px;
+    }
+
+    .servicecard:last-child {
+        border-bottom: none !important;
+    }
+
+    /* DATA PROTECTION PAGE */
+    .dataprotectionrow {
+        height: 100%;
+        border-radius: 0px;
+        align-items: center;
+        padding-left: 0px;
+    }
+
+    .dataprotectiontext {
+        text-align: center;
+        justify-content: center;
+        padding: 25px 0;
+    }
+
+    .smillingman img {
+        width: 100%;
+        height: 25vh;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+
+    .otherservice {
+        padding: 20px 0;
+    }
+
+    .othercol-p {
+        padding-top: 25px;
+        text-align: center;
+    }
+
+    .othercol-p p {
+        font-size: 14px;
+    }
+
+    .othercol-p> :nth-child(1) {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 15px;
+    }
+
+    .othercol {
+        line-height: 10px;
+        text-align: center;
+    }
+
+    .otherimg-img {
+        width: 95%;
+        height: auto;
+        margin: auto;
+    }
+
+    .otherimgdiv {
+        width: 95%;
+        margin: auto;
+    }
+
+    .scaleimg img {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .bottomsection {
+        background: #EAEAEA;
+        padding: 30px 0 20px 0;
+    }
+
+    .dataprotectiontext-img {
+        width: 30% !important;
+    }
+
+    .dataprotectionrow h3 {
+        font-size: 20px;
+    }
+
+    /* RESOURCES PAGE */
+    .resources {
+        margin-top: 20px;
+        height: 100%;
+        margin-bottom: 80px;
+    }
+
+    .resources-header h2 {
+        padding-bottom: 0;
+    }
+
+    /* BLOG PAGE */
+    .blogpostcontainer {
+        margin: 0 10px;
+    }
+
+    .loadmorediv {
+        width: 20%;
+        height: 2px;
+        background: #A6A6A6;
+    }
+
+    /* BLOG DETAIL PAGE */
+    .blogwriteupcol {
+        margin-left: 0;
+    }
+
+    .sharerow {
+        margin-left: 0;
+    }
+
+    .longline {
+        width: 100%;
+    }
+
+    .shareicon img {
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .pdfbutton {
+        margin-bottom: 30px;
+    }
+
+    .br {
+        display: block;
+    }
+
+    .image-wrapper {
+        border-radius: 15px;
+    }
+
+    .image-wrapper img {
+        border-radius: 10px;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .text-overlay {
+        bottom: 0;
+        left: 50px;
+        right: 50px;
+        background: white;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
+    }
+
+    .text-overlay h4 {
+        color: black;
+        margin: 0;
+        line-height: 1.4;
+        font-size: 14px;
+    }
+
+    /* FAQ PAGE */
+    .accordion {
+        width: 100%;
+    }
+
+    .accordionprivacy {
+        width: 100%;
+        padding: 15px 10px !important;
+        margin: 30px auto;
+    }
+
+    /* DOING BUSINESS PAGE */
+    .doingbusinessrow .col-md-6 {
+        padding-top: 20px;
+    }
+
+    .doingbusinessrow img {
+        height: 100%;
+    }
+
+    .doingbusinessrow p {
+        line-height: normal;
+    }
+
+    .mobilescale {
+        order: 2 !important;
+    }
+
+    .businesscontactrow {
+        border-radius: 0;
+        padding: 40px 0;
+    }
+
+    .businesscontact {
+        margin-bottom: 20px;
+        margin-top: -30px;
+    }
+
+    .businesscontactbutton {
+        margin-top: 20px !important;
+
+    }
+
+    .businesscontactrow h4 {
+        font-size: 18px;
+    }
+
+    .businesscontactbutton> :nth-child(1),
+    .businesscontactbutton> :nth-child(2),
+    .businesscontactbutton> :nth-child(1):hover,
+    .businesscontactbutton> :nth-child(2):hover {
+        font-size: 14px;
+    }
+
+    /* MEDIA PAGE */
+    .youtubesectionrow .col-md-6 {
+        height: 30vh;
+        width: 100%;
+        margin-top: 20px;
+        padding: 0;
+    }
+
+    .mediahubrow {
+        height: 40vh;
+        background-position: left;
+        width: 100%;
+        margin: auto !important;
+    }
+
+    .mediahub {
+        margin-top: 20px;
+    }
+
+    /* LEGAL CHECKLIST READ MORE PAGE  */
+    .checklistrow {
+        margin: 30px 0 !important;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .checklistrow .col-md-5 {
+        margin-top: 20px;
+    }
+
+    /* TEST ASSESSMENT PAGE */
+    .testassessmentcontainer {
+        height: 100% !important;
+    }
+
+    .testassessmentcard {
+        width: 95%;
+        padding: 30px 20px;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
+
+    .testassessmentcontainer {
+        height: 100%;
+    }
+
+    .testoptions {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 50px;
+    }
+
+    .testquestion-list {
+        grid-template-columns: 1fr;
+    }
+
+    .testprogress-percent {
+        top: -25px;
+        font-size: 10px;
+    }
+
+    /* SCHEDULE CONVERSATION PAGE */
+    .schedulesection {
+        margin: 30px 0;
+    }
+
+    .schedulerowcard {
+        border-radius: 10px;
+        width: 100% !important;
+        padding: 20px 20px !important;
+    }
+
+    .form-step button:last-of-type {
+        width: 30%;
+    }
+
+    .stepinput {
+        padding-left: 10px !important;
+        height: 40px !important;
+        color: #000 !important;
+    }
+
+    .btnhomepage {
+        width: 70% !important;
+    }
+
+    /* OUR IMPACT PAGE */
+    .csrinitiatives {
+        margin-top: 50px;
+        margin-bottom: 60px;
+    }
+
+    .sisterimage {
+        margin-top: 20px !important;
+    }
+
+    .sisterimage img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .csrinitiatives h3 {
+        text-align: center;
+        padding-bottom: 10px;
+    }
+
+    /* ERROR PAGE */
+    .erroepage {
+        height: 100%;
+    }
+
+    .errorcontainer {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .errored {
+        color: #FF0000;
+    }
+
+    .errorcontainer h1 {
+        font-size: 100px;
+        color: #114906;
+        font-weight: 700;
+    }
+
+    .btn-homepage,
+    .btn-homepage:hover {
+        background: #114906 !important;
+        color: white !important;
+        margin-top: 30px;
+    }
+
+    /* LEGAL LITRACY PAGE */
+    .legalquiz {
+        margin-top: 50px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .legalquizrow {
+        height: 100%;
+        padding-top: 30px;
+        border-radius: 0;
+    }
+
+    .legalquizrow img {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .legalquiz p {
+        padding: 10px 0;
+    }
+
+    .webinarp p {
+        width: 80%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+    .webinarow img {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        border: 2px solid #114906;
+        border-radius: 10px;
+    }
+
+    .upcomingwebutton {
+        justify-content: center;
+    }
+
+    .lower {
+        margin-top: 30px !important;
+    }
+
+    .webinar {
+        text-align: center;
+    }
+
+    .upcomingwebutton {
+        margin-bottom: 20px;
+    }
+
+    /* WEBINAR DETAILS PAGE */
+    .sectiontitle {
+        margin: 20px 0;
+    }
+
+    .sectiontitlerow img {
+        width: 100%;
+    }
+
+    .btnrsvp {
+        margin-bottom: 30px;
+    }
+
+    .webinartime {
+        justify-content: center;
+    }
+
+    .sectiontitlerow p {
+        width: 95%;
+        margin: auto;
+        padding-top: 0;
+    }
+
+    .sectiontitlerow {
+        text-align: center;
+    }
+
+    .rsvprowcard {
+        width: 100% !important;
+        padding: 20px !important;
+        height: 100% !important;
+        margin-bottom: 60px;
+    }
+
+    .rsvpform-step h4 {
+        padding-top: 0px;
+    }
+
+    .rsvpfixed-textarea {
+        height: 370px !important;
+    }
+
+    .rsvpbelow {
+        margin-top: 150px;
+    }
+
+    /* SCHOLARSHIP PAGE */
+    .Scholarshiprow {
+        margin-top: 40px !important;
+    }
+
+    .Scholarshiprow img {
+        width: 100%;
+    }
+
+    .Scholarshiprow h4 {
+        color: #114906;
+        padding-bottom: 0px;
+    }
+
+    .laww {
+        padding-top: 20px;
+    }
+
+    .scholarshipapply {
+        padding: 40px 0;
+    }
+
+    .scholarshipapply-text p {
+        width: 90%;
+        margin: auto;
+    }
+
+    .btnapplyhere {
+        background: #114906 !important;
+        color: white;
+    }
+
+    .scholarshipapplyrowcard {
+        padding: 20px 0;
+        height: 100%;
+        width: 80%;
+        margin: auto;
+    }
+
+    .scholarshipapplyrow .col-md-3 {
+        margin-top: 20px;
+    }
+
+    .scholarshipapplyrowcard img {
+        width: 20%;
+    }
+
+    .scholarshipapplyrow {
+        margin-top: 40px !important;
+    }
+
+    .last-text {
+        width: 100%;
+    }
+}
+
+
+
+
+/* Small devices (landscape phones, 576px - 767px)
+@media (min-width: 576px) and (max-width: 767.98px) {
+    Styles for landscape phones 
+} */
+
+/* Medium devices (tablets, 768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    /* Styles for tablets */
+}
+
+/* Large devices (desktops, 992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    /* Styles for small desktops/laptops */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Styles for big screens */
+}
+
+@media screen and (min-width: 1500px) {
+    .schedulerowcard {
+        width: 40% !important;
+        padding: 40px 60px !important;
+    }
+
+    .stepinput {
+        height: 45px !important;
+        font-size: 14px !important;
+    }
+
+    .form-step button:last-of-type {
+        width: 18%;
+        font-size: 16px;
+    }
+
+    .form-step input::placeholder {
+        font-size: 13px;
+    }
+
+    .labelform {
+        font-size: 13px;
+    }
+
+    .spandiv span {
+        font-size: 14px;
+    }
+
+    .progress-indicator {
+        justify-content: center;
+    }
+}
