@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\BlogCategory;
 use App\Models\Faq;
+use App\Models\Blog;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -18,7 +20,20 @@ class ResourceController extends Controller
 
     public function blogs()
     {
-        return view('web.resource.blogs');
+        $blogs = Blog::latest()->with('category')->paginate(6);
+        $blogCategories = BlogCategory::all();
+        return view('web.resource.blog.index', compact('blogs', 'blogCategories'));
+    }
+
+    public function showBlog(string $slug)
+    {
+
+        $blog = Blog::where(['slug' => $slug])->first();
+        if (! $blog) {
+            return abort(404);
+        }
+
+        return view('web.resource.blog.show', compact('blog'));
     }
 
     public function faqs()

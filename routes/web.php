@@ -41,6 +41,7 @@ Route::prefix('practice-areas')->name('practice-areas.')->controller(PracticeAre
 Route::prefix('resources')->name('resources.')->controller(ResourceController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('blogs', 'blogs')->name('blogs');
+    Route::get('blogs/{slug}', 'showBlog')->name('show.blog');
     Route::get('faqs', 'faqs')->name('faqs');
     Route::get('case-studies', 'caseStudies')->name('case.studies');
     Route::get('media-hub', 'mediaHub')->name('media.hub');

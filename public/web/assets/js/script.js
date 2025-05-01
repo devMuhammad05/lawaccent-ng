@@ -9,46 +9,46 @@ window.addEventListener("scroll", function () {
 });
 
 // Blog Post Swtiching
-const tabs = document.querySelectorAll("#categoryTabs div");
-const blogHeading = document.getElementById("blogHeading");
-const blogRows = document.querySelectorAll(".recent-blogrow");
-const wrapper = document.getElementById("blogContentCaseWrapper");
+// const tabs = document.querySelectorAll("#categoryTabs div");
+// const blogHeading = document.getElementById("blogHeading");
+// const blogRows = document.querySelectorAll(".recent-blogrow");
+// const wrapper = document.getElementById("blogContentCaseWrapper");
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    tabs.forEach((t) => t.classList.remove("blogpostactive"));
-    tab.classList.add("blogpostactive");
+// tabs.forEach((tab) => {
+//   tab.addEventListener("click", () => {
+//     tabs.forEach((t) => t.classList.remove("blogpostactive"));
+//     tab.classList.add("blogpostactive");
 
-    const selectedCategory = tab.getAttribute("data-category");
+//     const selectedCategory = tab.getAttribute("data-category");
 
-    if (selectedCategory === "all") {
-      blogHeading.textContent = "Recent Blog Posts";
-    } else if (selectedCategory === "others") {
-      blogHeading.textContent = "Other Blog Posts";
-    } else {
-      const newHeading =
-        selectedCategory
-          .split("-")
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-          .join(" ") + " Blog Posts";
-      blogHeading.textContent = newHeading;
-    }
+//     if (selectedCategory === "all") {
+//       blogHeading.textContent = "Recent Blog Posts";
+//     } else if (selectedCategory === "others") {
+//       blogHeading.textContent = "Other Blog Posts";
+//     } else {
+//       const newHeading =
+//         selectedCategory
+//           .split("-")
+//           .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+//           .join(" ") + " Blog Posts";
+//       blogHeading.textContent = newHeading;
+//     }
 
-    blogRows.forEach((row) => {
-      const rowCategory = row.getAttribute("data-category");
-      if (selectedCategory === "all" || rowCategory === selectedCategory) {
-        row.style.display = "flex";
-      } else {
-        row.style.display = "none";
-      }
-    });
+//     blogRows.forEach((row) => {
+//       const rowCategory = row.getAttribute("data-category");
+//       if (selectedCategory === "all" || rowCategory === selectedCategory) {
+//         row.style.display = "flex";
+//       } else {
+//         row.style.display = "none";
+//       }
+//     });
 
-    wrapper.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  });
-});
+//     wrapper.scrollIntoView({
+//       behavior: "smooth",
+//       block: "start",
+//     });
+//   });
+// });
 
 // Case Study Swtiching
 const casetabs = document.querySelectorAll("#categorycaseTabs div");
