@@ -7,6 +7,7 @@ use App\Http\Controllers\Web\AboutUsController;
 use App\Http\Controllers\Web\ResourceController;
 use App\Http\Controllers\web\ContactUsController;
 use App\Http\Controllers\web\OurImpactController;
+use App\Http\Controllers\Web\NewsletterController;
 use App\Http\Controllers\web\ConsultationController;
 use App\Http\Controllers\Web\PracticeAreaController;
 
@@ -56,8 +57,9 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
 
 Route::get('career', [CareerController::class, 'index'])->name('career');
 Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
-Route::post('contact-us', [ContactUsController::class, 'store'])->name('contact.store');
 Route::get('schedule-a-consultation', [ConsultationController::class, 'index'])->name('consultation');
+
+Route::post('newsletters', NewsletterController::class)->name('newsletters.store');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

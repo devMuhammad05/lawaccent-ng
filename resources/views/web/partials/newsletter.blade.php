@@ -1,3 +1,5 @@
+<form action="{{ route('newsletters.store') }}" method="post">
+@csrf
 <section class="subscribe">
     <div class="container">
         <div class="contact-row">
@@ -10,9 +12,11 @@
             </div>
 
             <div class="subscribe-wrapper">
-                <input type="email" placeholder="Enter Email Address" required />
+                <input type="email" name="email" placeholder="Enter Email Address" required />
                 <button type="submit">Subscribe</button>
             </div>
+
         </div>
     </div>
 </section>
+</form>

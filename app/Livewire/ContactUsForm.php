@@ -7,8 +7,6 @@ use Livewire\Component;
 
 class ContactUsForm extends Component
 {
-
-
     public $name;
     public $email;
     public $phone_number;

@@ -26,18 +26,6 @@ class ContactUsController extends Controller
         return $unreadContactUsDataTable->render('admin.contact-us.unread');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(NewContactUsRequest $request)
-    {
-        $validatedData = $request->validated();
-
-        ContactUs::create($validatedData);
-        flash()->success('Sent successfully');
-
-        return redirect()->back();
-    }
 
     /**
      * Display the specified resource.
@@ -57,7 +45,7 @@ class ContactUsController extends Controller
     {
         $contactUs->markAsRead();
 
-        flash()->success('Enquiry marked as read successfully');
+        flash()->success('Message marked as read successfully');
 
         return to_route('admin.contact-us.unread');
     }

@@ -22,7 +22,15 @@ class NewslettersDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'newsletters.action')
+            ->addIndexColumn()
+            ->addColumn('action', function ($query) {
+                // $edit = "<a href='".route('admin.faqs.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='".route('admin.newsletters.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
+
+                // $edit.
+
+                return $delete;
+            })->rawColumns(['action'])
             ->setRowId('id');
     }
 
@@ -65,11 +73,11 @@ class NewslettersDataTable extends DataTable
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
             Column::make('email'),
-            // Column::computed('action')
-            //       ->exportable(false)
-            //       ->printable(false)
-            //       ->width(60)
-            //       ->addClass('text-center'),
+            Column::computed('action')
+                  ->exportable(false)
+                  ->printable(false)
+                  ->width(100)
+                  ->addClass('text-center'),
         ];
     }
 

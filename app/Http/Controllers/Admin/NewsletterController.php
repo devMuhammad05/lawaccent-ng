@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataTables\NewslettersDataTable;
@@ -61,6 +62,11 @@ class NewsletterController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $newsletter = Newsletter::findOrFail($id);
+        $newsletter->delete();
+
+        flash()->deleted('Email deleted successfully');
+
+        return redirect()->back();
     }
 }
