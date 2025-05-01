@@ -17,36 +17,36 @@ class ResourceController extends Controller
 
     public function blogs()
     {
-        return view('web.resource.index');
+        return view('web.resource.blogs');
     }
 
     public function faqs()
     {
-        return view('web.resource.index');
+        return view('web.resource.faqs');
     }
 
     public function caseStudies()
     {
-        return view('web.resource.index');
+        return view('web.resource.case-studies');
     }
 
     public function mediaHub()
     {
-        return view('web.resource.index');
+        return view('web.resource.media-hub');
     }
 
     public function business()
     {
-        return view('web.resource.index');
+        return view('web.resource.business');
     }
 
     public function legalServices()
     {
-        return view('web.resource.index');
+        return view('web.resource.legal-services');
     }
 
     public function assessmentTool()
     {
-        return view('web.resource.index');
+        return view('web.resource.assessment-tool');
     }
 }

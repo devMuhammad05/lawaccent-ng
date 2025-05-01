@@ -42,9 +42,11 @@ Route::prefix('resources')->name('resources.')->controller(ResourceController::c
     Route::get('doing-business-in-nigeria', 'business')->name('business.nigeria');
     Route::get('cross-border-legal-services', 'legalServices')->name('legal.services');
     Route::get('legal-checklist-and-assessment-tool', 'assessmentTool')->name('assessment.tool');
-
 });
 
+
+Route::get('career', [HomeController::class, 'index'])->name('home');
+Route::get('contact-us', [AboutUsController::class, 'index'])->name('about-us');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

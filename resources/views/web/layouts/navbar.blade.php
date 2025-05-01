@@ -101,7 +101,7 @@
         <div class="svg-dropdown d-flex align-items-center">
         <a
             class="nav-link navlinks"
-            href="resources.html"
+            href="{{ route('resources.index') }}"
             id="resourcesLink"
         >
             Resources
@@ -121,33 +121,33 @@
 
         <ul class="dropdown-menu" aria-labelledby="dropdownToggleIcon">
         <li>
-            <a class="dropdown-item" href="blogpost.html"
+            <a class="dropdown-item" href="{{ route('resources.blogs') }}"
             >Blog Posts / Articles</a
             >
         </li>
         <li>
-            <a class="dropdown-item" href="faq.html">FAQs</a>
+            <a class="dropdown-item" href="{{ route('resources.faqs') }}">FAQs</a>
         </li>
         <li>
-            <a class="dropdown-item" href="casestudies.html"
+            <a class="dropdown-item" href="{{ route(name: 'resources.case.studies') }}"
             >Case Studies</a
             >
         </li>
         <li>
-            <a class="dropdown-item" href="mediahub.html">Media Hub</a>
+            <a class="dropdown-item" href="{{ route('resources.media.hub') }}">Media Hub</a>
         </li>
         <li>
-            <a class="dropdown-item" href="doingbusiness.html"
+            <a class="dropdown-item" href="{{ route('resources.business.nigeria') }}"
             >Doing Business in Nigeria</a
             >
         </li>
         <li>
-            <a class="dropdown-item" href="crossborder.html"
+            <a class="dropdown-item" href="{{ route('resources.legal.services') }}"
             >Cross Border Legal Services</a
             >
         </li>
         <li>
-            <a class="dropdown-item" href="legalchecklist.html"
+            <a class="dropdown-item" href="{{ route('resources.assessment.tool') }}"
             >Legal Checklist and Assessment Tool</a
             >
         </li>
