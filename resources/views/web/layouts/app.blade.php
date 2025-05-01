@@ -35,7 +35,7 @@
         .is-invalid {
             border-color: red !important;
         }
-        .text-danger {
+        .text-error {
             font-size: 0.875rem;
             color: #dc3545;
         }
