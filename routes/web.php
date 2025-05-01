@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\HomeController;
 
 
 
@@ -16,9 +17,7 @@ Route::get('clear', function () {
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('home', [HomeController::class, 'index'])->name('home');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
