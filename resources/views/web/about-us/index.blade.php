@@ -18,11 +18,11 @@
             <div class="col-md-6 mobile">
               <div class="row">
                 <div class="col-md-5 box">
-                  <h3>2016</h3>
+                  <h3>{{ $aboutUsMetrics['year'] }}</h3>
                   <span>Law Accent opens for business in the heart of Lagos</span>
                 </div>
                 <div class="col-md-5 box">
-                  <h3>4+</h3>
+                  <h3>{{ $aboutUsMetrics['number_of_offices'] }}+</h3>
                   <span
                     >Offices across Africa <br />
                     and the Globe</span
@@ -31,14 +31,14 @@
               </div>
               <div class="row mt-4">
                 <div class="col-md-5 box">
-                  <h3>1000+</h3>
+                  <h3>{{ $aboutUsMetrics['number_of_clients'] }}+</h3>
                   <span
                     >Serving clients in Nigeria <br />
                     and beyond</span
                   >
                 </div>
                 <div class="col-md-5 box">
-                  <h3>2+</h3>
+                  <h3>{{ $aboutUsMetrics['number_of_scholarships'] }}+</h3>
                   <span
                     >Law School Scholarships <br />
                     and Counting</span
@@ -148,42 +148,6 @@
         </div>
       </section>
 
-      <!-- <div class="missionrow">
-            <div class="col-md-4 col-12">
-              <img src="{{ asset("web/assets/images/mission.webp") }}" alt="image" />
-              <h4>Our Mission</h4>
-              <p>
-                To be the leading Pan-African law firm with a global footprint,
-                serving as a vital bridge between Africa, Europe, and the rest of
-                the world.
-              </p>
-            </div>
-            <div class="col-md-7 col-12">
-              <img src="{{ asset("web/assets/images/vision.webp") }}" alt="image" class="missionimg" />
-              <h4>Our Vision</h4>
-              <ul class="visionul">
-                <li>
-                  To transform the practice of law in Africa by building a
-                  forward-thinking legal team that sets the pace for modern,
-                  client-focused legal services.
-                </li>
-                <li>
-                  To connect Africans and global markets, especially in Europe, to
-                  diverse legal opportunities and pathways for expansion across
-                  the continent.
-                </li>
-                <li>
-                  To deliver seamless cross-border legal solutions through our
-                  presence in key international markets.
-                </li>
-                <li>
-                  To promote legal literacy and empower individuals and businesses
-                  through accessible legal education and plain language resources.
-                </li>
-              </ul>
-            </div>
-          </div> -->
-
       <section class="corevalue">
         <div class="container">
           <div class="row">
@@ -255,11 +219,14 @@
           </p>
           <div class="teamrow">
             <div class="row">
+
+            @foreach ($teamMembers as $teamMember)
+
               <div class="col-md-3 col-sm-6">
                 <div class="team-member">
                   <div class="tooltip-wrapper">
-                    <a href="https://www.linkedin.com/company/law-accent"
-                      ><img src="{{ asset("web/assets/images/ogun.webp") }}" alt="Eyitayo Ogunyemi"
+                    <a href="{{ @$teamMember->linkedin_url }}"
+                      ><img src="{{ asset($teamMember->image_path) }}" alt="{{ $teamMember->full_name }}"
                     /></a>
                     <span class="tooltiptext"
                       >Click the Image <br class="br" />
@@ -267,11 +234,13 @@
                       Profile</span
                     >
                   </div>
-                  <h6>Eyitayo Ogunyemi</h6>
-                  <span>Founder</span>
+                  <h6>{{ $teamMember->full_name }}</h6>
+                  <span>{{ $teamMember->role }}</span>
                 </div>
               </div>
-              <div class="col-md-3 col-sm-6">
+            @endforeach
+
+              {{-- <div class="col-md-3 col-sm-6">
                 <div class="team-member">
                   <div class="tooltip-wrapper">
                     <a href="/https://www.linkedin.com/company/law-accent"
@@ -316,9 +285,24 @@
                   <span>Associate</span>
                 </div>
               </div>
+              <div class="col-md-3 col-sm-6">
+                <div class="team-member">
+                  <div class="tooltip-wrapper">
+                    <a href="https://www.linkedin.com/company/law-accent/"
+                      ><img src="{{ asset("web/assets/images/bola.webp") }}" alt="Adeola Bola" /></a
+                    ><span class="tooltiptext"
+                      >Click the Image <br class="br" />
+                      to visit Linkedin <br class="br" />
+                      Profile</span
+                    >
+                  </div>
+                  <h6>Adeola Bola</h6>
+                  <span>Associate</span>
+                </div>
+              </div> --}}
             </div>
 
-            <div class="row">
+            {{-- <div class="row">
               <div class="col-md-3 col-sm-6">
                 <div class="team-member">
                   <div class="tooltip-wrapper">
@@ -379,12 +363,12 @@
                   <span>Accountant</span>
                 </div>
               </div>
-            </div>
+            </div> --}}
           </div>
         </div>
       </section>
 
-      @include('web.partials.contact-us-form')
+      <livewire:contact-us-form />
 
       @include('web.partials.newsletter')
 

@@ -113,7 +113,7 @@
         </div>
     </section>
 
-    @include('web.partials.contact-us-form')
+    <livewire:contact-us-form />
 
     @include('web.partials.newsletter')
 
