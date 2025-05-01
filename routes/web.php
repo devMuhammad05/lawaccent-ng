@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\AboutUsController;
+use App\Http\Controllers\Web\ResourceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\PracticeAreaController;
@@ -30,8 +31,20 @@ Route::prefix('practice-areas')->name('practice-areas.')->controller(PracticeAre
     Route::get('real-estate-law', 'realEstate')->name('real.estate.services');
     Route::get('debt-recovery', 'debtRecovery')->name('debt.recovery.services');
     Route::get('banking-and-finance-law', 'banking')->name('banking.and.finance.services');
+});
+
+Route::prefix('resources')->name('resources.')->controller(ResourceController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('blogs', 'blogs')->name('blogs');
+    Route::get('faqs', 'faqs')->name('faqs');
+    Route::get('case-studies', 'caseStudies')->name('case.studies');
+    Route::get('media-hub', 'mediaHub')->name('media.hub');
+    Route::get('doing-business-in-nigeria', 'business')->name('business.nigeria');
+    Route::get('cross-border-legal-services', 'legalServices')->name('legal.services');
+    Route::get('legal-checklist-and-assessment-tool', 'assessmentTool')->name('assessment.tool');
 
 });
+
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
