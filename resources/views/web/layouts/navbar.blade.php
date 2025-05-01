@@ -29,20 +29,20 @@
 </button>
 <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav mx-auto">
-    <li class="nav-item active">
+    <li class="nav-item {{ request()->routeIs('home') ? 'active' : '' }}">
         <a class="nav-link navlinks" href="{{ route("home") }}"
         >Home <span class="sr-only"></span
         ></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ request()->routeIs('about-us') ? 'active' : '' }}">
         <a class="nav-link navlinks" href="{{ route("about-us") }}"
         >About Us <span class="sr-only"></span
         ></a>
     </li>
 
     <li class="nav-item dropdown">
-        <div class="svg-dropdown d-flex align-items-center">
+        <div class="svg-dropdown d-flex align-items-center {{ request()->routeIs('practice-areas*') ? 'active' : '' }}">
         <a
             class="nav-link navlinks"
             href="{{ route("practice-areas.index") }}"
@@ -63,33 +63,33 @@
         </a>
         </div>
         <ul class="dropdown-menu" aria-labelledby="dropdownToggleIcon">
-        <li>
+        <li class="{{ request()->routeIs('practice-areas.data.protection.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('practice-areas.data.protection.services') }}"
             >Data Protection and Advisory Services</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('practice-areas.corporate.law.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('practice-areas.corporate.law.services') }}"
             >Corporate Law</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('practice-areas.family.law.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('practice-areas.family.law.services') }}">Family Law</a>
         </li>
-        <li>
+        <li class="{{ request()->routeIs('practice-areas.litigation.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('practice-areas.litigation.services') }}">Litigation</a>
         </li>
-        <li>
+        <li class="{{ request()->routeIs('practice-areas.real.estate.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('practice-areas.real.estate.services') }}"
             >Real Estate Law</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('practice-areas.debt.recovery.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('practice-areas.debt.recovery.services') }}"
             >Debt Recovery</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('practice-areas.banking.and.finance.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('practice-areas.banking.and.finance.services') }}"
             >Banking and Finance Law</a
             >

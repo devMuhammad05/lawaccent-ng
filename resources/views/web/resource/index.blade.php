@@ -35,7 +35,7 @@
                 <div class="col-md-4">
                     <div class="resources-card">
                         <img src="{{ asset("web/assets/images/note.svg") }}" alt="image" />
-                        <a href="casestudies.html">
+                        <a href="{{ route(name: 'resources.case.studies') }}">
                             <h4>Case Studies</h4>
                         </a>
                         <p>

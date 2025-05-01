@@ -227,7 +227,7 @@
           the law within your reach.
         </h2>
         <div class="legal-grid">
-          <a href="#" class="legal-row">
+          <a href="{{ route('our-impact.legal.literacy') }}" class="legal-row">
             <span class="legal-title">Legal Literacy</span>
             <span class="legal-description"
               >Webinars and resources for growing your legal knowledge.</span
@@ -237,7 +237,7 @@
             </span>
           </a>
 
-          <a href="blogpost.html" class="legal-row">
+          <a href="{{ route('resources.blogs') }}" class="legal-row">
             <span class="legal-title">Articles / Blog</span>
             <span class="legal-description"
               >Articles, explainers, and case studies on key legal issues.</span
@@ -247,7 +247,7 @@
             </span>
           </a>
 
-          <a href="mediahub.html" class="legal-row">
+          <a href="{{ route('resources.media.hub') }}" class="legal-row">
             <span class="legal-title">Media Hub</span>
             <span class="legal-description"
               >Watch sessions led by experts on general legal topics</span
@@ -276,7 +276,7 @@
             </span>
           </a>
 
-          <a href="#" class="legal-row">
+          <a href="{{ route('our-impact.scholarship') }}" class="legal-row">
             <span class="legal-title">Law School Scholarship</span>
             <span class="legal-description"
               >Empowering the next generation of lawyers.</span
@@ -299,7 +299,7 @@
           effective resolutions.
         </p>
         <button class="btn btn-case-study">
-          <a href="casestudies.html">Explore All Case Studies</a>
+          <a href="{{ route(name: 'resources.case.studies') }}">Explore All Case Studies</a>
         </button>
       </div>
       <div class="scroll-container">
