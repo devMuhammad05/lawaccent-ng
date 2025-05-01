@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
+use App\Models\Faq;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ResourceController extends Controller
 {
@@ -22,7 +23,8 @@ class ResourceController extends Controller
 
     public function faqs()
     {
-        return view('web.resource.faqs');
+        $faqs = Faq::all();
+        return view('web.resource.faqs', compact('faqs'));
     }
 
     public function caseStudies()

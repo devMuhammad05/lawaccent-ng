@@ -176,7 +176,7 @@
                         </p>
                         <div class="upcomingwebutton">
                             <button class="btn">
-                                <a href="mediahub.html">Watch Video/Recording</a>
+                                <a href="{{ route('resources.media.hub') }}">Watch Video/Recording</a>
                             </button>
                         </div>
                     </div>
@@ -187,7 +187,7 @@
                         </p>
                         <div class="upcomingwebutton">
                             <button class="btn">
-                                <a href="mediahub.html">Watch Video/Recording</a>
+                                <a href="{{ route('resources.media.hub') }}">Watch Video/Recording</a>
                             </button>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                         </p>
                         <div class="upcomingwebutton">
                             <button class="btn">
-                                <a href="mediahub.html">Watch Video/Recording</a>
+                                <a href="{{ route('resources.media.hub') }}">Watch Video/Recording</a>
                             </button>
                         </div>
                     </div>

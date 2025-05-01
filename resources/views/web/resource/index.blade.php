@@ -11,7 +11,7 @@
                 <div class="col-md-4">
                     <div class="resources-card">
                         <img src="{{ asset("web/assets/images/blog.svg") }}" alt="image" />
-                        <a href="blogpost.html">
+                        <a href="{{ route('resources.blogs') }}">
                             <h4>Blog Posts / Articles</h4>
                         </a>
                         <p>
@@ -23,7 +23,7 @@
                 <div class="col-md-4">
                     <div class="resources-card">
                         <img src="{{ asset("web/assets/images/faq.svg") }}" alt="image" />
-                        <a href="faq.html">
+                        <a href="{{ route('resources.faqs') }}">
                             <h4>FAQs</h4>
                         </a>
                         <p>
@@ -47,7 +47,7 @@
                 <div class="col-md-4">
                     <div class="resources-card">
                         <img src="{{ asset("web/assets/images/video.svg") }}" alt="image" />
-                        <a href="mediahub.html">
+                        <a href="{{ route('resources.media.hub') }}">
                             <h4>Media Hub</h4>
                         </a>
                         <p>
@@ -59,7 +59,7 @@
                 <div class="col-md-4">
                     <div class="resources-card">
                         <img src="{{ asset("web/assets/images/briefcase.svg") }}" alt="image" />
-                        <a href="doingbusiness.html">
+                        <a href="{{ route('resources.business.nigeria') }}">
                             <h4>Doing Business in Nigeria</h4>
                         </a>
                         <p>
@@ -71,7 +71,7 @@
                 <div class="col-md-4">
                     <div class="resources-card">
                         <img src="{{ asset("web/assets/images/cross.svg") }}" alt="image" />
-                        <a href="crossborder.html">
+                        <a href="{{ route('resources.legal.services') }}">
                             <h4>Cross Border Legal Services</h4>
                         </a>
                         <p>

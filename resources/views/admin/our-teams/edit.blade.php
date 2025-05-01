@@ -29,7 +29,7 @@
                         <div class="col-md-6 col-sm-6">
                             <div class="form-group text-center">
                                 <label>Current Member picture</label> <br>
-                                <img src="{{ asset($team->image_path) }}" width="300" alt="">
+                                <img src="{{ asset($team->image_path) }}" style="object-fit: contain" width="300" height="200" alt="">
                             </div>
                         </div>
                     </div>

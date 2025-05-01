@@ -625,6 +625,17 @@ hr {
     padding: 10px 0;
 }
 
+.form-group {
+    margin-bottom: 1rem;
+}
+.is-invalid {
+    border-color: red !important;
+}
+.text-error {
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
 .contact-form button:hover {
     background: #043d15;
 }
