@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Web\AboutUsController;
+use App\Http\Controllers\Web\CareerController;
 use App\Http\Controllers\Web\ResourceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\HomeController;
@@ -45,8 +46,8 @@ Route::prefix('resources')->name('resources.')->controller(ResourceController::c
 });
 
 
-Route::get('career', [HomeController::class, 'index'])->name('home');
-Route::get('contact-us', [AboutUsController::class, 'index'])->name('about-us');
+Route::get('career', [CareerController::class, 'index'])->name('career');
+Route::get('contact-us', [AboutUsController::class, 'index'])->name('contact-us');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
