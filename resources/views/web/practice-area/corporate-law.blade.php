@@ -21,13 +21,13 @@
         <div class="row justify-content-between">
         <div class="col-md-2 othercol">
             <h6>OTHER SERVICE</h6>
-            <a href="dataprotection.html"
+            <a href="{{ route('practice-areas.data.protection.services') }}"
             ><p>
                 Data Protection <br />
                 and Advisory
             </p></a
             >
-            <a href="familylaw.html"><p>Family Law</p></a>
+            <a href="{{ route('practice-areas.family.law.services') }}"><p>Family Law</p></a>
             <a href="{{ route('practice-areas.litigation.services') }}"><p>Litigation</p></a>
             <a href="{{ route('practice-areas.real.estate.services') }}"><p>Real Estate Law</p></a>
             <a href="{{ route('practice-areas.debt.recovery.services') }}.html"><p>Debt Recovery</p></a>

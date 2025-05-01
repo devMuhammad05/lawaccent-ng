@@ -21,7 +21,7 @@
             <div class="row justify-content-between">
                 <div class="col-md-2 othercol">
                     <h6>OTHER SERVICE</h6>
-                    <a href="dataprotection.html">
+                    <a href="{{ route('practice-areas.data.protection.services') }}">
                         <p>
                             Data Protection <br />
                             and Advisory
@@ -30,7 +30,7 @@
                     <a href="{{ route('practice-areas.corporate.law.services') }}">
                         <p>Corporate Law</p>
                     </a>
-                    <a href="familylaw.html">
+                    <a href="{{ route('practice-areas.family.law.services') }}">
                         <p>Family Law</p>
                     </a>
                     <a href="{{ route('practice-areas.real.estate.services') }}">

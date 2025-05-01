@@ -44,7 +44,7 @@
                         <div class="cardBody">
                             <h5>Data Protection and Advisory Services</h5>
                             <p>Expert guidance on compliance and data security.</p>
-                            <a href="dataprotection.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.data.protection.services') }}"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                                 Guiding families through sensitive matters such as divorce,
                                 custody, and maintentance.
                             </p>
-                            <a href="familylaw.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.family.law.services') }}"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                                 Reclaim lost revenue efficiently with our Debt Recovery as a
                                 Service.
                             </p>
-                            <a href="{{ route('practice-areas.debt.recovery.services') }}.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.debt.recovery.services') }}"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>
@@ -268,7 +268,7 @@
             </span>
           </a>
 
-          <a href="legalchecklist.html" class="legal-row">
+          <a href="{{ route('resources.assessment.tool') }}" class="legal-row">
             <span class="legal-title">Legal Checklists and Assessment</span>
             <span class="legal-description">Identify legal risks and gap</span>
             <span class="legal-arrow">

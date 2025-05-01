@@ -83,7 +83,7 @@
                 <div class="col-md-4">
                     <div class="resources-card">
                         <img src="{{ asset("web/assets/images/settings.svg") }}" alt="image" />
-                        <a href="legalchecklist.html">
+                        <a href="{{ route('resources.assessment.tool') }}">
                             <h4>Legal Checklist and Assessment Tool</h4>
                         </a>
                         <p>

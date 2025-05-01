@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Web\AboutUsController;
 use App\Http\Controllers\Web\CareerController;
+use App\Http\Controllers\web\ConsultationController;
 use App\Http\Controllers\web\OurImpactController;
 use App\Http\Controllers\Web\ResourceController;
 use Illuminate\Support\Facades\Route;
@@ -54,7 +55,7 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
 
 Route::get('career', [CareerController::class, 'index'])->name('career');
 Route::get('contact-us', [AboutUsController::class, 'index'])->name('contact-us');
-Route::get('consultation', [AboutUsController::class, 'index'])->name('consultation');
+Route::get('schedule-a-consultation', [ConsultationController::class, 'index'])->name('consultation');
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';

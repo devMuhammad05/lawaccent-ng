@@ -98,7 +98,7 @@
     </li>
 
     <li class="nav-item dropdown">
-        <div class="svg-dropdown d-flex align-items-center">
+        <div class="svg-dropdown d-flex align-items-center {{ request()->routeIs('resources*') ? 'active' : '' }}">
         <a
             class="nav-link navlinks"
             href="{{ route('resources.index') }}"
@@ -120,33 +120,33 @@
         </div>
 
         <ul class="dropdown-menu" aria-labelledby="dropdownToggleIcon">
-        <li>
+        <li class="{{ request()->routeIs('resources.blogs') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('resources.blogs') }}"
             >Blog Posts / Articles</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('resources.faqs') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('resources.faqs') }}">FAQs</a>
         </li>
-        <li>
+        <li class="{{ request()->routeIs('resources.case.studies') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route(name: 'resources.case.studies') }}"
             >Case Studies</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('resources.media.hub') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('resources.media.hub') }}">Media Hub</a>
         </li>
-        <li>
+        <li class="{{ request()->routeIs('resources.business.nigeria') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('resources.business.nigeria') }}"
             >Doing Business in Nigeria</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('resources.legal.services') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('resources.legal.services') }}"
             >Cross Border Legal Services</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('resources.assessment.tool') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('resources.assessment.tool') }}"
             >Legal Checklist and Assessment Tool</a
             >
@@ -155,7 +155,7 @@
     </li>
 
     <li class="nav-item dropdown">
-        <div class="svg-dropdown d-flex align-items-center">
+        <div class="svg-dropdown d-flex align-items-center {{ request()->routeIs('our-impact*') ? 'active' : '' }}">
         <a
             class="nav-link navlinks"
             href="{{ route('our-impact.index') }}"
@@ -176,12 +176,12 @@
         </a>
         </div>
         <ul class="dropdown-menu" aria-labelledby="dropdownToggleIcon">
-        <li>
+        <li class="{{ request()->routeIs('our-impact.legal.literacy') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('our-impact.legal.literacy') }}"
             >Legal Literacy & Public Education</a
             >
         </li>
-        <li>
+        <li class="{{ request()->routeIs('our-impact.scholarship') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('our-impact.scholarship') }}"
             >Law School Scholarship Programme</a
             >
@@ -189,21 +189,21 @@
         </ul>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ request()->routeIs('career') ? 'active' : '' }}">
         <a class="nav-link navlinks" href="{{ route('career') }}"
         >Career <span class="sr-only"></span
         ></a>
     </li>
 
-    <li class="nav-item">
+    <li class="nav-item {{ request()->routeIs('contact-us') ? 'active' : '' }}">
         <a class="nav-link navlinks" href="{{ route('contact-us') }}">Contact</a>
     </li>
     </ul>
     <div class="join-container">
-    <button aria-label="Name" class="btn btn-consult">
+    <button aria-label="Name" class="btn btn-consult {{ request()->routeIs('consultation') ? 'btn-consult-active' : '' }}">
         <a href="{{ route('consultation') }}">Schedule a Consultation</a>
     </button>
-    <a href="search.html"
+    <a href=""
         ><button aria-label="Name" class="btn btn-search">
         <img src="{{ asset("web/assets/images/search.svg") }}" alt="image" /></button
     ></a>

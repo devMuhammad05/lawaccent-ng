@@ -21,7 +21,7 @@
             <div class="row justify-content-between">
                 <div class="col-md-2 othercol">
                     <h6>OTHER SERVICE</h6>
-                    <a href="dataprotection.html">
+                    <a href="{{ route('practice-areas.data.protection.services') }}">
                         <p>
                             Data Protection <br />
                             and Advisory
