@@ -204,7 +204,8 @@
         <a href="{{ route('consultation') }}">Schedule a Consultation</a>
     </button>
     <a href=""
-        ><button aria-label="Name" class="btn btn-search">
+        >
+        <button aria-label="Name" class="btn btn-search">
         <img src="{{ asset("web/assets/images/search.svg") }}" alt="image" /></button
     ></a>
     </div>

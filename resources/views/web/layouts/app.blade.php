@@ -24,7 +24,22 @@
       media="all"
     />
   </head>
+
+  @livewireStyles
   <body>
+
+    <style>
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .is-invalid {
+            border-color: red !important;
+        }
+        .text-danger {
+            font-size: 0.875rem;
+            color: #dc3545;
+        }
+    </style>
 
     @include('web.layouts.navbar')
 
@@ -118,6 +133,7 @@
     </footer>
 
     <script src="{{ asset("web/assets/js/script.js") }}"></script>
+    <script src="{{ asset("web/assets/js/validate-phone-field.js") }}"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       defer

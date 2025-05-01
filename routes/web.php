@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\Web\AboutUsController;
-use App\Http\Controllers\Web\CareerController;
-use App\Http\Controllers\web\ConsultationController;
-use App\Http\Controllers\web\OurImpactController;
-use App\Http\Controllers\Web\ResourceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\HomeController;
+use App\Http\Controllers\Web\CareerController;
+use App\Http\Controllers\Web\AboutUsController;
+use App\Http\Controllers\Web\ResourceController;
+use App\Http\Controllers\web\ContactUsController;
+use App\Http\Controllers\web\OurImpactController;
+use App\Http\Controllers\web\ConsultationController;
 use App\Http\Controllers\Web\PracticeAreaController;
 
 
@@ -54,7 +55,8 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
 });
 
 Route::get('career', [CareerController::class, 'index'])->name('career');
-Route::get('contact-us', [AboutUsController::class, 'index'])->name('contact-us');
+Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
+Route::post('contact-us', [ContactUsController::class, 'store'])->name('contact.store');
 Route::get('schedule-a-consultation', [ConsultationController::class, 'index'])->name('consultation');
 
 require __DIR__.'/auth.php';

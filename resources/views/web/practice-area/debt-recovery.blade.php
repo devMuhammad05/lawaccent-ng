@@ -105,7 +105,7 @@
               <h1>Need Legal Clarity? Let's Talk.</h1>
               <p>For Enquiries and Consultations</p>
                <button class="btn">
-                <a href="scheduleconversation.html"
+                <a href="{{ route('consultation') }}"
                   >Schedule a Consultation</a
                 ></button
               ><br />

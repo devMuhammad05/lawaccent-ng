@@ -105,7 +105,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <img src="{{ asset('web/{{ asset("web/assets/images/logo.webp') }}" alt="logo" width="100" />
+            <img src="{{ asset("web/assets/images/logo.webp") }}" alt="logo" width="100" />
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('admin.dashboard') }}">LA UK</a>
@@ -161,11 +161,12 @@
                 </a>
             </li>
             <li class="{{ $currentRoute === 'our-teams' ? 'active' : '' }}">
-                <a href="{{ route("admin.our-teams.index") }}" class="nav-link">
+                <a href="{{ route('admin.our-teams.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Our Teams</span>
                 </a>
             </li>
+
             {{-- <li class="{{ $currentRoute === 'checklists' ? 'active' : '' }}">
                 <a href="" class="nav-link">
                     <i class="fas fa-columns"></i></i>

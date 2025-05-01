@@ -599,7 +599,7 @@ hr {
 .contact-form textarea {
     width: 100%;
     padding: 12px;
-    margin-bottom: 16px;
+    /* margin-bottom: 16px; */
     border-radius: 8px;
     border: 1px solid #A0A0A0;
     font-size: 1rem;
