@@ -28,12 +28,12 @@
         <div class="row justify-content-between">
         <div class="col-md-2 othercol">
             <h6>OTHER SERVICE</h6>
-            <a href="corporatelaw.html"><p>Corporate Law</p></a>
+            <a href="{{ route('practice-areas.corporate.law.services') }}"><p>Corporate Law</p></a>
             <a href="familylaw.html"><p>Family Law</p></a>
-            <a href="litigation.html"><p>Litigation</p></a>
-            <a href="realestatelaw.html"><p>Real Estate Law</p></a>
-            <a href="debtrecovery.html"><p>Debt Recovery</p></a>
-            <a href="bankingandfinancelaw.html"
+            <a href="{{ route('practice-areas.litigation.services') }}"><p>Litigation</p></a>
+            <a href="{{ route('practice-areas.real.estate.services') }}"><p>Real Estate Law</p></a>
+            <a href="{{ route('practice-areas.debt.recovery.services') }}.html"><p>Debt Recovery</p></a>
+            <a href="{{ route('practice-areas.banking.and.finance.services') }}"
             ><p>
                 Banking and <br />
                 Finance Law

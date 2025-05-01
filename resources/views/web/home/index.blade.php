@@ -34,7 +34,7 @@
                     confidence, and favourable outcomes.
                 </p>
                 <button class="btn">
-                    <a href="practicearea.html">Explore Our Services</a>
+                    <a href="{{ route("practice-areas.index") }}">Explore Our Services</a>
                 </button>
             </div>
             <div class="row servicerow justify-content-center">
@@ -57,7 +57,7 @@
                                 Advising businesses on contracts, compliance, and growth
                                 strategies.
                             </p>
-                            <a href="corporatelaw.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.corporate.law.services') }}"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                                 Professional representation to protect your rights and achieve
                                 justice.
                             </p>
-                            <a href="litigation.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.litigation.services') }}"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                                 Seamless legal support for property transactions, leases, and
                                 disputes.
                             </p>
-                            <a href="realestatelaw.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.real.estate.services') }}"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                                 Reclaim lost revenue efficiently with our Debt Recovery as a
                                 Service.
                             </p>
-                            <a href="debtrecovery.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.debt.recovery.services') }}.html"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                                 Comprehensive legal services for banking, finance, and
                                 investment transactions.
                             </p>
-                            <a href="bankingandfinancelaw.html"><button class="btn">Read More</button></a>
+                            <a href="{{ route('practice-areas.banking.and.finance.services') }}"><button class="btn">Read More</button></a>
                         </div>
                     </div>
                 </div>

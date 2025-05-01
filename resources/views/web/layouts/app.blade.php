@@ -38,7 +38,7 @@
             <ul>
               <li><a href="{{ route("about-us") }}">About Us</a></li>
               <li><a href="resources.html">Resources</a></li>
-              <li><a href="practicearea.html">Practice Areas</a></li>
+              <li><a href="{{ route("practice-areas.index") }}">Practice Areas</a></li>
               <li><a href="career.html">Career</a></li>
               <li><a href="contactus.html">Contact</a></li>
               <li><a href="privacynotice.html">Privacy Notice</a></li>
