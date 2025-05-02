@@ -27,14 +27,22 @@ class ResourceController extends Controller
 
     public function showBlog(string $slug)
     {
+        $blog = Blog::where('slug', $slug)->first();
 
-        $blog = Blog::where(['slug' => $slug])->first();
         if (! $blog) {
             return abort(404);
         }
 
-        return view('web.resource.blog.show', compact('blog'));
+        // Fetch recent blogs from the same category, excluding the current one
+        $recentBlogs = Blog::where('category_id', $blog->category_id)
+                          ->where('id', '!=', $blog->id)
+                          ->latest()
+                          ->take(3)
+                          ->get();
+
+        return view('web.resource.blog.show', compact('blog', 'recentBlogs'));
     }
+
 
     public function faqs()
     {

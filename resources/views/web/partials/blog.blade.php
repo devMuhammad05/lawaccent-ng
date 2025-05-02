@@ -64,27 +64,7 @@
             {{ $selectedCategory === 'all' ? 'Recent Blog Posts' : ucfirst(str_replace('-', ' ', $selectedCategory)) . ' Blog Posts' }}
         </h4>
 
-        <div class="row recent-blogrow">
-            @forelse ($blogs as $blog)
-                <div class="col-md-4">
-                    <div class="recentblogcard">
-                        <img src="{{ asset('web/assets/images/corporateshake.webp') }}" alt="" />
-                        <div class="recentblogcard-body">
-                            <h5>{{ $blog->title }}</h5>
-                            <p>{{ Str::limit($blog->summary, 100) }}</p>
-                            <div class="recentblog-buttons">
-                                <button class="btn">
-                                    <a href="{{ route('resources.show.blog', $blog->slug) }}">Read More</a>
-                                </button>
-                                <button class="btn">Download PDF</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            @empty
-                <p>No blog posts found in this category.</p>
-            @endforelse
-        </div>
+        @include('web.partials.blog-card')
 
         <!-- Only show the loader when actually loading -->
         <div class="row justify-content-center">

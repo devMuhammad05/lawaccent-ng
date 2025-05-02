@@ -1,6 +1,5 @@
 <x-app-layout>
 
-
     <section class="dataprotection">
         <div class="container">
             <div class="row dataprotectionrow">
