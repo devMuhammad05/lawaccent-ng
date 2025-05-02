@@ -53,7 +53,7 @@ Route::prefix('resources')->name('resources.')->controller(ResourceController::c
 Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController::class)->group(function () {
     Route::get('/', 'index')->name('index');
     Route::get('legal-literacy-and-public-education', 'legalLiteracy')->name('legal.literacy');
-    Route::get('law-school-scholarship-programme', 'lawSchool')->name('law.school');
+    Route::get('law-school-scholarship-programme', 'lawSchool')->name('law.school.scholarship');
     Route::get('apply-for-scholarship', 'scholarship')->name('scholarship');
     Route::post('apply-for-scholarship', 'applyScholarship')->name('scholarship.store');
 });

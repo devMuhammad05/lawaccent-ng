@@ -119,7 +119,7 @@
                     information including academic transcripts, a brief explanation of
                     your financial situation, and any relevant supporting documents.
                 </p>
-                <a href="#" class="cta-btn">See More About the Scholarship</a>
+                <a href="{{ route('our-impact.law.school.scholarship') }}" class="cta-btn">See More About the Scholarship</a>
             </div>
 
             <img src="{{ asset("web/assets/images/ladyscholar.webp") }}" alt="right image" class="scroll-img" />
@@ -144,7 +144,7 @@
                     information including academic transcripts, a brief explanation of
                     your financial situation, and any relevant supporting documents.
                 </p>
-                <a href="#" class="cta-btn">See More About the Scholarship</a>
+                <a href="{{ route('our-impact.law.school.scholarship') }}" class="cta-btn">See More About the Scholarship</a>
             </div>
 
             <img src="{{ asset("web/assets/images/man.webp") }}" alt="left image" class="scroll-img" />
@@ -169,7 +169,7 @@
                     information including academic transcripts, a brief explanation of
                     your financial situation, and any relevant supporting documents.
                 </p>
-                <a href="#" class="cta-btn">See More About the Scholarship</a>
+                <a href="{{ route('our-impact.law.school.scholarship') }}" class="cta-btn">See More About the Scholarship</a>
             </div>
 
             <img src="{{ asset("web/assets/images/ladyscholar.webp") }}" alt="right image" class="scroll-img" />
@@ -194,7 +194,7 @@
                     information including academic transcripts, a brief explanation of
                     your financial situation, and any relevant supporting documents.
                 </p>
-                <a href="#" class="cta-btn">See More About the Scholarship</a>
+                <a href="{{ route('our-impact.law.school.scholarship') }}" class="cta-btn">See More About the Scholarship</a>
             </div>
         </div>
     </section>

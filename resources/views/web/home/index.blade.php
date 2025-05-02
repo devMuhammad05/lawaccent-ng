@@ -187,7 +187,7 @@
             </span>
           </a>
 
-          <a href="{{ route('our-impact.law.school') }}" class="legal-row">
+          <a href="{{ route('our-impact.law.school.scholarship') }}" class="legal-row">
             <span class="legal-title">Law School Scholarship</span>
             <span class="legal-description"
               >Empowering the next generation of lawyers.</span

@@ -97,7 +97,7 @@
                             content to help individuals and businesses stay informed.
                         </p>
                         <button class="btn gotobutton">
-                            <a href="resources.html">Go to Resources Page</a>
+                            <a href="{{ route('resources.index') }}">Go to Resources Page</a>
                         </button>
                     </div>
                     <div class="upcomingweb">
