@@ -32,4 +32,18 @@ class ScholarshipApplicationController extends Controller
 
         return to_route('admin.scholarship-applications.unread');
     }
+
+    /**
+     * Display the specified resource.
+    */
+    public function show(ScholarshipApplication $scholarshipApplication)
+    {
+        // $contact = ScholarshipApplication::find($id);
+
+        $scholarshipApplication->markAsRead();
+
+        return view('admin.scholarship-application.show', [
+            'scholarshipApplication' => $scholarshipApplication,
+        ]);
+    }
 }
