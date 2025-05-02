@@ -67,7 +67,6 @@ class OurImpactController extends Controller
             $validated['cv_doc'] = (string) 'storage/'.$path;
         }
 
-        // Save the application to the database
         ScholarshipApplication::create($validated);
 
         flash()->success('Your application has been successfully!');
