@@ -42,7 +42,7 @@ class OurImpactController extends Controller
             'graduation_date' => 'required|date',
             'degree_classification' => 'required|string',
             'cgpa' => 'required|numeric',
-            'previously_selected_for_scholarship' => 'required',
+            // 'previously_selected_for_scholarship' => 'required',
             'scholarship_details' => 'nullable|max:150',
             'transcript_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
             'essay_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',

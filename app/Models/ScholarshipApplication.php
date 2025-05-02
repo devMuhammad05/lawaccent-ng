@@ -14,7 +14,7 @@ class ScholarshipApplication extends Model
         'graduation_date',
         'degree_classification',
         'cgpa',
-        'previously_selected_for_scholarship',
+        // 'previously_selected_for_scholarship',
         'scholarship_details',
         'transcript_doc',
         'essay_doc',
