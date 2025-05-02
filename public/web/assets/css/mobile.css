@@ -8,6 +8,10 @@
 @media (max-width: 767.98px) {
 
     /* HOME PAGE */
+    hr {
+        margin-top: 20px !important;
+    }
+
     p {
         font-size: 13px !important;
     }
@@ -1134,6 +1138,75 @@
     .last-text {
         width: 100%;
     }
+
+    /* SCHOLARSHIP FORM PAGE */
+    .labeldiv {
+        gap: 30px;
+    }
+
+    /* QUIZ PAGE */
+    .quizzes-text {
+        display: block;
+        text-align: center;
+    }
+
+    .quizzesrow {
+        margin-top: 20px !important;
+        margin-bottom: 20px;
+    }
+
+    .quizzesrowcard {
+        width: 90%;
+        margin: auto;
+    }
+
+    .dotwrap {
+        width: 60%;
+    }
+
+    /* MAIN QUIZ PAGE */
+    .whytake {
+        margin: 0 0 40px 0;
+    }
+
+    .whytakerow img {
+        margin-top: 0;
+    }
+
+    .whytakerow h3 {
+        text-align: center;
+    }
+
+    .whytakediv {
+        border-radius: 15px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    /* TEST QUIZ */
+    .testquizquiz-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .testquizprogress-container {
+        width: 90%;
+        margin: auto;
+        background: #B5B5B5;
+        border-radius: 20px;
+        margin: 20px auto;
+        position: relative;
+    }
+    .testquizprogress-text {
+        position: absolute;
+        right: 10px;
+        top: -25px;
+        font-size: 14px;
+        color: #114906;
+        font-weight: bold;
+    }
 }
 
 
@@ -1141,7 +1214,7 @@
 
 /* Small devices (landscape phones, 576px - 767px)
 @media (min-width: 576px) and (max-width: 767.98px) {
-    Styles for landscape phones 
+    Styles for landscape phones
 } */
 
 /* Medium devices (tablets, 768px - 991px) */

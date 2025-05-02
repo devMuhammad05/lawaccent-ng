@@ -13,9 +13,10 @@
       content="Law Accent (NG) is dedicated to simplifying the complexities of data protection and privacy for organisations across industries."
     />
     <title>Law Accent NG</title>
-    <link rel="icon" href="{{ asset("web/assets/images/ng.webp") }}"" />
+    <link rel="icon" href="{{ asset("web/assets/images/ng.webp") }}" />
     <link rel="stylesheet" href="{{ asset("web/assets/css/style.css") }}" />
     <link rel="stylesheet" href="{{ asset("web/assets/css/mobile.css") }}" />
+    <link rel="stylesheet" href="{{ asset("web/assets/css/custom.css") }}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
