@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('graduation_date');
             $table->string('degree_classification');
             $table->string('cgpa');
-            $table->boolean('previously_selected_for_scholarship');
+            $table->string('previously_selected_for_scholarship');
             $table->string('scholarship_details')->nullable();
             $table->string('transcript_doc')->nullable();
             $table->string('essay_doc')->nullable();

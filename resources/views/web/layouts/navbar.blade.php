@@ -181,7 +181,7 @@
             >Legal Literacy & Public Education</a
             >
         </li>
-        <li class="{{ request()->routeIs('our-impact.law.school' ? 'active' : '') }}">
+        <li class="{{ request()->routeIs('our-impact.law.school') ? 'active' : '' }}">
             <a class="dropdown-item" href="{{ route('our-impact.law.school') }}"
             >Law School Scholarship Programme</a
             >

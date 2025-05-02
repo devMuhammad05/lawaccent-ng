@@ -42,12 +42,30 @@ class OurImpactController extends Controller
             'graduation_date' => 'required|date',
             'degree_classification' => 'required|string',
             'cgpa' => 'required|numeric',
-            // 'previously_selected_for_scholarship' => 'required',
+            'previously_selected_for_scholarship' => 'required|string',
             'scholarship_details' => 'nullable|max:150',
             'transcript_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
             'essay_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
             'cv_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
         ]);
+
+        if ($request->hasFile('transcript_doc')) {
+            $path = $request->file('transcript_doc')->store('docs', 'public');
+
+            $validated['transcript_doc'] = (string) 'storage/'.$path;
+        }
+
+        if ($request->hasFile('essay_doc')) {
+            $path = $request->file('essay_doc')->store('docs', 'public');
+
+            $validated['essay_doc'] = (string) 'storage/'.$path;
+        }
+
+        if ($request->hasFile('cv_doc')) {
+            $path = $request->file('cv_doc')->store('docs', 'public');
+
+            $validated['cv_doc'] = (string) 'storage/'.$path;
+        }
 
         // Save the application to the database
         ScholarshipApplication::create($validated);

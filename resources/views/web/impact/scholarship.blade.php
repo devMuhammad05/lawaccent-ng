@@ -97,7 +97,7 @@
                                 @error('degree_classification') <small class="text-error d-block">{{ $message }}</small> @enderror
 
                                 <label class="labelform">Cumulative Grade Point Average (CGPA)</label>
-                                <input type="text" name="cgpa" value="{{ old('cgpa') }}" placeholder="Enter your CGPA" class="stepinput form-control" />
+                                <input type="number" name="cgpa" value="{{ old('cgpa') }}" placeholder="Enter your CGPA" class="stepinput form-control" />
                                 @error('cgpa') <small class="text-error d-block">{{ $message }}</small> @enderror
 
                                 <label class="labelform">Have you been selected for any Scholarship?</label>
