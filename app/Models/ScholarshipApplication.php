@@ -22,4 +22,16 @@ class ScholarshipApplication extends Model
         'is_read',
     ];
 
+
+    public function scopeUnread($query)
+    {
+        return $query->where('is_read', false);
+    }
+
+    public function markAsRead()
+    {
+        $this->is_read = true;
+        $this->save();
+    }
+
 }

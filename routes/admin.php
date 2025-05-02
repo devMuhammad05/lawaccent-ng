@@ -43,4 +43,5 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('our-teams', OurTeamController::class);
     Route::resource('scholarship-applications', ScholarshipApplicationController::class);
     Route::get('scholarship-application/unread', [ScholarshipApplicationController::class, 'unread'])->name('scholarship-applications.unread');
+    Route::get('scholarship-application/{scholarship-application}/mark-as-read', [ScholarshipApplicationController::class, 'markAsRead'])->name('scholarship-application.markAsRead');
 });

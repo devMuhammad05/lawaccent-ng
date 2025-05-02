@@ -13,6 +13,7 @@ class SidebarComposer
         $view->with([
             'currentRoute' => $currentRoute,
             'unreadMessagesCount' => \App\Models\ContactUs::unread()->count(),
+            'unreadApplicationCount' => \App\Models\ScholarshipApplication::unread()->count(),
         ]);
 
     }

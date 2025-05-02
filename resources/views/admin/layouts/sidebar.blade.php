@@ -179,7 +179,7 @@
                     <i class="fas fa-columns"></i>
                     <span>
                         Scholarship Applications
-                        @if ($unreadMessagesCount > 0)
+                        @if ($unreadApplicationCount > 0)
                             <button type="button" class="btn btn-danger">
                                 !
                             </button>
@@ -190,8 +190,8 @@
                     <li>
                         <a class="nav-link" href="{{ route('admin.scholarship-applications.unread') }}">
                             Unread Applications
-                            @if ($unreadMessagesCount > 0)
-                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @if ($unreadApplicationCount > 0)
+                                <span class="counter">{{ $unreadApplicationCount }}</span>
                             @endif
                         </a>
                     </li>
