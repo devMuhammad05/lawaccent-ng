@@ -18,6 +18,12 @@ class OurImpactController extends Controller
     public function legalLiteracy()
     {
         return view('web.impact.legal-literacy');
+
+    }
+
+    public function lawSchool()
+    {
+        return view('web.impact.law-school');
     }
 
     public function scholarship()
