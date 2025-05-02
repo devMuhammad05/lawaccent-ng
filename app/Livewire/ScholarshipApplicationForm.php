@@ -4,9 +4,12 @@ namespace App\Livewire;
 
 use App\Models\ScholarshipApplication;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class ScholarshipApplicationForm extends Component
 {
+    use WithFileUploads;
+
     public $name;
     public $email;
     public $phone_number;
@@ -31,18 +34,18 @@ class ScholarshipApplicationForm extends Component
         'graduation_date' => 'required|date',
         'degree_classification' => 'required|string',
         'cgpa' => 'required|numeric',
-        // 'previously_selected_for_scholarship' => 'required|boolean',
+        'previously_selected_for_scholarship' => 'required',
         'scholarship_details' => 'nullable|max:150',
-        // 'transcript_doc' => 'file',
-        // 'essay_doc' => 'file',
-        // 'cv_doc' => 'file',
+        'transcript_doc' => 'nullable|file|mimes:pdf,doc,docx|max:5048',
+        'essay_doc' => 'nullable|file|mimes:pdf,doc,docx|max:5048',
+        'cv_doc' => 'nullable|file|mimes:pdf,doc,docx|max:5048',
     ];
 
     public function save()
     {
         // dd("hi");
         $data = $this->validate();
-        // ScholarshipApplication::create($data);
+        ScholarshipApplication::create($data);
         flash()->success('Your application has been successfully!');
 
         $this->reset();

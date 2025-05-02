@@ -55,6 +55,8 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
     Route::get('legal-literacy-and-public-education', 'legalLiteracy')->name('legal.literacy');
     Route::get('law-school-scholarship-programme', 'lawSchool')->name('law.school');
     Route::get('apply-for-scholarship', 'scholarship')->name('scholarship');
+    Route::get('apply-for-scholarship', 'scholarship')->name('scholarship');
+    Route::post('apply-for-scholarship', 'applyScholarship')->name('scholarship.store');
 });
 
 Route::get('career', [CareerController::class, 'index'])->name('career');

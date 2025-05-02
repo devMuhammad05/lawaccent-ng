@@ -1,10 +1,9 @@
 <section class="scholarshipform">
 
-
     <form action="" wire:submit.prevent="save">
         <div class="container">
         <div class="accordion form-accordion" id="accordionExample">
-            <div class="accordion-item form-accordion-item shadow mt-4">
+            <div class="accordion-item form-accordion-item shadow mt-4" wire:ignore.self>
             <h2 class="accordion-header">
                 <button
                 aria-label="Name"
@@ -23,11 +22,11 @@
                 data-bs-parent="#accordionExample"
             >
                 <div class="accordion-body">
-                <form action="">
+
                     <label for="" class="pb-1"><small>Full Name</small></label>
                     <input
                     type="text"
-                    wire:model.live.debounce.500ms="name"
+                    wire:model="name"
                     placeholder="Enter Full Name"
                     class="stepinput form-control"
                     />
@@ -38,7 +37,7 @@
                     <label for="" class="labelform">Email Address</label>
                     <input
                     type="email"
-                    wire:model.live.debounce.500ms="email"
+                    wire:model="email"
                     placeholder="Enter email address"
                     class="stepinput form-control"
                     />
@@ -51,7 +50,7 @@
                     <input
                     class="stepinput form-control"
                     type="tel"
-                    wire:model.live.debounce.500ms="phone_number"
+                    wire:model="phone_number"
                     placeholder="Enter a valid phone number (Ex. +234 801 2345 678)"
                     />
                     @error('phone_number')
@@ -66,17 +65,17 @@
                     </div>
                     <div class="labeldiv">
                     <label
-                        ><input type="radio" name="consultationType" wire:model.live.debounce.500ms="eligibility_status" /> Yes</label
+                        ><input type="radio" name="consultationType" wire:model="eligibility_status" /> Yes</label
                     >
 
                     <label
-                        ><input type="radio" name="consultationType" wire:model.live.debounce.500ms="eligibility_status" /> No</label
+                        ><input type="radio" name="consultationType" wire:model="eligibility_status" /> No</label
                     >
                     <label
                         ><input
                         type="radio"
                         name="consultationType"
-                        wire:model.live.debounce.500ms="eligibility_status"
+                        wire:model="eligibility_status"
                         />Partially</label
                     >
                     </div>
@@ -86,11 +85,11 @@
                             <small class="text-error d-block">{{ $message }}</small>
                         @enderror
                     </div>
-                </form>
+
                 </div>
             </div>
             </div>
-            <div class="accordion-item form-accordion-item shadow mt-4">
+            <div class="accordion-item form-accordion-item shadow mt-4" wire:ignore.self>
             <h2 class="accordion-header">
                 <button
                 aria-label="Name"
@@ -109,19 +108,18 @@
                 data-bs-parent="#accordionExample"
             >
                 <div class="accordion-body">
-                <form action="">
                     <label for="" class="pb-1"
                     ><small>Graduation Date</small></label
                     >
-                    <input type="date" wire:model.live.debounce.500ms="graduation_date" class="stepinput form-control"  />
+                    <input type="date" wire:model="graduation_date" class="stepinput form-control"  />
                     @error('graduation_date')
                         <small class="text-error d-block">{{ $message }}</small>
                     @enderror
 
                     <label for="" class="labelform">Degree Classification</label>
-                    <select class="stepinput form-control" wire:model.live.debounce.500ms="degree_classification" >
-                    <option value="">Choose degree of classification</option>
-                    <option>Choose</option>
+                    <select class="stepinput form-control" wire:model="degree_classification" >
+                    <option value="degree">Choose degree of classification</option>
+                    <option class="degree">Choose</option>
                     <option>Choose degree</option>
                     <option>Choose degree of</option>
                     <option>Choose degree of classification</option>
@@ -138,19 +136,19 @@
                     type="text"
                     placeholder="Enter your CGPA"
                     class="stepinput form-control"
-                    wire:model.live.debounce.500ms="cgpa"
+                    wire:model="cgpa"
                     />
                     @error('cgpa')
                         <small class="text-error d-block">{{ $message }}</small>
                     @enderror
 
                     <label for="" class="labelform">Have you been selected for any Scholarship?</label>
-                    <select class="stepinput form-control" wire:model.live.debounce.500ms="previously_selected_for_scholarship" >
+                    <select class="stepinput form-control" wire:model="previously_selected_for_scholarship" >
                     <option value="">
                         Have you been selected for any Scholarship?
                     </option>
-                    <option>NO</option>
-                    <option>YES</option>
+                    <option value="no">NO</option>
+                    <option value="yes">YES</option>
                     </select>
                     @error('previously_selected_for_scholarship')
                         <small class="text-error d-block">{{ $message }}</small>
@@ -159,7 +157,7 @@
                     <label for="" class="labelform">If yes, specify</label>
                     <input
                     type="text"
-                    wire:model.live.debounce.500ms="scholarship_details"
+                    wire:model="scholarship_details"
                     placeholder="Enter details"
                     class="stepinput form-control"
                     />
@@ -167,7 +165,6 @@
                         <small class="text-error d-block">{{ $message }}</small>
                     @enderror
 
-                </form>
                 </div>
             </div>
             </div>
@@ -190,13 +187,13 @@
                 data-bs-parent="#accordionExample"
             >
                 <div class="accordion-body">
-                <form action="">
+
                     <div class="file-upload-wrapper">
                     <label class="pb-1"
                         ><small>Academic Credential (Transcript)</small></label
                     >
                     <div class="file-upload-box">
-                        <input type="file" wire:model.live.debounce.500ms="transcript_doc"class="file-input"  />
+                        <input type="file" wire:model="transcript_doc"class="file-input"  />
                         <div class="file-instructions">
                         <p>
                             <span
@@ -218,7 +215,7 @@
                         candidate</label
                     >
                     <div class="file-upload-box">
-                        <input type="file" wire:model.live.debounce.500ms="essay_doc" class="file-input" />
+                        <input type="file" wire:model="essay_doc" class="file-input" />
                         <div class="file-instructions">
                         <p>
                             <span
@@ -237,7 +234,7 @@
                     <div class="file-upload-wrapper">
                     <label class="labelform">Curriculum Vitae (CV)</label>
                     <div class="file-upload-box">
-                        <input type="file" wire:model.live.debounce.500ms="cv_doc" class="file-input" />
+                        <input type="file" wire:model="cv_doc" class="file-input" />
                         <div class="file-instructions">
                         <p>
                             <span
@@ -252,19 +249,19 @@
                         </div>
                     </div>
                     </div>
-                </form>
+
                 </div>
             </div>
             </div>
             <div class="mt-4">
             <div class="accordrow">
-                <input type="checkbox" wire:model.live.debounce.500ms="information_consent"  id="" />
+                <input type="checkbox" wire:model="information_consent"  id="" />
                 I confirm that the information provided is accurate and complete
                 to the <br />
                 best of my knowledge.
             </div>
             <div class="accordrow">
-                <input type="checkbox" wire:model.live.debounce.500ms="application_consent"  id="" />
+                <input type="checkbox" wire:model="application_consent"  id="" />
                 I agree to be contacted by Law Accent for updates regarding this
                 <br />
                 application.
@@ -275,3 +272,5 @@
         </div>
     </form>
   </section>
+
+
