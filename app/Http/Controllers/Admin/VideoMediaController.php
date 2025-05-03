@@ -67,7 +67,9 @@ class VideoMediaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = VideoMedia::find($id);
+
+        return view('admin.media-hub.video.edit', compact('data'));
     }
 
     /**
