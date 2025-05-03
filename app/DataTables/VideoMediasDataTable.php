@@ -22,9 +22,39 @@ class VideoMediasDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'videomedias.action')
+            ->addIndexColumn()
+            ->addColumn('video', function($query){
+                $video = '';
+
+                if ($query->media_link) {
+                    // If media_link is provided (external URL)
+                    $video = "<video width='150' controls>
+                                <source src='{$query->media_link}' type='video/mp4'>
+                                Your browser does not support the video tag.
+                              </video>";
+                } elseif ($query->media_location) {
+                    // If media_location is available (uploaded file)
+                    $videoUrl = asset($query->media_location);
+                    $video = "<video width='150' controls>
+                                <source src='{$videoUrl}' type='video/mp4'>
+                                Your browser does not support the video tag.
+                              </video>";
+                } else {
+                    $video = '<span class="text-muted">No video</span>';
+                }
+
+                return $video;
+            })
+            ->addColumn('action', function ($query) {
+                $edit = "<a href='".route('admin.videos.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='".route('admin.videos.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
+
+                return $edit . $delete;
+            })
+            ->rawColumns(['action', 'video'])
             ->setRowId('id');
     }
+
 
     /**
      * Get the query source of dataTable.
@@ -63,15 +93,15 @@ class VideoMediasDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('title'),
+            Column::make('video'),
+
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
-                  ->width(60)
+                  ->width(100)
                   ->addClass('text-center'),
-            Column::make('id'),
-            Column::make('add your columns'),
-            Column::make('created_at'),
-            Column::make('updated_at'),
         ];
     }
 

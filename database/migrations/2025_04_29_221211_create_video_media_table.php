@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('video_media', function (Blueprint $table) {
             $table->id();
+            $table->string("title");
             $table->string("media_location")->nullable();
             $table->string("media_link")->nullable();
             $table->timestamps();
