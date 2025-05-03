@@ -120,8 +120,12 @@
       </div>
     </footer>
 
+
+  <script src="https://cdn.jsdelivr.net/npm/just-validate@4.2.0/dist/just-validate.production.min.js"></script>
+
     <script src="{{ asset("web/assets/js/script.js") }}"></script>
     <script src="{{ asset("web/assets/js/validate-phone-field.js") }}"></script>
+
     @stack('scripts')
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"

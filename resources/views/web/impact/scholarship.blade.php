@@ -24,8 +24,6 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button form-accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseOne">
                                 Personal Information
-
-
                             </button>
 
                         </h2>

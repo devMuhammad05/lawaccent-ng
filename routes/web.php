@@ -61,6 +61,7 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
 Route::get('career', [CareerController::class, 'index'])->name('career');
 Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::get('schedule-a-consultation', [ConsultationController::class, 'index'])->name('consultation');
+Route::post('schedule-a-consultation', [ConsultationController::class, 'store'])->name('consultation.store');
 
 Route::post('newsletters', NewsletterController::class)->name('newsletters.store');
 
