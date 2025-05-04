@@ -24,11 +24,11 @@ class JobOpeningsDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addIndexColumn()
             ->addColumn('action', function ($query) {
-                $delete = "<a href='".route('admin.job-openings.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
+                $delete = "<a href=".route('admin.job-openings.destroy', $query->id)." class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
                 return $delete;
             })
             ->addColumn('application_link', function($query){
-                $link = "<a target='__blank' href='". $query->application_link ."' class='ml-2'>'". $query->application_link   ."'</a>";
+                $link = "<a target='__blank' href=". $query->application_link ." class='ml-2'>". $query->application_link   ."</a>";
 
                 return $link;
             })

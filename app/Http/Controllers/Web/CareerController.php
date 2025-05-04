@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
+use App\Models\JobOpening;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CareerController extends Controller
 {
@@ -12,6 +13,7 @@ class CareerController extends Controller
     */
     public function index()
     {
-        return view('web.career');
+        $jobOpenings = JobOpening::all();
+        return view('web.career', compact('jobOpenings'));
     }
 }

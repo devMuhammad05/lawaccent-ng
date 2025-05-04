@@ -48,45 +48,17 @@
             </div>
 
             <div class="legal-grid-career">
-                <a href="/legal-literacy.html" class="legal-row">
-                    <span class="legal-title">Legal Assistant</span>
-                    <span class="legal-description">LAGOS, NIGERIA</span>
-                    <span class="legal-arrow">
-                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-                    </span>
-                </a>
 
-                <a href="/legal-literacy.html" class="legal-row">
-                    <span class="legal-title">Legal Assistant</span>
-                    <span class="legal-description">LAGOS, NIGERIA</span>
-                    <span class="legal-arrow">
-                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-                    </span>
-                </a>
+                @foreach ($jobOpenings as $jobOpening)
+                    <a target="__blank" href="{{ $jobOpening->application_link }}" class="legal-row">
+                        <span class="legal-title">{{ $jobOpening->role  }}</span>
+                        <span class="legal-description">{{ $jobOpening->location  }}</span>
+                        <span class="legal-arrow">
+                            <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
+                        </span>
+                    </a>
+                @endforeach
 
-                <a href="/legal-literacy.html" class="legal-row">
-                    <span class="legal-title">Legal Assistant</span>
-                    <span class="legal-description">LAGOS, NIGERIA</span>
-                    <span class="legal-arrow">
-                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-                    </span>
-                </a>
-
-                <a href="/legal-literacy.html" class="legal-row">
-                    <span class="legal-title">Legal Assistant</span>
-                    <span class="legal-description">LAGOS, NIGERIA</span>
-                    <span class="legal-arrow">
-                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-                    </span>
-                </a>
-
-                <a href="/legal-literacy.html" class="legal-row">
-                    <span class="legal-title">Legal Assistant</span>
-                    <span class="legal-description">LAGOS, NIGERIA</span>
-                    <span class="legal-arrow">
-                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-                    </span>
-                </a>
             </div>
         </div>
     </section>
