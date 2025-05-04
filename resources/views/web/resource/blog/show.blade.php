@@ -6,9 +6,6 @@
                     <img src="{{ asset("web/assets/images/baldman.webp") }}" alt="Business Registration" />
                     <div class="text-overlay">
                         <h4>
-                            {{-- Understanding Business Registration in <br />
-                            Nigeria: A Step-by-Step Guide --}}
-
                             {{ $blog->title }}
                         </h4>
                     </div>

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Models\BlogCategory;
 use App\Models\Faq;
 use App\Models\Blog;
+use App\Models\CaseStudy;
+use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -53,6 +54,17 @@ class ResourceController extends Controller
     public function caseStudies()
     {
         return view('web.resource.case-studies');
+    }
+
+    public function showCaseStudy(string $slug)
+    {
+        $caseStudy = CaseStudy::where('slug', $slug)->first();
+
+        if (! $caseStudy) {
+            return abort(404);
+        }
+
+        return view('web.resource.case-study.show', compact('caseStudy'));
     }
 
     public function mediaHub()

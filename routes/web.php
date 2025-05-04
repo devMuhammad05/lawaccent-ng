@@ -44,6 +44,7 @@ Route::prefix('resources')->name('resources.')->controller(ResourceController::c
     Route::get('blogs/{slug}', 'showBlog')->name('show.blog');
     Route::get('faqs', 'faqs')->name('faqs');
     Route::get('case-studies', 'caseStudies')->name('case.studies');
+    Route::get('case-studies/{slug}', 'showCaseStudy')->name('show.case.study');
     Route::get('media-hub', 'mediaHub')->name('media.hub');
     Route::get('doing-business-in-nigeria', 'business')->name('business.nigeria');
     Route::get('cross-border-legal-services', 'legalServices')->name('legal.services');

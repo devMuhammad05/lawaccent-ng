@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
+use App\Models\CaseStudy;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -12,6 +13,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('web.home.index');
+        $caseStudies = CaseStudy::active()->latest()->get([
+            'id',
+            'title',
+            'thumbnail',
+            'legal_issues_explored',
+            'slug',
+        ])->take(15);
+        return view('web.home.index', compact('caseStudies'));
     }
 }

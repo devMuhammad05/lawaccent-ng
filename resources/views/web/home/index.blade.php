@@ -79,266 +79,154 @@
 
 
     <section class="chooseus">
-      <div class="container">
-        <img src="{{ asset("web/assets/images/chooseus.svg") }}" alt="image" class="chooseimg" />
-        <h2>
-          What sets Law Accent apart in <br />
-          today's legal landscape
-        </h2>
-        <div class="row chooserow">
-          <div class="col-md-3">
-            <div class="chooseuscard">
-              <img src="{{ asset("web/assets/images/global.svg") }}" alt="image" />
-              <h4>Global Presence</h4>
-              <p>
-                With offices in the UK, Africa and synergies across Europe, we
-                offer local insight and international reach.
-              </p>
+        <div class="container">
+            <img src="{{ asset("web/assets/images/chooseus.svg") }}" alt="image" class="chooseimg" />
+            <h2>
+                What sets Law Accent apart in <br />
+                today's legal landscape
+            </h2>
+            <div class="row chooserow">
+                <div class="col-md-3">
+                    <div class="chooseuscard">
+                        <img src="{{ asset("web/assets/images/global.svg") }}" alt="image" />
+                        <h4>Global Presence</h4>
+                        <p>
+                            With offices in the UK, Africa and synergies across Europe, we
+                            offer local insight and international reach.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="chooseuscard">
+                        <img src="{{ asset("web/assets/images/chat.svg") }}" alt="image" />
+                        <h4>Plain Language Advocacy</h4>
+                        <p>
+                            We explain legal matters in clear, everyday terms — no jargon.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="chooseuscard">
+                        <img src="{{ asset("web/assets/images/legal.svg") }}" alt="image" />
+                        <h4>Legal Education Tools</h4>
+                        <p>
+                            Access videos, checklists, and webinars to stay informed,
+                            empowered and educated.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="chooseuscard">
+                        <img src="{{ asset("web/assets/images/service.svg") }}" alt="image" />
+                        <h4>Diverse and Inclusive Legal Services</h4>
+                        <p>
+                            We cover a wide range of practice areas that reflect the diverse
+                            needs of our clients across Africa and beyond.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="col-md-3">
-            <div class="chooseuscard">
-              <img src="{{ asset("web/assets/images/chat.svg") }}" alt="image" />
-              <h4>Plain Language Advocacy</h4>
-              <p>
-                We explain legal matters in clear, everyday terms — no jargon.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="chooseuscard">
-              <img src="{{ asset("web/assets/images/legal.svg") }}" alt="image" />
-              <h4>Legal Education Tools</h4>
-              <p>
-                Access videos, checklists, and webinars to stay informed,
-                empowered and educated.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="chooseuscard">
-              <img src="{{ asset("web/assets/images/service.svg") }}" alt="image" />
-              <h4>Diverse and Inclusive Legal Services</h4>
-              <p>
-                We cover a wide range of practice areas that reflect the diverse
-                needs of our clients across Africa and beyond.
-              </p>
-            </div>
-          </div>
+            <hr />
         </div>
-        <hr />
-      </div>
     </section>
 
     <section class="explore">
-      <div class="container">
-        <img src="{{ asset("web/assets/images/explore.svg") }}" alt="image" class="chooseimg" />
-        <h2>
-          Discover tools, insights, and services that put <br />
-          the law within your reach.
-        </h2>
-        <div class="legal-grid">
-          <a href="{{ route('our-impact.legal.literacy') }}" class="legal-row">
-            <span class="legal-title">Legal Literacy</span>
-            <span class="legal-description"
-              >Webinars and resources for growing your legal knowledge.</span
-            >
-            <span class="legal-arrow">
-              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-            </span>
-          </a>
+        <div class="container">
+            <img src="{{ asset("web/assets/images/explore.svg") }}" alt="image" class="chooseimg" />
+            <h2>
+                Discover tools, insights, and services that put <br />
+                the law within your reach.
+            </h2>
+            <div class="legal-grid">
+                <a href="{{ route('our-impact.legal.literacy') }}" class="legal-row">
+                    <span class="legal-title">Legal Literacy</span>
+                    <span class="legal-description">Webinars and resources for growing your legal knowledge.</span>
+                    <span class="legal-arrow">
+                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
+                    </span>
+                </a>
 
-          <a href="{{ route('resources.blogs') }}" class="legal-row">
-            <span class="legal-title">Articles / Blog</span>
-            <span class="legal-description"
-              >Articles, explainers, and case studies on key legal issues.</span
-            >
-            <span class="legal-arrow">
-              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-            </span>
-          </a>
+                <a href="{{ route('resources.blogs') }}" class="legal-row">
+                    <span class="legal-title">Articles / Blog</span>
+                    <span class="legal-description">Articles, explainers, and case studies on key legal issues.</span>
+                    <span class="legal-arrow">
+                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
+                    </span>
+                </a>
 
-          <a href="{{ route('resources.media.hub') }}" class="legal-row">
-            <span class="legal-title">Media Hub</span>
-            <span class="legal-description"
-              >Watch sessions led by experts on general legal topics</span
-            >
-            <span class="legal-arrow">
-              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-            </span>
-          </a>
+                <a href="{{ route('resources.media.hub') }}" class="legal-row">
+                    <span class="legal-title">Media Hub</span>
+                    <span class="legal-description">Watch sessions led by experts on general legal topics</span>
+                    <span class="legal-arrow">
+                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
+                    </span>
+                </a>
 
-          <a href="#" class="legal-row">
-            <span class="legal-title">Law Quiz</span>
-            <span class="legal-description"
-              >Challenge yourself with quizzes on Nigerian and international
-              laws.</span
-            >
-            <span class="legal-arrow">
-              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-            </span>
-          </a>
+                <a href="#" class="legal-row">
+                    <span class="legal-title">Law Quiz</span>
+                    <span class="legal-description">Challenge yourself with quizzes on Nigerian and international
+                        laws.</span>
+                    <span class="legal-arrow">
+                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
+                    </span>
+                </a>
 
-          <a href="{{ route('resources.assessment.tool') }}" class="legal-row">
-            <span class="legal-title">Legal Checklists and Assessment</span>
-            <span class="legal-description">Identify legal risks and gap</span>
-            <span class="legal-arrow">
-              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-            </span>
-          </a>
+                <a href="{{ route('resources.assessment.tool') }}" class="legal-row">
+                    <span class="legal-title">Legal Checklists and Assessment</span>
+                    <span class="legal-description">Identify legal risks and gap</span>
+                    <span class="legal-arrow">
+                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
+                    </span>
+                </a>
 
-          <a href="{{ route('our-impact.law.school.scholarship') }}" class="legal-row">
-            <span class="legal-title">Law School Scholarship</span>
-            <span class="legal-description"
-              >Empowering the next generation of lawyers.</span
-            >
-            <span class="legal-arrow">
-              <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
-            </span>
-          </a>
+                <a href="{{ route('our-impact.law.school.scholarship') }}" class="legal-row">
+                    <span class="legal-title">Law School Scholarship</span>
+                    <span class="legal-description">Empowering the next generation of lawyers.</span>
+                    <span class="legal-arrow">
+                        <img src="{{ asset("web/assets/images/arrow.svg") }}" alt="image" />
+                    </span>
+                </a>
+            </div>
+            <hr />
         </div>
-        <hr />
-      </div>
     </section>
 
-    <section class="casestudy">
-      <div class="service-text">
-        <h1>Case Studies</h1>
-        <p>
-          Explore real-world legal scenarios that highlight key challenges,
-          applicable legal principles, and <br />
-          effective resolutions.
-        </p>
-        <button class="btn btn-case-study">
-          <a href="{{ route(name: 'resources.case.studies') }}">Explore All Case Studies</a>
-        </button>
-      </div>
-      <div class="scroll-container">
-        <div class="casestudycard">
-          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
-          <div class="casestudycard-body">
-            <div class="casestudycard-title">
-              Data Privacy Compliance<br />Under the NDPR
+    @if ($caseStudies->isNotEmpty())
+        <section class="casestudy">
+            <div class="service-text">
+                <h1>Case Studies</h1>
+                <p>
+                    Explore real-world legal scenarios that highlight key challenges,
+                    applicable legal principles, and <br />
+                    effective resolutions.
+                </p>
+                <button class="btn btn-case-study">
+                    <a href="{{ route(name: 'resources.case.studies') }}">Explore All Case Studies</a>
+                </button>
             </div>
-            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-            <div class="casestudycard-text">
-              Understanding the obligations of businesses under the Nigeria Data
-              Protection Regulation (NDPR) and the consequences of
-              non-compliance.
-            </div>
-            <a href="casestudydetails.html" class="casestudyread-more-btn"
-              >Read More</a
-            >
-          </div>
-        </div>
+            <div class="scroll-container">
 
-        <div class="casestudycard">
-          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
-          <div class="casestudycard-body">
-            <div class="casestudycard-title">
-              Data Privacy Compliance<br />Under the NDPR
+            @foreach ($caseStudies as $caseStudy)
+                <div class="casestudycard">
+                    <img src="{{ asset($caseStudy->thumbnail) }}" alt="{{ $caseStudy->title }}" />
+                    <div class="casestudycard-body">
+                        <div class="casestudycard-title">
+                            {{ $caseStudy->title }}
+                        </div>
+                        <div class="casestudycard-subtitle">Legal Issue Explored:</div>
+                        <div class="casestudycard-text">
+                            {{ $caseStudy->legal_issues_explored }}
+                        </div>
+                        <a href="{{ route('resources.show.case.study', $caseStudy->slug) }}" class="casestudyread-more-btn">Read More</a>
+                    </div>
+                </div>
+            @endforeach
             </div>
-            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-            <div class="casestudycard-text">
-              Understanding the obligations of businesses under the Nigeria Data
-              Protection Regulation (NDPR) and the consequences of
-              non-compliance.
-            </div>
-            <a href="casestudydetails.html" class="casestudyread-more-btn"
-              >Read More</a
-            >
-          </div>
-        </div>
+        </section>
+    @endif
 
-        <div class="casestudycard">
-          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
-          <div class="casestudycard-body">
-            <div class="casestudycard-title">
-              Data Privacy Compliance<br />Under the NDPR
-            </div>
-            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-            <div class="casestudycard-text">
-              Understanding the obligations of businesses under the Nigeria Data
-              Protection Regulation (NDPR) and the consequences of
-              non-compliance.
-            </div>
-            <a href="casestudydetails.html" class="casestudyread-more-btn"
-              >Read More</a
-            >
-          </div>
-        </div>
 
-        <div class="casestudycard">
-          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
-          <div class="casestudycard-body">
-            <div class="casestudycard-title">
-              Data Privacy Compliance<br />Under the NDPR
-            </div>
-            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-            <div class="casestudycard-text">
-              Understanding the obligations of businesses under the Nigeria Data
-              Protection Regulation (NDPR) and the consequences of
-              non-compliance.
-            </div>
-            <a href="casestudydetails.html" class="casestudyread-more-btn"
-              >Read More</a
-            >
-          </div>
-        </div>
 
-        <div class="casestudycard">
-          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
-          <div class="casestudycard-body">
-            <div class="casestudycard-title">
-              Data Privacy Compliance<br />Under the NDPR
-            </div>
-            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-            <div class="casestudycard-text">
-              Understanding the obligations of businesses under the Nigeria Data
-              Protection Regulation (NDPR) and the consequences of
-              non-compliance.
-            </div>
-            <a href="casestudydetails.html" class="casestudyread-more-btn"
-              >Read More</a
-            >
-          </div>
-        </div>
-        <div class="casestudycard">
-          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
-          <div class="casestudycard-body">
-            <div class="casestudycard-title">
-              Data Privacy Compliance<br />Under the NDPR
-            </div>
-            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-            <div class="casestudycard-text">
-              Understanding the obligations of businesses under the Nigeria Data
-              Protection Regulation (NDPR) and the consequences of
-              non-compliance.
-            </div>
-            <a href="casestudydetails.html" class="casestudyread-more-btn"
-              >Read More</a
-            >
-          </div>
-        </div>
-        <div class="casestudycard">
-          <img src="{{ asset("web/assets/images/stickynote.webp") }}" alt="Sticky notes" />
-          <div class="casestudycard-body">
-            <div class="casestudycard-title">
-              Data Privacy Compliance<br />Under the NDPR
-            </div>
-            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-            <div class="casestudycard-text">
-              Understanding the obligations of businesses under the Nigeria Data
-              Protection Regulation (NDPR) and the consequences of
-              non-compliance.
-            </div>
-            <a href="casestudydetails.html" class="casestudyread-more-btn"
-              >Read More</a
-            >
-          </div>
-        </div>
-      </div>
-    </section>
 
 
     <livewire:contact-us-form />
