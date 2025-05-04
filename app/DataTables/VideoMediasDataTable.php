@@ -96,7 +96,6 @@ class VideoMediasDataTable extends DataTable
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
             Column::make('title'),
             Column::make('video'),
-
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
