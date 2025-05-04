@@ -106,6 +106,7 @@
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
             <img src="{{ asset("web/assets/images/logo.webp") }}" alt="logo" width="100" />
+            <img src="{{ asset("web/assets/images/ng.svg") }}" alt="brand logo" />
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ route('admin.dashboard') }}">LA UK</a>

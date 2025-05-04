@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\DataTables\PodcastsMediaDataTable;
 use App\Http\Controllers\Controller;
+use App\Models\PodcastMedia;
 use Illuminate\Http\Request;
 
 class PodcastMediaController extends Controller
@@ -21,7 +22,7 @@ class PodcastMediaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.media-hub.podcast.create');
     }
 
     /**
@@ -29,7 +30,28 @@ class PodcastMediaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|string|max:255',
+            'media_location' => 'nullable|file|mimes:mp3',
+            'media_link' => 'nullable|url',
+        ]);
+
+        if ($request->filled('media_location') && $request->filled('media_link')) {
+
+            flash()->error('Only one of podcast file or media link should be provided.');
+            return back();
+        }
+
+        if ($request->hasFile('media_location')) {
+            $path = $request->file('media_location')->store('media-hub/podcast', 'public');
+
+            $data['media_location'] = (string) 'storage/'.$path;
+        }
+
+        PodcastMedia::create($data);
+        flash()->success( 'Media added successfully');
+
+        return to_route('admin.podcasts.store');
     }
 
     /**

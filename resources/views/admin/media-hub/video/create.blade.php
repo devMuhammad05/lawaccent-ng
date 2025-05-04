@@ -44,21 +44,7 @@
             </div>
 
             <script>
-                document.getElementById('mediaType').addEventListener('change', function () {
-                    const fileInput = document.getElementById('fileInput');
-                    const urlInput = document.getElementById('urlInput');
 
-                    if (this.value === 'file') {
-                        fileInput.style.display = 'block';
-                        urlInput.style.display = 'none';
-                    } else if (this.value === 'url') {
-                        fileInput.style.display = 'none';
-                        urlInput.style.display = 'block';
-                    } else {
-                        fileInput.style.display = 'none';
-                        urlInput.style.display = 'none';
-                    }
-                });
             </script>
 
         </div>
@@ -69,6 +55,22 @@
     <script type="text/javascript">
         bkLib.onDomLoaded(function() {
             nicEditors.allTextAreas()
+        });
+
+        document.getElementById('mediaType').addEventListener('change', function () {
+            const fileInput = document.getElementById('fileInput');
+            const urlInput = document.getElementById('urlInput');
+
+            if (this.value === 'file') {
+                fileInput.style.display = 'block';
+                urlInput.style.display = 'none';
+            } else if (this.value === 'url') {
+                fileInput.style.display = 'none';
+                urlInput.style.display = 'block';
+            } else {
+                fileInput.style.display = 'none';
+                urlInput.style.display = 'none';
+            }
         });
     </script>
 @endpush

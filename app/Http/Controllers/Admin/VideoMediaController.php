@@ -36,7 +36,7 @@ class VideoMediaController extends Controller
             'media_link' => 'nullable|url',
         ]);
 
-        if ($request->filled('video_file') && $request->filled('media_link')) {
+        if ($request->filled('media_location') && $request->filled('media_link')) {
 
             flash()->error('Only one of video file or media link should be provided.');
             return back();
