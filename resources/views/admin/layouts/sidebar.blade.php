@@ -149,6 +149,12 @@
                     <span>Blogs</span>
                 </a>
             </li>
+            <li class="{{ $currentRoute === 'job-openings' ? 'active' : '' }}">
+                <a href="{{ route('admin.job-openings.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Job Openings</span>
+                </a>
+            </li>
             <li class="{{ $currentRoute === 'case-studies' ? 'active' : '' }}">
                 <a href="{{ route('admin.case-studies.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>

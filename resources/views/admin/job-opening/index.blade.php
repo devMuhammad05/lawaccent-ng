@@ -3,13 +3,13 @@
 @section('content')
 <section class="section">
     <div class="section-header">
-      <h1>Faqs</h1>
+      <h1>Job Openings</h1>
     </div>
     <div class="card card-primary">
         <div class="card-header">
-          <h4>All Faqs </h4>
+          <h4>All Job Openings</h4>
           <div class="card-header-action">
-            <a href="{{ route('admin.faqs.create')}}" class="btn btn-primary">
+            <a href="{{ route('admin.job-openings.create')}}" class="btn btn-primary">
               Create new
             </a>
           </div>

@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Newsletter;
+use App\Models\JobOpening;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,36 +12,36 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class NewslettersDataTable extends DataTable
+class JobOpeningsDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
      *
-     * @param QueryBuilder<Newsletter> $query Results from query() method.
+     * @param QueryBuilder<JobOpening> $query Results from query() method.
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
             ->addIndexColumn()
             ->addColumn('action', function ($query) {
-                // $edit = "<a href='".route('admin.newsletters.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
-                $delete = "<a href='".route('admin.newsletters.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
-
+                $delete = "<a href='".route('admin.job-openings.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
                 return $delete;
             })
-            ->addColumn('created_at', function ($query) {
-                return $query->created_at->format('d M Y');
+            ->addColumn('application_link', function($query){
+                $link = "<a target='__blank' href='". $query->application_link ."' class='ml-2'>'". $query->application_link   ."'</a>";
+
+                return $link;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['action', 'application_link'])
             ->setRowId('id');
     }
 
     /**
      * Get the query source of dataTable.
      *
-     * @return QueryBuilder<Newsletter>
+     * @return QueryBuilder<JobOpening>
      */
-    public function query(Newsletter $model): QueryBuilder
+    public function query(JobOpening $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -52,10 +52,9 @@ class NewslettersDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('newsletters-table')
+                    ->setTableId('jobopenings-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip') // Add this line for showing the buttons
                     ->orderBy(1)
                     ->selectStyleSingle()
                     ->buttons([
@@ -75,10 +74,11 @@ class NewslettersDataTable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
-            Column::make('email'),
-            Column::make('created_at')->title('Signup Date'),
+            Column::make('role'),
+            Column::make('location'),
+            Column::make('application_link')->title('Application Form'),
             Column::computed('action')
-                  ->exportable(true) 
+                  ->exportable(true)
                   ->printable(false)
                   ->width(100)
                   ->addClass('text-center'),
@@ -90,6 +90,6 @@ class NewslettersDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Newsletters_' . date('YmdHis');
+        return 'JobOpenings_' . date('YmdHis');
     }
 }

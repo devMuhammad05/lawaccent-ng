@@ -20,7 +20,7 @@ return new class extends Migration
             $table->longText('body');
             $table->boolean('status')->default(true);
             $table->string('slug');
-            $table->fullText(['title', 'sub_heading', 'short_body', 'body']);
+            $table->fullText(['title', 'sub_heading', 'body']);
             $table->timestamps();
         });
     }

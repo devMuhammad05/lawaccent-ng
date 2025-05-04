@@ -2,13 +2,13 @@
 
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\BlogController;
-use App\Http\Controllers\Admin\ScholarshipApplicationController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\OurTeamController;
 use App\Http\Controllers\Admin\CaseStudyController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AssessmentController;
+use App\Http\Controllers\Admin\JobOpeningController;
 use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\Admin\VideoMediaController;
 use App\Http\Controllers\Admin\SiteSettingController;
@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\CookieNoticeController;
 use App\Http\Controllers\Admin\PodcastMediaController;
 use App\Http\Controllers\Admin\PrivacyNoticeController;
 use App\Http\Controllers\Admin\AboutUsMetricsController;
+use App\Http\Controllers\Admin\ScholarshipApplicationController;
 
 
 Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->group(function () {
@@ -34,6 +35,7 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('socials', SocialController::class);
     Route::get('contact-us/unread', [ContactUsController::class, 'unread'])->name('contact-us.unread');
     Route::resource('contact-us', ContactUsController::class)->except('post');
+    Route::resource('job-openings', JobOpeningController::class);
     Route::get('contact-us/{contact_us}/mark-as-read', [ContactUsController::class, 'markAsRead'])->name('contact-us.markAsRead');
     Route::resource('media-hub/videos', VideoMediaController::class);
     Route::resource('media-hub/podcasts', PodcastMediaController::class);
