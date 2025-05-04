@@ -85,6 +85,12 @@ class VideoMediaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $videoMedia = VideoMedia::find($id);
+
+        $videoMedia->delete();
+
+        // flash()->deleted('Privacy Notice deleted successfully');
+
+        return redirect()->back();
     }
 }

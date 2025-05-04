@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\DataTables\PodcastsMediaDataTable;
-use App\Http\Controllers\Controller;
+use App\Models\VideoMedia;
 use App\Models\PodcastMedia;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\DataTables\PodcastsMediaDataTable;
 
 class PodcastMediaController extends Controller
 {
@@ -67,7 +68,9 @@ class PodcastMediaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = PodcastMedia::find($id);
+
+        return view('admin.media-hub.podcast.edit', compact('data'));
     }
 
     /**
@@ -83,6 +86,12 @@ class PodcastMediaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $postMedia = PodcastMedia::find($id);
+
+        $postMedia->delete();
+
+        // flash()->deleted('Privacy Notice deleted successfully');
+
+        return redirect()->back();
     }
 }

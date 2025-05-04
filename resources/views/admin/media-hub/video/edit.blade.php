@@ -2,7 +2,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Blogs</h1>
+            <h1>Video</h1>
         </div>
         <div class="card-body">
             <form enctype="multipart/form-data" action="{{ route('admin.videos.update', $data->id) }}" method="POST">
@@ -37,9 +37,17 @@
                 <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
             </form>
         </div>
+    </section>
+@endsection
 
-        <script>
-            document.getElementById('mediaType').addEventListener('change', function () {
+
+@push('scripts')
+    <script type="text/javascript">
+        bkLib.onDomLoaded(function() {
+            nicEditors.allTextAreas()
+        });
+
+        document.getElementById('mediaType').addEventListener('change', function () {
                 const fileInput = document.getElementById('fileInput');
                 const urlInput = document.getElementById('urlInput');
 
@@ -54,15 +62,5 @@
                     urlInput.style.display = 'none';
                 }
             });
-        </script>
-    </section>
-@endsection
-
-
-@push('scripts')
-    <script type="text/javascript">
-        bkLib.onDomLoaded(function() {
-            nicEditors.allTextAreas()
-        });
     </script>
 @endpush
