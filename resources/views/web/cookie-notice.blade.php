@@ -4,7 +4,7 @@
         <div class="container">
           <div class="privacyrow">
             <h3>Cookie Notice</h3>
-            <p>Effective Date: [<span id="currentDate"></span>]</p>
+            <p>Effective Date: [<span id="currentDate">{{ $effectiveDate }}</span>]</p>
             <p>
               At Law Accent we use cookies and similar tracking technologies to
               enhance your experience when visiting our website
@@ -22,237 +22,37 @@
 
     <section class="faq-section">
     <div class="container">
-        <div class="accordion accordionprivacy" id="accordionExample">
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header accordionprivacy-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-controls="collapseOne"
-            >
-                What Are Cookies?
-            </button>
-            </h2>
-            <div
-            id="collapseOne"
-            class="accordion-collapse collapse show"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                quos nesciunt eveniet libero possimus nobis facilis id
-                reiciendis ipsa neque.
+
+        @if (count($cookieNotice) > 0)
+            <div class="accordion accordionprivacy" id="accordionExample">
+                @foreach ($cookieNotice as $cookie)
+                    <div class="accordion-item mt-4">
+                        <h2 class="accordion-header">
+                        <button
+                            aria-label="Name"
+                            class="accordion-button accordionprivacy-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapse{{ $cookie->id }}"
+                            aria-controls="collapse{{ $cookie->id }}"
+                        >
+                            {{ $cookie->question }}
+                        </button>
+                        </h2>
+                        <div
+                        id="collapse{{ $cookie->id }}"
+                        class="accordion-collapse collapse"
+                        data-bs-parent="#accordionExample"
+                        >
+                        <div class="accordion-body">
+                        {!! $cookie->answer !!}
+                        </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-controls="collapseTwo"
-            >
-                What Type of Cookie Do We Use?
-            </button>
-            </h2>
-            <div
-            id="collapseTwo"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Dolorem temporibus voluptates sapiente earum iusto dolores eos
-                totam reiciendis dicta, architecto porro maxime error nihil sunt
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-controls="collapseThree"
-            >
-                How Do We Use These Cookies?
-            </button>
-            </h2>
-            <div
-            id="collapseThree"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Dolorem temporibus voluptates sapiente earum iusto dolores eos
-                totam reiciendis dicta, architecto porro maxime error nihil sunt
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseFour"
-                aria-controls="collapseFour"
-            >
-                How Do We Handle Third Party Cookies?
-            </button>
-            </h2>
-            <div
-            id="collapseFour"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                aspernatur voluptatem expedita, natus voluptatum incidunt
-                dolorum, et consequuntur quis provident porro alias quasi
-                suscipit perferendis veniam nam ullam ad reiciendis molestiae
-                pariatur ducimus corporis facere at! Suscipit consectetur ipsum
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseFive"
-                aria-controls="collapseFive"
-            >
-                How Do We Obtain Consent?
-            </button>
-            </h2>
-            <div
-            id="collapseFive"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat, quo neque maxime corrupti minima soluta enim
-                architecto sequi aut, sunt, commodi a veniam sint amet expedita?
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseSix"
-                aria-controls="collapseSix"
-            >
-                What Are Our Cookie Choices?
-            </button>
-            </h2>
-            <div
-            id="collapseSix"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Dolorem temporibus voluptates sapiente earum iusto dolores eos
-                totam reiciendis dicta, architecto porro maxime error nihil sunt
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseSeven"
-                aria-controls="collapseSeven"
-            >
-                What Are Our Cookie Choices?
-            </button>
-            </h2>
-            <div
-            id="collapseSeven"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-                aspernatur voluptatem expedita, natus voluptatum incidunt
-                dolorum, et consequuntur quis provident porro alias quasi
-                suscipit perferendis veniam nam ullam ad reiciendis molestiae
-                pariatur ducimus corporis facere at! Suscipit consectetur ipsum
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseEight"
-                aria-controls="collapseEight"
-            >
-                Managing & Disabling Cookies Via Browser Settings Option
-            </button>
-            </h2>
-            <div
-            id="collapseEight"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat, quo neque maxime corrupti minima soluta enim
-                architecto sequi aut, sunt, commodi a veniam sint amet expedita?
-            </div>
-            </div>
-        </div>
-        <div class="accordion-item mt-4">
-            <h2 class="accordion-header">
-            <button
-                aria-label="Name"
-                class="accordion-button accordionprivacy-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseNine"
-                aria-controls="collapseNine"
-            >
-                Update To This Cookie Notice
-            </button>
-            </h2>
-            <div
-            id="collapseNine"
-            class="accordion-collapse collapse"
-            data-bs-parent="#accordionExample"
-            >
-            <div class="accordion-body">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Repellat, quo neque maxime corrupti minima soluta enim
-                architecto sequi aut, sunt, commodi a veniam sint amet expedita?
-            </div>
-            </div>
-        </div>
-        </div>
+        @endif
+
     </div>
     </section>
 
