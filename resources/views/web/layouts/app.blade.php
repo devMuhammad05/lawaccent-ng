@@ -40,12 +40,12 @@
             <h3>Quick Links</h3>
             <ul>
               <li><a href="{{ route("about-us") }}">About Us</a></li>
-              <li><a href="resources.html">Resources</a></li>
+              <li><a href="{{ route('resources.index') }}">Resources</a></li>
               <li><a href="{{ route("practice-areas.index") }}">Practice Areas</a></li>
-              <li><a href="career.html">Career</a></li>
-              <li><a href="contactus.html">Contact</a></li>
-              <li><a href="privacynotice.html">Privacy Notice</a></li>
-              <li><a href="cookienotice.html">Cookie Notice</a></li>
+              <li><a href="{{ route('career') }}">Career</a></li>
+              <li><a href="{{ route('contact-us') }}">Contact</a></li>
+              <li><a href="{{ route('privacy-notice') }}">Privacy Notice</a></li>
+              <li><a href="{{ route('cookie-notice') }}">Cookie Notice</a></li>
             </ul>
           </div>
 

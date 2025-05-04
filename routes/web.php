@@ -10,6 +10,7 @@ use App\Http\Controllers\web\OurImpactController;
 use App\Http\Controllers\Web\NewsletterController;
 use App\Http\Controllers\web\ConsultationController;
 use App\Http\Controllers\Web\PracticeAreaController;
+use App\Http\Controllers\Web\PrivacyAndCookiesController;
 
 
 
@@ -65,6 +66,10 @@ Route::get('schedule-a-consultation', [ConsultationController::class, 'index'])-
 Route::post('schedule-a-consultation', [ConsultationController::class, 'store'])->name('consultation.store');
 
 Route::post('newsletters', NewsletterController::class)->name('newsletters.store');
+
+Route::get('privacy-notice', [PrivacyAndCookiesController::class, 'privacy'])->name('privacy-notice');
+Route::get('cookie-notice', [PrivacyAndCookiesController::class, 'cookies'])->name('cookie-notice');
+
 
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
