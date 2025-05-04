@@ -1,7 +1,7 @@
 <x-app-layout>
     <section class="aboutlawaccent">
         <div class="container">
-            <img src="{{ asset("web/assets/images/lan-bordered.svg" alt="image" />
+            <img src="{{ asset("web/assets/images/lan-bordered.svg") }}" alt="image" />
             <h2>Practice Areas</h2>
             <p>
                 Law Accent specialises in corporate law, regulatory compliance, data
@@ -12,7 +12,7 @@
             </p>
         </div>
         <div class="legalrow">
-            <img src="{{ asset("web/assets/images/practicarea.webp" alt="image" />
+            <img src="{{ asset("web/assets/images/practicarea.webp") }}" alt="image" />
         </div>
     </section>
 
@@ -50,8 +50,8 @@
                     </p>
                 </div>
                 <div class="col-md-4 legalimg">
-                    <img src="{{ asset("web/assets/images/man.webp" alt="image" />
-                    <img src="{{ asset("web/assets/images/Logo.svg" alt="image" />
+                    <img src="{{ asset("web/assets/images/man.webp") }}" alt="image" />
+                    <img src="{{ asset("web/assets/images/Logo.svg") }}" alt="image" />
                     <div class="legalcard">
                         <h3>150+</h3>
                         <p>

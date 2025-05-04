@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Status;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -12,11 +13,15 @@ class Blog extends Model
         'title',
         'sub_heading',
         'thumbnail',
-        'short_body',
         'body',
         'status',
         'slug',
     ];
+
+    public function scopeActive($query)
+    {
+        return $query->where('status', Status::ACTIVE);
+    }
 
     public function category(): BelongsTo
     {

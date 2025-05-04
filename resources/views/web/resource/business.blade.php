@@ -47,144 +47,38 @@
         </div>
     </section>
 
-    <section class="recent-blog pb-5">
-        <div class="container">
-            <h4 id="blogHeading">Recent Blog Posts</h4>
 
-            <div id="blogContentWrapper">
-                <div class="row recent-blogrow" data-category="all">
-                    <div class="col-md-4">
-                        <div class="recentblogcard">
-                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
-                            <div class="recentblogcard-body">
-                                <h5>
-                                    Understanding Business Registration in Nigeria: A
-                                    Step-by-Step Guide
-                                </h5>
-                                <p>
-                                    Starting a business in Nigeria requires proper legal
-                                    registration to ensure compliance with regulatory
-                                    authorities.
-                                </p>
-                                <div class="recentblog-buttons">
-                                    <button class="btn">
-                                        <a href="blogdetails.html">Read More</a>
-                                    </button>
-                                    <button class="btn">Download PDF</button>
+    @if (count($blogs) > 0)
+        <section class="recent-blog pb-5">
+            <div class="container">
+                <h4 id="blogHeading">Recent Blog Posts</h4>
+                <div id="blogContentWrapper">
+                    <div class="row recent-blogrow" data-category="all">
+                        @forelse ($blogs as $blog)
+                            <div class="col-md-4">
+                                <div class="recentblogcard">
+                                    <img src="{{ asset($blog->thumbnail) }}" alt="" />
+                                    <div class="recentblogcard-body">
+                                        <h5>{{ $blog->title }}</h5>
+                                        <p>{{ Str::limit($blog->sub_heading, 200, '...') }}</p>
+                                        <div class="recentblog-buttons">
+                                            <button class="btn">
+                                                <a href="{{ route('resources.show.blog', $blog->slug) }}">Read More</a>
+                                            </button>
+                                            <button class="btn">Download PDF</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recentblogcard">
-                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
-                            <div class="recentblogcard-body">
-                                <h5>
-                                    Understanding Contract Law in Nigeria: Key Elements & Common
-                                    Pitfalls
-                                </h5>
-                                <p>
-                                    Contracts are the foundation of business agreements,
-                                    ensuring legal protection for all parties involved.
-                                </p>
-                                <div class="recentblog-buttons">
-                                    <button class="btn">
-                                        <a href="blogdetails.html">Read More</a>
-                                    </button>
-                                    <button class="btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recentblogcard">
-                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
-                            <div class="recentblogcard-body">
-                                <h5>
-                                    Intellectual Property Protection in Nigeria: How to
-                                    Safeguard Your Ideas
-                                </h5>
-                                <p>
-                                    In today's digital age, protecting intellectual property
-                                    (IP) is more important than ever.
-                                </p>
-                                <div class="recentblog-buttons">
-                                    <button class="btn">
-                                        <a href="blogdetails.html">Read More</a>
-                                    </button>
-                                    <button class="btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recentblogcard">
-                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
-                            <div class="recentblogcard-body">
-                                <h5>
-                                    Understanding Business Registration in Nigeria: A
-                                    Step-by-Step Guide
-                                </h5>
-                                <p>
-                                    Starting a business in Nigeria requires proper legal
-                                    registration to ensure compliance with regulatory
-                                    authorities.
-                                </p>
-                                <div class="recentblog-buttons">
-                                    <button class="btn">
-                                        <a href="blogdetails.html">Read More</a>
-                                    </button>
-                                    <button class="btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recentblogcard">
-                            <img src="{{ asset("web/assets/images/smilinghandshake.webp") }}" alt="" />
-                            <div class="recentblogcard-body">
-                                <h5>
-                                    Understanding Contract Law in Nigeria: Key Elements & Common
-                                    Pitfalls
-                                </h5>
-                                <p>
-                                    Contracts are the foundation of business agreements,
-                                    ensuring legal protection for all parties involved.
-                                </p>
-                                <div class="recentblog-buttons">
-                                    <button class="btn">
-                                        <a href="blogdetails.html">Read More</a>
-                                    </button>
-                                    <button class="btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="recentblogcard">
-                            <img src="{{ asset("web/assets/images/corporateshake.webp") }}" alt="" />
-                            <div class="recentblogcard-body">
-                                <h5>
-                                    Intellectual Property Protection in Nigeria: How to
-                                    Safeguard Your Ideas
-                                </h5>
-                                <p>
-                                    In today's digital age, protecting intellectual property
-                                    (IP) is more important than ever.
-                                </p>
-                                <div class="recentblog-buttons">
-                                    <button class="btn">
-                                        <a href="blogdetails.html">Read More</a>
-                                    </button>
-                                    <button class="btn">Download PDF</button>
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+                            <p>No blog posts found.</p>
+                        @endforelse
                     </div>
                 </div>
+
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     <section class="businesscontact">
         <div class="container">

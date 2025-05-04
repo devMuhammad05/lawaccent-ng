@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('title');
             $table->string('sub_heading');
             $table->string('thumbnail');
-            $table->text('short_body');
             $table->longText('body');
             $table->boolean('status')->default(true);
             $table->string('slug');

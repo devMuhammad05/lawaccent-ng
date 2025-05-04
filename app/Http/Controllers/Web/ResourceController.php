@@ -74,7 +74,8 @@ class ResourceController extends Controller
 
     public function business()
     {
-        return view('web.resource.business');
+        $blogs = Blog::active()->latest()->take(8)->get(['id', 'title', 'sub_heading', 'slug', 'thumbnail']);
+        return view('web.resource.business', compact('blogs'));
     }
 
     public function legalServices()
