@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class PodcastMedia extends Model
 {
-    //
+    protected $fillable = [
+        'title',
+        'media_location',
+        'media_link',
+    ];
 }
+
+

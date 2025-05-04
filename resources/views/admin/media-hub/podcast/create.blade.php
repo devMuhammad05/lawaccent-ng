@@ -39,6 +39,7 @@
                             value='{{ old('media_link') }}'>
                     </div>
 
+                    <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
                 </form>
             </div>
         </div>

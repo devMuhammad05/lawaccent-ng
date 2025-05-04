@@ -43,7 +43,7 @@ class PodcastMediaController extends Controller
         }
 
         if ($request->hasFile('media_location')) {
-            $path = $request->file('media_location')->store('media-hub/podcast', 'public');
+            $path = $request->file('media_location')->store('media-hub/podcasts', 'public');
 
             $data['media_location'] = (string) 'storage/'.$path;
         }
