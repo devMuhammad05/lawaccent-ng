@@ -286,45 +286,7 @@ window.addEventListener("scroll", function () {
 
 
 
-  // MULTISTEP FORM (Schedule Page) FUNCTION
-  let currentStep = 1;
-  showStep(currentStep);
-
-  function showStep(step) {
-    document.querySelectorAll(".form-step").forEach((el, index) => {
-      el.style.display = index === step - 1 ? "block" : "none";
-    });
-    document.querySelectorAll(".step-indicator").forEach((el, index) => {
-      el.classList.remove("active");
-      el.style.width = "12px";
-    });
-    document.getElementById(`indicator${step}`).classList.add("active");
-    document.getElementById(`indicator${step}`).style.width = "45px";
-    currentStep = step;
-  }
-
-  function nextStep() {
-    showStep(2);
-  }
-
-  function prevStep() {
-    showStep(1);
-  }
-
-  function submitForm() {
-    showStep(3);
-  }
-
-  function goHome() {
-    window.location.href = "index.html";
-  }
-
-  // IMAGE UPLOAD
-
-
-
-
-
+//   // MULTISTEP FORM (Schedule Page) FUNCTION
 //   let currentStep = 1;
 //   showStep(currentStep);
 
@@ -342,12 +304,7 @@ window.addEventListener("scroll", function () {
 //   }
 
 //   function nextStep() {
-//     // Validate first step
-//     step1Validator.revalidate().then(isValid => {
-//       if (isValid) {
-//         showStep(2);
-//       }
-//     });
+//     showStep(2);
 //   }
 
 //   function prevStep() {
@@ -355,66 +312,14 @@ window.addEventListener("scroll", function () {
 //   }
 
 //   function submitForm() {
-//     step2Validator.revalidate().then(isValid => {
-//       if (isValid) {
-//         // Optionally send to server with AJAX here
-//         showStep(3);
-//       }
-//     });
+//     showStep(3);
 //   }
 
 //   function goHome() {
 //     window.location.href = "index.html";
 //   }
 
-//   // ===== JUSTVALIDATE INITIALIZATION =====
+  // IMAGE UPLOAD
 
-//   const step1Validator = new JustValidate('#consultationForm', {
-//     validateBeforeSubmitting: true,
-//   });
 
-//   step1Validator
-//     .addField('[name="name"]', [
-//       { rule: 'required' },
-//       { rule: 'maxLength', value: 255 },
-//     ])
-//     .addField('[name="email"]', [
-//       { rule: 'required' },
-//       { rule: 'email' },
-//       { rule: 'maxLength', value: 255 },
-//     ])
-//     .addField('[name="phone_number"]', [
-//       { rule: 'required' },
-//       { rule: 'maxLength', value: 20 },
-//     ])
-//     .addField('[name="type"]', [
-//       {
-//         rule: 'required',
-//         errorMessage: 'Please select consultation type',
-//       },
-//     ]);
-
-//   const step2Validator = new JustValidate('#consultationForm', {
-//     validateBeforeSubmitting: true,
-//   });
-
-//   step2Validator
-//     .addField('[name="legal_concerns"]', [
-//       { rule: 'required' },
-//     ])
-//     .addField('[name="date"]', [
-//       { rule: 'required' },
-//       {
-//         validator: value => {
-//           const selectedDate = new Date(value);
-//           const today = new Date();
-//           today.setHours(0, 0, 0, 0);
-//           return selectedDate >= today;
-//         },
-//         errorMessage: 'Date must be today or in the future',
-//       }
-//     ])
-//     .addField('[name="additional_info"]', [
-//       { rule: 'maxLength', value: 1000 },
-//     ]);
 

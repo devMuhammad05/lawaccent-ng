@@ -121,7 +121,7 @@
     </footer>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/just-validate@4.2.0/dist/just-validate.production.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 
     <script src="{{ asset("web/assets/js/script.js") }}"></script>
     <script src="{{ asset("web/assets/js/validate-phone-field.js") }}"></script>
