@@ -59,8 +59,8 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
     Route::get('apply-for-scholarship', 'scholarship')->name('scholarship');
     Route::post('apply-for-scholarship', 'applyScholarship')->name('scholarship.store');
     // Route::resource('quizes');
-    Route::get('quizes', 'quizes')->name('quizes.index');
-    Route::get('why-take-quiz', 'whyTakeQuiz')->name('why.take.quiz');
+    Route::get('quizzes', 'quizes')->name('quizes.index');
+    Route::get('quizzes/{quiz}/why-take-quiz', 'whyTakeQuiz')->name('why.take.quiz');
 
 });
 

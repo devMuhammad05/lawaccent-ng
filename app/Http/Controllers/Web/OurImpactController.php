@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\web;
 
+use App\Models\Quiz;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\ScholarshipApplication;
@@ -77,7 +78,9 @@ class OurImpactController extends Controller
 
     public function quizes()
     {
-        return view('web.impact.quiz.index');
+        $quizzes = Quiz::active()->withCount('questions')->get();
+
+        return view('web.impact.quiz.index', compact('quizzes'));
     }
 
     public function whyTakeQuiz()

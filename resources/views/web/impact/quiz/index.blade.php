@@ -31,22 +31,25 @@
             </div>
           </div>
           <div class="row quizzesrow">
-            <div class="col-md-3">
-              <div class="quizzesrowcard">
-                <h5>How Legally Protected Is Your Business?</h5>
-                <p>Check your compliance with CAC, tax, and contracts.</p>
-                <div class="dotwrap">
-                  <div class="img-m">
-                    <img src="{{ asset("web/assets/images/time.svg") }}" alt="image" width="50%" />2m
-                  </div>
-                  <div><img src="{{ asset("web/assets/images/dot.svg") }}" alt="image" /></div>
-                  <div>6 questions</div>
+            @foreach ($quizzes as $quiz)
+                <div class="col-md-3">
+                <div class="quizzesrowcard">
+                    <h5>{{ $quiz->title }}</h5>
+                    <p>{{ $quiz->sub_title }}</p>
+                    <div class="dotwrap">
+                    <div class="img-m">
+                        <img src="{{ asset("web/assets/images/time.svg") }}" alt="image" width="50%" />2m
+                    </div>
+                    <div><img src="{{ asset("web/assets/images/dot.svg") }}" alt="image" /></div>
+                    <div>{{ $quiz->questions_count }} {{ Str::plural('Question', $quiz->questions_count) }}</div>
+
+                    </div>
+                    <button class="btn takequizbtn">
+                    <a href="{{ route('our-impact.why.take.quiz', $quiz) }}">Take Quiz</a>
+                    </button>
                 </div>
-                <button class="btn takequizbtn">
-                  <a href="{{ route('our-impact.why.take.quiz') }}">Take Quiz</a>
-                </button>
-              </div>
-            </div>
+                </div>
+            @endforeach
           </div>
           <div class="loadmore">
             <div class="loadmorediv"></div>
