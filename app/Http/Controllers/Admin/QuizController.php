@@ -42,7 +42,8 @@ class QuizController extends Controller
             $quiz = Quiz::create([
                 'title' => $data['title'],
                 'sub_title' => $data['sub_title'],
-                'description' => $data['description'] ?? null,
+                'description' => $data['description'] ?? '',
+                'why_take_quiz' => $validated['why_take_quiz'] ?? ''
             ]);
 
             foreach ($data['questions'] as $qIndex => $questionData) {
@@ -79,15 +80,53 @@ class QuizController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $quiz = Quiz::find($id);
+
+        return view('admin.quiz.edit', compact('quiz'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreQuizRequest $request, string $id)
     {
-        //
+        $quiz = Quiz::findOrFail($id);
+
+        if(! $quiz){
+            abort(404);
+        }
+
+        $validated = $request->validated();
+
+        // Update quiz info
+        $quiz->update([
+            'title' => $validated['title'],
+            'sub_title' => $validated['sub_title'],
+            'description' => $validated['description'] ?? '',
+            'why_take_quiz' => $validated['why_take_quiz'] ?? ''
+        ]);
+
+        //Delete old questions and options
+        foreach ($quiz->questions as $question) {
+            $question->options()->delete();
+            $question->delete();
+        }
+
+        //Recreate questions and options
+        foreach ($validated['questions'] as $qIndex => $questionData) {
+            $question = $quiz->questions()->create([
+                'text' => $questionData['text'],
+            ]);
+
+            foreach ($questionData['options'] as $oIndex => $option) {
+                $question->options()->create([
+                    'text' => $option['text'],
+                    'is_correct' => (int)$questionData['correct_option'] === $oIndex,
+                ]);
+            }
+        }
+
+        return redirect()->route('admin.quizzes.index')->with('success', 'Quiz updated successfully!');
     }
 
     /**
@@ -95,6 +134,12 @@ class QuizController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $quiz = Quiz::find($id);
+
+        $quiz->delete();
+
+        // flash()->deleted('Quiz deleted successfully');
+
+        return redirect()->back();
     }
 }

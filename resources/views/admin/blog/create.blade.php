@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>SubTitle</label>
+                        <label>Sub Title</label>
                         <input type='text' class='form-control' placeholder='Enter subtitle' name='sub_heading'
                             value='{{ old('sub_heading') }}'>
                     </div>

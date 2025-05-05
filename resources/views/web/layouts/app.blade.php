@@ -52,20 +52,29 @@
           <div class="footer-section">
             <h3>Addresses</h3>
             <p>
-              <strong>Nigeria: </strong><br />30, Muyibat Oyefusi Crescent,
-              <br />
-              Omole Phase 1, Lagos State <br /><br />
-              60, Old Owode Road, Onikolobo,<br />
-              Abeokuta, Ogun State
+              <a href="https://g.co/kgs/Z69ZNMQ">
+                <strong>Nigeria: </strong><br />30, Muyibat Oyefusi Crescent,
+                <br />
+                Omole Phase 1, Lagos State</a
+              >
+              <br /><br />
+              <a href="https://g.co/kgs/EXVWFB2"
+                >60, Old Owode Road, Onikolobo,<br />
+                Abeokuta, Ogun State</a
+              >
             </p>
             <p>
-              <strong>Kenya: </strong><br />Skygo Building 1st floor, <br />
-              Milolongo.
+              <a href=""
+                ><strong>Kenya: </strong><br />Skygo Building 1st floor, <br />
+                Milolongo.</a
+              >
             </p>
             <p>
-              <strong>United Kingdom: </strong><br />82a, James Carter Road,
-              <br />
-              Mildenhall, IP28 7DE.
+              <a href="https://g.co/kgs/c4bzbUr"
+                ><strong>United Kingdom: </strong><br />82a, James Carter Road,
+                <br />
+                Mildenhall, IP28 7DE.</a
+              >
             </p>
           </div>
 

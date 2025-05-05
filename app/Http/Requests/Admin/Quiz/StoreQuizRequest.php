@@ -25,6 +25,7 @@ class StoreQuizRequest extends FormRequest
             'title' => 'required|string',
             'sub_title' => 'required|string',
             'description' => 'nullable|string',
+            'why_take_quiz' => 'nullable|string',
             'questions' => 'required|array|min:1',
             'questions.*.text' => 'required|string',
             'questions.*.options' => 'required|array|size:4',

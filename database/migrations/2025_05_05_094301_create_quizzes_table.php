@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('sub_title');
             $table->string('description')->nullable();
-            $table->string('why_take_quiz')->nullable();
+            $table->text('why_take_quiz')->nullable();
             $table->boolean('status')->default(true);
             $table->timestamps();
         });

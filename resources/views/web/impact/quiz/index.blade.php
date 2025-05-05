@@ -51,11 +51,11 @@
                 </div>
             @endforeach
           </div>
-          <div class="loadmore">
+          {{-- <div class="loadmore">
             <div class="loadmorediv"></div>
             <button class="btn">Load More Quizzes</button>
             <div class="loadmorediv"></div>
-          </div>
+          </div> --}}
         </div>
       </section>
 

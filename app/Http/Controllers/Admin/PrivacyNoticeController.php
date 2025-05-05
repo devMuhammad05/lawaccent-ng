@@ -68,9 +68,9 @@ class PrivacyNoticeController extends Controller
      */
     public function destroy(string $id)
     {
-        $PrivacyNotice = PrivacyNotice::find($id);
+        $privacyNotice = PrivacyNotice::find($id);
 
-        $PrivacyNotice->delete();
+        $privacyNotice->delete();
 
         // flash()->deleted('Privacy Notice deleted successfully');
 

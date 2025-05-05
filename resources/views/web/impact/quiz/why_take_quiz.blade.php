@@ -4,13 +4,9 @@
     <section class="aboutlawaccent">
         <div class="container">
           <img src="{{ asset("web/assets/images/quizsvg.svg") }}" alt="image" />
-          <h3>How Legally Protected Is Your Business?</h3>
+          <h3>{{ $quiz->title }}</h3>
           <p>
-            Legal matters don't have to feel overwhelming. Our quizzes are
-            designed to help you understand where you <br />
-            stand, highlight blind spots, and guide you toward safer legal
-            decisions — whether you're running a business <br />
-            or managing personal affairs.
+            {{ $quiz->description }}
           </p>
           <button class="btn btn-quiz">
             <a href="{{ route('our-impact.show.quiz', $quiz) }}">Start Quiz</a>
@@ -26,38 +22,26 @@
         <div class="container">
           <div class="row whytakerow">
             <div class="col-md-4">
-              <img src="assets/images/people.svg" alt="image" />
+              <img src="{{ asset("web/assets/images/people.svg") }}" alt="image" />
             </div>
             <div class="col-md-7">
               <h3>Why take this quiz?</h3>
               <div class="whytakediv">
-                <p>
-                  Understanding legal risk is the first step toward protecting
-                  your <br />
-                  interests.
-                </p>
 
-                <p>Our short, interactive quizzes can help you:</p>
-                <ul>
-                  <li>
-                    ✅ Identify areas where your business or personal life may be
+                @if ($quiz->why_take_quiz)
+                    {!! $quiz->why_take_quiz !!}
+                @else
+                    <p>
+                        This quiz offers a quick and engaging way to assess your understanding, reinforce important concepts, and track your progress.
+                    </p>
+
+                    <p>
+                    Each quiz takes just takes a few minutes and provides immediate
                     <br />
-                    legally vulnerable
-                  </li>
-                  <li>
-                    ✅ Learn key concepts in employment law, contracts,
-                    compliance, <br />
-                    and more
-                  </li>
-                  <li>✅ Prepare for meetings with lawyers or regulators</li>
-                  <li>✅ Avoid costly legal mistakes</li>
-                </ul>
+                    feedback, with helpful insights and next steps.
+                    </p>
+                @endif
 
-                <p>
-                  Each quiz takes just takes a few minutes and provides immediate
-                  <br />
-                  feedback, with helpful insights and next steps.
-                </p>
               </div>
             </div>
           </div>
