@@ -11,7 +11,7 @@ class OurImpactController extends Controller
 {
     /**
      * Display a listing of the resource.
-    */
+     */
     public function index()
     {
         return view('web.impact.index');
@@ -53,19 +53,19 @@ class OurImpactController extends Controller
         if ($request->hasFile('transcript_doc')) {
             $path = $request->file('transcript_doc')->store('docs', 'public');
 
-            $validated['transcript_doc'] = (string) 'storage/'.$path;
+            $validated['transcript_doc'] = (string) 'storage/' . $path;
         }
 
         if ($request->hasFile('essay_doc')) {
             $path = $request->file('essay_doc')->store('docs', 'public');
 
-            $validated['essay_doc'] = (string) 'storage/'.$path;
+            $validated['essay_doc'] = (string) 'storage/' . $path;
         }
 
         if ($request->hasFile('cv_doc')) {
             $path = $request->file('cv_doc')->store('docs', 'public');
 
-            $validated['cv_doc'] = (string) 'storage/'.$path;
+            $validated['cv_doc'] = (string) 'storage/' . $path;
         }
 
         ScholarshipApplication::create($validated);
@@ -83,8 +83,39 @@ class OurImpactController extends Controller
         return view('web.impact.quiz.index', compact('quizzes'));
     }
 
-    public function whyTakeQuiz()
+    public function whyTakeQuiz(Quiz $quiz)
     {
-        return view('web.impact.quiz.why_take_quiz');
+
+        return view('web.impact.quiz.why_take_quiz', compact('quiz'));
     }
+
+    public function showQuiz(Quiz $quiz)
+    {
+        $quiz->load('questions.options');
+
+        $questionsData = [];
+
+        foreach ($quiz->questions as $question) {
+            $options = [];
+
+            foreach ($question->options as $option) {
+                $options[] = [
+                    'text' => $option->text,
+                    'correct' => (bool) $option->is_correct,
+                ];
+            }
+
+            $questionsData[] = [
+                'question' => $question->text,
+                'options' => $options,
+                'explanation' => "This is the explanation"
+            ];
+        }
+
+        // Convert to JSON for use in JavaScript
+        $questionsJson = $questionsData;
+
+        return view('web.impact.quiz.show', compact('quiz', 'questionsJson'));
+    }
+
 }

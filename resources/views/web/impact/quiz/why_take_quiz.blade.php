@@ -3,7 +3,7 @@
 
     <section class="aboutlawaccent">
         <div class="container">
-          <img src="assets/images/quizsvg.svg" alt="image" />
+          <img src="{{ asset("web/assets/images/quizsvg.svg") }}" alt="image" />
           <h3>How Legally Protected Is Your Business?</h3>
           <p>
             Legal matters don't have to feel overwhelming. Our quizzes are
@@ -13,7 +13,7 @@
             or managing personal affairs.
           </p>
           <button class="btn btn-quiz">
-            <a href="testquiz.html">Start Quiz</a>
+            <a href="{{ route('our-impact.show.quiz', $quiz) }}">Start Quiz</a>
           </button>
         </div>
       </section>

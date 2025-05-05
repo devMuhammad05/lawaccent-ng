@@ -176,38 +176,6 @@
     </section>
 
 
-    {{-- <script>
-        let questionIndex = 1;
-
-        document.getElementById('add-question').addEventListener('click', function () {
-            const wrapper = document.getElementById('questions-wrapper');
-
-            let html = `
-    <div class="question-block mb-4 border p-3 rounded" data-index="${questionIndex}">
-        <h6 class="question-title">Question ${questionIndex + 1}</h6>
-        <div class="form-group">
-            <label>Question</label>
-            <input type="text" name="questions[${questionIndex}][text]" class="form-control" placeholder="Enter question" required>
-        </div>
-
-        <div class="options-wrapper">
-            <h6>Options</h6>
-            ${[0, 1, 2, 3].map(i => `
-                <div class="form-group d-flex">
-                    <input type="text" name="questions[${questionIndex}][options][${i}][text]" class="form-control me-2" placeholder="Option text" required>
-                    <label class="me-2 mt-2">Correct?</label>
-                    <input type="checkbox" name="questions[${questionIndex}][options][${i}][is_correct]" value="1" class="form-check-input mt-2">
-                </div>
-            `).join('')}
-        </div>
-    </div>`;
-
-
-            wrapper.insertAdjacentHTML('beforeend', html);
-            questionIndex++;
-        });
-    </script> --}}
-
     <script>
         let questionIndex = 1;
 

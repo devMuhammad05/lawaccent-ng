@@ -61,6 +61,7 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
     // Route::resource('quizes');
     Route::get('quizzes', 'quizes')->name('quizes.index');
     Route::get('quizzes/{quiz}/why-take-quiz', 'whyTakeQuiz')->name('why.take.quiz');
+    Route::get('quizzes/{quiz}', 'showQuiz')->name('show.quiz');
 
 });
 
