@@ -74,4 +74,14 @@ class OurImpactController extends Controller
         return redirect()->route('our-impact.scholarship');
     }
 
+
+    public function quizes()
+    {
+        return view('web.impact.quiz.index');
+    }
+
+    public function whyTakeQuiz()
+    {
+        return view('web.impact.quiz.why_take_quiz');
+    }
 }

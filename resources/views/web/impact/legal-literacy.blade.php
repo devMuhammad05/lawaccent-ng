@@ -76,7 +76,7 @@
                     <h2>Take a Legal Quiz</h2>
                     <p>Think you know the law? Take the quiz and find out!</p>
                     <button class="btn btn-quiz">
-                        <a href="quizpage.html">Go to Quiz Page</a>
+                        <a href="{{ route('our-impact.quizes.index') }}">Go to Quiz Page</a>
                     </button>
                 </div>
                 <div class="col-md-6">
