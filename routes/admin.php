@@ -33,7 +33,7 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('case-studies', CaseStudyController::class);
     Route::resource('assessments', AssessmentController::class);
     Route::resource('newsletters', NewsletterController::class);
-    Route::resource('quiz', QuizController::class);
+    Route::resource('quizzes', QuizController::class);
     Route::resource('socials', SocialController::class);
     Route::get('contact-us/unread', [ContactUsController::class, 'unread'])->name('contact-us.unread');
     Route::resource('contact-us', ContactUsController::class)->except('post');
