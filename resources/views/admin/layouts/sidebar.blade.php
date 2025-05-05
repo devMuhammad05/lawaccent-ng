@@ -149,7 +149,7 @@
                     <span>Blogs</span>
                 </a>
             </li>
-            <li class="{{ $currentRoute === 'blogs' ? 'active' : '' }}">
+            <li class="{{ $currentRoute === 'quizzes' ? 'active' : '' }}">
                 <a href="{{ route('admin.quizzes.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Quizzes</span>

@@ -57,15 +57,22 @@ class NewslettersDataTable extends DataTable
                     ->minifiedAjax()
                     ->dom('Bfrtip') // Add this line for showing the buttons
                     ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+                    ->selectStyleSingle();
+                    // ->buttons([
+                    //     // Button::make('excel'),
+                    //     Button::make('csv'),
+                    //     Button::make('reload')
+                    // ]);
+
+                    // ->buttons([
+                    //     Button::make('csv')
+                    //         ->className('btn btn-primary btn-sm mr-2'),
+                    //     Button::make('reload')
+                    //         ->className('btn btn-outline-secondary btn-sm'),
+                    // ]);
+
+
+
     }
 
     /**
@@ -78,8 +85,8 @@ class NewslettersDataTable extends DataTable
             Column::make('email'),
             Column::make('created_at')->title('Signup Date'),
             Column::computed('action')
-                  ->exportable(true) 
-                  ->printable(false)
+                  ->exportable(flag: true)
+                  ->printable(true)
                   ->width(100)
                   ->addClass('text-center'),
         ];
