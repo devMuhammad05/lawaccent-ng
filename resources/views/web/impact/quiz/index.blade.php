@@ -12,7 +12,7 @@
             or managing personal affairs.
           </p>
           <button class="btn btn-quiz">
-            <a href="l">Go To Quizzes</a>
+            <a href="">Go To Quizzes</a>
           </button>
         </div>
       </section>

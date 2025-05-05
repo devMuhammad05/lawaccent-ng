@@ -78,7 +78,7 @@ class OurImpactController extends Controller
 
     public function quizes()
     {
-        $quizzes = Quiz::active()->withCount('questions')->get();
+        $quizzes = Quiz::active()->latest()->withCount('questions')->get();
 
         return view('web.impact.quiz.index', compact('quizzes'));
     }
@@ -91,7 +91,6 @@ class OurImpactController extends Controller
 
     public function showQuiz(Quiz $quiz)
     {
-        $quiz->load('questions.options');
 
         $questionsData = [];
 
