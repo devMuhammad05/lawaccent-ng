@@ -49,6 +49,7 @@ class QuizController extends Controller
             foreach ($data['questions'] as $qIndex => $questionData) {
                 $question = $quiz->questions()->create([
                     'text' => $questionData['text'],
+                    'explanation' => $questionData['explanation']
                 ]);
 
                 foreach ($questionData['options'] as $i => $optionData) {
@@ -116,6 +117,7 @@ class QuizController extends Controller
         foreach ($validated['questions'] as $qIndex => $questionData) {
             $question = $quiz->questions()->create([
                 'text' => $questionData['text'],
+                'explanation' => $questionData['explanation']
             ]);
 
             foreach ($questionData['options'] as $oIndex => $option) {

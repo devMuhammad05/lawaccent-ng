@@ -107,7 +107,7 @@ class OurImpactController extends Controller
             $questionsData[] = [
                 'question' => $question->text,
                 'options' => $options,
-                'explanation' => "This is the explanation"
+                'explanation' => $question->explanation
             ];
         }
 
