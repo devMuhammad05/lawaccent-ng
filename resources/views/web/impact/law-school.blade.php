@@ -5,7 +5,7 @@
           <div class="row dataprotectionrow">
             <div class="col-md-6 dataprotectiontext">
               <div>
-                <img src="assets/images/social.svg" alt="image" />
+                <img src="{{ asset("web/assets/images/social.svg") }}" alt="image" />
                 <h3>
                   Annual Law School <br />
                   Scholarship Programme
@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="col-md-6 smillingman">
-              <img src="assets/images/ladyscholar.webp" alt="image" />
+              <img src="{{ asset("web/assets/images/ladyscholar.webp") }}" alt="image" />
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
               </ol>
             </div>
             <div class="col-md-5">
-              <img src="assets/images/malegraduate.webp" alt="image" />
+              <img src="{{ asset("web/assets/images/malegraduate.webp") }}" alt="image" />
             </div>
             <div class="criteria">
               <h4>Eligibility Criteria</h4>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="col-md-5">
-              <img src="assets/images/femalegraduate.webp" alt="image" />
+              <img src="{{ asset("web/assets/images/femalegraduate.webp") }}" alt="image" />
             </div>
             <div class="col-md-5 laww">
               <ol>
