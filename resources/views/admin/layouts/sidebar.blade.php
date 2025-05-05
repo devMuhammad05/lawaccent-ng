@@ -257,7 +257,7 @@
                     <i class="fas fa-columns"></i>
                     <span>
                         Consultations
-                        @if ($unreadMessagesCount > 0)
+                        @if ($unreadConsultationCount > 0)
                             <button type="button" class="btn btn-danger">
                                 !
                             </button>
@@ -268,8 +268,8 @@
                     <li>
                         <a class="nav-link" href="{{ route('admin.consultations.unread') }}">
                             Unread Consultations
-                            @if ($unreadMessagesCount > 0)
-                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @if ($unreadConsultationCount > 0)
+                                <span class="counter">{{ $unreadConsultationCount }}</span>
                             @endif
                         </a>
                     </li>

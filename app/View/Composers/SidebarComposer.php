@@ -14,6 +14,7 @@ class SidebarComposer
             'currentRoute' => $currentRoute,
             'unreadMessagesCount' => \App\Models\ContactUs::unread()->count(),
             'unreadApplicationCount' => \App\Models\ScholarshipApplication::unread()->count(),
+            'unreadConsultationCount' => \App\Models\Consultation::unread()->count(),
         ]);
 
     }

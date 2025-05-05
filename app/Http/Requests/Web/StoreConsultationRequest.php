@@ -21,11 +21,13 @@ class StoreConsultationRequest extends FormRequest
      */
     public function rules(): array
     {
+
+
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'phone_number' => 'required|string|max:20',
-            'type' => 'required|in:individual,corporate',
+            'phone_number' => 'required|string|max:15',
+            'type' => 'required|in:Virtual,In Person',
             'legal_concerns' => 'required',
             'date' => 'required|date|after_or_equal:today',
             'additional_info' => 'nullable|string|max:1000',
