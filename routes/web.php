@@ -26,7 +26,7 @@ Route::get('clear', function () {
 
 
 
-Route::get('home', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('about-us', [AboutUsController::class, 'index'])->name('about-us');
 Route::prefix('practice-areas')->name('practice-areas.')->controller(PracticeAreaController::class)->group(function () {
     Route::get('/', 'index')->name('index');
@@ -58,7 +58,6 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
     Route::get('law-school-scholarship-programme', 'lawSchool')->name('law.school.scholarship');
     Route::get('apply-for-scholarship', 'scholarship')->name('scholarship');
     Route::post('apply-for-scholarship', 'applyScholarship')->name('scholarship.store');
-    // Route::resource('quizes');
     Route::get('quizzes', 'quizes')->name('quizes.index');
     Route::get('quizzes/{quiz}/why-take-quiz', 'whyTakeQuiz')->name('why.take.quiz');
     Route::get('quizzes/{quiz}', 'showQuiz')->name('show.quiz');

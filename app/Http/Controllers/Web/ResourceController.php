@@ -51,7 +51,7 @@ class ResourceController extends Controller
 
     public function caseStudies()
     {
-        return view('web.resource.case-studies');
+        return view('web.resource.case-study.index');
     }
 
     public function showCaseStudy(string $slug)

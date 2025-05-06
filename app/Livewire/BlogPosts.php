@@ -19,7 +19,7 @@ class BlogPosts extends Component
     public function mount()
     {
         $this->blogs = collect(); // Initialize as empty collection
-        $this->totalBlogs = Blog::all();
+        // $this->totalBlogs = Blog::active()->count();
         $this->categories = BlogCategory::all();
         $this->loadBlogs();
     }
