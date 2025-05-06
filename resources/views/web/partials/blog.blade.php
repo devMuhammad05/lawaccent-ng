@@ -10,20 +10,6 @@
         }
     }"
     x-init="init()"
-
-    {{-- x-data="{
-        init() {
-            const blogCount = {{ $totalBlogs }};
-            window.addEventListener('scroll', () => {
-                if (blogCount > 3) {
-                    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 1000)) {
-                        @this.call('loadMore');
-                    }
-                }
-            });
-        }
-    }" --}}
-
 >
 
 <style>

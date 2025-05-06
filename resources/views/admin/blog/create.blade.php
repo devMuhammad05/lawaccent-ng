@@ -45,26 +45,18 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Short Body</label>
                         <textarea name="short_body" style="width: 100%; height: 200px;">
                             {{ old('short_body') }}
                         </textarea>
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
                         <label>Body</label>
                         <textarea name="body" style="width: 100%; height: 200px;">
                             {{ old('body') }}
                         </textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select type='text' class='form-control' name='status'>
-                            <option value="1">Active</option>
-                            <option value="0">Inactive</option>
-                        </select>
                     </div>
 
                      <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>

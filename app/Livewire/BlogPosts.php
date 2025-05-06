@@ -13,7 +13,7 @@ class BlogPosts extends Component
     public $categories;
     public $page = 1;
     public $perPage = 3;
-    public $hasMorePages = true; //track if more pages are available
+    public $hasMorePages = true; // track if more pages are available
 
     public function mount()
     {
@@ -30,7 +30,7 @@ class BlogPosts extends Component
 
     public function loadBlogs()
     {
-        $query = Blog::with('category')->select('id', 'title', 'sub_heading', 'thumbnail', 'slug', 'category_id');
+        $query = Blog::active()->with('category')->select('id', 'title', 'sub_heading','thumbnail', 'slug');
 
         if ($this->selectedCategory !== 'all') {
             $query->whereHas('category', function ($q) {
@@ -73,6 +73,7 @@ class BlogPosts extends Component
     {
         return view('web.partials.blog', [
             'blogs' => $this->blogs,
+            'hasMorePages' => $this->hasMorePages,
         ]);
     }
 }
