@@ -54,15 +54,19 @@
         </div>
     </section>
 
-    <section class="recent-blog pb-5">
-        <div class="container">
-            <h4 id="blogHeading">Recent Blog Posts</h4>
 
-            <div id="blogContentWrapper">
-                @include('web.partials.blog-card', ['blogs' => $recentBlogs])
+    @if (count($recentBlogs))
+        <section class="recent-blog pb-5">
+            <div class="container">
+                <h4 id="blogHeading">Recent Blog Posts</h4>
+
+                <div id="blogContentWrapper">
+                    @include('web.partials.blog-card', ['blogs' => $recentBlogs])
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    @endif
+
 
     <livewire:contact-us-form />
 

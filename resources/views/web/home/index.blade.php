@@ -201,7 +201,7 @@
                     effective resolutions.
                 </p>
                 <button class="btn btn-case-study">
-                    <a href="{{ route(name: 'resources.case.studies') }}">Explore All Case Studies</a>
+                    <a href="{{ route('resources.case.studies') }}">Explore All Case Studies</a>
                 </button>
             </div>
             <div class="scroll-container">

@@ -32,7 +32,7 @@ class CaseStudiesDataTable extends DataTable
                 return $query->category->name;
             })
             ->addColumn('thumbnail', function ($query) {
-                return "<img src='".asset($query->thumbnail)."' width='90'>";
+                return "<img src='".asset($query->thumbnail)."' width='90' height='90'>";
             })->rawColumns(['thumbnail', 'category', 'action'])
             ->setRowId('id');
     }
