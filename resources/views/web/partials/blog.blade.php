@@ -10,26 +10,21 @@
         }
     }"
     x-init="init()"
+
+    {{-- x-data="{
+        init() {
+            const blogCount = {{ $totalBlogs }};
+            window.addEventListener('scroll', () => {
+                if (blogCount > {{ $perPage }}) {
+                    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 1000)) {
+                        @this.call('loadMore');
+                    }
+                }
+            });
+        }
+    }" --}}
+
 >
-
-<style>
-    .loader {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #054d1b;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        animation: spin 0.8s linear infinite;
-        margin: 0 auto;
-        transform: scale(1.1);
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-</style>
-
 
 {{-- blog: {{ $totalBlogs }} --}}
 

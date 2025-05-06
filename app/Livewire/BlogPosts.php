@@ -10,6 +10,7 @@ class BlogPosts extends Component
 {
     public $selectedCategory = 'all';
     public Collection $blogs;
+    public $totalBlogs;
     public $categories;
     public $page = 1;
     public $perPage = 3;
@@ -18,6 +19,7 @@ class BlogPosts extends Component
     public function mount()
     {
         $this->blogs = collect(); // Initialize as empty collection
+        $this->totalBlogs = Blog::all();
         $this->categories = BlogCategory::all();
         $this->loadBlogs();
     }
