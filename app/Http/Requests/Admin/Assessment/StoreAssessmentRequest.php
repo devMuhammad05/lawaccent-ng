@@ -1,12 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\Blog;
+namespace App\Http\Requests\Admin\Assessment;
 
-use App\Rules\MaxWords;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreBlogRequest extends FormRequest
+class StoreAssessmentRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +22,15 @@ class StoreBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'category_id' => ['required', 'exists:blog_categories,id'],
-            'title' => ['required', 'string'],
-            'sub_heading' => ['required', 'string'],
+            'title' => 'required|string',
+            'description' => 'required|string',
             'thumbnail' => ['required', 'image'],
-            'body' => ['required', 'string'],
+
+            'questions' => 'required|array|min:1',
+            'questions.*.text' => 'required|string',
+            'questions.*.options' => 'required|array|size:2',
+            'questions.*.options.*.text' => 'required|string',
+            'questions.*.correct_option' => 'required|in:0,1,',
         ];
     }
 }

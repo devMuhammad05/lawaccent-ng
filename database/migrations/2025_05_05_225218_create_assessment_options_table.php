@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('assessment_options', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('assessment_question_id')->constrained()->cascadeOnDelete();
+            $table->string('text');
+            $table->boolean('is_correct')->default(false);
             $table->timestamps();
         });
     }

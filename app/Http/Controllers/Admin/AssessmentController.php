@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Assessment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\DataTables\AssessmentsDataTable;
+use App\Http\Requests\Admin\Assessment\StoreAssessmentRequest;
 
 class AssessmentController extends Controller
 {
@@ -27,9 +30,46 @@ class AssessmentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreAssessmentRequest $request)
     {
-        //
+        $data = $request->validated();
+
+        DB::beginTransaction();
+
+        try {
+
+            if ($request->hasFile('thumbnail')) {
+                $imagePath = $request->file('thumbnail')->store('assessment', 'public');
+
+                $data['thumbnail'] = (string) 'storage/'.$imagePath;
+            }
+
+            // Create the assessment
+            $assessment = Assessment::create([
+                'title' => $data['title'],
+                'description' => $data['description'],
+                'thumbnail' => $data['thumbnail']
+            ]);
+
+            foreach ($data['questions'] as $qIndex => $questionData) {
+                $question = $assessment->questions()->create([
+                    'text' => $questionData['text'],
+                ]);
+
+                foreach ($questionData['options'] as $i => $optionData) {
+                    $question->options()->create([
+                        'text' => $optionData['text'],
+                        'is_correct' => ($i == $questionData['correct_option']),
+                    ]);
+                }
+            }
+            DB::commit();
+
+            return redirect()->route('admin.assessments.index')->with('success', 'Assessment created successfully!');
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors(['error' => 'Something went wrong: ' . $e->getMessage()]);
+        }
     }
 
     /**

@@ -22,7 +22,17 @@ class AssessmentsDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'assessments.action')
+            ->addIndexColumn()
+            ->addColumn('action', function ($query) {
+                $edit = "<a href='" . route('admin.assessments.edit', $query->id) . "' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='" . route('admin.assessments.destroy', $query->id) . "' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
+
+                return $edit . $delete;
+
+            })
+            ->addColumn('thumbnail', function ($query) {
+                return "<img src='" . asset($query->thumbnail) . "' width='90' height='90'>";
+            })->rawColumns(['thumbnail', 'action'])
             ->setRowId('id');
     }
 
@@ -42,19 +52,11 @@ class AssessmentsDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('assessments-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+            ->setTableId('assessments-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            ->orderBy(1)
+            ->selectStyleSingle();
     }
 
     /**
@@ -63,15 +65,15 @@ class AssessmentsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(60),
             Column::make('thumbnail'),
             Column::make('title'),
             Column::make('description'),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(100)
-                  ->addClass('text-center'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(100)
+                ->addClass('text-center'),
         ];
     }
 

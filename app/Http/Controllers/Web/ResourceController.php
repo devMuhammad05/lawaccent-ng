@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\CaseStudy;
+use App\Models\Assessment;
 use App\Models\BlogCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -83,6 +84,8 @@ class ResourceController extends Controller
 
     public function assessmentTool()
     {
-        return view('web.resource.assessment-tool');
+        $assessments = Assessment::active()->get();
+
+        return view('web.resource.assessment-tool', compact('assessments'));
     }
 }

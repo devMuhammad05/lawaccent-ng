@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('thumbnail');
             $table->string('description');
-            $table->json('question_set');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }

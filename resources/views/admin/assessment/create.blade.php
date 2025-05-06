@@ -4,18 +4,19 @@
         <div class="section-header">
             <h1>Assessments</h1>
         </div>
-        <div class="card card-primary">
-            <div class="card-header">
-                <h4>Create Assessment</h4>
 
-            </div>
-            <div class="card-body">
-                <form enctype="multipart/form-data" action="{{ route('admin.assessments.store') }}" method="POST"
-                    enctype="multipart/form-data">
-                    @csrf
+        <form action="{{ route('admin.assessments.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            <!-- Assessment Info -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h4>Create Assessment</h4>
+                </div>
+                <div class="card-body">
 
                     <div class="form-group">
-                        <label>Title</label>
+                        <label>Assessment Title</label>
                         <input type='text' class='form-control' placeholder='Enter assessment title' name='title'
                             value='{{ old('title') }}'>
                     </div>
@@ -23,7 +24,7 @@
                     <div class="form-group">
                         <label>Description</label>
                         <input type='text' class='form-control' placeholder='Enter description' name='description'
-                            value='{{ old('description') }}'>
+                            value='{{ old('description') }}'  required>
                     </div>
 
                     <div class="form-group">
@@ -34,25 +35,86 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select type='text' class='form-control' name='status'>
-                            <option value="1">Active</option>
-                            <option value="0">Inactive</option>
-                        </select>
+                    <hr>
+
+                    <!-- Questions -->
+                    <div id="questions-wrapper">
+                        <h5>Questions</h5>
+                        <div class="question-block mb-4 border p-3 rounded" data-index="0">
+                            <h6 class="question-title">Question 1</h6>
+
+                            <div class="form-group">
+                                <label>Question</label>
+                                <input type="text" name="questions[0][text]" class="form-control"
+                                    placeholder="Enter question" required>
+                            </div>
+
+                            <div class="options-wrapper">
+                                <h6>Options</h6>
+                                @for ($i = 0; $i < 2; $i++)
+                                    <div class="form-group d-flex">
+                                        <input type="text" name="questions[0][options][{{ $i }}][text]"
+                                            class="form-control me-2" placeholder="Option text" required>
+                                        <label class="me-2 mt-2">Correct?</label>
+                                        <input type="radio" name="questions[0][correct_option]" value="{{ $i }}"
+                                            class="form-check-input mt-2" required>
+                                    </div>
+                                @endfor
+{{--
+                                <div class="form-group">
+                                    <label>Answer Explanation</label>
+                                    <input type="text" name="questions[0][explanation]" class="form-control" placeholder="Enter explanation" required>
+
+                                </div> --}}
+                            </div>
+                        </div>
                     </div>
 
-                     <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
-                </form>
+                    <button type="button" id="add-question" class="btn mb-4 text-white"
+                        style="background-color: rgb(223, 149, 45)">+ Add Question</button>
+
+                    <br>
+
+                    <button type="submit" class="btn btn-primary py-2 px-3">Create Assessment</button>
+                </div>
             </div>
-        </div>
+        </form>
     </section>
 @endsection
 
 @push('scripts')
-    <script type="text/javascript">
-        bkLib.onDomLoaded(function() {
-            nicEditors.allTextAreas()
-        });
-    </script>
+<script>
+    let questionIndex = 1;
+
+    document.getElementById('add-question').addEventListener('click', function () {
+        const wrapper = document.getElementById('questions-wrapper');
+
+        let html = `
+            <div class="question-block mb-4 border p-3 rounded" data-index="${questionIndex}">
+                <h6 class="question-title">Question ${questionIndex + 1}</h6>
+
+                <div class="form-group">
+                    <label>Question</label>
+                    <input type="text" name="questions[${questionIndex}][text]" class="form-control" placeholder="Enter question" required>
+                </div>
+
+                <div class="options-wrapper">
+                    <h6>Options</h6>
+                    ${[0, 1].map(i => `
+                        <div class="form-group d-flex">
+                            <input type="text" name="questions[${questionIndex}][options][${i}][text]" class="form-control me-2" placeholder="Option text" required>
+                            <label class="me-2 mt-2">Correct?</label>
+                            <input type="radio" name="questions[${questionIndex}][correct_option]" value="${i}" class="form-check-input mt-2" required>
+                        </div>
+                    `).join('')}
+                </div>
+
+
+            </div>
+        `;
+
+        wrapper.insertAdjacentHTML('beforeend', html);
+        questionIndex++;
+    });
+</script>
 @endpush

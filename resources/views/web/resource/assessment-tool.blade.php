@@ -42,21 +42,22 @@
           </div>
           <h4>Assessments</h4>
           <div class="row assessmentrow">
+
+            @foreach ($assessments as $assessment)
             <div class="col-md-4">
               <div class="assessmentcard">
                 <div class="assessmentimage-wrapper">
                   <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
+                  {{-- <img src="{{ asset($assessment->thumbnail) }}" alt="" /> --}}
                   <div class="overlay">
                     <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
-                    <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
+                    <p>{{ $assessment->title }}</p>
                   </div>
                 </div>
                 <div class="assesmentcard-body">
-                  <h6>How Legally Sound Are Your Contracts?</h6>
+                  <h6>{{ $assessment->title }}</h6>
                   <p>
-                    Contracts protect your interests — if they are done right. This
-                    checklist walks you through the key elements of strong,
-                    enforceable agreements.
+                    {{ $assessment->description }}
                   </p>
                   <button class="btn">
                     <a href="testassessment.html">Take Assessment</a>
@@ -64,124 +65,20 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="assessmentcard">
-                <div class="assessmentimage-wrapper">
-                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                  <div class="overlay">
-                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
-                    <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
-                  </div>
-                </div>
-                <div class="assesmentcard-body">
-                  <h6>How Legally Sound Are Your Contracts?</h6>
-                  <p>
-                    Contracts protect your interests — if they are done right. This
-                    checklist walks you through the key elements of strong,
-                    enforceable agreements.
-                  </p>
-                  <button class="btn">
-                    <a href="testassessment.html">Take Assessment</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="assessmentcard">
-                <div class="assessmentimage-wrapper">
-                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                  <div class="overlay">
-                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
-                    <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
-                  </div>
-                </div>
-                <div class="assesmentcard-body">
-                  <h6>How Legally Sound Are Your Contracts?</h6>
-                  <p>
-                    Contracts protect your interests — if they are done right. This
-                    checklist walks you through the key elements of strong,
-                    enforceable agreements.
-                  </p>
-                  <button class="btn">
-                    <a href="testassessment.html">Take Assessment</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="assessmentcard">
-                <div class="assessmentimage-wrapper">
-                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                  <div class="overlay">
-                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
-                    <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
-                  </div>
-                </div>
-                <div class="assesmentcard-body">
-                  <h6>How Legally Sound Are Your Contracts?</h6>
-                  <p>
-                    Contracts protect your interests — if they are done right. This
-                    checklist walks you through the key elements of strong,
-                    enforceable agreements.
-                  </p>
-                  <button class="btn">
-                    <a href="testassessment.html">Take Assessment</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="assessmentcard">
-                <div class="assessmentimage-wrapper">
-                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                  <div class="overlay">
-                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
-                    <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
-                  </div>
-                </div>
-                <div class="assesmentcard-body">
-                  <h6>How Legally Sound Are Your Contracts?</h6>
-                  <p>
-                    Contracts protect your interests — if they are done right. This
-                    checklist walks you through the key elements of strong,
-                    enforceable agreements.
-                  </p>
-                  <button class="btn">
-                    <a href="testassessment.html">Take Assessment</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="assessmentcard">
-                <div class="assessmentimage-wrapper">
-                  <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                  <div class="overlay">
-                    <img src="{{ asset("web/assets/images/overlayimg.svg") }}" alt="" />
-                    <p>HOW LEGALLY SOUND ARE YOUR CONTRACTS?</p>
-                  </div>
-                </div>
-                <div class="assesmentcard-body">
-                  <h6>How Legally Sound Are Your Contracts?</h6>
-                  <p>
-                    Contracts protect your interests — if they are done right. This
-                    checklist walks you through the key elements of strong,
-                    enforceable agreements.
-                  </p>
-                  <button class="btn">
-                    <a href="testassessment.html">Take Assessment</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+            @endforeach
+
           </div>
-          <div class="loadmore">
+          {{-- <div class="loadmore">
             <div class="loadmorediv"></div>
             <button class="btn">Load More Assessment</button>
             <div class="loadmorediv"></div>
-          </div>
+          </div> --}}
+
+        <hr>
+
         </div>
       </section>
+
 
       <section class="legalchecklist">
         <div class="container">
@@ -251,11 +148,11 @@
               </div>
             </div>
           </div>
-          <div class="loadmore">
+          {{-- <div class="loadmore">
             <div class="loadmorediv"></div>
             <button class="btn">Load More Checklists</button>
             <div class="loadmorediv"></div>
-          </div>
+          </div> --}}
         </div>
       </section>
 
