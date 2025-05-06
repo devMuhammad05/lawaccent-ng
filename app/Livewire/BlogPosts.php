@@ -12,8 +12,8 @@ class BlogPosts extends Component
     public Collection $blogs;
     public $categories;
     public $page = 1;
-    public $perPage = 3; // Increased to show more posts per page (typically 3 or 6 for a grid layout)
-    public $hasMorePages = true; // Flag to track if more pages are available
+    public $perPage = 3;
+    public $hasMorePages = true; //track if more pages are available
 
     public function mount()
     {
@@ -30,7 +30,7 @@ class BlogPosts extends Component
 
     public function loadBlogs()
     {
-        $query = Blog::with('category');
+        $query = Blog::with('category')->select('id', 'title', 'sub_heading', 'thumbnail', 'slug', 'category_id');
 
         if ($this->selectedCategory !== 'all') {
             $query->whereHas('category', function ($q) {
@@ -73,7 +73,6 @@ class BlogPosts extends Component
     {
         return view('web.partials.blog', [
             'blogs' => $this->blogs,
-            'hasMorePages' => $this->hasMorePages,
         ]);
     }
-} 
+}

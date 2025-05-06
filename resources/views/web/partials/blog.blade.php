@@ -10,6 +10,20 @@
         }
     }"
     x-init="init()"
+
+    {{-- x-data="{
+        init() {
+            const blogCount = {{ $totalBlogs }};
+            window.addEventListener('scroll', () => {
+                if (blogCount > 3) {
+                    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 1000)) {
+                        @this.call('loadMore');
+                    }
+                }
+            });
+        }
+    }" --}}
+
 >
 
 <style>
@@ -29,6 +43,9 @@
         100% { transform: rotate(360deg); }
     }
 </style>
+
+
+{{-- blog: {{ $totalBlogs }} --}}
 
 <section class="blogpostnav">
     <div class="blogpostcontainer">
@@ -67,15 +84,16 @@
         @include('web.partials.blog-card')
 
         <!-- Only show the loader when actually loading -->
-        <div class="row justify-content-center">
-            <div class="col-auto">
+        <div class="row justify-content-center" >
+            <div wire:loading class="col-auto">
                 <!-- Loading spinner that shows only when loadMore is being executed -->
-                <div wire:loading.block wire:target="loadMore" class="d-flex flex-column align-items-center justify-content-center my-5">
+                <div class="d-flex flex-column align-items-center justify-content-center my-5">
                     <div class="loader"></div>
                     <p class="mt-2 text-muted">Loading more posts...</p>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 

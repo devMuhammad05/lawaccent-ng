@@ -21,9 +21,7 @@ class ResourceController extends Controller
 
     public function blogs()
     {
-        $blogs = Blog::latest()->with('category')->paginate(6);
-        $blogCategories = BlogCategory::all();
-        return view('web.resource.blog.index', compact('blogs', 'blogCategories'));
+        return view('web.resource.blog.index');
     }
 
     public function showBlog(string $slug)
