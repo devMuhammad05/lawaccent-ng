@@ -11,9 +11,12 @@
             decisions — whether you're running a business <br />
             or managing personal affairs.
           </p>
+
+          @if (count($quizzes))
           <button class="btn btn-quiz">
-            <a href="">Go To Quizzes</a>
+            <a href="#quizpage">Go To Quizzes</a>
           </button>
+          @endif
         </div>
       </section>
 
@@ -25,12 +28,22 @@
         <div class="container">
           <div class="quizzes-text">
             <h5>Quizzes</h5>
+
+            @if (count($quizzes))
             <div class="quizzes-wrapper">
               <input type="email" placeholder="Enter a Keyword" required />
               <button type="submit">Search Quizzes</button>
             </div>
+            @else
+
+            <br>
+            <p class="text-secondary">No quiz at the moment check back later!</p>
+            @endif
+
           </div>
-          <div class="row quizzesrow">
+
+
+          <div class="row quizzesrow" id="quizpage">
             @foreach ($quizzes as $quiz)
                 <div class="col-md-3">
                 <div class="quizzesrowcard">

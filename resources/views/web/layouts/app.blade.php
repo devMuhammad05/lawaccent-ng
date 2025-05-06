@@ -81,14 +81,19 @@
           <div class="footer-section footer-contact">
             <h3>Contact</h3>
             <p><a href="mailto:info@lawaccent.com">info@lawaccent.com</a></p>
-            <p><a href="#">www.lawaccent.com</a></p>
+            <p><a href="https://www.lawaccent.com">www.lawaccent.com</a></p>
             <p class="footerp">
-              +2347040092801<br /><br /><span>+2347040092804</span
-              ><br /><br /><span>+254 726 707693</span><br /><br /><span
-                >+44 7909 339154</span
+              <a href="tel:+2347040092801">+2347040092801</a><br /><br /><a
+                href="tel:+2347040092804"
+                ><span>+2347040092804</span></a
+              ><br /><br /><a href="tel:++254726707693"
+                ><span>+254726707693</span></a
+              ><br /><br /><a href="tel:+447909339154"
+                ><span>+447909339154</span></a
               >
             </p>
           </div>
+
 
           <div class="footer-section working-hours">
             <h3>Working Hours</h3>

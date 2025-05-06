@@ -60,7 +60,7 @@
                     {{ $assessment->description }}
                   </p>
                   <button class="btn">
-                    <a href="testassessment.html">Take Assessment</a>
+                    <a href="{{ route('resources.show.assessment', $assessment) }}">Take Assessment</a>
                   </button>
                 </div>
               </div>
@@ -78,7 +78,6 @@
 
         </div>
       </section>
-
 
       <section class="legalchecklist">
         <div class="container">

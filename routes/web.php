@@ -50,6 +50,7 @@ Route::prefix('resources')->name('resources.')->controller(ResourceController::c
     Route::get('doing-business-in-nigeria', 'business')->name('business.nigeria');
     Route::get('cross-border-legal-services', 'legalServices')->name('legal.services');
     Route::get('legal-checklist-and-assessment-tool', 'assessmentTool')->name('assessment.tool');
+    Route::get('legal-checklist-and-assessment-tool{assessment}', 'showAssessment')->name('show.assessment');
 });
 
 Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController::class)->group(function () {

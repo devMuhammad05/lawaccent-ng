@@ -111,7 +111,6 @@ class OurImpactController extends Controller
             ];
         }
 
-        // Convert to JSON for use in JavaScript
         $questionsJson = $questionsData;
 
         return view('web.impact.quiz.show', compact('quiz', 'questionsJson'));

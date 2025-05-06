@@ -88,4 +88,33 @@ class ResourceController extends Controller
 
         return view('web.resource.assessment-tool', compact('assessments'));
     }
+
+    public function showAssessment(Assessment $assessment)
+    {
+        if (! $assessment) {
+            abort(404);
+        }
+
+        // $questionsData = [];
+
+        // foreach ($assessment->questions as $question) {
+        //     $options = [];
+
+        //     foreach ($question->options as $option) {
+        //         $options[] = [
+        //             'text' => $option->text,
+        //             'correct' => (bool) $option->is_correct,
+        //         ];
+        //     }
+
+        //     $questionsData[] = [
+        //         'question' => $question->text,
+        //         'options' => $options,
+        //     ];
+        // }
+
+        // $questionsJson = $questionsData;
+
+        return view('web.resource.assessment.show', compact('assessment'));
+    }
 }

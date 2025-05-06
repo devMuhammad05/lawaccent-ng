@@ -102,7 +102,7 @@
           <div class="row scholarshipapplyrow">
             <div class="col-md-3">
               <div class="scholarshipapplyrowcard">
-                <img src="assets/images/01svg.svg" alt="image" />
+                <img src="{{ asset("web/assets/images/01svg.svg") }}" alt="image" />
                 <p>
                   <b
                     >Fill out the online <br class="br" />
@@ -116,7 +116,7 @@
             </div>
             <div class="col-md-3">
               <div class="scholarshipapplyrowcard">
-                <img src="assets/images/02svg.svg" alt="image" />
+                <img src="{{ asset("web/assets/images/02svg.svg") }}" alt="image" />
                 <p>
                   <b
                     >Submit supporting <br class="br" />
@@ -128,7 +128,7 @@
             </div>
             <div class="col-md-3">
               <div class="scholarshipapplyrowcard">
-                <img src="assets/images/03svg.svg" alt="image" />
+                <img src="{{ asset("web/assets/images/03svg.svg") }}" alt="image" />
                 <p>
                   <b
                     >Shortlisted candidates <br class="br" />
@@ -140,7 +140,7 @@
             </div>
             <div class="col-md-3">
               <div class="scholarshipapplyrowcard">
-                <img src="assets/images/04svg.svg" alt="image" />
+                <img src="{{ asset("web/assets/images/04svg.svg") }}" alt="image" />
                 <p>
                   <b
                     >Final selection and <br class="br" />
