@@ -18,7 +18,6 @@ class SocialFactory extends Factory
     {
         return [
             'linkedin_link' => 'https://linkedin.com/company/law-accent-uk',
-            'facebook_link' => 'https://www.youtube.com/@LawAccentUK',
             'x_link' => 'https://x.com/accent_uk57423',
         ];
     }

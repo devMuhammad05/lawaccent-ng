@@ -79,7 +79,10 @@ class ResourceController extends Controller
 
     public function legalServices()
     {
-        return view('web.resource.legal-services');
+        $caseStudies = CaseStudy::active()->latest()->take(6)->get();
+        $blogs = Blog::active()->latest()->take(6)->get();
+        $faqs = Faq::active()->get();
+        return view('web.resource.legal-services', compact('caseStudies', 'blogs', 'faqs'));
     }
 
     public function assessmentTool()
