@@ -30,11 +30,7 @@ class FaqsDataTable extends DataTable
                 $status = $query->status == 1 ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-danger">InActive</span>';
 
                 return $status;
-            })->addColumn('show_on_home_page', function ($query) {
-                $show_on_home_page = $query->show_on_home_page == 1 ? '<span class="badge badge-primary">Yes</span>' : '<span class="badge badge-danger">No</span>';
-
-                return $show_on_home_page;
-            })->rawColumns(['action', 'status', 'show_on_home_page'])
+            })->rawColumns(['action', 'status'])
             ->setRowId('id');
     }
 
@@ -74,10 +70,9 @@ class FaqsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(5),
             Column::make('question'),
-            // Column::make('answer'),
-            Column::make('show_on_home_page'),
+            Column::make('answer'),
             Column::make('status'),
             Column::computed('action')
                 ->exportable(false)

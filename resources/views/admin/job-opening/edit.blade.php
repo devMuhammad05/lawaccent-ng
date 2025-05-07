@@ -26,14 +26,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Show at home page</label>
-                        <select type='text' class='form-control' name='show_on_home_page'>
-                            <option value="1" {{ $faq->show_on_home_page === 1 ? 'selected' : '' }}>Yes</option>
-                            <option value="0" {{ $faq->show_on_home_page === 0 ? 'selected' : '' }}>No</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
                         <label>Status</label>
                         <select type='text' class='form-control' name='status'>
                             <option value="1" {{ $faq->status === 1 ? 'selected' : '' }}>Active</option>

@@ -26,22 +26,6 @@
                             value='{{ old('answer') }}'>
                     </div>
 
-                    <div class="form-group">
-                        <label>Show at home page</label>
-                        <select type='text' class='form-control' name='show_on_home_page'>
-                            <option value="1">Yes</option>
-                            <option value="0">No</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Status</label>
-                        <select type='text' class='form-control' name='status'>
-                            <option value="1">Active</option>
-                            <option value="0">Inactive</option>
-                        </select>
-                    </div>
-
                      <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
                 </form>
             </div>

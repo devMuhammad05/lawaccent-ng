@@ -26,8 +26,6 @@ class StoreFaqRequest extends FormRequest
         return [
             'question' => ['required', 'string', new MaxWords(30)],
             'answer' => ['required', 'string', new MaxWords(200)],
-            'show_on_home_page' => ['required', 'string', Rule::in([1, 0])],
-            'status' => ['required', 'string', Rule::in([1, 0])],
         ];
     }
 }

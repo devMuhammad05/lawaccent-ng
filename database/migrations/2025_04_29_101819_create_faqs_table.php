@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('question');
             $table->longText('answer');
-            $table->boolean('show_on_home_page');
             $table->boolean('status')->default(true);
             $table->timestamps();
         });
