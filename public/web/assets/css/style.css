@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 h1,
@@ -62,11 +61,11 @@ a:hover {
     width: 10%;
 }
 
-.navbar-brand> :nth-child(1) {
+.navbar-brand > :nth-child(1) {
     width: 90%;
 }
 
-.navbar-brand> :nth-child(2) {
+.navbar-brand > :nth-child(2) {
     width: 23%;
     margin-top: 10px;
 }
@@ -91,7 +90,8 @@ a:hover {
 }
 
 .active a img {
-    filter: invert(22%) sepia(17%) saturate(1700%) hue-rotate(72deg) brightness(60%) contrast(110%);
+    filter: invert(22%) sepia(17%) saturate(1700%) hue-rotate(72deg)
+        brightness(60%) contrast(110%);
     /* filter: drop-shadow(0 0 0 #114906) drop-shadow(1px 1px 0 #114906) drop-shadow(-1px -1px 0 #114906); */
 }
 
@@ -140,7 +140,7 @@ a:hover {
 }
 
 .btn-consult-active {
-    background: #FF7300 !important;
+    background: #ff7300 !important;
     border: 2px solid #114906 !important;
 }
 
@@ -181,7 +181,7 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.buttons> :nth-child(1) {
+.buttons > :nth-child(1) {
     background: #114906;
     border: 1px solid white;
     color: white;
@@ -189,21 +189,21 @@ a:hover {
     border-radius: 7px;
 }
 
-.buttons> :nth-child(1):hover {
+.buttons > :nth-child(1):hover {
     background: #092902;
     border: 1px solid white;
     color: white;
 }
 
-.buttons> :nth-child(2) {
-    background: #FF7300;
+.buttons > :nth-child(2) {
+    background: #ff7300;
     border: 1px solid white;
     color: white;
     padding: 7px 20px;
     border-radius: 7px;
 }
 
-.buttons> :nth-child(2):hover {
+.buttons > :nth-child(2):hover {
     background: #ff7300d5;
     border: 1px solid white;
     color: white;
@@ -216,7 +216,7 @@ a:hover {
 
 .service {
     margin-top: 40px;
-    background: #EAEAEA;
+    background: #eaeaea;
     padding-bottom: 70px;
 }
 
@@ -362,7 +362,7 @@ a:hover {
 .chooseuscard {
     border: 2px solid #114906;
     border-radius: 10px;
-    background: #E7E7E7;
+    background: #e7e7e7;
     height: 100%;
     padding: 20px;
     padding-bottom: 0 !important;
@@ -375,7 +375,7 @@ a:hover {
 .corevaluecard {
     border: 2px solid #114906;
     border-radius: 10px;
-    background: #E7E7E7;
+    background: #e7e7e7;
     height: 100%;
     padding: 20px;
     padding-bottom: 0 !important;
@@ -402,7 +402,7 @@ a:hover {
 }
 
 hr {
-    border: 2px solid #BCBCBC;
+    border: 2px solid #bcbcbc;
     margin-top: 50px !important;
 }
 
@@ -422,7 +422,7 @@ hr {
     align-items: center;
     justify-content: space-between;
     padding: 25px 0 10px 0;
-    border-bottom: 1px solid #8C8C8C;
+    border-bottom: 1px solid #8c8c8c;
     gap: 20px;
 }
 
@@ -434,7 +434,7 @@ hr {
 
 .legal-description {
     flex: 2;
-    color: #157B01;
+    color: #157b01;
     text-align: right;
 }
 
@@ -450,7 +450,7 @@ hr {
 
 .casestudy {
     margin-top: 30px;
-    background: #EAEAEA;
+    background: #eaeaea;
     padding-bottom: 40px;
 }
 
@@ -473,16 +473,14 @@ hr {
 
 .scroll-container::-webkit-scrollbar {
     display: none;
-
 }
-
 
 .casestudycard {
     flex: 0 0 330px;
     background: transparent;
     border-radius: 8px;
     scroll-snap-align: start;
-    border: 1px solid #9F9F9F;
+    border: 1px solid #9f9f9f;
     padding: 10px;
     /* margin-right: 150px; */
 }
@@ -606,9 +604,9 @@ hr {
     padding: 12px;
     margin-bottom: 16px;
     border-radius: 8px;
-    border: 1px solid #A0A0A0;
+    border: 1px solid #a0a0a0;
     font-size: 1rem;
-    background: #EFEFEF;
+    background: #efefef;
     color: #838383;
     font-size: 14px;
 }
@@ -853,10 +851,10 @@ hr {
     gap: 100px;
 }
 
-.missionwrapper> :nth-child(1),
-.missionwrapper> :nth-child(3),
-.vissionwrapper> :nth-child(2),
-.vissionwrapper> :nth-child(3) {
+.missionwrapper > :nth-child(1),
+.missionwrapper > :nth-child(3),
+.vissionwrapper > :nth-child(2),
+.vissionwrapper > :nth-child(3) {
     border: 1px solid #686868;
     padding: 7px 40px;
     border-radius: 10px;
@@ -866,8 +864,8 @@ hr {
     cursor: pointer;
 }
 
-.missionwrapper> :nth-child(2),
-.vissionwrapper> :nth-child(1) {
+.missionwrapper > :nth-child(2),
+.vissionwrapper > :nth-child(1) {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -879,7 +877,7 @@ hr {
 
 .missioncontent,
 .visioncontent {
-    background: #EFEFEF;
+    background: #efefef;
     height: 45vh;
     width: 98% !important;
     margin: auto;
@@ -925,11 +923,10 @@ hr {
 }
 
 .ourteam {
-    background: #EAEAEA;
+    background: #eaeaea;
     padding: 40px 0 70px 0;
     margin-top: 70px;
 }
-
 
 .ourteam h2 {
     color: #114906;
@@ -958,7 +955,6 @@ hr {
     padding: 20px;
     border-radius: 12px;
 }
-
 
 .team-member img {
     max-width: 100%;
@@ -1017,7 +1013,7 @@ hr {
 
 /* PRACTICE AREA PAGE */
 .legalexpertise {
-    background: #EAEAEA;
+    background: #eaeaea;
     margin-top: 150px;
     padding-top: 220px;
     padding-bottom: 100px;
@@ -1086,14 +1082,14 @@ hr {
     font-weight: 600;
 }
 
-.legalimg> :nth-child(1) {
+.legalimg > :nth-child(1) {
     width: 100%;
     height: 50vh;
     border-radius: 20px;
     object-fit: cover;
 }
 
-.legalimg> :nth-child(2) {
+.legalimg > :nth-child(2) {
     position: absolute;
     top: 20px;
     left: 40px;
@@ -1160,7 +1156,6 @@ hr {
     scrollbar-width: none;
     padding-left: 5px;
 }
-
 
 .scrolling-card::-webkit-scrollbar {
     display: none;
@@ -1251,7 +1246,7 @@ hr {
     border-right: 1px solid #ccc;
 }
 
-.servicecard:not(:nth-last-child(-n+2)) {
+.servicecard:not(:nth-last-child(-n + 2)) {
     border-bottom: 1px solid #ccc;
 }
 
@@ -1284,7 +1279,7 @@ hr {
 }
 
 .dataprotectionrow {
-    background: #EAEAEA;
+    background: #eaeaea;
     height: 45vh;
     border-radius: 15px;
     align-items: center;
@@ -1357,7 +1352,6 @@ hr {
     border-radius: 0 0 15px 15px;
 }
 
-
 .contactdiv {
     display: flex;
     align-items: center;
@@ -1407,7 +1401,7 @@ hr {
 }
 
 .bottomsection {
-    background: #EAEAEA;
+    background: #eaeaea;
     padding: 60px 0 50px 0;
 }
 
@@ -1452,7 +1446,7 @@ hr {
 .resources-card {
     border: 2px solid #114906;
     border-radius: 10px;
-    background: #E7E7E7;
+    background: #e7e7e7;
     height: 100%;
     padding: 20px;
     padding-bottom: 0 !important;
@@ -1464,7 +1458,7 @@ hr {
 
 .resources-card img {
     width: 15%;
-    background: #157B01;
+    background: #157b01;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
@@ -1515,7 +1509,7 @@ hr {
     font-size: 14px;
     border-radius: 50px;
     cursor: pointer;
-    color: black
+    color: black;
 }
 
 .blogpostactive {
@@ -1524,7 +1518,7 @@ hr {
 }
 
 .bloghr {
-    border: 1px solid #A6A6A6;
+    border: 1px solid #a6a6a6;
     margin-top: 30px !important;
 }
 
@@ -1536,16 +1530,15 @@ hr {
     margin-top: 0px;
 }
 
-
-.recentblog-buttons> :nth-child(1),
-.recentblog-buttons> :nth-child(1):hover {
+.recentblog-buttons > :nth-child(1),
+.recentblog-buttons > :nth-child(1):hover {
     background: #114906;
     color: white;
 }
 
-.recentblog-buttons> :nth-child(2),
-.recentblog-buttons> :nth-child(2):hover {
-    background: #7D7D7D;
+.recentblog-buttons > :nth-child(2),
+.recentblog-buttons > :nth-child(2):hover {
+    background: #7d7d7d;
     color: white;
 }
 
@@ -1600,7 +1593,7 @@ hr {
 .loadmorediv {
     width: 40%;
     height: 2px;
-    background: #A6A6A6;
+    background: #a6a6a6;
 }
 
 #blogContentWrapper {
@@ -1719,7 +1712,7 @@ hr {
 }
 
 .faq-here span a {
-    color: #126B02 !important;
+    color: #126b02 !important;
     text-decoration: underline;
     padding-left: 3px;
 }
@@ -1750,7 +1743,7 @@ hr {
 
 .accordion-header {
     display: flex;
-    background: #E6FCE1;
+    background: #e6fce1;
     height: 100%;
     width: 100%;
     margin: auto;
@@ -1778,7 +1771,7 @@ hr {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: 1px solid #9F9F9F;
+    border: 1px solid #9f9f9f;
     padding: 15px;
     border-radius: 10px;
 }
@@ -1849,7 +1842,7 @@ hr {
 }
 
 .businesscontactrow {
-    background: #EAEAEA;
+    background: #eaeaea;
     border-radius: 15px;
     padding: 70px 0;
     text-align: center;
@@ -1866,13 +1859,12 @@ hr {
     gap: 20px;
     display: flex;
     justify-content: center;
-
 }
 
-.businesscontactbutton> :nth-child(1),
-.businesscontactbutton> :nth-child(2),
-.businesscontactbutton> :nth-child(1):hover,
-.businesscontactbutton> :nth-child(2):hover {
+.businesscontactbutton > :nth-child(1),
+.businesscontactbutton > :nth-child(2),
+.businesscontactbutton > :nth-child(1):hover,
+.businesscontactbutton > :nth-child(2):hover {
     color: white;
     background: #114906;
 }
@@ -1904,7 +1896,7 @@ hr {
 
 .mediahubrowcol button,
 .mediahub button:hover {
-    background: #FA1D2F;
+    background: #fa1d2f;
     color: white;
     border: 1px solid white;
 }
@@ -1923,7 +1915,7 @@ hr {
 }
 
 .youtubesectionrow .col-md-6 {
-    border: 1px solid #A6A6A6;
+    border: 1px solid #a6a6a6;
     height: 50vh;
     width: 49%;
     border-radius: 15px;
@@ -2152,7 +2144,7 @@ hr {
 .testprogress-bar {
     width: 100%;
     height: 3px;
-    background: #B5B5B5;
+    background: #b5b5b5;
     border-radius: 5px;
     margin-bottom: 30px;
     overflow: hidden;
@@ -2200,7 +2192,7 @@ hr {
 
 .testoption {
     padding: 10px 20px;
-    background: #F0FFED;
+    background: #f0ffed;
     border: 2px solid transparent;
     border-radius: 10px;
     cursor: pointer;
@@ -2213,7 +2205,7 @@ hr {
 
 .testoption.active {
     border: 2px solid #114906;
-    background: #E0F7E9;
+    background: #e0f7e9;
 }
 
 .testbuttons {
@@ -2221,7 +2213,6 @@ hr {
     justify-content: right;
     gap: 30px;
 }
-
 
 .testbuttons button {
     padding: 8px 20px;
@@ -2351,7 +2342,7 @@ hr {
 }
 
 .labelforms {
-    margin-top: 15px;
+    margin-top: 25px;
     padding-bottom: 5px;
     font-size: 12px;
 }
@@ -2362,8 +2353,8 @@ hr {
 }
 
 .stepinput {
-    background: #EFEFEF !important;
-    border: 1px solid #A0A0A0 !important;
+    background: #efefef !important;
+    border: 1px solid #a0a0a0 !important;
     padding-left: 20px !important;
     height: 40px !important;
     color: #838383 !important;
@@ -2372,7 +2363,19 @@ hr {
     width: 100%;
 }
 
-.stepinput:focus {
+.fixed-textarea {
+    background: #efefef !important;
+    border: 1px solid #a0a0a0 !important;
+    padding-left: 20px !important;
+    height: 100px !important;
+    color: #838383 !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    width: 100%;
+}
+
+.stepinput:focus,
+.fixed-textarea:focus {
     box-shadow: none !important;
 }
 
@@ -2400,10 +2403,6 @@ input[type="radio"] {
     align-items: center;
     gap: 50px;
     margin-bottom: 20px;
-}
-
-.fixed-textarea {
-    height: 120px !important;
 }
 
 .btnhomepage {
@@ -2452,17 +2451,17 @@ input[type="radio"] {
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    background: #EAEAEA !important;
+    background: #eaeaea !important;
     padding: 20px !important;
     border-radius: 10px;
 }
 
 .accordionprivacy-button:focus {
-    background: #EAEAEA !important;
+    background: #eaeaea !important;
 }
 
 .accordionprivacy-button {
-    background: #EAEAEA !important;
+    background: #eaeaea !important;
 }
 
 .cookielink a {
@@ -2488,7 +2487,7 @@ input[type="radio"] {
 }
 
 .errored {
-    color: #FF0000;
+    color: #ff0000;
 }
 
 .errorcontainer h1 {
@@ -2511,7 +2510,7 @@ input[type="radio"] {
 
 .legalquizrow {
     height: 56vh;
-    background: #EAEAEA;
+    background: #eaeaea;
     border-radius: 15px;
     align-items: center;
     display: flex;
@@ -2616,11 +2615,11 @@ input[type="radio"] {
     width: 60px;
 }
 
-.webinartimediv> :nth-child(1) {
+.webinartimediv > :nth-child(1) {
     font-size: 20px !important;
 }
 
-.webinartimediv> :nth-child(2) {
+.webinartimediv > :nth-child(2) {
     font-size: 10px !important;
 }
 
@@ -2693,13 +2692,12 @@ input[type="radio"] {
     gap: 20px;
     display: flex;
     justify-content: center;
-
 }
 
-.rsvpbutton> :nth-child(1),
-.rsvpbutton> :nth-child(2),
-.rsvpbutton> :nth-child(1):hover,
-.rsvpbutton> :nth-child(2):hover {
+.rsvpbutton > :nth-child(1),
+.rsvpbutton > :nth-child(2),
+.rsvpbutton > :nth-child(1):hover,
+.rsvpbutton > :nth-child(2):hover {
     color: white;
     background: #114906 !important;
 }
@@ -2767,7 +2765,7 @@ input[type="radio"] {
 }
 
 .scholarshipapplyrowcard {
-    background: #E7E7E7;
+    background: #e7e7e7;
     border-radius: 20px;
     text-align: center;
     padding: 40px 0;
@@ -3007,7 +3005,7 @@ input[type="radio"] {
 
 .whytakediv {
     height: 100%;
-    background: #E7E7E7;
+    background: #e7e7e7;
     border: 2px solid #114906;
     border-radius: 20px;
     padding: 30px;
@@ -3030,14 +3028,13 @@ input[type="radio"] {
     font-size: 24px;
 }
 
-
 .testquiztext {
     text-align: center;
 }
 
 .testquizprogress-container {
     width: 50%;
-    background: #B5B5B5;
+    background: #b5b5b5;
     border-radius: 20px;
     margin: 20px auto;
     position: relative;
@@ -3073,7 +3070,7 @@ input[type="radio"] {
 }
 
 .testquizoption {
-    background: #F0FFED;
+    background: #f0ffed;
     padding: 12px;
     border-radius: 15px;
     margin: 10px 0;

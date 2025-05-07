@@ -2,9 +2,9 @@
 
     @if ($errors->any())
         @foreach ($errors->all() as $error)
-        @php
-        flash()->error("$error")
-        @endphp
+            @php
+                flash()->error("$error")
+            @endphp
         @endforeach
     @endif
 
@@ -26,17 +26,18 @@
                             <h4>Schedule A Consultation</h4>
                             <span>Book a consultation with one of our experienced lawyers</span><br />
                             <label class="labelform">Full Name</label>
-                            <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter Full Name" class="stepinput form-control"
-                                id="fullName" />
+                            <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter Full Name"
+                                class="stepinput form-control" id="fullName" />
                             <small class="text-error d-block" id="errorName"></small>
 
                             <label class="labelform">Email Address</label>
-                            <input type="email" name="email" value="{{ old('email') }}" placeholder="Enter email address" class="stepinput form-control"
-                                id="email" />
+                            <input type="email" name="email" value="{{ old('email') }}"
+                                placeholder="Enter email address" class="stepinput form-control" id="email" />
                             <small class="text-error d-block" id="errorEmail"></small>
 
                             <label class="labelform">Phone Number</label>
-                            <input type="tel" name="phone_number" value="{{ old('phone_number') }}" placeholder="Enter a valid phone number (Ex. +234 801 2345 678)"
+                            <input type="tel" name="phone_number" value="{{ old('phone_number') }}"
+                                placeholder="Enter a valid phone number (Ex. +234 801 2345 678)"
                                 class="stepinput form-control" id="phone" />
                             <small class="text-error d-block" id="errorPhone"></small>
 
@@ -55,23 +56,26 @@
                         <!-- Step 2 -->
                         <div class="form-step" id="step2" style="display: none">
                             <h4>Schedule A Consultation</h4>
-                            <span>Book a consultation with one of our experienced lawyers</span>
+                            <span>Book a consultation with one of our experienced lawyers</span> <br>
                             <label class="labelforms">Choose Area Of Legal Concern</label>
                             <select class="stepinput form-control" name="legal_concerns" id="legalArea">
                                 <option value="">Choose area of concern</option>
-                                <option value="family_law" {{ old('legal_concerns') == 'family_law' ? 'selected' : '' }}>Family Law</option>
+                                <option value="family_law" {{ old('legal_concerns') == 'family_law' ? 'selected' : '' }}>
+                                    Family Law</option>
                                 <option value="business_law" {{ old('legal_concerns') == 'business_law' ? 'selected' : '' }}>Business Law</option>
                                 <option value="property_law" {{ old('legal_concerns') == 'property_law' ? 'selected' : '' }}>Property Law</option>
                             </select>
                             <small class="text-error d-block" id="errorArea"></small>
 
                             <label class="labelforms">Preferred Date And Time</label>
-                            <input type="datetime-local" class="stepinput form-control" name="date" value="{{ old('date') }}" id="dateTime" />
+                            <input type="datetime-local" class="stepinput form-control" name="date"
+                                value="{{ old('date') }}" id="dateTime" />
                             <small class="text-error d-block" id="errorDate"></small>
 
                             <label class="labelforms">Additional Information</label>
                             <textarea placeholder="Enter any additional information"
-                                class="stepinput form-control fixed-textarea" id="info" name="additional_info">{{ old('additional_info') }}</textarea>
+                                class="form-control fixed-textarea" id="info" name="additional_info">{{ old('additional_info') }}
+                            </textarea>
                             <small class="text-error d-block" id="errorInfo"></small>
 
                             <div class="mt-4">

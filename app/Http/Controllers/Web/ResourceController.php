@@ -46,7 +46,7 @@ class ResourceController extends Controller
 
     public function faqs()
     {
-        $faqs = Faq::all();
+        $faqs = Faq::active()->get();
         return view('web.resource.faqs', compact('faqs'));
     }
 

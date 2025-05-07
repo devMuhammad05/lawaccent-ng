@@ -124,7 +124,7 @@
             <li>Caldicott Guardian Service</li>
             </ul>
             and more
-            <a href="http://lawaccent.co.uk/">
+            <a href="http://lawaccent.co.uk/" target="_blank">
             <p>Click here to go to Law Accent UK website</p></a
             >
         </div>

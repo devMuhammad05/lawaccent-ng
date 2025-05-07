@@ -162,7 +162,7 @@
                     </span>
                 </a>
 
-                <a href="#" class="legal-row">
+                <a href="{{ route('our-impact.quizes.index') }}" class="legal-row">
                     <span class="legal-title">Law Quiz</span>
                     <span class="legal-description">Challenge yourself with quizzes on Nigerian and international
                         laws.</span>
