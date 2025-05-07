@@ -25,9 +25,9 @@
                             name='linkedin_link' value='{{ old('linkedin_link', @$social_links->linkedin_link) }}'>
                     </div>
                     <div class="form-group">
-                        <label>Youtube</label>
-                        <input type='url' class='form-control' placeholder='link to Youtube account'
-                            name='youtube_link' value='{{ old('youtube_link', @$social_links->youtube_link) }}'>
+                        <label>Facebook</label>
+                        <input type='url' class='form-control' placeholder='link to facebook account'
+                            name='facebook_link' value='{{ old('facebook_link', @$social_links->facebook_link) }}'>
                     </div>
                     <div class="form-group">
                         <label>Instagram</label>

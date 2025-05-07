@@ -28,7 +28,7 @@ class SocialController extends Controller
         $validatedData = $request->validate([
             'x_link' => 'sometimes|url',
             'linkedin_link' => 'sometimes|url',
-            'youtube_link' => 'sometimes|url',
+            'facebook_link' => 'sometimes|url',
             'instagram_link' => 'sometimes|url',
         ]);
 

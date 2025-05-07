@@ -2,8 +2,9 @@
 
 namespace App\View\Components;
 
-use Illuminate\View\Component;
+use App\Models\Social;
 use Illuminate\View\View;
+use Illuminate\View\Component;
 
 final class AppLayout extends Component
 {
@@ -12,6 +13,9 @@ final class AppLayout extends Component
      */
     public function render(): View
     {
-        return view('web.layouts.app');
+        $socials = Social::first();
+        return view('web.layouts.app', [
+            'socials' => $socials
+        ]);
     }
 }
