@@ -9,7 +9,7 @@
     <meta name="description"
         content="Law Accent (NG) is dedicated to simplifying the complexities of data protection and privacy for organisations across industries." />
     <title>Law Accent NG</title>
-    <link rel="icon" href="{{ asset("web/assets/images/ng.webp") }}" />
+    <link rel="icon" href="{{ asset("web/assets/images/logo.webp") }}" />
     <link rel="stylesheet" href="{{ asset("web/assets/css/style.css") }}" />
     <link rel="stylesheet" href="{{ asset("web/assets/css/mobile.css") }}" />
     <link rel="stylesheet" href="{{ asset("web/assets/css/custom.css") }}" />

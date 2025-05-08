@@ -2,8 +2,9 @@
 
 namespace App\Livewire;
 
-use App\Models\ContactUs;
 use Livewire\Component;
+use App\Models\ContactUs;
+use Illuminate\Support\Facades\Mail;
 
 class ContactUsForm extends Component
 {
@@ -26,6 +27,22 @@ class ContactUsForm extends Component
         $data = $this->validate();
         ContactUs::create($data);
         flash()->success('Your message has been sent successfully!');
+
+        Mail::html("
+        <p>Thank you for sending us a message.</p>
+        <p>Here is the summary of the message you sent:</p>
+
+        <ul>
+            <li><strong>Name:</strong> {$this->name}</li>
+            <li><strong>Email:</strong> {$this->email}</li>
+            <li><strong>Phone Number:</strong> {$this->phone_number}</li>
+            <li><strong>Message:</strong> {$this->message}</li>
+        </ul>
+    ", function ($message) {
+        $message->to($this->email)
+                ->subject('Thank You for Contacting Us');
+    });
+
 
         $this->reset();
     }

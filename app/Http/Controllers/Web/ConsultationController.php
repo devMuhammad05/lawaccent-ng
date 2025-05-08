@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\web;
 
-use App\Enums\ConsultationTypes;
 use App\Models\Consultation;
 use Illuminate\Http\Request;
+use App\Enums\ConsultationTypes;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\Web\StoreConsultationRequest;
 
 class ConsultationController extends Controller
@@ -31,6 +32,7 @@ class ConsultationController extends Controller
         Consultation::create($data);
 
         flash()->success( 'Your consultation request has been submitted successfully. We will get back to you shortly.');
+
 
         return back();
     }

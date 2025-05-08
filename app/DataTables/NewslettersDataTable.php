@@ -55,7 +55,7 @@ class NewslettersDataTable extends DataTable
                     ->setTableId('newsletters-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
-                    ->dom('Bfrtip') // Add this line for showing the buttons
+                    // ->dom('Bfrtip') // Add this line for showing the buttons
                     ->orderBy(1)
                     ->selectStyleSingle();
                     // ->buttons([
@@ -81,7 +81,7 @@ class NewslettersDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(10),
             Column::make('email'),
             Column::make('created_at')->title('Signup Date'),
             Column::computed('action')

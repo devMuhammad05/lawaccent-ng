@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\DataTables\NewslettersDataTable;
 
 class NewsletterController extends Controller
@@ -30,8 +31,29 @@ class NewsletterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'subject' => 'required|max:255',
+            'body' => 'required',
+        ]);
+
+        $emails = Newsletter::pluck('email');
+
+        try {
+
+            foreach ($emails as $email) {
+                Mail::html($request->body, function ($message) use ($request, $email) {
+                    $message->to($email)
+                            ->subject($request->subject);
+                });
+            }
+
+        } catch (\Exception $e) {
+            return back()->with('error', 'Unable to send mail try again.');
+        }
+
+        return back()->with('success', 'Newsletter sent successfully to all subscribers.');
     }
+
 
     /**
      * Display the specified resource.

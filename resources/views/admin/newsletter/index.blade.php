@@ -9,8 +9,9 @@
         <div class="card-header">
           <h4>All Newsletters</h4>
           <div class="card-header-action">
+            <button class="btn btn-secondary">Export Emails</button>
             <a href="{{ route('admin.newsletters.create')}}" class="btn btn-primary">
-              Create new
+              Send Email
             </a>
           </div>
 
