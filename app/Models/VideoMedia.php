@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\Status;
 use Illuminate\Database\Eloquent\Model;
 
 class VideoMedia extends Model
@@ -11,4 +12,5 @@ class VideoMedia extends Model
         'media_location',
         'media_link',
     ];
+
 }

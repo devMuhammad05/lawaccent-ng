@@ -11,6 +11,7 @@ use Yajra\DataTables\Html\Column;
 use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
+use function Termwind\style;
 
 class VideoMediasDataTable extends DataTable
 {
@@ -28,14 +29,15 @@ class VideoMediasDataTable extends DataTable
 
                 if ($query->media_link) {
                     // If media_link is provided (external URL)
-                    $video = "<video width='150' controls>
-                                <source src='{$query->media_link}' type='video/mp4'>
-                                Your browser does not support the video tag.
-                              </video>";
+
+                    // $video = $query->media_link;
+
+                    $video = "<div class='' style='height:60%; width:20% !important;'>{$query->media_link}</div>";
+
                 } elseif ($query->media_location) {
                     // If media_location is available (uploaded file)
                     $videoUrl = asset($query->media_location);
-                    $video = "<video width='150' controls>
+                    $video = "<video width='80%' controls>
                                 <source src='{$videoUrl}' type='video/mp4'>
                                 Your browser does not support the video tag.
                               </video>";
@@ -93,7 +95,7 @@ class VideoMediasDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(20),
             Column::make('title'),
             Column::make('video'),
             Column::computed('action')

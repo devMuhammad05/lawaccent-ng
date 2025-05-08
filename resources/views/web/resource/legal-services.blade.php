@@ -92,7 +92,7 @@
 
       @if (count($blogs))
         <section class="recent-blog">
-            <div class="container mt-5">
+            <div class="container mb-5">
             <h4 id="blogHeading">Blog Posts</h4>
             <div id="blogContentWrapper">
                 <div class="row recent-blogrow">
@@ -106,10 +106,11 @@
       @endif
 
       <section class="youtubesection">
-        <div class="container">
+        <div class="container mb-5">
           <h5>Video Hub</h5>
           <div class="row youtubesectionrow">
-            <div class="col-md-6 col-12">
+            @include('web.partials.video-card')
+            {{-- <div class="col-md-6 col-12">
               <div class="youtube-card">
                 <iframe
                   src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
@@ -126,7 +127,7 @@
                   allowfullscreen
                 ></iframe>
               </div>
-            </div>
+            </div> --}}
           </div>
           {{-- <div class="loadmore">
             <div class="loadmorediv"></div>
@@ -138,7 +139,7 @@
 
       @if (count($faqs))
         <section class="faq-section">
-            <div class="container mt-5">
+            <div class="container mb-5">
             <h5>Frequently Asked Questions</h5>
             @include('web.partials.faq-accordion')
             </div>

@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Assessment;
 use App\Models\BlogCategory;
+use App\Models\VideoMedia;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -82,7 +83,8 @@ class ResourceController extends Controller
         $caseStudies = CaseStudy::active()->latest()->take(6)->get();
         $blogs = Blog::active()->latest()->take(6)->get();
         $faqs = Faq::active()->get();
-        return view('web.resource.legal-services', compact('caseStudies', 'blogs', 'faqs'));
+        $videoMedias = VideoMedia::latest()->take(4)->get();
+        return view('web.resource.legal-services', compact('caseStudies', 'blogs', 'faqs', 'videoMedias'));
     }
 
     public function assessmentTool()

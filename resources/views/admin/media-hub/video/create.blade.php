@@ -24,7 +24,7 @@
                         <select id="mediaType" class="form-control">
                             <option value="">-- Choose media format --</option>
                             <option value="file">Upload Video</option>
-                            <option value="url">Enter URL</option>
+                            <option value="text">Enter URL</option>
                         </select>
                     </div>
 
@@ -35,7 +35,7 @@
 
                     <div class="form-group" id="urlInput" style="display: none;">
                         <label>Video URL</label>
-                        <input type='url' class='form-control' placeholder='Enter video URL' name='media_link'
+                        <input type='text' class='form-control' placeholder='Enter video URL' name='media_link'
                             value='{{ old('media_link') }}'>
                     </div>
 
@@ -64,7 +64,7 @@
             if (this.value === 'file') {
                 fileInput.style.display = 'block';
                 urlInput.style.display = 'none';
-            } else if (this.value === 'url') {
+            } else if (this.value === 'text') {
                 fileInput.style.display = 'none';
                 urlInput.style.display = 'block';
             } else {

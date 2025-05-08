@@ -33,7 +33,7 @@ class VideoMediaController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'media_location' => 'nullable|file|mimes:mp4',
-            'media_link' => 'nullable|url',
+            'media_link' => 'nullable',
         ]);
 
         if ($request->filled('media_location') && $request->filled('media_link')) {
