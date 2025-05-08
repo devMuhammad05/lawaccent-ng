@@ -3,8 +3,8 @@
         <div class="contact-row">
             <div class="contact-info">
 
-                <h1>Need Legal Clarity? Let's Talk.</h1>
-                <p>For Enquiries and Consultations</p>
+                <h1>{{ $subject }}</h1>
+                <p>{{ $sub_heading }}</p>
                 <button class="btn">
                     <a href="{{ route('consultation') }}">Schedule a Consultation</a></button><br />
                 <div class="buttonspread">

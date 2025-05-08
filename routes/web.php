@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Web\HomeController;
 use App\Http\Controllers\Web\CareerController;
@@ -79,3 +80,12 @@ Route::get('cookie-notice', [PrivacyAndCookiesController::class, 'cookies'])->na
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
 
+
+Route::get('/mail', function () {
+    Mail::raw('This is a plain text test email.', function ($message) {
+        $message->to('olayemisrael@gmail.com')
+                ->subject('Test Raw Email');
+    });
+
+    return 'Email Sent!';
+});

@@ -79,8 +79,8 @@
 
       @if (count($caseStudies))
         <section>
-            <div class="container">
-            <h5 class="pt-5">Case Studies and Practical Insights</h5>
+            <div class="container mb-5">
+            <h5 class="pt-4">Case Studies and Practical Insights</h5>
             <div class="row recent-caserow">
                 @foreach ($caseStudies as $caseStudy)
                     @include('web.partials.case-study-card')
@@ -126,7 +126,10 @@
       @endif
 
 
-    <livewire:contact-us-form />
+    <livewire:contact-us-form
+        subject="Speak with a Cross-Border Legal Expert "
+        sub_heading="Not sure how the regulations apply to your business? We are here to help."
+    />
 
     @include('web.partials.newsletter')
 

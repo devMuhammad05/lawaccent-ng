@@ -255,13 +255,13 @@
             </div>
             <div class="mt-4">
             <div class="accordrow">
-                <input type="checkbox" wire:model="information_consent"  id="" />
+                <input type="checkbox" wire:model="information_consent" required  id="" />
                 I confirm that the information provided is accurate and complete
                 to the <br />
                 best of my knowledge.
             </div>
             <div class="accordrow">
-                <input type="checkbox" wire:model="application_consent"  id="" />
+                <input type="checkbox" wire:model="application_consent" required  id="" />
                 I agree to be contacted by Law Accent for updates regarding this
                 <br />
                 application.

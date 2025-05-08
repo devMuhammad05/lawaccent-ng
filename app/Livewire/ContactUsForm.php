@@ -11,6 +11,8 @@ class ContactUsForm extends Component
     public $email;
     public $phone_number;
     public $message;
+    public $subject = "Need Legal Clarity? Let’s Talk.";
+    public $sub_heading = "For Enquiries and Consultations";
 
     protected $rules = [
         'name' => 'required|string|max:255|min:3',

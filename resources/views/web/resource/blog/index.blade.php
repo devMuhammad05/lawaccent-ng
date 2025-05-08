@@ -23,8 +23,8 @@
 
     <livewire:blog-posts>
 
-        <livewire:contact-us-form />
+        {{-- <livewire:contact-us-form /> --}}
 
-        @include('web.partials.newsletter')
+    @include('web.partials.newsletter')
 
 </x-app-layout>

@@ -23,7 +23,7 @@
 
     <livewire:case-studies />
 
-    <livewire:contact-us-form />
+    {{-- <livewire:contact-us-form /> --}}
 
     @include('web.partials.newsletter')
 
