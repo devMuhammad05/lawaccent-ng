@@ -73,7 +73,7 @@ class CaseStudiesDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(10),
             Column::make('thumbnail'),
             Column::make('title'),
             Column::make('category'),

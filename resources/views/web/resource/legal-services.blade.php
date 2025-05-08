@@ -105,37 +105,16 @@
         </section>
       @endif
 
+      @if (count($blogs))
       <section class="youtubesection">
         <div class="container mb-5">
           <h5>Video Hub</h5>
           <div class="row youtubesectionrow">
             @include('web.partials.video-card')
-            {{-- <div class="col-md-6 col-12">
-              <div class="youtube-card">
-                <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-            <div class="col-md-6 col-12">
-              <div class="youtube-card">
-                <iframe
-                  src="https://www.youtube.com/embed/3JZ_D3ELwOQ?rel=0"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div> --}}
           </div>
-          {{-- <div class="loadmore">
-            <div class="loadmorediv"></div>
-            <button class="btn py-2 px-3">Load More Videos</button>
-            <div class="loadmorediv"></div>
-          </div> --}}
         </div>
       </section>
+      @endif
 
       @if (count($faqs))
         <section class="faq-section">
