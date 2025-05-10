@@ -23,7 +23,10 @@
                         {!! $blog->body !!}
                     </div>
 
-                    <button class="btn pdfbutton">Download PDF</button>
+                    <a href="{{ route('resources.download.blog', $blog->slug) }}">
+                        <button class="btn pdfbutton">Download PDF</button>
+                    </a>
+                    
                 </div>
                 <div class="col-md-3 otherimg col-12">
                     <div class="otherimg-img">

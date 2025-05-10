@@ -6,9 +6,10 @@ use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Assessment;
-use App\Models\BlogCategory;
 use App\Models\VideoMedia;
+use App\Models\BlogCategory;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 
 class ResourceController extends Controller
@@ -43,6 +44,22 @@ class ResourceController extends Controller
 
         return view('web.resource.blog.show', compact('blog', 'recentBlogs'));
     }
+
+    public function downloadPdf(string $slug)
+    {
+        $blog = Blog::where('slug', $slug)->first();
+
+        if (! $blog) {
+            return abort(404);
+        }
+
+        $pdf = Pdf::loadView('web.resource.blog.pdf', ['blog' => $blog]);
+        return $pdf->stream(config('app.name') . " Blog - " . $blog->title . '.pdf');
+    }
+
+
+
+    // return view('web.resource.blog.pdf', compact($blog));
 
 
     public function faqs()

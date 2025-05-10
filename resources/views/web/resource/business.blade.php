@@ -65,7 +65,9 @@
                                             <button class="btn">
                                                 <a href="{{ route('resources.show.blog', $blog->slug) }}">Read More</a>
                                             </button>
-                                            <button class="btn">Download PDF</button>
+                                            <a href="{{ route('resources.download.blog', $blog->slug) }}" class="btn">
+                                                Download PDF
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

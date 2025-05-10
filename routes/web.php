@@ -44,6 +44,7 @@ Route::prefix('resources')->name('resources.')->controller(ResourceController::c
     Route::get('/', 'index')->name('index');
     Route::get('blogs', 'blogs')->name('blogs');
     Route::get('blogs/{slug}', 'showBlog')->name('show.blog');
+    Route::get('download-blogs/{slug}', 'downloadPdf')->name('download.blog');
     Route::get('faqs', 'faqs')->name('faqs');
     Route::get('case-studies', 'caseStudies')->name('case.studies');
     Route::get('case-studies/{slug}', 'showCaseStudy')->name('show.case.study');
