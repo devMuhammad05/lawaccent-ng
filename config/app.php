@@ -14,6 +14,8 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+    'recaptcha_sitekey' => env('RECAPTCHAV3_SITEKEY'),
+    'recaptcha_secret' => env('RECAPTCHAV3_SECRET'),
 
     /*
     |--------------------------------------------------------------------------
