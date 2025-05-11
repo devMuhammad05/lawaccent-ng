@@ -30,9 +30,14 @@ class AssessmentsDataTable extends DataTable
                 return $edit . $delete;
 
             })
+            ->addColumn('status', function ($query) {
+                $status = $query->status == 1 ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-danger">InActive</span>';
+
+                return $status;
+            })
             ->addColumn('thumbnail', function ($query) {
                 return "<img src='" . asset($query->thumbnail) . "' width='90' height='90'>";
-            })->rawColumns(['thumbnail', 'action'])
+            })->rawColumns(['thumbnail', 'action', 'status'])
             ->setRowId('id');
     }
 
@@ -69,6 +74,7 @@ class AssessmentsDataTable extends DataTable
             // Column::make('thumbnail'),
             Column::make('title'),
             Column::make('description'),
+            Column::make('status'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

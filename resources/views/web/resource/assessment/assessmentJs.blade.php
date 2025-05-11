@@ -42,7 +42,8 @@ let answers = [];
 
 function showQuestion() {
   const question = questions[currentQuestion];
-  document.getElementById("questionHead").innerText = question.head;
+  document.getElementById("questionHead").innerText = `${currentQuestion + 1}. ${question.head || question.question}`;
+
   document.getElementById("questionText").innerText = question.question;
 
   const progressPercent = ((currentQuestion + 1) / questions.length) * 100;

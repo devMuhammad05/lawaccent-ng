@@ -85,15 +85,53 @@ class AssessmentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $assessment = Assessment::find($id);
+
+        return view('admin.assessment.edit', compact('assessment'));
     }
+
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(StoreAssessmentRequest $request, string $id)
     {
-        //
+        $assessment = Assessment::findOrFail($id);
+
+        if (!$assessment) {
+            abort(404);
+        }
+
+        $validated = $request->validated();
+
+        // Update assessment info
+        $assessment->update([
+            'title' => $validated['title'],
+            'description' => $validated['description'] ?? '',
+        ]);
+
+        //Delete old questions and options
+        foreach ($assessment->questions as $question) {
+            $question->options()->delete();
+            $question->delete();
+        }
+
+        //Recreate questions and options
+        foreach ($validated['questions'] as $qIndex => $questionData) {
+            $question = $assessment->questions()->create([
+                'text' => $questionData['text'],
+                'head' => $questionData['head']
+            ]);
+
+            foreach ($questionData['options'] as $oIndex => $option) {
+                $question->options()->create([
+                    'text' => $option['text'],
+                    'is_correct' => (int) $questionData['correct_option'] === $oIndex,
+                ]);
+            }
+        }
+
+        return redirect()->route('admin.assessments.index')->with('success', 'Assessment updated successfully!');
     }
 
     /**
