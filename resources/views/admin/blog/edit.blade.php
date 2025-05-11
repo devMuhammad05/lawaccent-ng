@@ -23,10 +23,22 @@
                     </div>
 
                     <div class="form-group">
-                        <label>SubTitle</label>
+                        <label>Sub Title</label>
                         <input type='text' class='form-control' placeholder='Short Answer' name='sub_heading'
                             value='{{ $blog->sub_heading }}'>
                     </div>
+
+                    <div class="form-group">
+                        <label>Select Category</label>
+                        <select type='text' class='form-control' name='category_id'>
+                            <option selected disabled>Select Category</option>
+
+                            @foreach ($categories as $category)
+                                <option @selected($category->id == $blog->category_id) value="{{ old('category_id', $category->id) }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
                     <div class="row">
                         <div class="form-group col-md-6 col-sm-6">
                             <div class="form-group">
@@ -43,11 +55,6 @@
                                 <img src="{{ asset($blog->thumbnail) }}" width="300" alt="">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Short Body</label>
-                        <textarea name="short_body" style="width: 100%;"rows="10">{{ $blog->short_body }}</textarea>
                     </div>
 
                     <div class="form-group">

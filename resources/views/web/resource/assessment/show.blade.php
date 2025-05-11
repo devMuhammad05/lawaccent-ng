@@ -1,7 +1,5 @@
 <x-app-layout>
 
-
-
     <section class="testassessment">
         <div class="testassessmentcontainer">
             <div class="testassessmentcard" id="assessmentCard">
@@ -15,14 +13,9 @@
                 <div id="questionSection" class="fade">
                     <h6 id="questionHead">1. Contracts</h6>
                     <div class="question" id="questionText">Question Text</div>
-                    <div class="testoptions">
-                        <div class="testoption" onclick="selectOption('yes', this)">
-                            ✅ Yes
-                        </div>
-                        <div class="testoption" onclick="selectOption('no', this)">
-                            ⚠ No
-                        </div>
-                    </div>
+
+                    <div class="testoptions" id="optionsContainer"></div>
+
                 </div>
 
                 <div class="testbuttons">
@@ -56,7 +49,6 @@
             </div>
         </div>
     </section>
-
 
     @push('script')
         @include('web.resource.assessment.assessmentJs')

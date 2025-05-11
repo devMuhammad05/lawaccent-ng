@@ -24,14 +24,10 @@ class UpdateBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'category_id' => ['required', 'exists:blog_categories,id'],
             'title' => ['required', 'string'],
             'sub_heading' => ['required', 'string'],
             'thumbnail' => ['sometimes', 'image'],
-            'short_body' => [
-                'required',
-                'string',
-                new MaxWords(200),
-            ],
             'body' => ['required', 'string'],
             'status' => ['required', Rule::in([1, 0])],
         ];

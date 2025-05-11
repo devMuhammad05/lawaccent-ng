@@ -9,6 +9,7 @@ class AssessmentQuestion extends Model
     protected $fillable = [
         'assessment_id',
         'text',
+        'head',
     ];
 
 

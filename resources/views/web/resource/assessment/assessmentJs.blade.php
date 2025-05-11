@@ -1,69 +1,73 @@
 <script>
 
 // TEST ASSESSMENT FUNCTION
-const questions = [
-  {
-    head: "1. Contracts",
-    text: "Do you use written contracts for your clients, suppliers, or freelancers?",
-  },
-  {
-    head: "2. Privacy",
-    text: "Do you have a privacy policy if you collect personal data?",
-  },
-  {
-    head: "3. Business Registration",
-    text: "Is your business registered properly (LLC, Corporation, Sole Proprietor)?",
-  },
-  {
-    head: "4. Intellectual Property",
-    text: "Do you protect your intellectual property (trademarks, copyrights)?",
-  },
-  {
-    head: "5. Liability Insurance",
-    text: "Do you have liability insurance for your business operations?",
-  },
-  {
-    head: "6. Disputes & Liability",
-    text: "Do you have insurance that covers business disputes or legal claims?",
-  },
-];
+// const questions = [
+//   {
+//     head: "1. Contracts",
+//     text: "Do you use written contracts for your clients, suppliers, or freelancers?",
+//     options: ["✅ Something Else", "⚠ No"]
+//   },
+//   {
+//     head: "2. Privacy",
+//     text: "Do you have a privacy policy if you collect personal data?",
+//     options: ["✅ Yes", "⚠ No"]
+//   },
+//   {
+//     head: "3. Business Registration",
+//     text: "Is your business registered properly (LLC, Corporation, Sole Proprietor)?",
+//     options: ["✅ Yes", "⚠ No"]
+//   },
+//   {
+//     head: "4. Intellectual Property",
+//     text: "Do you protect your intellectual property (trademarks, copyrights)?",
+//     options: ["✅ Yes", "⚠ No"]
+//   },
+//   {
+//     head: "5. Liability Insurance",
+//     text: "Do you have liability insurance for your business operations?",
+//     options: ["✅ Yes", "⚠ No"]
+//   },
+//   {
+//     head: "6. Disputes & Liability",
+//     text: "Do you have insurance that covers business disputes or legal claims?",
+//     options: ["✅ Yes", "⚠ No"]
+//   },
+// ];
 
 
+const questions = @json($questionsJson)
 
 let currentQuestion = 0;
 let answers = [];
 
 function showQuestion() {
-  const questionSection = document.getElementById("questionSection");
-
-  questionSection.classList.remove("fade");
-  void questionSection.offsetWidth; // trigger reflow to restart animation
-  questionSection.classList.add("fade");
-
-  document.getElementById("questionHead").innerText =
-    questions[currentQuestion].head;
-  document.getElementById("questionText").innerText =
-    questions[currentQuestion].text;
+  const question = questions[currentQuestion];
+  document.getElementById("questionHead").innerText = question.head;
+  document.getElementById("questionText").innerText = question.question;
 
   const progressPercent = ((currentQuestion + 1) / questions.length) * 100;
   document.getElementById("progress").style.width = progressPercent + "%";
-  document.getElementById("progressPercent").innerText =
-    Math.round(progressPercent) + "%";
+  document.getElementById("progressPercent").innerText = Math.round(progressPercent) + "%";
 
-  document
-    .querySelectorAll(".testoption")
-    .forEach((opt) => opt.classList.remove("active"));
+  // Clear and render new options
+  const container = document.getElementById("optionsContainer");
+  container.innerHTML = "";
 
-  if (answers[currentQuestion]) {
-    document.querySelectorAll(".testoption").forEach((opt) => {
-      if (
-        (answers[currentQuestion] === "yes" && opt.innerText.includes("✅")) ||
-        (answers[currentQuestion] === "no" && opt.innerText.includes("⚠"))
-      ) {
-        opt.classList.add("active");
-      }
-    });
+
+  question.options.forEach(option => {
+  const div = document.createElement("div");
+  div.className = "testoption";
+  div.innerText = option.text;
+  div.onclick = () => selectOption(option.text, div);
+
+  if (answers[currentQuestion] === option.text) {
+    div.classList.add("active");
   }
+
+  container.appendChild(div);
+});
+
+
 
   if (currentQuestion === questions.length - 1) {
     document.getElementById("nextBtn").style.display = "none";
@@ -73,6 +77,9 @@ function showQuestion() {
     document.getElementById("submitBtn").style.display = "none";
   }
 }
+showQuestion();
+
+
 
 function selectOption(value, element) {
   answers[currentQuestion] = value;
@@ -112,30 +119,34 @@ function submitAssessment() {
   document.getElementById("resultsSection").style.display = "block";
   document.getElementById("moreButtons").style.display = "flex";
 
-  const list = document.getElementById("questionList");
-  list.innerHTML = "";
 
-  let correctCount = 0;
-  answers.forEach((ans, index) => {
-    const div = document.createElement("div");
-    if (ans === "yes") {
-      div.className = "testquestion-box";
-      div.innerText = `✅ ${questions[index].head}`;
-      correctCount++;
-    } else {
-      div.className = "testquestion-box wrong";
-      div.innerText = `❌ ${questions[index].head}`;
-    }
-    list.appendChild(div);
-  });
 
-  document.getElementById(
-    "finalScoreText"
-  ).innerText = `You got ${correctCount} out of ${questions.length} questions right!`;
+
+//   const list = document.getElementById("questionList");
+//   list.innerHTML = "";
+
+//   let correctCount = 0;
+//   answers.forEach((ans, index) => {
+//     const div = document.createElement("div");
+//     if (ans === "yes") {
+//       div.className = "testquestion-box";
+//       div.innerText = `✅ ${questions[index].head}`;
+//       correctCount++;
+//     } else {
+//       div.className = "testquestion-box wrong";
+//       div.innerText = `❌ ${questions[index].head}`;
+//     }
+//     list.appendChild(div);
+//   });
+
+//   document.getElementById(
+//     "finalScoreText"
+//   ).innerText = `You got ${correctCount} out of ${questions.length} questions right!`;
+
 }
 
 function restart() {
   location.reload();
 }
-showQuestion();
+
 </script>

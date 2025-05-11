@@ -45,12 +45,6 @@
                         </div>
                     </div>
 
-                    {{-- <div class="form-group">
-                        <label>Short Body</label>
-                        <textarea name="short_body" style="width: 100%; height: 200px;">
-                            {{ old('short_body') }}
-                        </textarea>
-                    </div> --}}
 
                     <div class="form-group">
                         <label>Body</label>

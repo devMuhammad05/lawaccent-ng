@@ -10,7 +10,7 @@ class Assessment extends Model
     protected $fillable = [
         'title',
         'description',
-        'thumbnail',
+        // 'thumbnail',
         'status',
     ];
 

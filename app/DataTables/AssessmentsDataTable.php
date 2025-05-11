@@ -66,7 +66,7 @@ class AssessmentsDataTable extends DataTable
     {
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(60),
-            Column::make('thumbnail'),
+            // Column::make('thumbnail'),
             Column::make('title'),
             Column::make('description'),
             Column::computed('action')

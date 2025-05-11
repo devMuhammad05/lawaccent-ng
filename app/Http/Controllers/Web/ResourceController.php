@@ -16,7 +16,7 @@ class ResourceController extends Controller
 {
     /**
      * Display a listing of the resource.
-    */
+     */
     public function index()
     {
         return view('web.resource.index');
@@ -31,16 +31,16 @@ class ResourceController extends Controller
     {
         $blog = Blog::where('slug', $slug)->first();
 
-        if (! $blog) {
+        if (!$blog) {
             return abort(404);
         }
 
         // Fetch recent blogs from the same category, excluding the current one
         $recentBlogs = Blog::where('category_id', $blog->category_id)
-                          ->where('id', '!=', $blog->id)
-                          ->latest()
-                          ->take(3)
-                          ->get();
+            ->where('id', '!=', $blog->id)
+            ->latest()
+            ->take(3)
+            ->get();
 
         return view('web.resource.blog.show', compact('blog', 'recentBlogs'));
     }
@@ -57,9 +57,64 @@ class ResourceController extends Controller
         return $pdf->stream(config('app.name') . " Blog - " . $blog->title . '.pdf');
     }
 
+    // public function downloadPdf(string $slug)
+    // {
+    //     $blog = Blog::where('slug', $slug)->first();
 
+    //     if (! $blog) {
+    //         return abort(404);
+    //     }
 
-    // return view('web.resource.blog.pdf', compact($blog));
+    //     $pdf = Pdf::loadView('web.resource.blog.pdf', ['blog' => $blog]);
+
+    //     // Get canvas and page dimensions
+    //     $canvas = $pdf->getCanvas();
+    //     $pageWidth = $canvas->get_width();
+    //     $pageHeight = $canvas->get_height();
+
+    //     // Watermark image path - replace with your image path
+    //     // The image should be accessible via public path
+    //     $watermarkPath = public_path('web/assets/images/logo.webp');
+
+    //     // Make sure the image exists
+    //     if (file_exists($watermarkPath)) {
+    //         // Calculate watermark size and position
+    //         // Adjust these values based on your image and desired appearance
+    //         $imageWidth = $pageWidth * 0.4; // 40% of page width
+    //         $imageHeight = 500; // Auto-calculate height to maintain aspect ratio
+    //         // $xPosition = ($pageWidth - $imageWidth) / 2; // Center horizontally
+    //         $xPosition = 200; // Center horizontally
+    //         // $yPosition = ($pageHeight - $imageHeight) / 2; // Center vertically
+    //         $yPosition = 100; // Center vertically
+
+    //         // Set low opacity for the watermark
+    //         $canvas->set_opacity(1); // 8% opacity - subtle watermark
+
+    //         // Add watermark to each page using callback
+    //         $pdf->output([
+    //             'before_send_to_browser' => function($pdf) use ($canvas, $watermarkPath, $xPosition, $yPosition, $imageWidth, $imageHeight) {
+    //                 $totalPages = $pdf->getDomPDF()->getCanvas()->get_page_count();
+
+    //                 for ($i = 1; $i <= $totalPages; $i++) {
+    //                     $canvas = $pdf->getDomPDF()->getCanvas();
+    //                     $canvas->page_script($i, 'reset');
+    //                     $canvas->set_opacity(0.8);
+    //                     $canvas->page_image(
+    //                         $watermarkPath,
+    //                         $xPosition,
+    //                         $yPosition,
+    //                         $imageWidth,
+    //                         $imageHeight,
+    //                         'auto',
+    //                         true
+    //                     );
+    //                 }
+    //             }
+    //         ]);
+    //     }
+
+    //     return $pdf->stream(config('app.name') . " Blog - " . $blog->title . '.pdf');
+    // }
 
 
     public function faqs()
@@ -77,7 +132,7 @@ class ResourceController extends Controller
     {
         $caseStudy = CaseStudy::where('slug', $slug)->first();
 
-        if (! $caseStudy) {
+        if (!$caseStudy) {
             return abort(404);
         }
 
@@ -108,35 +163,38 @@ class ResourceController extends Controller
     {
         $assessments = Assessment::active()->get();
 
-        return view('web.resource.assessment-tool', compact('assessments'));
+        return view('web.resource.assessment.index', compact('assessments'));
     }
 
     public function showAssessment(Assessment $assessment)
     {
-        if (! $assessment) {
+        if (!$assessment) {
             abort(404);
         }
 
-        // $questionsData = [];
+        $questionsData = [];
 
-        // foreach ($assessment->questions as $question) {
-        //     $options = [];
+        foreach ($assessment->questions as $question) {
+            $options = [];
 
-        //     foreach ($question->options as $option) {
-        //         $options[] = [
-        //             'text' => $option->text,
-        //             'correct' => (bool) $option->is_correct,
-        //         ];
-        //     }
+            foreach ($question->options as $option) {
+                $options[] = [
+                    'text' => $option->text,
+                    'correct' => (bool) $option->is_correct,
+                ];
+            }
 
-        //     $questionsData[] = [
-        //         'question' => $question->text,
-        //         'options' => $options,
-        //     ];
-        // }
+            $questionsData[] = [
+                'question' => $question->text,
+                'head' => $question->head,
+                'options' => $options,
+            ];
+        }
 
-        // $questionsJson = $questionsData;
+        $questionsJson = $questionsData;
 
-        return view('web.resource.assessment.show', compact('assessment'));
+        // dd($questionsJson);
+
+        return view('web.resource.assessment.show', compact('assessment', 'questionsJson'));
     }
 }

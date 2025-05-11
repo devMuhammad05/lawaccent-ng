@@ -38,21 +38,21 @@ class AssessmentController extends Controller
 
         try {
 
-            if ($request->hasFile('thumbnail')) {
-                $imagePath = $request->file('thumbnail')->store('assessment', 'public');
+            // if ($request->hasFile('thumbnail')) {
+            //     $imagePath = $request->file('thumbnail')->store('assessment', 'public');
 
-                $data['thumbnail'] = (string) 'storage/'.$imagePath;
-            }
+            //     $data['thumbnail'] = (string) 'storage/'.$imagePath;
+            // }
 
             // Create the assessment
             $assessment = Assessment::create([
                 'title' => $data['title'],
                 'description' => $data['description'],
-                'thumbnail' => $data['thumbnail']
             ]);
 
             foreach ($data['questions'] as $qIndex => $questionData) {
                 $question = $assessment->questions()->create([
+                    'head' => $questionData['head'],
                     'text' => $questionData['text'],
                 ]);
 

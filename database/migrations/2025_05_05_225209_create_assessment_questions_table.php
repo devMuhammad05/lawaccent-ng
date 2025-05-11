@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('assessment_id')->constrained()->cascadeOnDelete();
             $table->string('text');
+            $table->string('head');
             $table->timestamps();
         });
     }

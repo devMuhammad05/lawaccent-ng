@@ -24,16 +24,16 @@
                     <div class="form-group">
                         <label>Description</label>
                         <input type='text' class='form-control' placeholder='Enter description' name='description'
-                            value='{{ old('description') }}'  required>
+                            value='{{ old('description') }}' required>
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Thumbnail</label>
                         <div id="image-preview" class="image-preview">
                             <label for="image-upload" id="image-label">Choose File</label>
                             <input type="file" name="thumbnail" id="image-upload" />
                         </div>
-                    </div>
+                    </div> --}}
 
                     <hr>
 
@@ -42,6 +42,12 @@
                         <h5>Questions</h5>
                         <div class="question-block mb-4 border p-3 rounded" data-index="0">
                             <h6 class="question-title">Question 1</h6>
+
+                            <div class="form-group">
+                                <label>Head</label>
+                                <input type="text" name="questions[0][head]" class="form-control"
+                                    placeholder="Enter question head" required>
+                            </div>
 
                             <div class="form-group">
                                 <label>Question</label>
@@ -60,12 +66,6 @@
                                             class="form-check-input mt-2" required>
                                     </div>
                                 @endfor
-{{--
-                                <div class="form-group">
-                                    <label>Answer Explanation</label>
-                                    <input type="text" name="questions[0][explanation]" class="form-control" placeholder="Enter explanation" required>
-
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -83,38 +83,44 @@
 @endsection
 
 @push('scripts')
-<script>
-    let questionIndex = 1;
+    <script>
+        let questionIndex = 1;
 
-    document.getElementById('add-question').addEventListener('click', function () {
-        const wrapper = document.getElementById('questions-wrapper');
+        document.getElementById('add-question').addEventListener('click', function () {
+            const wrapper = document.getElementById('questions-wrapper');
 
-        let html = `
-            <div class="question-block mb-4 border p-3 rounded" data-index="${questionIndex}">
-                <h6 class="question-title">Question ${questionIndex + 1}</h6>
+            let html = `
+                <div class="question-block mb-4 border p-3 rounded" data-index="${questionIndex}">
+                    <h6 class="question-title">Question ${questionIndex + 1}</h6>
 
-                <div class="form-group">
-                    <label>Question</label>
-                    <input type="text" name="questions[${questionIndex}][text]" class="form-control" placeholder="Enter question" required>
+                    <div class="form-group">
+                        <label>Head</label>
+                        <input type="text" name="questions[${questionIndex}][head]" class="form-control"
+                            placeholder="Enter question head" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Question</label>
+                        <input type="text" name="questions[${questionIndex}][text]" class="form-control" placeholder="Enter question" required>
+                    </div>
+
+                    <div class="options-wrapper">
+                        <h6>Options</h6>
+                        ${[0, 1].map(i => `
+                            <div class="form-group d-flex">
+                                <input type="text" name="questions[${questionIndex}][options][${i}][text]" class="form-control me-2" placeholder="Option text" required>
+                                <label class="me-2 mt-2">Correct?</label>
+                                <input type="radio" name="questions[${questionIndex}][correct_option]" value="${i}" class="form-check-input mt-2" required>
+                            </div>
+                        `).join('')}
+                    </div>
+
+
                 </div>
+            `;
 
-                <div class="options-wrapper">
-                    <h6>Options</h6>
-                    ${[0, 1].map(i => `
-                        <div class="form-group d-flex">
-                            <input type="text" name="questions[${questionIndex}][options][${i}][text]" class="form-control me-2" placeholder="Option text" required>
-                            <label class="me-2 mt-2">Correct?</label>
-                            <input type="radio" name="questions[${questionIndex}][correct_option]" value="${i}" class="form-check-input mt-2" required>
-                        </div>
-                    `).join('')}
-                </div>
-
-
-            </div>
-        `;
-
-        wrapper.insertAdjacentHTML('beforeend', html);
-        questionIndex++;
-    });
-</script>
+            wrapper.insertAdjacentHTML('beforeend', html);
+            questionIndex++;
+        });
+    </script>
 @endpush

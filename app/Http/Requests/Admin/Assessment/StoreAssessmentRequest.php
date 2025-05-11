@@ -24,10 +24,11 @@ class StoreAssessmentRequest extends FormRequest
         return [
             'title' => 'required|string',
             'description' => 'required|string',
-            'thumbnail' => ['required', 'image'],
+            // 'thumbnail' => ['nullable', 'image'],
 
             'questions' => 'required|array|min:1',
             'questions.*.text' => 'required|string',
+            'questions.*.head' => 'required|string',
             'questions.*.options' => 'required|array|size:2',
             'questions.*.options.*.text' => 'required|string',
             'questions.*.correct_option' => 'required|in:0,1,',
