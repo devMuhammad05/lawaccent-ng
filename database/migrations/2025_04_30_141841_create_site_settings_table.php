@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->date('privacy_notice_effective_date')->default(now());
             $table->date('cookie_notice_effective_date')->default(now());
+            $table->string('application_form_link')->nullable();
             $table->timestamps();
         });
     }

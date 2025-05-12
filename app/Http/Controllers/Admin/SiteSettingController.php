@@ -28,6 +28,7 @@ class SiteSettingController extends Controller
             // 'display_cookies_consent_banner' => ['sometimes', 'boolean'],
             'privacy_notice_effective_date' => ['sometimes', 'date'],
             'cookie_notice_effective_date' => ['sometimes', 'date'],
+            'application_form_link' => ['sometimes', 'url'],
         ]);
 
         // dd($site_setting);
