@@ -44,8 +44,10 @@
             </div>
 
             <div class="testmore-buttons" id="moreButtons" style="display: none">
-                <button onclick="restart()" class="btn">More Assessments</button>
-                <button class="btn"><a href="index.html">Go To Homepage</a></button>
+                <a href="{{ route('resources.assessment.tool') }}">
+                    <button class="btn">More Assessments</button>
+                </a>
+                <button class="btn"><a href="{{ route('home') }}">Go To Homepage</a></button>
             </div>
         </div>
     </section>

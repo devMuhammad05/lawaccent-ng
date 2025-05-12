@@ -26,7 +26,7 @@
       </section>
 
       <section class="chooseus">
-        <div class="container">
+        <div class="container mb-4">
           <h2>Our Cross-Border Legal Solutions</h2>
           <div class="row chooserow">
             <div class="col-md-4">
