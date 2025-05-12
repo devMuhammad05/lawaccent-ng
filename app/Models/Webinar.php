@@ -6,5 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Webinar extends Model
 {
-    //
+    protected $fillable = [
+        'title',
+        'topic',
+        'slug',
+        'description',
+        'date',
+    ];
+
+    protected $casts = [
+        'date' => 'datetime',
+    ];
 }

@@ -29,6 +29,7 @@ class SiteSettingController extends Controller
             'privacy_notice_effective_date' => ['sometimes', 'date'],
             'cookie_notice_effective_date' => ['sometimes', 'date'],
             'application_form_link' => ['sometimes', 'url'],
+            'youtube_link' => ['sometimes', 'url'],
         ]);
 
         // dd($site_setting);

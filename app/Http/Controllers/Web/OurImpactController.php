@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\web;
 
 use App\Models\Quiz;
+use App\Models\Webinar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\ScholarshipApplication;
@@ -19,8 +20,8 @@ class OurImpactController extends Controller
 
     public function legalLiteracy()
     {
-        return view('web.impact.legal-literacy');
-
+        $webinars = Webinar::latest()->get();
+        return view('web.impact.legal-literacy', compact('webinars'));
     }
 
     public function lawSchool()
@@ -116,4 +117,8 @@ class OurImpactController extends Controller
         return view('web.impact.quiz.show', compact('quiz', 'questionsJson'));
     }
 
+    public function showWebinar(Webinar $webinar)
+    {
+        return view('web.impact.webinar-details');
+    }
 }

@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('webinars', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('topic');
+            $table->string('slug');
+            $table->text('description');
+            $table->dateTime('date');
             $table->timestamps();
         });
     }

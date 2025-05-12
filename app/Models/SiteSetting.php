@@ -12,6 +12,7 @@ class SiteSetting extends Model
         'privacy_notice_effective_date',
         'cookie_notice_effective_date',
         'application_form_link',
+        'youtube_link',
     ];
 
     protected $casts = [

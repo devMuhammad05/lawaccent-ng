@@ -19,6 +19,7 @@ use App\Http\Controllers\Admin\PodcastMediaController;
 use App\Http\Controllers\Admin\PrivacyNoticeController;
 use App\Http\Controllers\Admin\AboutUsMetricsController;
 use App\Http\Controllers\Admin\ScholarshipApplicationController;
+use App\Http\Controllers\Admin\WebinarController;
 
 
 Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->group(function () {
@@ -46,6 +47,7 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::get('consultation/unread', [ConsultationController::class, 'unread'])->name('consultations.unread');
     Route::resource('our-teams', OurTeamController::class);
     Route::resource('scholarship-applications', ScholarshipApplicationController::class);
+    Route::resource('webinars', WebinarController::class);
     Route::get('scholarship-application/unread', [ScholarshipApplicationController::class, 'unread'])->name('scholarship-applications.unread');
     Route::get('scholarship-application/{scholarshipApplication}/mark-as-read', [ScholarshipApplicationController::class, 'markAsRead'])->name('scholarship-application.markAsRead');
 });

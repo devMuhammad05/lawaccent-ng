@@ -76,7 +76,9 @@
                 class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 {{-- <img alt="image" src="{{ asset('admin/assets/img/avatar/avatar-2.png') }}"
                     class="mr-1 rounded-circle"> --}}
-                <div class="d-sm-none d-lg-inline-block"><p class="admin-text">Hi, Admin</p></div>
+                <div class="d-sm-none d-lg-inline-block">
+                    <p class="admin-text">Hi, Admin</p>
+                </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 {{-- <div class="dropdown-title">Logged in 5 min ago</div> --}}
@@ -90,10 +92,8 @@
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <a href="#"
-                        onclick="event.preventDefault();
-                        this.closest('form').submit();"
-                        class="dropdown-item has-icon text-danger">
+                    <a href="#" onclick="event.preventDefault();
+                        this.closest('form').submit();" class="dropdown-item has-icon text-danger">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
 
@@ -208,7 +208,8 @@
                             @endif
                         </a>
                     </li>
-                    <li><a class="nav-link" href="{{ route('admin.scholarship-applications.index') }}">All Applications</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.scholarship-applications.index') }}">All
+                            Applications</a></li>
                 </ul>
             </li>
 
@@ -243,7 +244,8 @@
                     <li><a class="nav-link" href="{{ route('admin.contact-us.index') }}">All Messages</a></li>
                 </ul>
             </li>
-            <li class="dropdown {{ $currentRoute === 'videos' ? 'active' : '' }} {{ $currentRoute === 'podcasts' ? 'active' : '' }}">
+            <li
+                class="dropdown {{ $currentRoute === 'videos' ? 'active' : '' }} {{ $currentRoute === 'podcasts' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-columns"></i>
                     <span>
@@ -256,6 +258,13 @@
                     </li>
                     <li><a class="nav-link" href="{{ route('admin.podcasts.index') }}">Podcast</a></li>
                 </ul>
+            </li>
+
+            <li class="{{ $currentRoute === 'webinars' ? 'active' : '' }}">
+                <a href="{{ route('admin.webinars.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Webinars</span>
+                </a>
             </li>
 
             <li class="dropdown {{ $currentRoute === 'consultations' ? 'active' : '' }}">
@@ -310,12 +319,12 @@
 
 
 <style>
-    .notice{
+    .notice {
         padding: 0px 7px !important;
         width: 20px !important
     }
 
-    .counter{
+    .counter {
         color: white;
         background-color: #fc544b;
         padding: 0px 7px;
@@ -325,7 +334,7 @@
         margin-left: 5px;
     }
 
-    .btn{
+    .btn {
         padding: 0px 7px;
         font-size: 13px;
         font-weight: bold;
