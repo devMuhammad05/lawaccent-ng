@@ -20,7 +20,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="form-group w-50">
                             <label>Application form link</label>
-                            <input type="url" class="form-control" name="application_form_link">
+                            <input type="url" class="form-control" value="{{ old('application_form_link', optional(SiteSetting::first())->application_form_link) }}" placeholder="Enter Application Form" name="application_form_link">
                         </div>
                         <div>
                             <button class="btn btn-primary py-2 px-3">Update</button>
@@ -30,7 +30,6 @@
 
             </div>
         </div>
-
 
         <div class="card card-primary">
             <div class="card-header">

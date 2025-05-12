@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    <section class="youtubesection">
+    {{-- <section class="youtubesection">
         <div class="container">
             <h5>Recent Videos</h5>
             <div class="row youtubesectionrow">
@@ -87,7 +87,17 @@
                 <div class="loadmorediv"></div>
             </div>
         </div>
+    </section> --}}
+    @if (count($videoMedias))
+    <section class="youtubesection">
+      <div class="container mb-5">
+        <h5>Recent Videos</h5>
+        <div class="row youtubesectionrow">
+          @include('web.partials.video-card')
+        </div>
+      </div>
     </section>
+    @endif
 
     <section class="podcastsection">
         <div class="container">

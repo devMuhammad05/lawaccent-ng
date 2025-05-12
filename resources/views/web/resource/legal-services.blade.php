@@ -105,7 +105,7 @@
         </section>
       @endif
 
-      @if (count($blogs))
+      @if (count($videoMedias))
       <section class="youtubesection">
         <div class="container mb-5">
           <h5>Video Hub</h5>

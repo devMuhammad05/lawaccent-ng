@@ -7,8 +7,6 @@ use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Assessment;
 use App\Models\VideoMedia;
-use App\Models\BlogCategory;
-use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 
@@ -141,7 +139,8 @@ class ResourceController extends Controller
 
     public function mediaHub()
     {
-        return view('web.resource.media-hub');
+        $videoMedias = VideoMedia::latest()->take(8)->get();
+        return view('web.resource.media-hub', compact('videoMedias'));
     }
 
     public function business()
@@ -192,8 +191,6 @@ class ResourceController extends Controller
         }
 
         $questionsJson = $questionsData;
-
-        // dd($questionsJson);
 
         return view('web.resource.assessment.show', compact('assessment', 'questionsJson'));
     }
