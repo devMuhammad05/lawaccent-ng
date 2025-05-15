@@ -43,6 +43,7 @@
             <h4>Assessments</h4>
             <div class="row assessmentrow">
 
+
                 @foreach ($assessments as $assessment)
                     <div class="col-md-4">
                         <div class="assessmentcard">
@@ -67,6 +68,10 @@
                     </div>
                 @endforeach
 
+                @if (count($assessments) < 1)
+                    <p class="text-secondary">No assessment at the moment, check back later!</p>
+                @endif
+
             </div>
 
             <hr>
@@ -78,7 +83,31 @@
         <div class="container">
             <h4>Checklists</h4>
             <div class="row assessmentrow">
+
+                @foreach ($legalCheckLists as $legalCheckList)
                 <div class="col-md-4">
+                    <div class="assessmentcard">
+                        <div class="assessmentimage-wrapper">
+                            <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
+                            <div class="overlay">
+                                <img src="{{ asset("web/assets/images/overlaycheck.svg") }}" alt="" />
+                                <p>{{ $legalCheckList->title }}</p>
+                            </div>
+                        </div>
+                        <div class="assesmentcard-body">
+                            <h6>{{ $legalCheckList->title }}</h6>
+                            <p>
+                                {{ $legalCheckList->description }}
+                            </p>
+                            <button class="btn">
+                                <a href="{{ route('resources.show.legal.check.list', $legalCheckList) }}">Read Checklist</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+
+                {{-- <div class="col-md-4">
                     <div class="assessmentcard">
                         <div class="assessmentimage-wrapper">
                             <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
@@ -119,28 +148,7 @@
                             </button>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="assessmentcard">
-                        <div class="assessmentimage-wrapper">
-                            <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                            <div class="overlay">
-                                <img src="{{ asset("web/assets/images/overlaycheck.svg") }}" alt="" />
-                                <p>HOW TO REGISTRER YOUR BUSINESS LEGALLY</p>
-                            </div>
-                        </div>
-                        <div class="assesmentcard-body">
-                            <h6>How to Register Your Business Legally</h6>
-                            <p>
-                                A step-by-step guide to choosing a business structure,
-                                securing a name, and completing official regustrations
-                            </p>
-                            <button class="btn">
-                                <a href="legalchecklistreadmore.html">Read Checklist</a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
             {{-- <div class="loadmore">
                 <div class="loadmorediv"></div>

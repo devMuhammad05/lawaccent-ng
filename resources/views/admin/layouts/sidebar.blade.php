@@ -173,6 +173,12 @@
                     <span>Assessments</span>
                 </a>
             </li>
+            <li class="{{ $currentRoute === 'checklists' ? 'active' : '' }}">
+                <a href="{{ route('admin.checklists.index') }}" class="nav-link">
+                    <i class="fas fa-columns"></i></i>
+                    <span>Checklists</span>
+                </a>
+            </li>
             <li class="{{ $currentRoute === 'our-teams' ? 'active' : '' }}">
                 <a href="{{ route('admin.our-teams.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>

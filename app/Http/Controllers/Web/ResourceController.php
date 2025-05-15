@@ -6,6 +6,7 @@ use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Assessment;
+use App\Models\LegalCheckList;
 use App\Models\VideoMedia;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
@@ -47,7 +48,7 @@ class ResourceController extends Controller
     {
         $blog = Blog::where('slug', $slug)->first();
 
-        if (! $blog) {
+        if (!$blog) {
             return abort(404);
         }
 
@@ -161,8 +162,9 @@ class ResourceController extends Controller
     public function assessmentTool()
     {
         $assessments = Assessment::active()->get();
+        $legalCheckLists = LegalCheckList::all();
 
-        return view('web.resource.assessment.index', compact('assessments'));
+        return view('web.resource.assessment.index', compact('assessments', 'legalCheckLists'));
     }
 
     public function showAssessment(Assessment $assessment)
@@ -194,4 +196,14 @@ class ResourceController extends Controller
 
         return view('web.resource.assessment.show', compact('assessment', 'questionsJson'));
     }
+
+    public function showLegalCheckList(LegalCheckList $legalCheckList)
+    {
+        if (!$legalCheckList) {
+            abort(404);
+        }
+
+        return view('web.resource.check-list-details', compact('legalCheckList'));
+    }
+
 }

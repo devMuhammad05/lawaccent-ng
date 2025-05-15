@@ -5,7 +5,9 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\QuizController;
 use App\Http\Controllers\Admin\SocialController;
 use App\Http\Controllers\Admin\OurTeamController;
+use App\Http\Controllers\Admin\WebinarController;
 use App\Http\Controllers\Admin\CaseStudyController;
+use App\Http\Controllers\Admin\CheckListController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AssessmentController;
@@ -19,7 +21,6 @@ use App\Http\Controllers\Admin\PodcastMediaController;
 use App\Http\Controllers\Admin\PrivacyNoticeController;
 use App\Http\Controllers\Admin\AboutUsMetricsController;
 use App\Http\Controllers\Admin\ScholarshipApplicationController;
-use App\Http\Controllers\Admin\WebinarController;
 
 
 Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->group(function () {
@@ -33,6 +34,7 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('site-settings', SiteSettingController::class);
     Route::resource('case-studies', CaseStudyController::class);
     Route::resource('assessments', AssessmentController::class);
+    Route::resource('checklists', CheckListController::class);
     Route::resource('newsletters', NewsletterController::class);
     Route::resource('quizzes', QuizController::class);
     Route::resource('socials', SocialController::class);

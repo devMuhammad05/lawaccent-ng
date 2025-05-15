@@ -2,7 +2,7 @@
 
 namespace App\DataTables;
 
-use App\Models\Quiz;
+use App\Models\LegalCheckList;
 use Illuminate\Database\Eloquent\Builder as QueryBuilder;
 use Yajra\DataTables\EloquentDataTable;
 use Yajra\DataTables\Html\Builder as HtmlBuilder;
@@ -12,33 +12,33 @@ use Yajra\DataTables\Html\Editor\Editor;
 use Yajra\DataTables\Html\Editor\Fields;
 use Yajra\DataTables\Services\DataTable;
 
-class QuizzesDataTable extends DataTable
+class LegalCheckListDataTable extends DataTable
 {
     /**
      * Build the DataTable class.
      *
-     * @param QueryBuilder<Quiz> $query Results from query() method.
+     * @param QueryBuilder<LegalCheckList> $query Results from query() method.
      */
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
             ->addIndexColumn()
             ->addColumn('action', function ($query) {
-                $edit = "<a href='".route('admin.quizzes.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
-                $delete = "<a href='".route('admin.quizzes.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
+                $edit = "<a href='".route('admin.checklists.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='".route('admin.checklists.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
 
                 return $edit.$delete;
             })
-            ->rawColumns(['action'])
+             ->rawColumns(['action', 'body'])
             ->setRowId('id');
     }
 
     /**
      * Get the query source of dataTable.
      *
-     * @return QueryBuilder<Quiz>
+     * @return QueryBuilder<LegalCheckList>
      */
-    public function query(Quiz $model): QueryBuilder
+    public function query(LegalCheckList $model): QueryBuilder
     {
         return $model->newQuery();
     }
@@ -49,7 +49,7 @@ class QuizzesDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('quizzes-table')
+                    ->setTableId('legalchecklist-table')
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(1)
@@ -72,15 +72,13 @@ class QuizzesDataTable extends DataTable
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
             Column::make('title'),
-            Column::make('sub_title'),
             Column::make('description'),
-            Column::make('status'),
+            Column::make('body'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)
                   ->width(100)
                   ->addClass('text-center'),
-
         ];
     }
 
@@ -89,6 +87,6 @@ class QuizzesDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'Quizzes_' . date('YmdHis');
+        return 'LegalCheckList_' . date('YmdHis');
     }
 }
