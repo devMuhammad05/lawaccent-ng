@@ -2,38 +2,38 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>Cookie Notice</h1>
+            <h1>Legal Checklist</h1>
         </div>
         <div class="card card-primary">
             <div class="card-header">
-                <h4>Edit Cookie Notice</h4>
+                <h4>Edit Legal Checklist</h4>
 
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.cookie-notice.update', ['cookies_policy' => $cookiesPolicy]) }}"
-                    method="POST">
+                <form action="{{ route('admin.checklists.update', $legalCheckList->id) }}" method="POST">
                     @csrf
                     @method('PUT')
+
                     <div class="form-group">
                         <label>Title</label>
-                        <input type='text' class='form-control' placeholder='Question' name='question'
-                            value='{{ $cookiesPolicy->question }}'>
+                        <input type='text' class='form-control' placeholder='Title' name='title' value='{{ $legalCheckList->title }}'>
                     </div>
 
                     <div class="form-group">
-                        <label class="form-control">Answer</label>
-                          <textarea class="summernote" name="answer">{!! $cookiesPolicy->answer !!}</textarea>
+                        <label>Description</label>
+                        <input type='text' class='form-control' placeholder='Description' name='description'
+                            value='{{ $legalCheckList->description }}'>
                     </div>
 
                     <div class="form-group">
-                        <label>Status</label>
-                        <select type='text' class='form-control' name='status'>
-                            <option value="1" @selected($cookiesPolicy->status == 1)>Active</option>
-                            <option value="0" @selected($cookiesPolicy->status == 0)>Inactive</option>
-                        </select>
+                        <label class="form-control">Checklists</label>
+                        <textarea class="summernote" name="body">{{
+                            $legalCheckList->body
+                        }}
+                        </textarea>
                     </div>
 
-                     <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
+                    <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
                 </form>
             </div>
         </div>

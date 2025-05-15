@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\LegalCheckList;
 use Illuminate\Http\Request;
+use App\Models\LegalCheckList;
 use App\Http\Controllers\Controller;
 use App\DataTables\LegalCheckListDataTable;
 use App\Http\Requests\Admin\CheckList\StoreCheckList;
+use App\Http\Requests\Admin\CheckList\UpdateCheckList;
 
 class CheckListController extends Controller
 {
@@ -38,28 +39,33 @@ class CheckListController extends Controller
         return to_route('admin.checklists.index')->with("success", "Legal checklist created successfully");
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
     {
-        //
+        $legalCheckList = legalCheckList::find($id);
+
+        return view('admin.checklist.edit', [
+            'legalCheckList' => $legalCheckList,
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateCheckList $request, string $id)
     {
-        //
+        $validatedData = $request->validated();
+
+        $legalCheckList = legalCheckList::find($id);
+
+        $legalCheckList->update($validatedData);
+
+        flash()->success('Legal checklist updated successfully');
+
+        return to_route('admin.checklists.index');
     }
 
     /**
@@ -67,6 +73,14 @@ class CheckListController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $legalCheckList = legalCheckList::find($id);
+
+        $legalCheckList->delete();
+
+        return response([
+            "status" => "success",
+            "response" => "Legal checklist deleted successfully",
+        ]);
+
     }
 }

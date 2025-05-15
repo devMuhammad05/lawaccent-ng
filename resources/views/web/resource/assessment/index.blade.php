@@ -107,54 +107,12 @@
                 </div>
                 @endforeach
 
-                {{-- <div class="col-md-4">
-                    <div class="assessmentcard">
-                        <div class="assessmentimage-wrapper">
-                            <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                            <div class="overlay">
-                                <img src="{{ asset("web/assets/images/overlaycheck.svg") }}" alt="" />
-                                <p>HOW TO REGISTRER YOUR BUSINESS LEGALLY</p>
-                            </div>
-                        </div>
-                        <div class="assesmentcard-body">
-                            <h6>How to Register Your Business Legally</h6>
-                            <p>
-                                A step-by-step guide to choosing a business structure,
-                                securing a name, and completing official regustrations
-                            </p>
-                            <button class="btn">
-                                <a href="legalchecklistreadmore.html">Read Checklist</a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="assessmentcard">
-                        <div class="assessmentimage-wrapper">
-                            <img src="{{ asset("web/assets/images/assessment.webp") }}" alt="" />
-                            <div class="overlay">
-                                <img src="{{ asset("web/assets/images/overlaycheck.svg") }}" alt="" />
-                                <p>HOW TO REGISTRER YOUR BUSINESS LEGALLY</p>
-                            </div>
-                        </div>
-                        <div class="assesmentcard-body">
-                            <h6>How to Register Your Business Legally</h6>
-                            <p>
-                                A step-by-step guide to choosing a business structure,
-                                securing a name, and completing official regustrations
-                            </p>
-                            <button class="btn">
-                                <a href="legalchecklistreadmore.html">Read Checklist</a>
-                            </button>
-                        </div>
-                    </div>
-                </div> --}}
+                @if (count($assessments) < 1)
+                    <p class="text-secondary">No checklist at the moment, check back later!</p>
+                @endif
+
             </div>
-            {{-- <div class="loadmore">
-                <div class="loadmorediv"></div>
-                <button class="btn">Load More Checklists</button>
-                <div class="loadmorediv"></div>
-            </div> --}}
+
         </div>
     </section>
 
