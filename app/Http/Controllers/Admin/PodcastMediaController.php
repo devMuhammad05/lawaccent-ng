@@ -90,8 +90,6 @@ class PodcastMediaController extends Controller
 
         $postMedia->delete();
 
-        // flash()->deleted('Privacy Notice deleted successfully');
-
-        return redirect()->back();
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

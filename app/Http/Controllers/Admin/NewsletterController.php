@@ -87,8 +87,6 @@ class NewsletterController extends Controller
         $newsletter = Newsletter::findOrFail($id);
         $newsletter->delete();
 
-        flash()->deleted('Email deleted successfully');
-
-        return redirect()->back();
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

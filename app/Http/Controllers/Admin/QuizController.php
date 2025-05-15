@@ -140,8 +140,6 @@ class QuizController extends Controller
 
         $quiz->delete();
 
-        // flash()->deleted('Quiz deleted successfully');
-
-        return redirect()->back();
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

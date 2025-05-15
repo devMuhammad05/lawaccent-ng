@@ -72,8 +72,6 @@ class CookieNoticeController extends Controller
 
         $CookieNotice->delete();
 
-        flash()->deleted('Cookie Notice deleted successfully');
-
-        return redirect()->back();
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

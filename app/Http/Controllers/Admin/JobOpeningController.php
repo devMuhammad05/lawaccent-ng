@@ -49,8 +49,6 @@ class JobOpeningController extends Controller
 
         $jobOpening->delete();
 
-        flash()->deleted('Job opening deleted successfully');
-
-        return redirect()->back();
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

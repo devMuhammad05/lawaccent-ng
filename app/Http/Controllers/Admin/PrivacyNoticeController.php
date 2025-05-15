@@ -72,8 +72,6 @@ class PrivacyNoticeController extends Controller
 
         $privacyNotice->delete();
 
-        // flash()->deleted('Privacy Notice deleted successfully');
-
-        return redirect()->back();
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

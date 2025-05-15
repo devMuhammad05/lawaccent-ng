@@ -74,8 +74,6 @@ class FaqController extends Controller
 
         $faq->delete();
 
-        flash()->deleted('Faq deleted successfully');
-
-        return redirect()->back();
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }
