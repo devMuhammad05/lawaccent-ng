@@ -1,5 +1,19 @@
 <x-app-layout>
 
+        <!--=============================
+        DISPLAY ANY ERROR START
+    ==============================-->
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+        @php
+          flash()->error("$error")
+        @endphp
+        @endforeach
+    @endif
+    <!--=============================
+       DISPLAY ANY ERROR END
+    ==============================-->
+    
     <section class="sectiontitle">
         <div class="container">
             <div class="row sectiontitlerow">
@@ -42,12 +56,13 @@
     <section class="rsvp">
         <div class="container">
             <div class="rsvprowcard shadow">
-                <form id="consultationForm">
-                    <div class="progress-indicator progressrsvp">
+                <form id="consultationForm" action="{{ route('webinar.store') }}" method="POST">
+                    @csrf
+                    {{-- <div class="progress-indicator progressrsvp">
                         <span class="step-indicator active" id="indicator1"></span>
                         <span class="step-indicator" id="indicator2"></span>
                         <span class="step-indicator" id="indicator3"></span>
-                    </div>
+                    </div> --}}
 
                     <!-- Step 1 -->
                     <div class="form-step rsvpform-step" id="step1">
@@ -55,32 +70,43 @@
                         <p>Secure your spot for our upcoming legal seminar.</p>
                         <form action="">
                             <label for="" class="rsvplabelform">Full Name</label>
-                            <input type="text" placeholder="Enter Full Name" class="stepinput form-control" required />
+                            <input type="text" placeholder="Enter Full Name" class="stepinput form-control" name="name" required />
                             <label for="" class="rsvplabelform">Email Address</label>
-                            <input type="email" placeholder="Enter email address" class="stepinput form-control"
+                            <input type="email" placeholder="Enter email address" name="email" class="stepinput form-control"
                                 required />
                             <label for="" class="rsvplabelform">Phone Number</label>
                             <input class="stepinput form-control" type="tel"
-                                placeholder="Enter a valid phone number (Ex. +234 801 2345 678)" required />
+                                placeholder="Enter a valid phone number (Ex. +234 801 2345 678)" name="phone_number" required />
                             <div class="rsvpspandiv">
-                                <span>Preferred Consultation Type</span>
+                                <span>Attendance Type</span>
                             </div>
                             <div class="labeldiv">
-                                <label><input type="radio" name="consultationType" />
+                                <label><input type="radio" name="type"  value="Virtual" {{ old('type') == 'Virtual' ? 'checked' : '' }} />
                                     Virtual</label>
-                                <label><input type="radio" name="consultationType" /> In
+                                <label><input type="radio" name="type" value="In Person" {{ old('type') == 'In Person' ? 'checked' : '' }} /> In
                                     Person</label>
                             </div>
-                            <label for="" class="rsvplabelforms">Event</label>
-                            <select class="stepinput form-control" required>
+
+                            {{-- <label for="" class="rsvplabelforms">Event</label> --}}
+                            {{-- <select class="stepinput form-control" required>
                                 <option value="">Autofilled Event</option>
                                 <option>Autofilled Event</option>
                                 <option>Autofilled Event</option>
                                 <option>Autofilled Event</option>
-                            </select>
-                            <button type="button" class="btn rsvpsubmitbtn" onclick="nextStep()">
+                            </select> --}}
+                            {{-- <button type="button" class="btn rsvpsubmitbtn" onclick="nextStep()">
                                 Next
-                            </button>
+                            </button> --}}
+
+                            <label for="" class="rsvplabelform">Have Any Questions To Ask Before The Webinar?</label>
+
+                                <textarea placeholder="Enter your question"
+                                class="stepinput form-control rsvpfixed-textarea" name="question" required></textarea>
+
+
+                                <button class="btn reservebtn mt-5" type="submit">
+                                    Reserve My Seat
+                                </button>
                         </form>
                     </div>
 
@@ -91,9 +117,8 @@
                         <form action="">
                             <label for="" class="rsvplabelform">Have Any Questions To Ask Before The Webinar?</label>
                             <textarea placeholder="Enter your question"
-                                class="stepinput form-control rsvpfixed-textarea" required></textarea>
+                                class="stepinput form-control rsvpfixed-textarea" required style="height: 300px!important"></textarea>
                             <div class="mt-4">
-                                <!-- <button class="btn" onclick="prevStep()">Previous</button> -->
                                 <button class="btn reservebtn" onclick="submitForm()">
                                     Reserve My Seat
                                 </button>
@@ -102,38 +127,7 @@
                     </div>
 
                     <!-- Step 3 -->
-                    <div class="form-step rsvpform-step" id="step3" style="display: none">
-                        <h4>✅ RSVP Confirmed!</h4>
-                        <p class="pt-3">
-                            Thank you for confirming your attendance — we're excited to have
-                            you with us!
-                        </p>
-                        <p>
-                            We've received your RSVP and saved your spot. Keep an eye on
-                            your email for event details, and reminders.
-                        </p>
 
-                        <div class="rsvpbelow">
-                            <p>📅 What's Next?</p>
-                            <ul class="text-center">
-                                <li>Event Details: Will be sent to your email shortly.</li>
-                                <li>
-                                    Need to make changes? You can update your RSVP by replying
-                                    to the confirmation email.
-                                </li>
-                                <br />
-                                <li>Have questions?</li>
-                            </ul>
-                            <div class="rsvpbutton">
-                                <button class="btn">
-                                    <a href="mailto:info@lawaccent.com">Send An Email</a>
-                                </button>
-                                <button class="btn">
-                                    <a href="tel:+2347040092801">Call Us</a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </form>
             </div>
         </div>

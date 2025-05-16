@@ -99,7 +99,7 @@
     </section>
     @endif
 
-    <section class="podcastsection">
+    {{-- <section class="podcastsection">
         <div class="container">
             <h5>Recent PodCasts</h5>
             <div class="row podcastsectionrow">
@@ -282,7 +282,7 @@
                 <div class="loadmorediv"></div>
             </div>
         </div>
-    </section>
+    </section> --}}
 
     @include('web.partials.newsletter')
 

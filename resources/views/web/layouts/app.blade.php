@@ -21,6 +21,7 @@
 @livewireStyles
 
 <body>
+    
 
     @include('web.layouts.navbar')
 

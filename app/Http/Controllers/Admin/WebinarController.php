@@ -70,7 +70,7 @@ class WebinarController extends Controller
 
         $webinar->update($validatedData);
 
-        flash()->success('Webinar Updated successfully');
+        flash()->success('Webinar updated successfully');
 
         return to_route('admin.webinars.index');
     }

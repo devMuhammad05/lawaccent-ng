@@ -121,9 +121,6 @@
         </div>
     </section>
 
-
-    <livewire:contact-us-form />
-
     @include('web.partials.newsletter')
 
     @push('script')

@@ -12,6 +12,7 @@ use App\Http\Controllers\Web\NewsletterController;
 use App\Http\Controllers\web\ConsultationController;
 use App\Http\Controllers\Web\PracticeAreaController;
 use App\Http\Controllers\Web\PrivacyAndCookiesController;
+use App\Http\Controllers\Web\WebinarApplicationController;
 
 
 
@@ -67,13 +68,13 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
     Route::get('quizzes/{quiz}/why-take-quiz', 'whyTakeQuiz')->name('why.take.quiz');
     Route::get('quizzes/{quiz}', 'showQuiz')->name('show.quiz');
     Route::get('webinars/{webinar:slug}', 'showWebinar')->name('show.webinar');
-
 });
 
 Route::get('career', [CareerController::class, 'index'])->name('career');
 Route::get('contact-us', [ContactUsController::class, 'index'])->name('contact-us');
 Route::get('schedule-a-consultation', [ConsultationController::class, 'index'])->name('consultation');
 Route::post('schedule-a-consultation', [ConsultationController::class, 'store'])->name('consultation.store');
+Route::post('webinar-application', [WebinarApplicationController::class, 'store'])->name('webinar.store');
 
 Route::post('newsletters', NewsletterController::class)->name('newsletters.store');
 

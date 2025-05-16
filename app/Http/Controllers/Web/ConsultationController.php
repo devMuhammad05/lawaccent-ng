@@ -33,7 +33,6 @@ class ConsultationController extends Controller
 
         flash()->success( 'Your consultation request has been submitted successfully. We will get back to you shortly.');
 
-
         return back();
     }
 }
