@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\DataTables\webinarsDataTable;
 use App\Http\Requests\Admin\Webinar\StoreWebinarRequest;
+use App\Http\Requests\Admin\Webinar\UpdateWebinarRequest;
 
 class WebinarController extends Controller
 {
@@ -54,15 +55,24 @@ class WebinarController extends Controller
      */
     public function edit(string $id)
     {
-        //
-    }
+        $webinar = Webinar::find($id);
 
+        return view('admin.webinar.edit', [
+            'webinar' => $webinar,
+        ]);
+    }
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateWebinarRequest $request, Webinar $webinar)
     {
-        //
+        $validatedData = $request->validated();
+
+        $webinar->update($validatedData);
+
+        flash()->success('Webinar Updated successfully');
+
+        return to_route('admin.webinars.index');
     }
 
     /**
@@ -70,6 +80,10 @@ class WebinarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $webinar = Webinar::find($id);
+
+        $webinar->delete();
+
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
     }
 }

@@ -58,7 +58,7 @@ class PrivacyNoticeController extends Controller
 
         $PrivacyNotice->update($validatedData);
 
-        // flash()->success('Privacy Notice updated successfully');
+        flash()->success('Privacy Notice updated successfully');
 
         return redirect()->back();
     }

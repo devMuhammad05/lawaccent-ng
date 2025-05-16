@@ -100,67 +100,33 @@
                             <a href="{{ route('resources.index') }}">Go to Resources Page</a>
                         </button>
                     </div>
+
+
+                    @if (count($webinars) > 0)
                     <div class="upcomingweb">
                         <h4>Upcoming Webinars</h4>
                         <div class="row upcomingwebrow">
-                            <div class="col-md-6">
-                                <p>
-                                    📌 [Webinar Title] - Date & Time <br class="br" />
-                                    Topic: Brief description
-                                </p>
-                                <div class="upcomingwebutton">
-                                    <button class="btn">
-                                        <a href="webinardetails.html">See Details</a>
-                                    </button>
-                                    <button class="btn">
-                                        <a href="webinardetails.html">RSVP</a>
-                                    </button>
+
+                            @foreach ($webinars as $webinar)
+                                <div class="col-md-6">
+                                    <p>
+                                        📌 {{ $webinar->title }} - Date & Time <br class="br" />
+                                        Topic: {{ $webinar->topic }}
+                                    </p>
+                                    <div class="upcomingwebutton">
+                                        <button class="btn">
+                                            <a href="{{ route('our-impact.show.webinar', $webinar->slug) }}">See Details</a>
+                                        </button>
+                                        <button class="btn">
+                                            <a href="webinardetails.html">RSVP</a>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <p>
-                                    📌 [Webinar Title] - Date & Time <br class="br" />
-                                    Topic: Brief description
-                                </p>
-                                <div class="upcomingwebutton">
-                                    <button class="btn">
-                                        <a href="webinardetails.html">See Details</a>
-                                    </button>
-                                    <button class="btn">
-                                        <a href="webinardetails.html">RSVP</a>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-md-6 lower">
-                                <p>
-                                    📌 [Webinar Title] - Date & Time <br class="br" />
-                                    Topic: Brief description
-                                </p>
-                                <div class="upcomingwebutton">
-                                    <button class="btn">
-                                        <a href="webinardetails.html">See Details</a>
-                                    </button>
-                                    <button class="btn">
-                                        <a href="webinardetails.html">RSVP</a>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="col-md-6 lower">
-                                <p>
-                                    📌 [Webinar Title] - Date & Time <br class="br" />
-                                    Topic: Brief description
-                                </p>
-                                <div class="upcomingwebutton">
-                                    <button class="btn">
-                                        <a href="webinardetails.html">See Details</a>
-                                    </button>
-                                    <button class="btn">
-                                        <a href="webinardetails.html">RSVP</a>
-                                    </button>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
+                    @endif
+
                 </div>
                 <div class="col-md-4">
                     <img src="{{ asset("web/assets/images/laptophone.webp") }}" alt="" />

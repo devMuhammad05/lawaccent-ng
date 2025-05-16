@@ -6,7 +6,7 @@
         </div>
         <div class="card card-primary">
             <div class="card-header">
-                <h4>Edit Item</h4>
+                <h4>Edit Faq</h4>
 
             </div>
             <div class="card-body">

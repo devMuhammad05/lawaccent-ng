@@ -86,13 +86,11 @@ class OurImpactController extends Controller
 
     public function whyTakeQuiz(Quiz $quiz)
     {
-
         return view('web.impact.quiz.why_take_quiz', compact('quiz'));
     }
 
     public function showQuiz(Quiz $quiz)
     {
-
         $questionsData = [];
 
         foreach ($quiz->questions as $question) {
@@ -119,6 +117,7 @@ class OurImpactController extends Controller
 
     public function showWebinar(Webinar $webinar)
     {
-        return view('web.impact.webinar-details');
+        $webinar->date = \Carbon\Carbon::parse($webinar->date)->toIso8601String();
+        return view('web.impact.webinar-details', compact('webinar',));
     }
 }

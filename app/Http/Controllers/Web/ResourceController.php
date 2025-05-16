@@ -56,65 +56,6 @@ class ResourceController extends Controller
         return $pdf->stream(config('app.name') . " Blog - " . $blog->title . '.pdf');
     }
 
-    // public function downloadPdf(string $slug)
-    // {
-    //     $blog = Blog::where('slug', $slug)->first();
-
-    //     if (! $blog) {
-    //         return abort(404);
-    //     }
-
-    //     $pdf = Pdf::loadView('web.resource.blog.pdf', ['blog' => $blog]);
-
-    //     // Get canvas and page dimensions
-    //     $canvas = $pdf->getCanvas();
-    //     $pageWidth = $canvas->get_width();
-    //     $pageHeight = $canvas->get_height();
-
-    //     // Watermark image path - replace with your image path
-    //     // The image should be accessible via public path
-    //     $watermarkPath = public_path('web/assets/images/logo.webp');
-
-    //     // Make sure the image exists
-    //     if (file_exists($watermarkPath)) {
-    //         // Calculate watermark size and position
-    //         // Adjust these values based on your image and desired appearance
-    //         $imageWidth = $pageWidth * 0.4; // 40% of page width
-    //         $imageHeight = 500; // Auto-calculate height to maintain aspect ratio
-    //         // $xPosition = ($pageWidth - $imageWidth) / 2; // Center horizontally
-    //         $xPosition = 200; // Center horizontally
-    //         // $yPosition = ($pageHeight - $imageHeight) / 2; // Center vertically
-    //         $yPosition = 100; // Center vertically
-
-    //         // Set low opacity for the watermark
-    //         $canvas->set_opacity(1); // 8% opacity - subtle watermark
-
-    //         // Add watermark to each page using callback
-    //         $pdf->output([
-    //             'before_send_to_browser' => function($pdf) use ($canvas, $watermarkPath, $xPosition, $yPosition, $imageWidth, $imageHeight) {
-    //                 $totalPages = $pdf->getDomPDF()->getCanvas()->get_page_count();
-
-    //                 for ($i = 1; $i <= $totalPages; $i++) {
-    //                     $canvas = $pdf->getDomPDF()->getCanvas();
-    //                     $canvas->page_script($i, 'reset');
-    //                     $canvas->set_opacity(0.8);
-    //                     $canvas->page_image(
-    //                         $watermarkPath,
-    //                         $xPosition,
-    //                         $yPosition,
-    //                         $imageWidth,
-    //                         $imageHeight,
-    //                         'auto',
-    //                         true
-    //                     );
-    //                 }
-    //             }
-    //         ]);
-    //     }
-
-    //     return $pdf->stream(config('app.name') . " Blog - " . $blog->title . '.pdf');
-    // }
-
 
     public function faqs()
     {
