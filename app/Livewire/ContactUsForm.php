@@ -20,11 +20,24 @@ class ContactUsForm extends Component
         'email' => 'required|email:rfc,dns,spoof',
         'phone_number' => "required|string|max:255|regex:/^(\+?\d{1,3}[- ]?)?\d{10}$/",
         'message' => 'required|string|max:255',
+        // 'g-recaptcha-response' => 'required',
     ];
+
+    //     public function messages(): array
+    // {
+    //     return [
+    //         'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
+    //         'g-recaptcha-response.recaptchav3' => 'ReCAPTCHA verification failed. Please try again.',
+    //     ];
+    // }
 
     public function save()
     {
         $data = $this->validate();
+
+
+        // dd($data);
+
         ContactUs::create($data);
         flash()->success('Your message has been sent successfully!');
 

@@ -16,7 +16,7 @@
           <div class="row justify-content-between">
             <div class="col-md-8 blogwriteupcol">
 
-                {{ $caseStudy->body }}
+                {!! $caseStudy->body !!}
 
             </div>
             <div class="col-md-3 otherimg col-12">

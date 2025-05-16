@@ -132,7 +132,7 @@
 
         if (userAnswers[currentQuestion] !== null) {
             const feedback = document.getElementById("feedbackText");
-            feedback.innerText = `Correct Answer: ${questions[currentQuestion].options.find((o) => o.correct).text
+            feedback.innerText = `<b></b></b>Correct Answer: ${questions[currentQuestion].options.find((o) => o.correct).text
                 }\n\n${questions[currentQuestion].explanation}`;
         }
     }

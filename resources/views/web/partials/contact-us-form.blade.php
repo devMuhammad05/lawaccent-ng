@@ -55,7 +55,7 @@
                     </div>
 
                     <!-- Google reCAPTCHA -->
-                    <div class="g-recaptcha" data-sitekey="{{ config('app.recaptcha_sitekey') }}"></div>
+                    <div class="g-recaptcha mb-3c" data-sitekey="{{ config('app.recaptcha_sitekey') }}"></div>
 
                     <button type="submit" class="w-100" wire:loading.attr="disabled" wire:target="save">
                         <span wire:loading.remove wire:target="save">Submit</span>

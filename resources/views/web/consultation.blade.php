@@ -73,10 +73,13 @@
                             <small class="text-error d-block" id="errorDate"></small>
 
                             <label class="labelforms">Additional Information</label>
-                            <textarea placeholder="Enter any additional information"
-                                class="form-control fixed-textarea" id="info" name="additional_info">{{ old('additional_info') }}
+                            <textarea placeholder="Enter any additional information" class="form-control fixed-textarea"
+                                id="info" name="additional_info">{{ old('additional_info') }}
                             </textarea>
                             <small class="text-error d-block" id="errorInfo"></small>
+
+                            <!-- Google reCAPTCHA -->
+                            <div class="g-recaptcha mt-3" data-sitekey="{{ config('app.recaptcha_sitekey') }}"></div>
 
                             <div class="mt-4">
                                 <button class="btn" onclick="prevStep()">Previous</button>
