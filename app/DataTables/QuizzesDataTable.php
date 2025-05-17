@@ -28,8 +28,12 @@ class QuizzesDataTable extends DataTable
                 $delete = "<a href='".route('admin.quizzes.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
 
                 return $edit.$delete;
+            })->addColumn('status', function ($query) {
+                $status = $query->status == 1 ? '<span class="badge badge-primary">Active</span>' : '<span class="badge badge-danger">InActive</span>';
+
+                return $status;
             })
-            ->rawColumns(['action'])
+            ->rawColumns(['action', 'status'])
             ->setRowId('id');
     }
 

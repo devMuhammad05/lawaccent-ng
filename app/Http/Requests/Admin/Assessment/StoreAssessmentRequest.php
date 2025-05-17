@@ -25,6 +25,7 @@ class StoreAssessmentRequest extends FormRequest
             'title' => 'required|string',
             'description' => 'required|string',
             // 'thumbnail' => ['nullable', 'image'],
+            'status' => 'boolean|in:0,1',
 
             'questions' => 'required|array|min:1',
             'questions.*.text' => 'required|string',

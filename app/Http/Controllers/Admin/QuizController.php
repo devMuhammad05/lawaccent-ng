@@ -43,7 +43,7 @@ class QuizController extends Controller
                 'title' => $data['title'],
                 'sub_title' => $data['sub_title'],
                 'description' => $data['description'] ?? '',
-                'why_take_quiz' => $validated['why_take_quiz'] ?? ''
+                'why_take_quiz' => $data['why_take_quiz'] ?? ''
             ]);
 
             foreach ($data['questions'] as $qIndex => $questionData) {
@@ -56,7 +56,6 @@ class QuizController extends Controller
                         'text' => $option['text'],
                         'is_correct' => (int) $questionData['correct_option'] === $oIndex,
                         'explanation' => $questionData['explanations'][$oIndex]['text'] ?? null,
-
                     ]);
                 }
             }
@@ -94,6 +93,7 @@ class QuizController extends Controller
     {
         $quiz = Quiz::findOrFail($id);
 
+
         if (!$quiz) {
             abort(404);
         }
@@ -105,7 +105,8 @@ class QuizController extends Controller
             'title' => $validated['title'],
             'sub_title' => $validated['sub_title'],
             'description' => $validated['description'] ?? '',
-            'why_take_quiz' => $validated['why_take_quiz'] ?? ''
+            'why_take_quiz' => $validated['why_take_quiz'] ?? '',
+            'status' => $validated['status']
         ]);
 
         //Delete old questions and options
@@ -124,8 +125,7 @@ class QuizController extends Controller
                 $question->options()->create([
                     'text' => $option['text'],
                     'is_correct' => (int) $questionData['correct_option'] === $oIndex,
-                    'explanation' => $questionData['explanations'][$oIndex]['text'] ?? null,
-
+                    'explanation' => $questionData['explanations'][$oIndex]['text'],
                 ]);
             }
         }

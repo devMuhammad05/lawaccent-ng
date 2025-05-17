@@ -97,12 +97,6 @@
                                     </div>
 
                                 @endfor
-
-                                {{-- <div class="form-group">
-                                    <label>Answer Explanation</label>
-                                    <input type="text" name="questions[0][explanation]" class="form-control"
-                                        placeholder="Enter explanation" required>
-                                </div> --}}
                             </div>
                         </div>
                     </div>

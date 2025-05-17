@@ -57,14 +57,28 @@
                                     @foreach ($question->options as $oIndex => $option)
                                         <div class="form-group d-flex">
                                             <input type="text" name="questions[{{ $qIndex }}][options][{{ $oIndex }}][text]" value="{{ $option->text }}" class="form-control me-2" placeholder="Option text" required>
+
                                             <label class="me-2 mt-2">Correct?</label>
                                             <input type="radio" name="questions[{{ $qIndex }}][correct_option]" value="{{ $oIndex }}" class="form-check-input mt-2"
                                                    {{ $option->is_correct ? 'checked' : '' }} required>
                                         </div>
+
+                                    <div class="form-group">
+                                        <input type="text" name="questions[0][explanations][{{ $oIndex }}][text]"
+                                            class="form-control" value="{{ $option->explanation }}" placeholder="Option explanation" required>
+                                    </div>
                                     @endforeach
                                 </div>
                             </div>
                         @endforeach
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select type='text' class='form-control' name='status'>
+                            <option value="1" @selected($quiz->status === 1)>Active</option>
+                            <option value="0" @selected($quiz->status === 0)>Inactive</option>
+                        </select>
                     </div>
 
                     <button type="button" id="add-question" class="btn mb-4 text-white" style="background-color: rgb(223, 149, 45)">+ Add Question</button>
@@ -100,6 +114,10 @@
                                 <input type="text" name="questions[${questionIndex}][options][${i}][text]" class="form-control me-2" placeholder="Option text" required>
                                 <label class="me-2 mt-2">Correct?</label>
                                 <input type="radio" name="questions[${questionIndex}][correct_option]" value="${i}" class="form-check-input mt-2" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="questions[${questionIndex}][explanations][${i}][text]" class="form-control" placeholder="Option explanation" required>
                             </div>
                         `).join('')}
                     </div>

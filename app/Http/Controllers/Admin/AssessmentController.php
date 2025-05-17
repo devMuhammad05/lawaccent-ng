@@ -108,6 +108,7 @@ class AssessmentController extends Controller
         $assessment->update([
             'title' => $validated['title'],
             'description' => $validated['description'] ?? '',
+            'status' => $validated['status']
         ]);
 
         //Delete old questions and options
