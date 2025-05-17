@@ -49,13 +49,14 @@ class QuizController extends Controller
             foreach ($data['questions'] as $qIndex => $questionData) {
                 $question = $quiz->questions()->create([
                     'text' => $questionData['text'],
-                    'explanation' => $questionData['explanation']
                 ]);
 
-                foreach ($questionData['options'] as $i => $optionData) {
+                foreach ($questionData['options'] as $oIndex => $option) {
                     $question->options()->create([
-                        'text' => $optionData['text'],
-                        'is_correct' => ($i == $questionData['correct_option']),
+                        'text' => $option['text'],
+                        'is_correct' => (int) $questionData['correct_option'] === $oIndex,
+                        'explanation' => $questionData['explanations'][$oIndex]['text'] ?? null,
+
                     ]);
                 }
             }
@@ -93,7 +94,7 @@ class QuizController extends Controller
     {
         $quiz = Quiz::findOrFail($id);
 
-        if(! $quiz){
+        if (!$quiz) {
             abort(404);
         }
 
@@ -117,13 +118,14 @@ class QuizController extends Controller
         foreach ($validated['questions'] as $qIndex => $questionData) {
             $question = $quiz->questions()->create([
                 'text' => $questionData['text'],
-                'explanation' => $questionData['explanation']
             ]);
 
             foreach ($questionData['options'] as $oIndex => $option) {
                 $question->options()->create([
                     'text' => $option['text'],
-                    'is_correct' => (int)$questionData['correct_option'] === $oIndex,
+                    'is_correct' => (int) $questionData['correct_option'] === $oIndex,
+                    'explanation' => $questionData['explanations'][$oIndex]['text'] ?? null,
+
                 ]);
             }
         }

@@ -32,7 +32,7 @@ class StoreQuizRequest extends FormRequest
             'questions.*.options' => 'required|array|size:4',
             'questions.*.options.*.text' => 'required|string',
             'questions.*.correct_option' => 'required|in:0,1,2,3',
-            'questions.*.explanation' => 'required|string',
+            'questions.*.explanations.*.text' => 'required|string',
         ];
 
     }

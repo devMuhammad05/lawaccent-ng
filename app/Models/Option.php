@@ -10,6 +10,7 @@ class Option extends Model
         'question_id',
         'text',
         'is_correct',
+        'explanation',
     ];
 
     public function question()

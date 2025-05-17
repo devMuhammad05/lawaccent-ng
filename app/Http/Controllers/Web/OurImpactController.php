@@ -34,8 +34,6 @@ class OurImpactController extends Controller
     {
         $isAcceptingApplication = SiteSetting::first('schoolarship_application_status')->schoolarship_application_status;
 
-        // dd($application_status);
-
         return view('web.impact.scholarship', compact('isAcceptingApplication'));
     }
 
@@ -105,13 +103,13 @@ class OurImpactController extends Controller
                 $options[] = [
                     'text' => $option->text,
                     'correct' => (bool) $option->is_correct,
+                    'explanation' => $option->explanation
                 ];
             }
 
             $questionsData[] = [
                 'question' => $question->text,
                 'options' => $options,
-                'explanation' => $question->explanation
             ];
         }
 

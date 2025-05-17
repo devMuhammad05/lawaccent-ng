@@ -35,35 +35,35 @@
                     <div class="form-group">
                         <label class="form-control">Why Take quiz (optional)</label>
                         <textarea class="summernote" name="why_take_quiz">{{ old('why_take_quiz', "
-                                <p>
-                                Understanding legal risk is the first step toward protecting
-                                your <br />
-                                interests.
-                                </p>
+                                    <p>
+                                    Understanding legal risk is the first step toward protecting
+                                    your <br />
+                                    interests.
+                                    </p>
 
-                                <p>Our short, interactive quizzes can help you:</p>
-                                <ul>
-                                <li>
-                                    ✅ Identify areas where your business or personal life may be
+                                    <p>Our short, interactive quizzes can help you:</p>
+                                    <ul>
+                                    <li>
+                                        ✅ Identify areas where your business or personal life may be
+                                        <br />
+                                        legally vulnerable
+                                    </li>
+                                    <li>
+                                        ✅ Learn key concepts in employment law, contracts,
+                                        compliance, <br />
+                                        and more
+                                    </li>
+                                    <li>✅ Prepare for meetings with lawyers or regulators</li>
+                                    <li>✅ Avoid costly legal mistakes</li>
+                                    </ul>
+
+                                    <p>
+                                    Each quiz takes just takes a few minutes and provides immediate
                                     <br />
-                                    legally vulnerable
-                                </li>
-                                <li>
-                                    ✅ Learn key concepts in employment law, contracts,
-                                    compliance, <br />
-                                    and more
-                                </li>
-                                <li>✅ Prepare for meetings with lawyers or regulators</li>
-                                <li>✅ Avoid costly legal mistakes</li>
-                                </ul>
+                                    feedback, with helpful insights and next steps.
+                                    </p>") }}
 
-                                <p>
-                                Each quiz takes just takes a few minutes and provides immediate
-                                <br />
-                                feedback, with helpful insights and next steps.
-                                </p>") }}
-
-                            </textarea>
+                                </textarea>
                     </div>
 
                     <hr>
@@ -90,13 +90,19 @@
                                         <input type="radio" name="questions[0][correct_option]" value="{{ $i }}"
                                             class="form-check-input mt-2" required>
                                     </div>
+
+                                    <div class="form-group">
+                                        <input type="text" name="questions[0][explanations][{{ $i }}][text]"
+                                            class="form-control" placeholder="Option explanation" required>
+                                    </div>
+
                                 @endfor
 
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label>Answer Explanation</label>
-                                    <input type="text" name="questions[0][explanation]" class="form-control" placeholder="Enter explanation" required>
-
-                                </div>
+                                    <input type="text" name="questions[0][explanation]" class="form-control"
+                                        placeholder="Enter explanation" required>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -120,31 +126,30 @@
             const wrapper = document.getElementById('questions-wrapper');
 
             let html = `
-                <div class="question-block mb-4 border p-3 rounded" data-index="${questionIndex}">
-                    <h6 class="question-title">Question ${questionIndex + 1}</h6>
+                    <div class="question-block mb-4 border p-3 rounded" data-index="${questionIndex}">
+                        <h6 class="question-title">Question ${questionIndex + 1}</h6>
 
-                    <div class="form-group">
-                        <label>Question</label>
-                        <input type="text" name="questions[${questionIndex}][text]" class="form-control" placeholder="Enter question" required>
-                    </div>
+                        <div class="form-group">
+                            <label>Question</label>
+                            <input type="text" name="questions[${questionIndex}][text]" class="form-control" placeholder="Enter question" required>
+                        </div>
 
-                    <div class="options-wrapper">
-                        <h6>Options</h6>
-                        ${[0, 1, 2, 3].map(i => `
-                            <div class="form-group d-flex">
-                                <input type="text" name="questions[${questionIndex}][options][${i}][text]" class="form-control me-2" placeholder="Option text" required>
-                                <label class="me-2 mt-2">Correct?</label>
-                                <input type="radio" name="questions[${questionIndex}][correct_option]" value="${i}" class="form-check-input mt-2" required>
-                            </div>
-                        `).join('')}
-                    </div>
+                        <div class="options-wrapper">
+                            <h6>Options</h6>
+                            ${[0, 1, 2, 3].map(i => `
+                                <div class="form-group d-flex">
+                                    <input type="text" name="questions[${questionIndex}][options][${i}][text]" class="form-control me-2" placeholder="Option text" required>
+                                    <label class="me-2 mt-2">Correct?</label>
+                                    <input type="radio" name="questions[${questionIndex}][correct_option]" value="${i}" class="form-check-input mt-2" required>
+                                </div>
 
-                    <div class="form-group">
-                        <label>Answer Explanation</label>
-                        <input type="text" name="questions[${questionIndex}][explanation]" class="form-control" placeholder="Enter explanation" required>
+                                <div class="form-group">
+                                    <input type="text" name="questions[${questionIndex}][explanations][${i}][text]" class="form-control" placeholder="Option explanation" required>
+                                </div>
+                            `).join('')}
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
 
             wrapper.insertAdjacentHTML('beforeend', html);
             questionIndex++;
