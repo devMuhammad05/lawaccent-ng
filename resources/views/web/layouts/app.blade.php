@@ -73,7 +73,7 @@
                     <p class="footerp">
                         <a href="tel:+2347040092801">+2347040092801</a><br /><br /><a
                             href="tel:+2347040092804"><span>+2347040092804</span></a><br /><br /><a
-                            href="tel:++254726707693"><span>+254726707693</span></a><br /><br /><a
+                            href="tel:+e254726707693"><span>+254726707693</span></a><br /><br /><a
                             href="tel:+447909339154"><span>+447909339154</span></a>
                     </p>
                 </div>

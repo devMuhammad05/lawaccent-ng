@@ -39,10 +39,10 @@ class PodcastsMediaDataTable extends DataTable
                         </audio>';
             })
             ->addColumn('action', function ($query) {
-                $edit = "<a href='".route('admin.podcasts.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                // $edit = "<a href='".route('admin.podcasts.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
                 $delete = "<a href='".route('admin.podcasts.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
 
-                return $edit . $delete;
+                return $delete;
             })
             ->rawColumns(['audio', 'action'])
             ->setRowId('id');
@@ -67,15 +67,7 @@ class PodcastsMediaDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+                    ->selectStyleSingle();
     }
 
     /**
@@ -84,7 +76,7 @@ class PodcastsMediaDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(10),
             Column::make('title'),
             Column::make('audio'),
             Column::computed('action')
@@ -96,7 +88,7 @@ class PodcastsMediaDataTable extends DataTable
     }
 
     /**
-     * Get the filename for export.
+     * Get the filename for export.a
      */
     protected function filename(): string
     {

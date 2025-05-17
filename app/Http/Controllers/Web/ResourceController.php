@@ -7,6 +7,7 @@ use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Assessment;
 use App\Models\LegalCheckList;
+use App\Models\PodcastMedia;
 use App\Models\VideoMedia;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
@@ -82,7 +83,8 @@ class ResourceController extends Controller
     public function mediaHub()
     {
         $videoMedias = VideoMedia::latest()->take(8)->get();
-        return view('web.resource.media-hub', compact('videoMedias'));
+        $podcasts = PodcastMedia::latest()->take(8)->get();
+        return view('web.resource.media-hub', compact('videoMedias', 'podcasts'));
     }
 
     public function business()

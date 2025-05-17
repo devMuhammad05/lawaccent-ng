@@ -21,14 +21,12 @@ class NewsletterController extends Controller
         if (Newsletter::where('email', $request->email)->exists()) {
             flash()->warning('You are already subscribed!');
             return redirect()->back();
-        }
+        } 
 
         Newsletter::create([
             'email' => $request->email,
         ]);
 
-
-        flash()->success('You have successfully subscribed to our newsletter!');
 
         Mail::html('
         <p>Thank you for subscribing to our newsletter.</p>
@@ -42,6 +40,10 @@ class NewsletterController extends Controller
             $message->to($request->email)
                 ->subject('Newsletter Subscription');
         });
+
+
+        flash()->success('You have successfully subscribed to our newsletter!');
+
 
         return redirect()->back();
     }

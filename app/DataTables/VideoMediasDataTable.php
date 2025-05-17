@@ -32,12 +32,12 @@ class VideoMediasDataTable extends DataTable
 
                     // $video = $query->media_link;
 
-                    $video = "<div class='' style='height:60%; width:20% !important;'>{$query->media_link}</div>";
+                    $video = "<div class='' style='height:300px; width:20% !important;'>{$query->media_link}</div>";
 
                 } elseif ($query->media_location) {
                     // If media_location is available (uploaded file)
                     $videoUrl = asset($query->media_location);
-                    $video = "<video width='80%' controls>
+                    $video = "<video width='85%' controls>
                                 <source src='{$videoUrl}' type='video/mp4'>
                                 Your browser does not support the video tag.
                               </video>";
@@ -48,10 +48,10 @@ class VideoMediasDataTable extends DataTable
                 return $video;
             })
             ->addColumn('action', function ($query) {
-                $edit = "<a href='".route('admin.videos.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                // $edit = "<a href='".route('admin.videos.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
                 $delete = "<a href='".route('admin.videos.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
 
-                return $edit . $delete;
+                return $delete;
             })
             ->rawColumns(['action', 'video'])
             ->setRowId('id');

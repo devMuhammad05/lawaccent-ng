@@ -11,7 +11,8 @@
             <div class="card-body">
                 <form enctype="multipart/form-data" action="{{ route('admin.podcasts.update', $data->id) }}" method="POST">
                     @csrf
-
+                    @method('PUT')
+                    
                     <div class="form-group">
                         <label>Title</label>
                         <input type='text' class='form-control' placeholder='Enter podcast title' name='title'
