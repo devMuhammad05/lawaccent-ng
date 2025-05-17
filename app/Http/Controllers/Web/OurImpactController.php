@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\web;
 
 use App\Models\Quiz;
+use App\Models\SiteSetting;
 use App\Models\Webinar;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -31,7 +32,11 @@ class OurImpactController extends Controller
 
     public function scholarship()
     {
-        return view('web.impact.scholarship');
+        $isAcceptingApplication = SiteSetting::first('schoolarship_application_status')->schoolarship_application_status;
+
+        // dd($application_status);
+
+        return view('web.impact.scholarship', compact('isAcceptingApplication'));
     }
 
     public function applyScholarship(Request $request)

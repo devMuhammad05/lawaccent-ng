@@ -30,6 +30,7 @@ class SiteSettingController extends Controller
             'cookie_notice_effective_date' => ['sometimes', 'date'],
             'application_form_link' => ['sometimes', 'url'],
             'youtube_link' => ['sometimes', 'url'],
+            'schoolarship_application_status' => ['sometimes', 'boolean']
         ]);
 
         // dd($site_setting);

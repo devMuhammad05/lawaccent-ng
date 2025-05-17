@@ -128,7 +128,7 @@
             <li class="{{ $currentRoute === 'faqs' ? 'active' : '' }}">
                 <a href="{{ route('admin.faqs.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
-                    <span>Faqs</span>
+                    <span>FAQs</span>
                 </a>
             </li>
             <li class="{{ $currentRoute === 'privacy-notice' ? 'active' : '' }}">

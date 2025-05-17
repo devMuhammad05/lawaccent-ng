@@ -21,7 +21,7 @@
 @livewireStyles
 
 <body>
-    
+
 
     @include('web.layouts.navbar')
 
@@ -46,20 +46,20 @@
                 <div class="footer-section">
                     <h3>Addresses</h3>
                     <p>
-                        <a href="https://g.co/kgs/Z69ZNMQ">
+                        <a href="https://g.co/kgs/9iUpq9D" target="__blank">
                             <strong>Nigeria: </strong><br />30, Muyibat Oyefusi Crescent,
                             <br />
                             Omole Phase 1, Lagos State</a>
                         <br /><br />
-                        <a href="https://g.co/kgs/EXVWFB2">60, Old Owode Road, Onikolobo,<br />
+                        <a href="https://g.co/kgs/EXVWFB2" target="__blank">60, Old Owode Road, Onikolobo,<br />
                             Abeokuta, Ogun State</a>
                     </p>
                     <p>
-                        <a href=""><strong>Kenya: </strong><br />Skygo Building 1st floor, <br />
+                        <a href="" target="__blank"><strong>Kenya: </strong><br />Skygo Building 1st floor, <br />
                             Milolongo.</a>
                     </p>
                     <p>
-                        <a href="https://g.co/kgs/c4bzbUr"><strong>United Kingdom: </strong><br />82a, James Carter
+                        <a href="https://g.co/kgs/c4bzbUr" target="__blank"><strong>United Kingdom: </strong><br />82a, James Carter
                             Road,
                             <br />
                             Mildenhall, IP28 7DE.</a>

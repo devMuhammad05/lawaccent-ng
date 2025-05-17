@@ -13,6 +13,7 @@ class SiteSetting extends Model
         'cookie_notice_effective_date',
         'application_form_link',
         'youtube_link',
+        'schoolarship_application_status',
     ];
 
     protected $casts = [
