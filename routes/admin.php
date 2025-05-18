@@ -38,6 +38,7 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('assessments', AssessmentController::class);
     Route::resource('checklists', CheckListController::class);
     Route::resource('newsletters', NewsletterController::class);
+    Route::get('newsletters-export', [NewsletterController::class, 'export'])->name('newsletters-export.export');
     Route::resource('quizzes', QuizController::class);
     Route::resource('socials', SocialController::class);
     Route::get('contact-us/unread', [ContactUsController::class, 'unread'])->name('contact-us.unread');
@@ -52,22 +53,10 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('our-teams', OurTeamController::class);
     Route::resource('scholarship-applications', ScholarshipApplicationController::class);
     Route::resource('webinars', WebinarController::class);
-
-
-        Route::get('webinar-applications/unread', [WebinarApplicationController::class, 'unread'])->name('webinar-applications.unread');
-
+    Route::get('webinar-applications/unread', [WebinarApplicationController::class, 'unread'])->name('webinar-applications.unread');
     Route::resource('webinar-applications', WebinarApplicationController::class)->except('post');
-
-
-
     Route::get('webinar-applications/{webinar_application}/mark-as-read', [WebinarApplicationController::class, 'markAsRead'])->name('webinar-applications.markAsRead');
-
-
     Route::resource('past-webinars', PastWebinarController::class);
-
-
-    Route::resource('past-webinars', PastWebinarController::class);
-
     Route::get('scholarship-application/unread', [ScholarshipApplicationController::class, 'unread'])->name('scholarship-applications.unread');
     Route::get('scholarship-application/{scholarshipApplication}/mark-as-read', [ScholarshipApplicationController::class, 'markAsRead'])->name('scholarship-application.markAsRead');
 });

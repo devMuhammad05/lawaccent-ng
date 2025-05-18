@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Carbon\Carbon;
 use App\Models\Newsletter;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
 use App\DataTables\NewslettersDataTable;
+use Illuminate\Support\Facades\Response;
 
 class NewsletterController extends Controller
 {
@@ -43,7 +45,7 @@ class NewsletterController extends Controller
             foreach ($emails as $email) {
                 Mail::html($request->body, function ($message) use ($request, $email) {
                     $message->to($email)
-                            ->subject($request->subject);
+                        ->subject($request->subject);
                 });
             }
 
@@ -55,28 +57,38 @@ class NewsletterController extends Controller
     }
 
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function export()
     {
-        //
-    }
+        $date = Carbon::now()->format('Y-m-d');
+        $fileName = "Newsletter-{$date}.csv";
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
+        $headers = [
+            "Content-type" => "text/csv",
+            "Content-Disposition" => "attachment; filename={$fileName}",
+            "Pragma" => "no-cache",
+            "Cache-Control" => "must-revalidate, post-check=0, pre-check=0",
+            "Expires" => "0"
+        ];
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
+        $columns = ['ID', 'Email', 'Signed Up At'];
+        $newsletters = Newsletter::all();
+
+        $callback = function () use ($newsletters, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($newsletters as $newsletter) {
+                fputcsv($file, [
+                    $newsletter->id,
+                    $newsletter->email,
+                    $newsletter->created_at->format('Y-m-d')
+                ]);
+            }
+
+            fclose($file);
+        };
+
+        return Response::stream($callback, 200, $headers);
     }
 
     /**
