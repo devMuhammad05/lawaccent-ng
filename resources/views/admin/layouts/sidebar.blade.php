@@ -309,20 +309,20 @@
                     <i class="fas fa-columns"></i>
                     <span>
                         Webinars Applications
-                        @if ($unreadMessagesCount > 0)
-                            <button type="button" class="btn btn-danger">
+                        @if ($unreadWebinarApplicationCount > 0)
+                            <button type="button" class="btn btn-danger" style="z-index: 9999">
                                 !
                             </button>
                         @endif
                     </span>
                 </a>
                 <ul class="dropdown-menu">
-  
+
                     <li>
                         <a class="nav-link" href="{{ route('admin.webinar-applications.unread') }}">
                             Unread Applications
-                            @if ($unreadMessagesCount > 0)
-                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @if ($unreadWebinarApplicationCount > 0)
+                                <span class="counter">{{ $unreadWebinarApplicationCount }}</span>
                             @endif
                         </a>
                     </li>

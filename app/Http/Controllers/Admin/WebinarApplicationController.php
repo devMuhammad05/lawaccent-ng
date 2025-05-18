@@ -32,7 +32,9 @@ class WebinarApplicationController extends Controller
 
         flash()->success('Message marked as read successfully');
 
-        return to_route('admin.webinar-applications.unread');
+        // return to_route('admin.webinar-applications.unread');
+
+        return back();
     }
 
     /**
