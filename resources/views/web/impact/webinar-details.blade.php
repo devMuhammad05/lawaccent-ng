@@ -13,7 +13,7 @@
     <!--=============================
        DISPLAY ANY ERROR END
     ==============================-->
-    
+
     <section class="sectiontitle">
         <div class="container">
             <div class="row sectiontitlerow">
@@ -101,7 +101,7 @@
                             <label for="" class="rsvplabelform">Have Any Questions To Ask Before The Webinar?</label>
 
                                 <textarea placeholder="Enter your question"
-                                class="stepinput form-control rsvpfixed-textarea" name="question" required></textarea>
+                                class="rsvpfixed-textarea form-control" name="question"w></textarea>
 
 
                                 <button class="btn reservebtn mt-5" type="submit">

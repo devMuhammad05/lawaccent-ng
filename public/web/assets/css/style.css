@@ -2671,16 +2671,27 @@ input[type="radio"] {
     font-size: 14px;
 }
 
+.rsvpfixed-textarea {
+    background: #efefef !important;
+    border: 1px solid #a0a0a0 !important;
+    padding-left: 20px !important;
+    height: 200px;
+    color: #838383 !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    width: 100%;
+}
+
+.rsvpfixed-textarea:focus {
+    box-shadow: none !important;
+}
+
 .rsvpspandiv {
     padding: 20px 0 10px 0;
 }
 
 .rsvpsubmitbtn {
     margin-top: 20px;
-}
-
-.rsvpfixed-textarea {
-    height: 370px !important;
 }
 
 .reservebtn {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Models\WebinarApplication;
 use Illuminate\Http\Request;
 use App\Enums\ConsultationTypes;
 use App\Http\Controllers\Controller;
@@ -13,13 +14,13 @@ class WebinarApplicationController extends Controller
     {
         $data = $request->validated();
 
-        // dd($request->all());
-
         if ($request->type == 'Virtual') {
             $data['type'] = ConsultationTypes::Virtual;
         } else {
             $data['type'] = ConsultationTypes::InPerson;
         }
+
+        WebinarApplication::create($data);
 
         flash()->success('Application successful');
 

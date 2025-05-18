@@ -12,5 +12,17 @@ class WebinarApplication extends Model
         'phone_number',
         'question',
         'type',
+        'is_read',
     ];
+
+    public function scopeUnread($query)
+    {
+        return $query->where('is_read', false);
+    }
+
+    public function markAsRead()
+    {
+        $this->is_read = true;
+        $this->save();
+    }
 }

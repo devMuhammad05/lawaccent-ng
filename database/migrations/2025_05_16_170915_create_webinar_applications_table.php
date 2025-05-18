@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('phone_number');
+            $table->enum('type', \App\Enums\ConsultationTypes::values());
             $table->text('question')->nullable();
+            $table->boolean('is_read')->default(false);
             $table->timestamps();
         });
     }

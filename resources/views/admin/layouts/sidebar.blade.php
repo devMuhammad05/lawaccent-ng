@@ -274,7 +274,8 @@
                 </a>
             </li> --}}
 
-            <li class="dropdown {{ $currentRoute === 'webinars' ? 'active' : '' }}">
+            <li
+                class="dropdown {{ $currentRoute === 'webinars' ? 'active' : '' }} {{ $currentRoute === 'past-webinars' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
                     <i class="fas fa-columns"></i>
                     <span>
@@ -290,14 +291,44 @@
                     <li><a class="nav-link" href="{{ route('admin.webinars.index') }}">Upcoming webinars</a></li>
                     <li><a class="nav-link" href="{{ route('admin.past-webinars.index') }}">Past webinars</a></li>
 
-                    <li>
-                        <a class="nav-link" href="{{ route('admin.contact-us.unread') }}">
+                    {{-- <li>
+                        <a class="nav-link" href="{{ route('admin.webinars-application.unread') }}">
                             Webinar Applications
                             @if ($unreadMessagesCount > 0)
                                 <span class="counter">{{ $unreadMessagesCount }}</span>
                             @endif
                         </a>
+                    </li> --}}
+                </ul>
+            </li>
+
+
+            <li
+                class="dropdown {{ $currentRoute === 'webinar-applications' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-columns"></i>
+                    <span>
+                        Webinars Applications
+                        @if ($unreadMessagesCount > 0)
+                            <button type="button" class="btn btn-danger">
+                                !
+                            </button>
+                        @endif
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+  
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.webinar-applications.unread') }}">
+                            Unread Applications
+                            @if ($unreadMessagesCount > 0)
+                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @endif
+                        </a>
                     </li>
+
+                    <li><a class="nav-link" href="{{ route('admin.webinar-applications.index') }}">All Applications</a></li>
+
                 </ul>
             </li>
 

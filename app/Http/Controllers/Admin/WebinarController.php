@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Webinar;
+use App\Models\WebinarApplication;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -42,13 +43,6 @@ class WebinarController extends Controller
         return to_route('admin.webinars.index')->with("success", "Webinar created successfully");
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -61,6 +55,8 @@ class WebinarController extends Controller
             'webinar' => $webinar,
         ]);
     }
+
+
     /**
      * Update the specified resource in storage.
      */
