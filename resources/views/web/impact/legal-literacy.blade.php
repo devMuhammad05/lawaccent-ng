@@ -103,28 +103,28 @@
 
 
                     @if (count($webinars) > 0)
-                    <div class="upcomingweb">
-                        <h4>Upcoming Webinars</h4>
-                        <div class="row upcomingwebrow">
+                        <div class="upcomingweb">
+                            <h4>Upcoming Webinars</h4>
+                            <div class="row upcomingwebrow">
 
-                            @foreach ($webinars as $webinar)
-                                <div class="col-md-6">
-                                    <p>
-                                        📌 {{ $webinar->title }} - Date & Time <br class="br" />
-                                        Topic: {{ $webinar->topic }}
-                                    </p>
-                                    <div class="upcomingwebutton">
-                                        <button class="btn">
-                                            <a href="{{ route('our-impact.show.webinar', $webinar->slug) }}">See Details</a>
-                                        </button>
-                                        <button class="btn">
-                                            <a href="webinardetails.html">RSVP</a>
-                                        </button>
+                                @foreach ($webinars as $webinar)
+                                    <div class="col-md-6">
+                                        <p>
+                                            📌 {{ $webinar->title }} - Date & Time <br class="br" />
+                                            Topic: {{ $webinar->topic }}
+                                        </p>
+                                        <div class="upcomingwebutton">
+                                            <button class="btn">
+                                                <a href="{{ route('our-impact.show.webinar', $webinar->slug) }}">See Details</a>
+                                            </button>
+                                            <button class="btn">
+                                                <a href="{{ route('our-impact.show.webinar', $webinar->slug) }}">RSVP</a>
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
                     @endif
 
                 </div>
@@ -132,44 +132,29 @@
                     <img src="{{ asset("web/assets/images/laptophone.webp") }}" alt="" />
                 </div>
             </div>
-            <div class="pastwebinar">
-                <h4>Past Webinars</h4>
-                <div class="row pastwebinarrow">
-                    <div class="col-md-4">
-                        <p>
-                            📌 [Webinar Title] - Date & Time <br class="br" />
-                            Topic: Brief description
-                        </p>
-                        <div class="upcomingwebutton">
-                            <button class="btn">
-                                <a href="{{ route('resources.media.hub') }}">Watch Video/Recording</a>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <p>
-                            📌 [Webinar Title] - Date & Time <br class="br" />
-                            Topic: Brief description
-                        </p>
-                        <div class="upcomingwebutton">
-                            <button class="btn">
-                                <a href="{{ route('resources.media.hub') }}">Watch Video/Recording</a>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <p>
-                            📌 [Webinar Title] - Date & Time <br class="br" />
-                            Topic: Brief description
-                        </p>
-                        <div class="upcomingwebutton">
-                            <button class="btn">
-                                <a href="{{ route('resources.media.hub') }}">Watch Video/Recording</a>
-                            </button>
-                        </div>
+
+            @if (count($pastWebinars))
+                <div class="pastwebinar">
+                    <h4>Past Webinars</h4>
+                    <div class="row pastwebinarrow">
+
+                        @foreach ($pastWebinars as $pastWebinar)
+                            <div class="col-md-4">
+                                <p>
+                                    📌 {{ $pastWebinar->title }} - Date & Time <br class="br" />
+                                    Topic: {{ $pastWebinar->topic }}
+                                </p>
+                                <div class="upcomingwebutton">
+                                    <button class="btn">
+                                        <a href="{{ $pastWebinar->recording_url }}" target="__blank">Watch Video/Recording</a>
+                                    </button>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
-            </div>
+            @endif
+
         </div>
     </section>
 

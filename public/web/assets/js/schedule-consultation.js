@@ -158,9 +158,9 @@ function validateDateTime() {
 function validateInfo() {
     if (!touchedFields.info) return true;
 
-    if (info.value.trim() === "") {
+    if (info.value.length > 500) {
         document.getElementById("errorInfo").textContent =
-            "Please provide additional info";
+            "Additional info must be less than 500 characters";
         return false;
     } else {
         document.getElementById("errorInfo").textContent = "";
@@ -222,28 +222,33 @@ function checkStep1ButtonState() {
         }
     }
 
-    // Enable button only if all touched fields are valid AND at least one field is touched
-    const anyFieldTouched =
-        touchedFields.fullName ||
-        touchedFields.email ||
-        touchedFields.phone ||
-        touchedFields.consultationType;
-    nextBtn.disabled =
-        !(isNameValid && isEmailValid && isPhoneValid && isTypeValid) ||
-        !anyFieldTouched;
+    // Enable button if all required fields have valid values
+    const requiredFieldsValid =
+        isNameValid && isEmailValid && isPhoneValid && isTypeValid;
+
+    // Check if form has any actual values to enable the button
+    const hasValues =
+        fullName.value.trim() !== "" &&
+        email.value.trim() !== "" &&
+        phone.value.trim() !== "" &&
+        Array.from(radioInputs).some((r) => r.checked);
+
+    nextBtn.disabled = !requiredFieldsValid || !hasValues;
 }
 
 function checkStep2ButtonState() {
     // Only check fields that have been touched
     const isAreaValid = !touchedFields.legalArea || legalArea.value !== "";
     const isDateValid = !touchedFields.dateTime || dateTime.value !== "";
-    const isInfoValid = !touchedFields.info || info.value.trim() !== "";
+    const isInfoValid = !touchedFields.info || info.value.length <= 500;
 
-    // Enable button only if all touched fields are valid AND at least one field is touched
-    const anyFieldTouched =
-        touchedFields.legalArea || touchedFields.dateTime || touchedFields.info;
-    submitBtn.disabled =
-        !(isAreaValid && isDateValid && isInfoValid) || !anyFieldTouched;
+    // Enable button if all required fields have valid values
+    const requiredFieldsValid = isAreaValid && isDateValid && isInfoValid;
+
+    // Check if form has the required values to enable the button
+    const hasRequiredValues = legalArea.value !== "" && dateTime.value !== "";
+
+    submitBtn.disabled = !requiredFieldsValid || !hasRequiredValues;
 }
 
 // Attach input event handlers for Step 1
@@ -290,8 +295,53 @@ info.addEventListener("input", function () {
     touchedFields.info = true;
     validateInfo();
     checkStep2ButtonState();
+
+    // Update character count or display warning if approaching limit
+    const remainingChars = 500 - info.value.length;
+    const infoCharCount = document.getElementById("infoCharCount");
+    if (infoCharCount) {
+        infoCharCount.textContent = `${remainingChars} characters remaining`;
+        if (remainingChars < 50) {
+            infoCharCount.style.color = "red";
+        } else {
+            infoCharCount.style.color = "";
+        }
+    }
 });
 
-// Initialize button states
+// Function to check if form has pre-filled values (after page refresh)
+function checkForExistingValues() {
+    // For Step 1
+    if (fullName.value.trim() !== "") touchedFields.fullName = true;
+    if (email.value.trim() !== "") touchedFields.email = true;
+    if (phone.value.trim() !== "") touchedFields.phone = true;
+
+    for (let r of radioInputs) {
+        if (r.checked) {
+            touchedFields.consultationType = true;
+            break;
+        }
+    }
+
+    // For Step 2
+    if (legalArea.value !== "") touchedFields.legalArea = true;
+    if (dateTime.value !== "") touchedFields.dateTime = true;
+    if (info.value.trim() !== "") touchedFields.info = true;
+
+    // Run validations based on current step
+    if (currentStep === 1) {
+        checkStep1ButtonState();
+    } else if (currentStep === 2) {
+        checkStep2ButtonState();
+    }
+}
+
+// Initialize button states and check for pre-filled values
 checkStep1ButtonState();
 checkStep2ButtonState();
+checkForExistingValues();
+
+// Add a listener for when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function () {
+    checkForExistingValues();
+});

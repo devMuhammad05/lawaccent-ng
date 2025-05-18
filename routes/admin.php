@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\AssessmentController;
 use App\Http\Controllers\Admin\JobOpeningController;
 use App\Http\Controllers\Admin\NewsletterController;
 use App\Http\Controllers\Admin\VideoMediaController;
+use App\Http\Controllers\Admin\PastWebinarController;
 use App\Http\Controllers\Admin\SiteSettingController;
 use App\Http\Controllers\Admin\ConsultationController;
 use App\Http\Controllers\Admin\CookieNoticeController;
@@ -50,6 +51,7 @@ Route::middleware(['auth', 'verifiedOtp'])->prefix('admin')->name('admin.')->gro
     Route::resource('our-teams', OurTeamController::class);
     Route::resource('scholarship-applications', ScholarshipApplicationController::class);
     Route::resource('webinars', WebinarController::class);
+    Route::resource('past-webinars', PastWebinarController::class);
     Route::get('scholarship-application/unread', [ScholarshipApplicationController::class, 'unread'])->name('scholarship-applications.unread');
     Route::get('scholarship-application/{scholarshipApplication}/mark-as-read', [ScholarshipApplicationController::class, 'markAsRead'])->name('scholarship-application.markAsRead');
 });

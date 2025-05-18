@@ -21,8 +21,6 @@ class StoreConsultationRequest extends FormRequest
      */
     public function rules(): array
     {
-
-
         return [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -31,6 +29,15 @@ class StoreConsultationRequest extends FormRequest
             'legal_concerns' => 'required',
             'date' => 'required|date|after_or_equal:today',
             'additional_info' => 'nullable|string|max:1000',
+            'g-recaptcha-response' => 'required',
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
+            'g-recaptcha-response.recaptchav3' => 'ReCAPTCHA verification failed. Please try again.',
         ];
     }
 }

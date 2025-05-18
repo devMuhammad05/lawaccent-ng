@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\web;
 
+use App\Models\PastWebinar;
 use App\Models\Quiz;
 use App\Models\SiteSetting;
 use App\Models\Webinar;
@@ -22,7 +23,8 @@ class OurImpactController extends Controller
     public function legalLiteracy()
     {
         $webinars = Webinar::latest()->get();
-        return view('web.impact.legal-literacy', compact('webinars'));
+        $pastWebinars = PastWebinar::latest()->get();
+        return view('web.impact.legal-literacy', compact('webinars', 'pastWebinars'));
     }
 
     public function lawSchool()

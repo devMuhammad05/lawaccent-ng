@@ -109,7 +109,7 @@
             <img src="{{ asset("web/assets/images/ng.svg") }}" alt="brand logo" />
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('admin.dashboard') }}">LA UK</a>
+            <a href="{{ route('admin.dashboard') }}">LA NG</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -250,6 +250,7 @@
                     <li><a class="nav-link" href="{{ route('admin.contact-us.index') }}">All Messages</a></li>
                 </ul>
             </li>
+
             <li
                 class="dropdown {{ $currentRoute === 'videos' ? 'active' : '' }} {{ $currentRoute === 'podcasts' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown">
@@ -266,11 +267,38 @@
                 </ul>
             </li>
 
-            <li class="{{ $currentRoute === 'webinars' ? 'active' : '' }}">
+            {{-- <li class="{{ $currentRoute === 'webinars' ? 'active' : '' }}">
                 <a href="{{ route('admin.webinars.index') }}" class="nav-link">
                     <i class="fas fa-columns"></i></i>
                     <span>Webinars</span>
                 </a>
+            </li> --}}
+
+            <li class="dropdown {{ $currentRoute === 'webinars' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown">
+                    <i class="fas fa-columns"></i>
+                    <span>
+                        Webinars
+                        @if ($unreadMessagesCount > 0)
+                            <button type="button" class="btn btn-danger">
+                                !
+                            </button>
+                        @endif
+                    </span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="{{ route('admin.webinars.index') }}">Upcoming webinars</a></li>
+                    <li><a class="nav-link" href="{{ route('admin.past-webinars.index') }}">Past webinars</a></li>
+
+                    <li>
+                        <a class="nav-link" href="{{ route('admin.contact-us.unread') }}">
+                            Webinar Applications
+                            @if ($unreadMessagesCount > 0)
+                                <span class="counter">{{ $unreadMessagesCount }}</span>
+                            @endif
+                        </a>
+                    </li>
+                </ul>
             </li>
 
             <li class="dropdown {{ $currentRoute === 'consultations' ? 'active' : '' }}">
