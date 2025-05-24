@@ -145,4 +145,12 @@ class OurImpactController extends Controller
         $webinar->date = \Carbon\Carbon::parse($webinar->date)->toIso8601String();
         return view('web.impact.webinar-details', compact('webinar', ));
     }
+
+    public function showPastWebinar(PastWebinar $pastWebinar)
+    {
+        $pastWebinar->date = \Carbon\Carbon::parse($pastWebinar->date)->toIso8601String();
+        return view('web.impact.past-webinar-details', compact('pastWebinar', ));
+    }
+
+
 }

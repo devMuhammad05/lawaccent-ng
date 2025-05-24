@@ -10,7 +10,8 @@
 
             </div>
             <div class="card-body">
-                <form enctype="multipart/form-data" action="{{ route('admin.past-webinars.update', $pastWebinar) }}" method="POST">
+                <form enctype="multipart/form-data" action="{{ route('admin.past-webinars.update', $pastWebinar) }}"
+                    method="POST">
                     @csrf
                     @method('PUT')
 
@@ -27,12 +28,18 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Material URL</label>
-                        <input type='url' class='form-control' placeholder='Url'
-                        name='recording_url' value='{{ $pastWebinar->recording_url }}'>
+                        <label>Recording URL</label>
+                        <input type='url' class='form-control' placeholder='Url' name='recording_url'
+                            value='{{ $pastWebinar->recording_url }}'>
                     </div>
 
-                     <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
+                    <div class="form-group">
+                        <label>Material URL</label>
+                        <input type='url' class='form-control' placeholder='Url' name='material_link'
+                            value='{{ $pastWebinar->material_link }}'>
+                    </div>
+
+                    <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
                 </form>
             </div>
         </div>

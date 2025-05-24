@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('phone_number');
             $table->boolean('is_read')->default(false);
             $table->enum('type', \App\Enums\ConsultationTypes::values());
-            $table->enum('legal_concerns', [
-                'family_law',
-                'business_law',
-                'property_law',
-               ]);
+            // $table->enum('legal_concerns', [
+            //     'family_law',
+            //     'business_law',
+            //     'property_law',
+            //    ]);
             $table->dateTime('date');
             $table->text('additional_info')->nullable();
             $table->timestamps();

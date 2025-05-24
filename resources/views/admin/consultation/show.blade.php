@@ -26,11 +26,11 @@
                         <input type='text' class='form-control' placeholder='Question' name='question'
                             value='{{ $consultation->phone_number }}' disabled>
                     </div>
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Legal Concerns</label>
                         <input type='text' class='form-control' placeholder='Question' name='question'
                             value='{{ str_replace('_', ' ', ucfirst($consultation->legal_concerns)) }}' disabled>
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label>Type</label>
                         <input type='text' class='form-control' placeholder='Question' name='question'

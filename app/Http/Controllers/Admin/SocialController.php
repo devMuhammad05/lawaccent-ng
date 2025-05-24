@@ -26,10 +26,10 @@ class SocialController extends Controller
     public function update(Request $request, string $id)
     {
         $validatedData = $request->validate([
-            'x_link' => 'sometimes|url',
-            'linkedin_link' => 'sometimes|url',
-            'facebook_link' => 'sometimes|url',
-            'instagram_link' => 'sometimes|url',
+            'x_link' => 'nullable|url',
+            'linkedin_link' => 'nullable|url',
+            'facebook_link' => 'nullable|url',
+            'instagram_link' => 'nullable|url',
         ]);
 
         Social::updateOrCreate(

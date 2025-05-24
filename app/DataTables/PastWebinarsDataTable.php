@@ -24,17 +24,22 @@ class PastWebinarsDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addIndexColumn()
             ->addColumn('action', function ($query) {
-                $edit = "<a href='".route('admin.past-webinars.edit', $query->id)."' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
-                $delete = "<a href='".route('admin.past-webinars.destroy', $query->id)."' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
+                $edit = "<a href='" . route('admin.past-webinars.edit', $query->id) . "' class='btn btn-primary'><i class='fas fa-edit'></i></a>";
+                $delete = "<a href='" . route('admin.past-webinars.destroy', $query->id) . "' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a>";
 
                 return $edit . $delete;
             })
-            ->addColumn('recording_url', function($query){
+            ->addColumn('recording_url', function ($query) {
                 $recording_url = "<a href=" . $query->recording_url . " target='__blank'>$query->recording_url</a>";
 
                 return $recording_url;
             })
-            ->rawColumns(['action', 'recording_url'])
+            ->addColumn('material_link', function ($query) {
+                $material_link = "<a href=" . $query->material_link . " target='__blank'>$query->material_link</a>";
+
+                return $material_link;
+            })
+            ->rawColumns(['action', 'recording_url', 'material_link'])
             ->setRowId('id');
     }
 
@@ -54,19 +59,19 @@ class PastWebinarsDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('pastwebinars-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    ->orderBy(1)
-                    ->selectStyleSingle();
-                    // ->buttons([
-                    //     Button::make('excel'),
-                    //     Button::make('csv'),
-                    //     Button::make('pdf'),
-                    //     Button::make('print'),
-                    //     Button::make('reset'),
-                    //     Button::make('reload')
-                    // ]);
+            ->setTableId('pastwebinars-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            ->orderBy(1)
+            ->selectStyleSingle();
+        // ->buttons([
+        //     Button::make('excel'),
+        //     Button::make('csv'),
+        //     Button::make('pdf'),
+        //     Button::make('print'),
+        //     Button::make('reset'),
+        //     Button::make('reload')
+        // ]);
     }
 
     /**
@@ -79,11 +84,12 @@ class PastWebinarsDataTable extends DataTable
             Column::make('title'),
             Column::make('topic'),
             Column::make('recording_url'),
+            Column::make('material_link'),
             Column::computed('action')
-                  ->exportable(false)
-                  ->printable(false)
-                  ->width(100)
-                  ->addClass('text-center'),
+                ->exportable(false)
+                ->printable(false)
+                ->width(100)
+                ->addClass('text-center'),
         ];
     }
 

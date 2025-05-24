@@ -176,7 +176,9 @@
             <div class="row applyrow">
                 <div class="col-md-4">
                     <h3>Are you qualified?</h3>
-                    <button class="btn btn-apply">Click to Apply Now</button>
+                    <a href="{{ $applicationFormLink }}" target="_blank">
+                        <button class="btn btn-apply">Click to Apply Now</button>
+                    </a>
                 </div>
                 <div class="col-md-8">
                     <p>

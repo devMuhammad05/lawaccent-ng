@@ -97,8 +97,9 @@
                             @enderror
 
                             <label class="labelform">Cumulative Grade Point Average (CGPA)</label>
-                            <input type="number" name="cgpa" value="{{ old('cgpa') }}" placeholder="Enter your CGPA"
-                                class="stepinput form-control" />
+                            <input type="number" name="cgpa" value="{{ old('cgpa') }}"
+                                placeholder="Enter your CGPA" class="stepinput form-control" />
+
                             @error('cgpa') <small class="text-error d-block">{{ $message }}</small> @enderror
 
                             <label class="labelform">Have you been selected for any Scholarship?</label>
@@ -136,47 +137,58 @@
                     @endif
 
                     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+
                         <div class="accordion-body">
-
-                            <div class="file-upload-wrapper">
-                                <label class="pb-1"><small>Academic Credential (Transcript)</small></label>
-                                <div class="file-upload-box">
-                                    <input type="file" name="transcript_doc" class="file-input" />
-                                    <div class="file-instructions">
-                                        <p><span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
-                                                    alt="upload icon" /></span><br />Choose a file or drag and
-                                            drop<br /><small>(Max file size: 5MB)</small></p>
+                            {{-- <form action=""> --}}
+                                <div class="file-upload-wrapper">
+                                    <label class="pb-1"><small>Academic Credential (Transcript)</small></label>
+                                    <div class="file-upload-box drop-zone">
+                                        <input type="file" name="transcript_doc" class="file-input" />
+                                        <div class="file-instructions">
+                                            <p>
+                                                <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
+                                                        alt="image" /></span><br class="br" />
+                                                Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
+                                            </p>
+                                        </div>
                                     </div>
+                                    @error('transcript_doc') <small class="text-error d-block">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                                @error('transcript_doc') <small class="text-error d-block">{{ $message }}</small>
-                                @enderror
-                            </div>
 
-                            <div class="file-upload-wrapper">
-                                <label class="labelform">Essay (1 page max)</label>
-                                <div class="file-upload-box">
-                                    <input type="file" name="essay_doc" class="file-input" />
-                                    <div class="file-instructions">
-                                        <p><span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
-                                                    alt="upload icon" /></span><br />Choose a file or drag and
-                                            drop<br /><small>(Max file size: 5MB)</small></p>
+                                <div class="file-upload-wrapper">
+                                    <label class="labelform">A one page essay explaining why you are the best
+                                        candidate</label>
+                                    <div class="file-upload-box drop-zone">
+                                        <input type="file" name="essay_doc" class="file-input" />
+                                        <div class="file-instructions">
+                                            <p>
+                                                <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
+                                                        alt="image" /></span><br class="br" />
+                                                Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
+                                            </p>
+                                        </div>
                                     </div>
+                                    @error('essay_doc') <small class="text-error d-block">{{ $message }}</small>
+                                    @enderror
                                 </div>
-                                @error('essay_doc') <small class="text-error d-block">{{ $message }}</small> @enderror
-                            </div>
 
-                            <div class="file-upload-wrapper">
-                                <label class="labelform">Curriculum Vitae (CV)</label>
-                                <div class="file-upload-box">
-                                    <input type="file" name="cv_doc" class="file-input" />
-                                    <div class="file-instructions">
-                                        <p><span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
-                                                    alt="upload icon" /></span><br />Choose a file or drag and
-                                            drop<br /><small>(Max file size: 5MB)</small></p>
+                                <div class="file-upload-wrapper">
+                                    <label class="labelform">Curriculum Vitae (CV)</label>
+                                    <div class="file-upload-box drop-zone">
+                                        <input type="file" name="cv_doc" class="file-input" />
+                                        <div class="file-instructions">
+                                            <p>
+                                                <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
+                                                        alt="image" /></span><br class="br" />
+                                                Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
+                                            </p>
+                                        </div>
                                     </div>
+                                    @error('cv_doc') <small class="text-error d-block">{{ $message }}</small> @enderror
                                 </div>
-                                @error('cv_doc') <small class="text-error d-block">{{ $message }}</small> @enderror
-                            </div>
+                                {{--
+                            </form> --}}
                         </div>
                     </div>
                 </div>

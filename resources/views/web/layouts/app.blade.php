@@ -112,7 +112,7 @@
                     @endif
                     @if (@$socials->facebook_link)
                         <a href="{{ $socials->facebook_link }}" target="_blank">
-                            <img src="{{ asset('web/assets/images/fb.svg') }}" alt="facebook" />
+                            <img src="{{ asset('web/assets/images/youtube-icon.webp') }}" alt="youtube" />
                         </a>
                     @endif
                     @if (@$socials->instagram_link)
@@ -128,11 +128,12 @@
 
     {{-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script> --}}
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-bH1HDo1FDHUX4XPYhv+IpV+lD+DRl5aXs3xF3tjZf2c=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 
     <script src="{{ asset("web/assets/js/script.js") }}"></script>
     @stack('script')
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
     <script src="https://www.google.com/recaptcha/api.js"></script>

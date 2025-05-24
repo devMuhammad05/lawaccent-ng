@@ -61,11 +61,11 @@ a:hover {
     width: 10%;
 }
 
-.navbar-brand > :nth-child(1) {
+.navbar-brand> :nth-child(1) {
     width: 90%;
 }
 
-.navbar-brand > :nth-child(2) {
+.navbar-brand> :nth-child(2) {
     width: 23%;
     margin-top: 10px;
 }
@@ -90,8 +90,7 @@ a:hover {
 }
 
 .active a img {
-    filter: invert(22%) sepia(17%) saturate(1700%) hue-rotate(72deg)
-        brightness(60%) contrast(110%);
+    filter: invert(22%) sepia(17%) saturate(1700%) hue-rotate(72deg) brightness(60%) contrast(110%);
     /* filter: drop-shadow(0 0 0 #114906) drop-shadow(1px 1px 0 #114906) drop-shadow(-1px -1px 0 #114906); */
 }
 
@@ -181,7 +180,7 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.buttons > :nth-child(1) {
+.buttons> :nth-child(1) {
     background: #114906;
     border: 1px solid white;
     color: white;
@@ -189,13 +188,13 @@ a:hover {
     border-radius: 7px;
 }
 
-.buttons > :nth-child(1):hover {
+.buttons> :nth-child(1):hover {
     background: #092902;
     border: 1px solid white;
     color: white;
 }
 
-.buttons > :nth-child(2) {
+.buttons> :nth-child(2) {
     background: #ff7300;
     border: 1px solid white;
     color: white;
@@ -203,7 +202,7 @@ a:hover {
     border-radius: 7px;
 }
 
-.buttons > :nth-child(2):hover {
+.buttons> :nth-child(2):hover {
     background: #ff7300d5;
     border: 1px solid white;
     color: white;
@@ -771,7 +770,6 @@ hr {
 .aboutlawaccent {
     text-align: center;
     margin-top: 20px;
-    padding-bottom: 20px;
 }
 
 .aboutlawaccent h2 {
@@ -851,10 +849,10 @@ hr {
     gap: 100px;
 }
 
-.missionwrapper > :nth-child(1),
-.missionwrapper > :nth-child(3),
-.vissionwrapper > :nth-child(2),
-.vissionwrapper > :nth-child(3) {
+.missionwrapper> :nth-child(1),
+.missionwrapper> :nth-child(3),
+.vissionwrapper> :nth-child(2),
+.vissionwrapper> :nth-child(3) {
     border: 1px solid #686868;
     padding: 7px 40px;
     border-radius: 10px;
@@ -864,8 +862,8 @@ hr {
     cursor: pointer;
 }
 
-.missionwrapper > :nth-child(2),
-.vissionwrapper > :nth-child(1) {
+.missionwrapper> :nth-child(2),
+.vissionwrapper> :nth-child(1) {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -956,14 +954,6 @@ hr {
     border-radius: 12px;
 }
 
-.team-member img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 5px;
-    object-fit: cover;
-}
-
 .team-member h6 {
     font-size: 18px;
     font-weight: 700;
@@ -981,11 +971,35 @@ hr {
     cursor: pointer;
 }
 
-.tooltip-wrapper img {
-    width: 100%;
+.profileImage {
+    width: 100% !important;
+    height: 280px !important;
     height: auto;
     border-radius: 10px;
     display: block;
+    object-fit: cover;
+}
+
+.svg-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.profilelinkedin {
+    position: absolute;
+    bottom: 5px;
+    background: #007AB9;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.profilelogo {
+    position: absolute;
+    bottom: 5px;
+    border-radius: 5px;
+    right: 15px;
+    width: 20%;
 }
 
 .tooltiptext {
@@ -1082,14 +1096,14 @@ hr {
     font-weight: 600;
 }
 
-.legalimg > :nth-child(1) {
+.legalimg> :nth-child(1) {
     width: 100%;
     height: 50vh;
     border-radius: 20px;
     object-fit: cover;
 }
 
-.legalimg > :nth-child(2) {
+.legalimg> :nth-child(2) {
     position: absolute;
     top: 20px;
     left: 40px;
@@ -1530,14 +1544,14 @@ hr {
     margin-top: 0px;
 }
 
-.recentblog-buttons > :nth-child(1),
-.recentblog-buttons > :nth-child(1):hover {
+.recentblog-buttons> :nth-child(1),
+.recentblog-buttons> :nth-child(1):hover {
     background: #114906;
     color: white;
 }
 
-.recentblog-buttons > :nth-child(2),
-.recentblog-buttons > :nth-child(2):hover {
+.recentblog-buttons> :nth-child(2),
+.recentblog-buttons> :nth-child(2):hover {
     background: #7d7d7d;
     color: white;
 }
@@ -1861,10 +1875,10 @@ hr {
     justify-content: center;
 }
 
-.businesscontactbutton > :nth-child(1),
-.businesscontactbutton > :nth-child(2),
-.businesscontactbutton > :nth-child(1):hover,
-.businesscontactbutton > :nth-child(2):hover {
+.businesscontactbutton> :nth-child(1),
+.businesscontactbutton> :nth-child(2),
+.businesscontactbutton> :nth-child(1):hover,
+.businesscontactbutton> :nth-child(2):hover {
     color: white;
     background: #114906;
 }
@@ -2508,13 +2522,23 @@ input[type="radio"] {
     width: 20px !important;
 }
 
-.backicon span{
-   font-size: 13px;
-   color: #114906;
-   font-weight: 500;
+.contactspan {
+    color: #114906;
+    text-decoration: underline;
 }
 
-.backicon{
+.accesstext {
+    color: #114906;
+    padding-top: 10px;
+}
+
+.backicon span {
+    font-size: 13px;
+    color: #114906;
+    font-weight: 500;
+}
+
+.backicon {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -2621,7 +2645,22 @@ input[type="radio"] {
 .btnrsvp {
     background: #114906 !important;
     color: white !important;
-    margin-top: 20px;
+    font-size: 14px !important;
+    padding: 10px 20px !important;
+}
+
+.btn-container {
+    margin-top: 50px !important;
+    display: flex;
+    gap: 30px;
+}
+
+.downloadmat {
+    background: white !important;
+    color: #114906 !important;
+    border: 1px solid #114906 !important;
+    font-size: 14px !important;
+    padding: 10px 20px !important;
 }
 
 .webinartimediv {
@@ -2635,11 +2674,11 @@ input[type="radio"] {
     width: 60px;
 }
 
-.webinartimediv > :nth-child(1) {
+.webinartimediv> :nth-child(1) {
     font-size: 20px !important;
 }
 
-.webinartimediv > :nth-child(2) {
+.webinartimediv> :nth-child(2) {
     font-size: 10px !important;
 }
 
@@ -2725,10 +2764,10 @@ input[type="radio"] {
     justify-content: center;
 }
 
-.rsvpbutton > :nth-child(1),
-.rsvpbutton > :nth-child(2),
-.rsvpbutton > :nth-child(1):hover,
-.rsvpbutton > :nth-child(2):hover {
+.rsvpbutton> :nth-child(1),
+.rsvpbutton> :nth-child(2),
+.rsvpbutton> :nth-child(1):hover,
+.rsvpbutton> :nth-child(2):hover {
     color: white;
     background: #114906 !important;
 }
@@ -2738,6 +2777,22 @@ input[type="radio"] {
 }
 
 /* SCHOLARSHIP PAGE */
+.drop-zone.dragging {
+    border: 2px dashed #007bff;
+    background-color: #f0f8ff;
+}
+
+.file-name {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.file-error {
+    color: red;
+    margin-top: 10px;
+    font-size: 0.875rem;
+}
+
 .Scholarship {
     margin: 40px 0;
 }
@@ -2892,6 +2947,10 @@ input[type="radio"] {
     height: 15px;
 }
 
+.accordrow {
+    font-size: 13px !important;
+}
+
 .form-button {
     color: white !important;
     background: #114906 !important;
@@ -2905,6 +2964,10 @@ input[type="radio"] {
     align-items: center;
     flex-direction: column;
     margin-bottom: 50px;
+}
+
+.scholarshipformcontainer img{
+    width: 30%;
 }
 
 .scholarshipformcontainer p {
@@ -3150,4 +3213,60 @@ input[type="radio"] {
 .testquiznavigation .btn:disabled {
     background: #aaa;
     cursor: not-allowed;
+}
+
+/* VIEW RECORDING PAGE PAGE */
+.viewrecording {
+    margin-top: 50px;
+}
+
+.greenbox {
+    background: #D6FFCE;
+    text-align: center;
+    color: black;
+    border-radius: 7px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 25%;
+}
+
+.graybox {
+    background: #B3B3B3;
+    text-align: center;
+    color: black;
+    border-radius: 7px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 25%;
+}
+
+.box-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.viewrecording-row {
+    justify-content: space-between;
+    margin: 0 30px 0 10px !important;
+}
+
+.laptophone img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 15px;
+    border-top: 2px solid #114906;
+    border-bottom: 2px solid #114906;
+    margin-bottom: 70px;
+}
+
+.laptophone div {
+    width: 90%;
+    background: #D9D9D9;
+    height: 35vh;
+    margin-left: auto;
+    margin-top: 30px;
+    border-radius: 5px;
 }

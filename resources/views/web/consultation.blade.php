@@ -57,15 +57,15 @@
                         <div class="form-step" id="step2" style="display: none">
                             <h4>Schedule A Consultation</h4>
                             <span>Book a consultation with one of our experienced lawyers</span> <br>
-                            <label class="labelforms">Choose Area Of Legal Concern</label>
-                            <select class="stepinput form-control" name="legal_concerns" id="legalArea">
+                            {{-- <label class="labelforms">Choose Area Of Legal Concern</label> --}}
+                            {{-- <select class="stepinput form-control" name="legal_concerns" id="legalArea">
                                 <option value="">Choose area of concern</option>
                                 <option value="family_law" {{ old('legal_concerns') == 'family_law' ? 'selected' : '' }}>
                                     Family Law</option>
                                 <option value="business_law" {{ old('legal_concerns') == 'business_law' ? 'selected' : '' }}>Business Law</option>
                                 <option value="property_law" {{ old('legal_concerns') == 'property_law' ? 'selected' : '' }}>Property Law</option>
                             </select>
-                            <small class="text-error d-block" id="errorArea"></small>
+                            <small class="text-error d-block" id="errorArea"></small> --}}
 
                             <label class="labelforms">Preferred Date And Time</label>
                             <input type="datetime-local" class="stepinput form-control" name="date"

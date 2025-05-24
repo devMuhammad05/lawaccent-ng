@@ -10,5 +10,10 @@ class PastWebinar extends Model
         'title',
         'topic',
         'recording_url',
+        'material_link',
+    ];
+
+    protected $casts = [
+        'date' => 'datetime',
     ];
 }

@@ -168,8 +168,6 @@
     @include('web.partials.newsletter')
 
 
-
-
     <script>
 
         const webinarDate = "{{ $webinar->date }}";

@@ -34,7 +34,7 @@
 
     @include('web.partials.newsletter')
 
-    @push('scripts')
+    @push('script')
         <script src="{{ asset("web/assets/js/scholarship.js") }}"></script>
     @endpush
 

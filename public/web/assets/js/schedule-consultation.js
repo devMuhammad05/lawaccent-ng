@@ -53,7 +53,7 @@ function submitForm() {
         }
         $(".consultation_type").text(consultationType);
 
-        showStep(3);
+        // showStep(3);
     }
 }
 
@@ -63,7 +63,7 @@ const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const nextBtn = document.getElementById("nextBtn");
 
-const legalArea = document.getElementById("legalArea");
+// const legalArea = document.getElementById("legalArea");
 const dateTime = document.getElementById("dateTime");
 const info = document.getElementById("info");
 const submitBtn = document.getElementById("submitBtn");
@@ -101,10 +101,12 @@ function validateEmail() {
 function validatePhone() {
     if (!touchedFields.phone) return true;
 
-    const phoneRegex = /^\+?\d{10,15}$/;
+    // Requires the number to start with + and followed by 10 to 14 digits
+    const phoneRegex = /^\+\d{10,14}$/;
+
     if (!phoneRegex.test(phone.value.trim())) {
         document.getElementById("errorPhone").textContent =
-            "Enter a valid phone number";
+            "Enter a valid phone number starting with + and country code (e.g., +234...)";
         return false;
     } else {
         document.getElementById("errorPhone").textContent = "";
@@ -129,18 +131,18 @@ function validateConsultationType() {
     }
 }
 
-function validateLegalArea() {
-    if (!touchedFields.legalArea) return true;
+// function validateLegalArea() {
+//     if (!touchedFields.legalArea) return true;
 
-    if (legalArea.value === "") {
-        document.getElementById("errorArea").textContent =
-            "Please choose an area";
-        return false;
-    } else {
-        document.getElementById("errorArea").textContent = "";
-        return true;
-    }
-}
+//     if (legalArea.value === "") {
+//         document.getElementById("errorArea").textContent =
+//             "Please choose an area";
+//         return false;
+//     } else {
+//         document.getElementById("errorArea").textContent = "";
+//         return true;
+//     }
+// }
 
 function validateDateTime() {
     if (!touchedFields.dateTime) return true;
@@ -189,16 +191,16 @@ function validateStep1() {
 
 function validateStep2() {
     // When clicking Submit, mark all step 2 fields as touched
-    touchedFields.legalArea = true;
+    // touchedFields.legalArea = true;
     touchedFields.dateTime = true;
     touchedFields.info = true;
 
     // Validate all fields and update their error messages
-    const isAreaValid = validateLegalArea();
+    // const isAreaValid = validateLegalArea();
     const isDateValid = validateDateTime();
     const isInfoValid = validateInfo();
 
-    const isValid = isAreaValid && isDateValid && isInfoValid;
+    const isValid = isDateValid && isInfoValid;
     submitBtn.disabled = !isValid;
     return isValid;
 }
@@ -238,15 +240,15 @@ function checkStep1ButtonState() {
 
 function checkStep2ButtonState() {
     // Only check fields that have been touched
-    const isAreaValid = !touchedFields.legalArea || legalArea.value !== "";
+    // const isAreaValid = !touchedFields.legalArea || legalArea.value !== "";
     const isDateValid = !touchedFields.dateTime || dateTime.value !== "";
     const isInfoValid = !touchedFields.info || info.value.length <= 500;
 
     // Enable button if all required fields have valid values
-    const requiredFieldsValid = isAreaValid && isDateValid && isInfoValid;
+    const requiredFieldsValid = isDateValid && isInfoValid;
 
     // Check if form has the required values to enable the button
-    const hasRequiredValues = legalArea.value !== "" && dateTime.value !== "";
+    const hasRequiredValues =  dateTime.value !== "";
 
     submitBtn.disabled = !requiredFieldsValid || !hasRequiredValues;
 }
@@ -279,11 +281,11 @@ for (let radio of radioInputs) {
 }
 
 // Attach input event handlers for Step 2
-legalArea.addEventListener("input", function () {
-    touchedFields.legalArea = true;
-    validateLegalArea();
-    checkStep2ButtonState();
-});
+// legalArea.addEventListener("input", function () {
+//     touchedFields.legalArea = true;
+//     validateLegalArea();
+//     checkStep2ButtonState();
+// });
 
 dateTime.addEventListener("input", function () {
     touchedFields.dateTime = true;
@@ -324,7 +326,7 @@ function checkForExistingValues() {
     }
 
     // For Step 2
-    if (legalArea.value !== "") touchedFields.legalArea = true;
+    // if (legalArea.value !== "") touchedFields.legalArea = true;
     if (dateTime.value !== "") touchedFields.dateTime = true;
     if (info.value.trim() !== "") touchedFields.info = true;
 

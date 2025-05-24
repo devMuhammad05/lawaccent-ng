@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Models\AboutUsMetric;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AboutUs\AboutUsMetricsRequest;
+use App\Http\Requests\Admin\AboutUs\AboutUsMetricsRequest;
 
 class AboutUsMetricsController extends Controller
 {

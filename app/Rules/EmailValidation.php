@@ -16,14 +16,14 @@ class EmailValidation implements ValidationRule
      */
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
-        $validator = new EmailValidator;
+        // $validator = new EmailValidator;
 
-        if (! $validator->isCompanyEmail($value)) {
-            $emailDomain = substr(strrchr($value, '@'), 1);
-            $fail("The :attribute cannot be from the '{$emailDomain}' domain. Please use a business email address.");
+        // if (! $validator->isCompanyEmail($value)) {
+        //     $emailDomain = substr(strrchr($value, '@'), 1);
+        //     $fail("The :attribute cannot be from the '{$emailDomain}' domain. Please use a business email address.");
 
-            return;
-        }
+        //     return;
+        // }
 
         $apiKey = config('app.email_verification_api_key');
         $response = Http::get('https://emailvalidation.abstractapi.com/v1/', [
@@ -33,10 +33,14 @@ class EmailValidation implements ValidationRule
 
         $data = $response->json();
 
+        // \Log::info('Email validation response:', [
+        //     'email' => $value,
+        //     'response' => $data,
+        // ]);
+
         if (
             ($data['deliverability'] ?? '') !== 'DELIVERABLE' ||
-            ($data['is_disposable_email']['value'] ?? false) === true ||
-            ($data['is_free_email']['value'] ?? false) === true
+            ($data['is_disposable_email']['value'] ?? false) === true
         ) {
             $fail('The :attribute is not a valid email.');
         }

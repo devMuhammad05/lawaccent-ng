@@ -25,6 +25,7 @@ class StorePastWebinar extends FormRequest
             'title' => ['required','max:255', 'string'],
             'topic' => ['required','max:255', 'string'],
             'recording_url' => ['required','max:255', 'url'],
+            'material_link' => ['nullable','max:255', 'url'],
         ];
     }
 }

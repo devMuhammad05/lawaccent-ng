@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Web;
 
+use App\Rules\EmailValidation;
+use App\Rules\PhoneNumberValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreConsultationRequest extends FormRequest
@@ -23,10 +25,10 @@ class StoreConsultationRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'phone_number' => 'required|string|max:15',
+            'email' => ['required', 'email:rfc,dns,spoof', new EmailValidation],
+            'phone_number' => ['required', 'string', 'max:15', new PhoneNumberValidationRule],
             'type' => 'required|in:Virtual,In Person',
-            'legal_concerns' => 'required',
+            'legal_concerns' => 'nullable',
             'date' => 'required|date|after_or_equal:today',
             'additional_info' => 'nullable|string|max:1000',
             'g-recaptcha-response' => 'required',
@@ -41,3 +43,4 @@ class StoreConsultationRequest extends FormRequest
         ];
     }
 }
+
