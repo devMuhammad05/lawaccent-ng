@@ -126,7 +126,10 @@
     </footer>
 
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    {{-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script> --}}
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-bH1HDo1FDHUX4XPYhv+IpV+lD+DRl5aXs3xF3tjZf2c=" crossorigin="anonymous"></script>
+
 
     <script src="{{ asset("web/assets/js/script.js") }}"></script>
     @stack('script')

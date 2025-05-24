@@ -32,17 +32,18 @@ class ConsultationController extends Controller
         $consultation = Consultation::find($id);
 
         return view('admin.consultation.show', [
-            'contact' => $consultation,
+            'consultation' => $consultation,
         ]);
     }
 
-    public function markAsRead(Consultation $consultation)
+    public function markAsRead(string $id)
     {
-        $consultation->markAsRead();
+        $consultation = Consultation::find($id);
 
+        $consultation->markAsRead();
         flash()->success('Enquiry marked as read successfully');
 
-        return to_route('admin.contact-us.unread');
+        return to_route('admin.consultations.unread');
     }
 
     /**

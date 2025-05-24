@@ -39,7 +39,6 @@ class ContactUsForm extends Component
         // dd($data);
 
         ContactUs::create($data);
-        flash()->success('Your message has been sent successfully!');
 
         Mail::html("
         <p>Thank you for sending us a message.</p>
@@ -52,9 +51,14 @@ class ContactUsForm extends Component
             <li><strong>Message:</strong> {$this->message}</li>
         </ul>
     ", function ($message) {
-        $message->to($this->email)
+            $message->to($this->email)
                 ->subject('Thank You for Contacting Us');
-    });
+        });
+
+
+
+        flash()->success('Your message has been sent successfully!');
+
 
 
         $this->reset();

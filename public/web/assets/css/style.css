@@ -2504,6 +2504,23 @@ input[type="radio"] {
 }
 
 /* LEGAL LITRACY PAGE */
+.backicon img {
+    width: 20px !important;
+}
+
+.backicon span{
+   font-size: 13px;
+   color: #114906;
+   font-weight: 500;
+}
+
+.backicon{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
 .legalquiz {
     margin-top: 50px;
 }
@@ -2569,7 +2586,10 @@ input[type="radio"] {
 }
 
 .upcomingwebrow .col-md-6 {
-    margin-top: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .lower {
@@ -2577,7 +2597,7 @@ input[type="radio"] {
 }
 
 .pastwebinar {
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .pastwebinarrow {

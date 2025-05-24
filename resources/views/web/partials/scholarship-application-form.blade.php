@@ -40,10 +40,17 @@
                                 <span>Are you eligible for the upcoming Law School Session?</span>
                             </div>
                             <div class="labeldiv">
-                                <label><input type="radio" name="eligibility_status" value="eligible" {{ old('eligibility_status') == 'yes' ? 'checked' : '' }} /> Yes</label>
-                                <label><input type="radio" name="eligibility_status" value="not_eligible" {{ old('eligibility_status') == 'no' ? 'checked' : '' }} /> No</label>
-                                <label><input type="radio" name="eligibility_status" value="partially_eligible" {{ old('eligibility_status') == 'partially' ? 'checked' : '' }} /> Partially</label>
+                                <label>
+                                    <input type="radio" name="eligibility_status" value="eligible" {{ old('eligibility_status') == 'eligible' ? 'checked' : '' }} /> Yes
+                                </label>
+                                <label>
+                                    <input type="radio" name="eligibility_status" value="not_eligible" {{ old('eligibility_status') == 'not_eligible' ? 'checked' : '' }} /> No
+                                </label>
+                                <label>
+                                    <input type="radio" name="eligibility_status" value="partially_eligible" {{ old('eligibility_status') == 'partially_eligible' ? 'checked' : '' }} /> Partially
+                                </label>
                             </div>
+
                             @error('eligibility_status') <small class="text-error d-block">{{ $message }}</small>
                             @enderror
                         </div>

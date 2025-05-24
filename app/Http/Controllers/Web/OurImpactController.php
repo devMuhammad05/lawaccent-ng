@@ -82,9 +82,29 @@ class OurImpactController extends Controller
     }
 
 
-    public function quizes()
+    // public function quizes()
+    // {
+    //     $quizzes = Quiz::active()->latest()->withCount('questions')->get();
+
+    //     return view('web.impact.quiz.index', compact('quizzes'));
+    // }
+
+
+    public function quizzes(Request $request)
     {
-        $quizzes = Quiz::active()->latest()->withCount('questions')->get();
+        $query = Quiz::active()->latest()->withCount('questions');
+
+        if ($request->has('search') && $request->search) {
+            $query->where(function ($q) use ($request) {
+                $q->where('title', 'like', '%' . $request->search . '%')
+                    ->orWhere('sub_title', 'like', '%' . $request->search . '%')
+                    ->orWhere('description', 'like', '%' . $request->search . '%')
+                    ->orWhere('why_take_quiz', 'like', '%' . $request->search . '%');
+            });
+        }
+
+
+        $quizzes = $query->get();
 
         return view('web.impact.quiz.index', compact('quizzes'));
     }
@@ -123,6 +143,6 @@ class OurImpactController extends Controller
     public function showWebinar(Webinar $webinar)
     {
         $webinar->date = \Carbon\Carbon::parse($webinar->date)->toIso8601String();
-        return view('web.impact.webinar-details', compact('webinar',));
+        return view('web.impact.webinar-details', compact('webinar', ));
     }
 }

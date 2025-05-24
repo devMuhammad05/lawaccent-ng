@@ -1,13 +1,13 @@
 <x-app-layout>
 
-        <!--=============================
+    <!--=============================
         DISPLAY ANY ERROR START
     ==============================-->
     @if ($errors->any())
         @foreach ($errors->all() as $error)
-        @php
-          flash()->error("$error")
-        @endphp
+            @php
+                flash()->error("$error")
+            @endphp
         @endforeach
     @endif
     <!--=============================
@@ -18,6 +18,12 @@
         <div class="container">
             <div class="row sectiontitlerow">
                 <div class="col-md-6">
+                    <a href="{{ route('our-impact.legal.literacy') }}">
+                        <div class="backicon">
+                            <img src="{{ asset("web/assets/images/lessthan.svg") }}" alt="" />
+                            <span>Back To Webinars</span>
+                        </div>
+                    </a>
                     <h4>{{ $webinar->title }}</h4>
                     <p>{{ $webinar->date->format('d M Y') }}</p>
 
@@ -70,18 +76,20 @@
                         <p>Secure your spot for our upcoming legal seminar.</p>
                         <form action="">
                             <label for="" class="rsvplabelform">Full Name</label>
-                            <input type="text" placeholder="Enter Full Name" class="stepinput form-control" name="name" required />
-                            <label for="" class="rsvplabelform">Email Address</label>
-                            <input type="email" placeholder="Enter email address" name="email" class="stepinput form-control"
+                            <input type="text" placeholder="Enter Full Name" class="stepinput form-control" name="name"
                                 required />
+                            <label for="" class="rsvplabelform">Email Address</label>
+                            <input type="email" placeholder="Enter email address" name="email"
+                                class="stepinput form-control" required />
                             <label for="" class="rsvplabelform">Phone Number</label>
                             <input class="stepinput form-control" type="tel"
-                                placeholder="Enter a valid phone number (Ex. +234 801 2345 678)" name="phone_number" required />
+                                placeholder="Enter a valid phone number (Ex. +234 801 2345 678)" name="phone_number"
+                                required />
                             <div class="rsvpspandiv">
                                 <span>Attendance Type</span>
                             </div>
                             <div class="labeldiv">
-                                <label><input type="radio" name="type"  value="Virtual" {{ old('type') == 'Virtual' ? 'checked' : '' }} />
+                                <label><input type="radio" name="type" value="Virtual" {{ old('type') == 'Virtual' ? 'checked' : '' }} />
                                     Virtual</label>
                                 <label><input type="radio" name="type" value="In Person" {{ old('type') == 'In Person' ? 'checked' : '' }} /> In
                                     Person</label>
@@ -100,13 +108,13 @@
 
                             <label for="" class="rsvplabelform">Have Any Questions To Ask Before The Webinar?</label>
 
-                                <textarea placeholder="Enter your question"
-                                class="rsvpfixed-textarea form-control" name="question"w></textarea>
+                            <textarea placeholder="Enter your question" class="rsvpfixed-textarea form-control"
+                                name="question"></textarea>
 
 
-                                <button class="btn reservebtn mt-5" type="submit">
-                                    Reserve My Seat
-                                </button>
+                            <button class="btn reservebtn mt-5" type="submit">
+                                Reserve My Seat
+                            </button>
                         </form>
                     </div>
 
@@ -117,7 +125,8 @@
                         <form action="">
                             <label for="" class="rsvplabelform">Have Any Questions To Ask Before The Webinar?</label>
                             <textarea placeholder="Enter your question"
-                                class="stepinput form-control rsvpfixed-textarea" required style="height: 300px!important"></textarea>
+                                class="stepinput form-control rsvpfixed-textarea" required
+                                style="height: 300px!important"></textarea>
                             <div class="mt-4">
                                 <button class="btn reservebtn" onclick="submitForm()">
                                     Reserve My Seat

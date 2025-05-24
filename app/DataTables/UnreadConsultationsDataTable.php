@@ -23,7 +23,24 @@ class UnreadConsultationsDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-            ->addColumn('action', 'unreadconsultations.action')
+            ->addIndexColumn()
+            ->addColumn('action', function ($query) {
+                $view = "<a href='".route('admin.consultations.show', $query->id)."' class='btn btn-danger mr-2'><i class='fas fa-eye'></i></a>";
+
+                if (! $query->is_read) {
+                    $markAsRead = "<a href='".route('admin.consultations.markAsRead', $query->id)."' class='btn btn-primary'>
+                            <i class='fas fa-check'></i>
+                    </a>";
+
+                    return (string) $view.$markAsRead;
+                }
+
+                return $view;
+            })->addColumn('type', function ($query) {
+
+               return str_replace('-', ' ', ucfirst($query->type));
+
+            })->rawColumns(['action'])
             ->setRowId('id');
     }
 
@@ -47,15 +64,15 @@ class UnreadConsultationsDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+                    ->selectStyleSingle();
+                    // ->buttons([
+                    //     Button::make('excel'),
+                    //     Button::make('csv'),
+                    //     Button::make('pdf'),
+                    //     Button::make('print'),
+                    //     Button::make('reset'),
+                    //     Button::make('reload')
+                    // ]);
     }
 
     /**
@@ -64,7 +81,7 @@ class UnreadConsultationsDataTable extends DataTable
     public function getColumns(): array
     {
         return [
-            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
+            Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(10),
             Column::make('name'),
             Column::make('email'),
             Column::make('type')->title('Consultation Type'),

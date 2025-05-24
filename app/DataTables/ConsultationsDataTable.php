@@ -27,6 +27,11 @@ class ConsultationsDataTable extends DataTable
                 $view = "<a href='".route('admin.consultations.show', $query->id)."' class='btn btn-primary'><i class='fas fa-eye'></i></a>";
 
                 return $view;
+
+            })->addColumn('type', function ($query) {
+
+               return str_replace('-', ' ', ucfirst($query->type));
+
             })->rawColumns(['action'])
             ->setRowId('id');
     }
@@ -51,15 +56,15 @@ class ConsultationsDataTable extends DataTable
                     ->columns($this->getColumns())
                     ->minifiedAjax()
                     ->orderBy(1)
-                    ->selectStyleSingle()
-                    ->buttons([
-                        Button::make('excel'),
-                        Button::make('csv'),
-                        Button::make('pdf'),
-                        Button::make('print'),
-                        Button::make('reset'),
-                        Button::make('reload')
-                    ]);
+                    ->selectStyleSingle();
+                    // ->buttons([
+                    //     Button::make('excel'),
+                    //     Button::make('csv'),
+                    //     Button::make('pdf'),
+                    //     Button::make('print'),
+                    //     Button::make('reset'),
+                    //     Button::make('reload')
+                    // ]);
     }
 
     /**

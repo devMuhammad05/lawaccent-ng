@@ -22,19 +22,22 @@
 
                     <div class="form-group">
                         <label>Select Category</label>
-                        <select type='text' class='form-control' name='case_study_category_id'>
-                            <option selected disabled>Select Category</option>
+                        <select class="form-control" name="case_study_category_id">
+                            <option disabled {{ old('case_study_category_id') ? '' : 'selected' }}>Select Category</option>
 
                             @foreach ($categories as $category)
-                                <option value="{{ old('case_study_category_id', $category->id) }}">{{ $category->name }}</option>
+                                <option value="{{ $category->id }}" {{ old('case_study_category_id') == $category->id ? 'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
 
+
                     <div class="form-group">
                         <label>Legal Issues Explored</label>
-                        <input type='text' class='form-control' placeholder='Enter legal issues' name='legal_issues_explored'
-                            value='{{ old('legal_issues_explored') }}'>
+                        <input type='text' class='form-control' placeholder='Enter legal issues'
+                            name='legal_issues_explored' value='{{ old('legal_issues_explored') }}'>
                     </div>
 
                     <div class="form-group">
@@ -48,8 +51,8 @@
                     <div class="form-group">
                         <label>Body</label>
                         <textarea name="body" style="width: 100%; height: 200px;">
-                            {{ old('body') }}
-                        </textarea>
+                                {{ old('body') }}
+                            </textarea>
                     </div>
 
                     {{-- <div class="form-group">
@@ -60,7 +63,7 @@
                         </select>
                     </div> --}}
 
-                     <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
+                    <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -69,7 +72,7 @@
 
 @push('scripts')
     <script type="text/javascript">
-        bkLib.onDomLoaded(function() {
+        bkLib.onDomLoaded(function () {
             nicEditors.allTextAreas()
         });
     </script>

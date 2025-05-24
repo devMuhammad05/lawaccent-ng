@@ -146,7 +146,7 @@
                                 </p>
                                 <div class="upcomingwebutton">
                                     <button class="btn">
-                                        <a href="{{ $pastWebinar->recording_url }}" target="__blank">Watch Video/Recording</a>
+                                        <a href="{{ $pastWebinar->recording_url }}" target="__blank">Access the Materials</a>
                                     </button>
                                 </div>
                             </div>

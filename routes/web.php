@@ -64,7 +64,7 @@ Route::prefix('our-impact')->name('our-impact.')->controller(OurImpactController
     Route::get('law-school-scholarship-programme', 'lawSchool')->name('law.school.scholarship');
     Route::get('apply-for-scholarship', 'scholarship')->name('scholarship');
     Route::post('apply-for-scholarship', 'applyScholarship')->name('scholarship.store');
-    Route::get('quizzes', 'quizes')->name('quizes.index');
+    Route::get('quizzes', 'quizzes')->name('quizes.index');
     Route::get('quizzes/{quiz}/why-take-quiz', 'whyTakeQuiz')->name('why.take.quiz');
     Route::get('quizzes/{quiz}', 'showQuiz')->name('show.quiz');
     Route::get('webinars/{webinar:slug}', 'showWebinar')->name('show.webinar');
@@ -85,12 +85,3 @@ Route::get('cookie-notice', [PrivacyAndCookiesController::class, 'cookies'])->na
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
 
-
-Route::get('/mail', function () {
-    Mail::raw('This is a plain text test email.', function ($message) {
-        $message->to('olayemisrael@gmail.com')
-                ->subject('Test Raw Email');
-    });
-
-    return 'Email Sent!';
-});

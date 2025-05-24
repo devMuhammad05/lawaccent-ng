@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Recording url</label>
+                        <label>Material URL</label>
                         <input type='url' class='form-control' placeholder='Url'
                         name='recording_url' value='{{ $pastWebinar->recording_url }}'>
                     </div>

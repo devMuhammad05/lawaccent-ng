@@ -33,7 +33,9 @@
                         Don't miss a single explainer - hit <br />
                         subscribe and stay in the loop!
                     </p>
-                    <button class="btn">Subscribe</button>
+                    <a href="{{ $youtube_link }}" target="_blank">
+                        <button class="btn">Subscribe</button>
+                    </a>
                 </div>
             </div>
             <hr class="hr-media" />

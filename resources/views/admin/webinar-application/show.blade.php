@@ -2,7 +2,7 @@
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>View Contact Us Message</h1>
+            <h1>View Webinar Application</h1>
         </div>
         <div class="card card-primary">
             <div class="card-header">

@@ -14,24 +14,44 @@
                     <div class="form-group">
                         <label>Name</label>
                         <input type='text' class='form-control' placeholder='Question' name='question'
-                            value='{{ $contact->name }}' disabled>
+                            value='{{ $consultation->name }}' disabled>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input type='text' class='form-control' placeholder='Question' name='question'
-                            value='{{ $contact->email }}' disabled>
+                            value='{{ $consultation->email }}' disabled>
                     </div>
                     <div class="form-group">
-                        <label>Message</label>
-                        <textarea name="data" style="width: 100%;" disabled>{{ $contact->message }}</textarea>
+                        <label>Phone Number</label>
+                        <input type='text' class='form-control' placeholder='Question' name='question'
+                            value='{{ $consultation->phone_number }}' disabled>
                     </div>
+                    <div class="form-group">
+                        <label>Legal Concerns</label>
+                        <input type='text' class='form-control' placeholder='Question' name='question'
+                            value='{{ str_replace('_', ' ', ucfirst($consultation->legal_concerns)) }}' disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Type</label>
+                        <input type='text' class='form-control' placeholder='Question' name='question'
+                            value='{{ str_replace('-', ' ', ucfirst($consultation->type)) }}' disabled>
+                    </div>
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="text" class="form-control" placeholder="Question" name="question"
+                            value="{{ $consultation->date->format('d M Y h:i A') }}" disabled>
 
-                    @if (!$contact->is_read)
-                        <a href='{{ route('admin.contact-us.markAsRead', $contact->id) }}' class='btn btn-primary p-2'>
-                            Mark as read
-                        </a>
-                    @endif
+                    </div>
+                    <div class="form-group">
+                        <label>Additional Info</label>
+                        <textarea name="data" style="width: 100%;" disabled>{{ $consultation->additional_info }}</textarea>
+                    </div>
                 </form>
+                @if (!$consultation->is_read)
+                    <a href='{{ route('admin.consultations.markAsRead', $consultation->id) }}' class='btn btn-primary p-2'>
+                        Mark as read
+                    </a>
+                @endif
             </div>
         </div>
     </section>

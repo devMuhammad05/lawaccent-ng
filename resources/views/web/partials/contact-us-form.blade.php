@@ -55,7 +55,8 @@
                     </div>
 
                     <!-- Google reCAPTCHA -->
-                    <div class="g-recaptcha mb-3" data-sitekey="{{ config('app.recaptcha_sitekey') }}"></div>
+                    {{-- <div class="g-recaptcha mb-3" data-sitekey="{{ config('app.recaptcha_sitekey') }}"></div> --}}
+                    
 
                     <button type="submit" class="w-100" wire:loading.attr="disabled" wire:target="save">
                         <span wire:loading.remove wire:target="save">Submit</span>
@@ -68,3 +69,43 @@
         </div>
     </div>
 </section>
+
+{{-- <script>
+    document.addEventListener('livewire:load', () => {
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            grecaptcha.ready(function () {
+                grecaptcha.execute('{{ config('app.recaptcha_sitekey') }}', { action: 'submit' }).then(function (token) {
+                    Livewire.emit('recaptchaToken', token);
+                });
+            });
+        });
+
+        Livewire.on('submitForm', () => {
+            form.submit();
+        });
+    });
+
+    function renderRecaptcha() {
+        if (typeof grecaptcha !== 'undefined') {
+            const existingWidget = document.querySelector('.g-recaptcha');
+            if (existingWidget && !existingWidget.hasAttribute('data-rendered')) {
+                grecaptcha.render(existingWidget, {
+                    sitekey: '{{ config('app.recaptcha_sitekey') }}'
+                });
+                existingWidget.setAttribute('data-rendered', 'true');
+            }
+        }
+    }
+
+    document.addEventListener('livewire:load', () => {
+        renderRecaptcha(); // initial render
+
+        Livewire.hook('message.processed', () => {
+            renderRecaptcha(); // re-render after Livewire updates DOM
+        });
+    });
+</script> --}}

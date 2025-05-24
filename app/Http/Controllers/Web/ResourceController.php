@@ -6,9 +6,10 @@ use App\Models\Faq;
 use App\Models\Blog;
 use App\Models\CaseStudy;
 use App\Models\Assessment;
-use App\Models\LegalCheckList;
-use App\Models\PodcastMedia;
 use App\Models\VideoMedia;
+use App\Models\SiteSetting;
+use App\Models\PodcastMedia;
+use App\Models\LegalCheckList;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
 
@@ -84,7 +85,8 @@ class ResourceController extends Controller
     {
         $videoMedias = VideoMedia::latest()->take(8)->get();
         $podcasts = PodcastMedia::latest()->take(8)->get();
-        return view('web.resource.media-hub', compact('videoMedias', 'podcasts'));
+        $youtube_link = SiteSetting::first()->youtube_link;
+        return view('web.resource.media-hub', compact('videoMedias', 'podcasts', 'youtube_link'));
     }
 
     public function business()
