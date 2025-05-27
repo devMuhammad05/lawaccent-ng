@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -17,9 +16,11 @@ return new class extends Migration
             $table->string('title');
             $table->string('sub_heading');
             $table->string('thumbnail');
+            $table->string('hero_image')->nullable();
             $table->longText('body');
             $table->boolean('status')->default(true);
             $table->string('slug');
+            $table->unsignedBigInteger('downloads')->default(0);
             $table->fullText(['title', 'sub_heading', 'body']);
             $table->timestamps();
         });

@@ -25,6 +25,8 @@ class ContactUsDataTable extends DataTable
                 $view = "<a href='".route('admin.contact-us.show', $query->id)."' class='btn btn-primary'><i class='fas fa-eye'></i></a>";
 
                 return $view;
+            })->addColumn('created_at', function ($query) {
+                return $query->created_at->format('d M Y');
             })->rawColumns(['action'])
             ->setRowId('id');
     }
@@ -68,6 +70,8 @@ class ContactUsDataTable extends DataTable
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false),
             Column::make('name'),
             Column::make('email'),
+            Column::make('message'),
+            Column::make('created_at')->title('Submitted On'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

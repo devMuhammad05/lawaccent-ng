@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Web;
 
 use App\Models\Faq;
 use App\Models\Blog;
+use App\Models\BlogView;
 use App\Models\CaseStudy;
 use App\Models\Assessment;
 use App\Models\VideoMedia;
 use App\Models\SiteSetting;
 use App\Models\PodcastMedia;
+use Illuminate\Support\Facades\Request;
 use App\Models\LegalCheckList;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Http\Controllers\Controller;
@@ -43,6 +45,21 @@ class ResourceController extends Controller
             ->take(3)
             ->get();
 
+        $ip = Request::ip();
+
+        $alreadyViewed = BlogView::where('blog_id', $blog->id)
+            ->where('ip_address', $ip)
+            ->exists();
+
+        if (!$alreadyViewed) {
+            $blogView = BlogView::create([
+                'blog_id' => $blog->id,
+                'ip_address' => $ip,
+            ]);
+
+            $blogView->increment('views_count');
+        }
+
         return view('web.resource.blog.show', compact('blog', 'recentBlogs'));
     }
 
@@ -53,6 +70,8 @@ class ResourceController extends Controller
         if (!$blog) {
             return abort(404);
         }
+
+        $blog->increment('downloads');
 
         $pdf = Pdf::loadView('web.resource.blog.pdf', ['blog' => $blog]);
         return $pdf->stream(config('app.name') . " Blog - " . $blog->title . '.pdf');

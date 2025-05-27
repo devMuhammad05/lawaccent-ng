@@ -46,4 +46,16 @@ class ScholarshipApplicationController extends Controller
             'scholarshipApplication' => $scholarshipApplication,
         ]);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $scholarshipApplication = ScholarshipApplication::find($id);
+
+        $scholarshipApplication->delete();
+
+        return response()->json(['status' => 'success', 'message' => 'Deleted successfully']);
+    }
 }

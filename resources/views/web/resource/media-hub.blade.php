@@ -64,11 +64,10 @@
                                 <img src="{{ asset("web/assets/images/podcast.webp") }}" alt="" />
                                 <div class="podcastsectionrowcard-body">
                                     <h5>
-                                        Know Your Rights: Arrests & Police Encounters in Nigeria
+                                        {{ $podcast->title }}
                                     </h5>
                                     <p>
-                                        Understand what the law says about arrests, your rights during
-                                        police encounters, and how to protect yourself legally.
+                                        {{ $podcast->description }}
                                     </p>
                                     <div class="podcast-audio-player">
                                         <audio id="audio{{ $index }}"

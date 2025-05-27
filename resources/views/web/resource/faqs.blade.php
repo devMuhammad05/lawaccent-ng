@@ -10,7 +10,7 @@
                         <p>
                             Find quick answers to common legal <br />
                             questions in Nigeria, covering business <br />
-                            setup, contracts, compliance, and more
+                            setup, contracts, compliance, and more.
                         </p>
                     </div>
                 </div>

@@ -34,6 +34,7 @@ class PodcastMediaController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
+            'description' => 'required|string|max:400',
             'media_location' => 'nullable|file|mimes:mp3',
             'media_link' => 'nullable|url',
         ]);
@@ -53,7 +54,7 @@ class PodcastMediaController extends Controller
         PodcastMedia::create($data);
         flash()->success('Media added successfully');
 
-        return to_route('admin.podcasts.store');
+        return to_route('admin.podcasts.index');
     }
 
     /**

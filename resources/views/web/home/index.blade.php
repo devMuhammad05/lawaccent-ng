@@ -191,6 +191,7 @@
         </div>
     </section>
 
+
     @if ($caseStudies->isNotEmpty())
         <section class="casestudy">
             <div class="service-text">
@@ -206,27 +207,40 @@
             </div>
             <div class="scroll-container">
 
-            @foreach ($caseStudies as $caseStudy)
-                <div class="casestudycard">
-                    <img src="{{ asset($caseStudy->thumbnail) }}" alt="{{ $caseStudy->title }}" />
-                    <div class="casestudycard-body">
-                        <div class="casestudycard-title">
-                            {{ $caseStudy->title }}
+                @foreach ($caseStudies as $caseStudy)
+                    <div class="casestudycard">
+                        <img src="{{ asset($caseStudy->thumbnail) }}" alt="{{ $caseStudy->title }}" />
+                        <div class="casestudycard-body">
+                            <div class="casestudycard-title">
+                                {{ $caseStudy->title }}
+                            </div>
+                            <div class="casestudycard-subtitle">Legal Issue Explored:</div>
+                            <div class="casestudycard-text">
+                                {{ $caseStudy->legal_issues_explored }}
+                            </div>
+                            <a href="{{ route('resources.show.case.study', $caseStudy->slug) }}"
+                                class="casestudyread-more-btn">Read More</a>
                         </div>
-                        <div class="casestudycard-subtitle">Legal Issue Explored:</div>
-                        <div class="casestudycard-text">
-                            {{ $caseStudy->legal_issues_explored }}
-                        </div>
-                        <a href="{{ route('resources.show.case.study', $caseStudy->slug) }}" class="casestudyread-more-btn">Read More</a>
                     </div>
-                </div>
-            @endforeach
+                @endforeach
             </div>
         </section>
     @endif
 
 
-
+    @if ($faqs->isNotEmpty())
+        <section class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <p class="text-center">
+                    Find quick answers to common legal
+                    questions in Nigeria, covering business
+                    setup, contracts, compliance, and more.
+                </p>
+                @include('web.partials.faqs-section', $faqs)
+            </div>
+        </section>
+    @endif
 
 
     <livewire:contact-us-form />

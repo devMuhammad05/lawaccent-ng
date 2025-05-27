@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Models\PastWebinar;
 use App\Models\Quiz;
-use App\Models\SiteSetting;
 use App\Models\Webinar;
+use App\Models\PastWebinar;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\ScholarshipApplication;
+use App\Http\Requests\Web\StoreScholarshipApplication;
 
 class OurImpactController extends Controller
 {
@@ -39,22 +40,9 @@ class OurImpactController extends Controller
         return view('web.impact.scholarship', compact('isAcceptingApplication'));
     }
 
-    public function applyScholarship(Request $request)
+    public function applyScholarship(StoreScholarshipApplication $request)
     {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255|min:3',
-            'email' => 'required|email:rfc,dns,spoof',
-            'phone_number' => "required|string|max:255|regex:/^(\+?\d{1,3}[- ]?)?\d{10}$/",
-            'eligibility_status' => 'required',
-            'graduation_date' => 'required|date',
-            'degree_classification' => 'required|string',
-            'cgpa' => 'required|numeric',
-            'previously_selected_for_scholarship' => 'required|string',
-            'scholarship_details' => 'nullable|max:150',
-            'transcript_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
-            'essay_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
-            'cv_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
-        ]);
+        $validated = $request->validated();
 
         if ($request->hasFile('transcript_doc')) {
             $path = $request->file('transcript_doc')->store('docs', 'public');
@@ -80,15 +68,6 @@ class OurImpactController extends Controller
 
         return redirect()->route('our-impact.scholarship');
     }
-
-
-    // public function quizes()
-    // {
-    //     $quizzes = Quiz::active()->latest()->withCount('questions')->get();
-
-    //     return view('web.impact.quiz.index', compact('quizzes'));
-    // }
-
 
     public function quizzes(Request $request)
     {

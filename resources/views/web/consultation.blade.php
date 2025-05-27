@@ -15,6 +15,7 @@
 
                     <form action="{{ route('consultation.store') }}" method="POST" id="consultationForm">
                         @csrf
+
                         <div class="progress-indicator">
                             <span class="step-indicator active" id="indicator1"></span>
                             <span class="step-indicator" id="indicator2"></span>
@@ -26,8 +27,9 @@
                             <h4>Schedule A Consultation</h4>
                             <span>Book a consultation with one of our experienced lawyers</span><br />
                             <label class="labelform">Full Name</label>
+
                             <input type="text" name="name" value="{{ old('name') }}" placeholder="Enter Full Name"
-                                class="stepinput form-control" id="fullName" />
+                                class="stepinput form-control" id="fullName" required />
                             <small class="text-error d-block" id="errorName"></small>
 
                             <label class="labelform">Email Address</label>
@@ -50,22 +52,14 @@
                             <small class="text-error d-block" id="errorType"></small>
 
                             <button type="button" class="btn submitbtn" id="nextBtn" onclick="nextStep()"
-                                disabled>Next</button>
+                                >Next</button>
+
                         </div>
 
                         <!-- Step 2 -->
                         <div class="form-step" id="step2" style="display: none">
                             <h4>Schedule A Consultation</h4>
                             <span>Book a consultation with one of our experienced lawyers</span> <br>
-                            {{-- <label class="labelforms">Choose Area Of Legal Concern</label> --}}
-                            {{-- <select class="stepinput form-control" name="legal_concerns" id="legalArea">
-                                <option value="">Choose area of concern</option>
-                                <option value="family_law" {{ old('legal_concerns') == 'family_law' ? 'selected' : '' }}>
-                                    Family Law</option>
-                                <option value="business_law" {{ old('legal_concerns') == 'business_law' ? 'selected' : '' }}>Business Law</option>
-                                <option value="property_law" {{ old('legal_concerns') == 'property_law' ? 'selected' : '' }}>Property Law</option>
-                            </select>
-                            <small class="text-error d-block" id="errorArea"></small> --}}
 
                             <label class="labelforms">Preferred Date And Time</label>
                             <input type="datetime-local" class="stepinput form-control" name="date"
@@ -78,13 +72,29 @@
                             </textarea>
                             <small class="text-error d-block" id="errorInfo"></small>
 
+                            <div class="mt-4">
+                                <div class=" d-flex align-items-start gap-2">
+                                    <input type="checkbox" class="checks mt-1" name="checkbox" required />
+                                    <p class="mb-0 ">
+                                        We value your privacy. Your information will be used solely
+                                        to respond to your enquiry and, if you click the box above,
+                                        to keep you informed about our products, services, and
+                                        valuable content. You can withdraw your consent at any time.
+                                        See our
+                                        <a href="{{ route('privacy-notice') }}" target="_blank" class="view-privacy">Privacy
+                                            Notice</a>
+                                        for details.
+                                    </p>
+                                </div>
+                            </div>
+
                             <!-- Google reCAPTCHA -->
                             <div class="g-recaptcha mt-3" data-sitekey="{{ config('app.recaptcha_sitekey') }}"></div>
 
+
                             <div class="mt-4">
-                                <button class="btn" onclick="prevStep()">Previous</button>
-                                <button type="submit" class="btn" id="submitBtn" onclick="submitForm()"
-                                    disabled>Submit</button>
+                                <button type="button" class="btn" onclick="prevStep()">Previous</button>
+                                <button type="submit" class="btn" id="submitBtn">Submit</button>
                             </div>
                         </div>
 

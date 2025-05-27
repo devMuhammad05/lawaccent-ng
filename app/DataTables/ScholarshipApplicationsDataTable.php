@@ -22,51 +22,51 @@ class ScholarshipApplicationsDataTable extends DataTable
     public function dataTable(QueryBuilder $query): EloquentDataTable
     {
         return (new EloquentDataTable($query))
-        ->addIndexColumn()
-        ->addColumn('action', function ($query) {
-            $buttonClass = $query->is_read == 1 ? 'btn-primary' : 'btn-danger';
-            $view = "<a href='" . route('admin.scholarship-applications.show', $query->id) . "' class='btn $buttonClass mr-2'><i class='fas fa-eye'></i></a>";
+            ->addIndexColumn()
+            ->addColumn('action', function ($query) {
+                $buttonClass = $query->is_read == 1 ? 'btn-primary' : 'btn-danger';
+                $view = "<a href='" . route('admin.scholarship-applications.show', $query->id) . "' class='btn $buttonClass mr-2'><i class='fas fa-eye'></i></a>";
+                $delete = "<a href='" . route('admin.scholarship-applications.destroy', $query->id) . "' class='ml-2 btn btn-danger delete-item'><i class='fas fa-trash-alt'></i></a</form>";
 
-
-            if (! $query->is_read) {
-                $markAsRead = "<a href='".route('admin.scholarship-application.markAsRead', $query->id)."' class='btn btn-primary'>
+                if (!$query->is_read) {
+                    $markAsRead = "<a href='" . route('admin.scholarship-application.markAsRead', $query->id) . "' class='btn btn-primary'>
                         <i class='fas fa-check'></i>
                 </a>";
 
-                return (string) $view.$markAsRead;
-            }
+                    return (string) $view . $markAsRead . $delete;
+                }
 
-            return $view;
-        })
-        ->addColumn('transcript_doc', function ($query) {
-            if ($query->transcript_doc) {
-                return "<a href='" . asset($query->transcript_doc) . "' download  class='btn btn-primary'>
+                return $view . $delete;
+            })
+            ->addColumn('transcript_doc', function ($query) {
+                if ($query->transcript_doc) {
+                    return "<a href='" . asset($query->transcript_doc) . "' download  class='btn btn-primary'>
                             <i class='fas fa-download'></i>
                         </a>";
-            }
+                }
 
-            return 'Not Available';
-        })
-        ->addColumn('essay_doc', function ($query) {
-            if ($query->essay_doc) {
-                return "<a href='" . asset($query->essay_doc) . "' download  class='btn btn-primary'>
+                return 'Not Available';
+            })
+            ->addColumn('essay_doc', function ($query) {
+                if ($query->essay_doc) {
+                    return "<a href='" . asset($query->essay_doc) . "' download  class='btn btn-primary'>
                             <i class='fas fa-download'></i>
                         </a>";
-            }
+                }
 
-            return 'Not Available';
-        })
-        ->addColumn('cv_doc', function ($query) {
-            if ($query->cv_doc) {
-                return "<a href='" . asset($query->cv_doc) . "' download  class='btn btn-primary'>
+                return 'Not Available';
+            })
+            ->addColumn('cv_doc', function ($query) {
+                if ($query->cv_doc) {
+                    return "<a href='" . asset($query->cv_doc) . "' download  class='btn btn-primary'>
                             <i class='fas fa-download'></i>
                         </a>";
-            }
+                }
 
-            return 'Not Available';
-        })
-        ->rawColumns(['action', 'transcript_doc', 'essay_doc', 'cv_doc'])
-        ->setRowId('id');
+                return 'Not Available';
+            })
+            ->rawColumns(['action', 'transcript_doc', 'essay_doc', 'cv_doc'])
+            ->setRowId('id');
     }
 
     /**
@@ -85,19 +85,19 @@ class ScholarshipApplicationsDataTable extends DataTable
     public function html(): HtmlBuilder
     {
         return $this->builder()
-                    ->setTableId('scholarshipapplications-table')
-                    ->columns($this->getColumns())
-                    ->minifiedAjax()
-                    ->orderBy(1)
-                    ->selectStyleSingle();
-                    // ->buttons([
-                    //     Button::make('excel'),
-                    //     Button::make('csv'),
-                    //     Button::make('pdf'),
-                    //     Button::make('print'),
-                    //     Button::make('reset'),
-                    //     Button::make('reload')
-                    // ]);
+            ->setTableId('scholarshipapplications-table')
+            ->columns($this->getColumns())
+            ->minifiedAjax()
+            ->orderBy(1)
+            ->selectStyleSingle();
+        // ->buttons([
+        //     Button::make('excel'),
+        //     Button::make('csv'),
+        //     Button::make('pdf'),
+        //     Button::make('print'),
+        //     Button::make('reset'),
+        //     Button::make('reload')
+        // ]);
     }
 
     /**
@@ -117,8 +117,8 @@ class ScholarshipApplicationsDataTable extends DataTable
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
-                ->width(value: 100)
-                // ->addClass('text-center'),
+                ->width( 150)
+            // ->addClass('text-center'),
         ];
     }
 

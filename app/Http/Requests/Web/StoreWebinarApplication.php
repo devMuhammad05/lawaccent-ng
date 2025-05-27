@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Web;
 
+use App\Rules\EmailValidation;
+use App\Rules\PhoneNumberValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreWebinarApplication extends FormRequest
@@ -23,8 +25,8 @@ class StoreWebinarApplication extends FormRequest
     {
         return [
             'name' => ['required', 'max:255', 'string'],
-            'email' => ['required','email'],
-            'phone_number' => ['required', 'max:15'],
+            'email' => ['required', 'email:rfc,dns,spoof', new EmailValidation],
+            'phone_number' => ['required', 'string', 'max:15', new PhoneNumberValidationRule],
             'question' => ['nullable', 'max:400'],
             'type' => 'required|in:Virtual,In Person',
         ];

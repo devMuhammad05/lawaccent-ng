@@ -16,6 +16,7 @@ class Blog extends Model
         'body',
         'status',
         'slug',
+        'hero_image'
     ];
 
     public function scopeActive($query)
@@ -26,5 +27,10 @@ class Blog extends Model
     public function category(): BelongsTo
     {
         return $this->belongsTo(BlogCategory::class);
+    }
+
+    public function blogViews()
+    {
+        return $this->hasMany(BlogView::class);
     }
 }

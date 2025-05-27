@@ -97,8 +97,8 @@
                             @enderror
 
                             <label class="labelform">Cumulative Grade Point Average (CGPA)</label>
-                            <input type="number" name="cgpa" value="{{ old('cgpa') }}"
-                                placeholder="Enter your CGPA" class="stepinput form-control" />
+                            <input type="number" name="cgpa" value="{{ old('cgpa') }}" placeholder="Enter your CGPA"
+                                class="stepinput form-control" />
 
                             @error('cgpa') <small class="text-error d-block">{{ $message }}</small> @enderror
 
@@ -139,56 +139,56 @@
                     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
 
                         <div class="accordion-body">
-                            {{-- <form action=""> --}}
-                                <div class="file-upload-wrapper">
-                                    <label class="pb-1"><small>Academic Credential (Transcript)</small></label>
-                                    <div class="file-upload-box drop-zone">
-                                        <input type="file" name="transcript_doc" class="file-input" />
-                                        <div class="file-instructions">
-                                            <p>
-                                                <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
-                                                        alt="image" /></span><br class="br" />
-                                                Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    @error('transcript_doc') <small class="text-error d-block">{{ $message }}</small>
-                                    @enderror
-                                </div>
 
-                                <div class="file-upload-wrapper">
-                                    <label class="labelform">A one page essay explaining why you are the best
-                                        candidate</label>
-                                    <div class="file-upload-box drop-zone">
-                                        <input type="file" name="essay_doc" class="file-input" />
-                                        <div class="file-instructions">
-                                            <p>
-                                                <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
-                                                        alt="image" /></span><br class="br" />
-                                                Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
-                                            </p>
-                                        </div>
+                            <div class="file-upload-wrapper">
+                                <label class="pb-1"><small>Academic Credential (Transcript)</small></label>
+                                <div class="file-upload-box drop-zone">
+                                    <input type="file" name="transcript_doc" class="file-input" />
+                                    <div class="file-instructions">
+                                        <p>
+                                            <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
+                                                    alt="image" /></span><br class="br" />
+                                            Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
+                                        </p>
                                     </div>
-                                    @error('essay_doc') <small class="text-error d-block">{{ $message }}</small>
-                                    @enderror
                                 </div>
+                                @error('transcript_doc') <small class="text-error d-block">{{ $message }}</small>
+                                @enderror
+                            </div>
 
-                                <div class="file-upload-wrapper">
-                                    <label class="labelform">Curriculum Vitae (CV)</label>
-                                    <div class="file-upload-box drop-zone">
-                                        <input type="file" name="cv_doc" class="file-input" />
-                                        <div class="file-instructions">
-                                            <p>
-                                                <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
-                                                        alt="image" /></span><br class="br" />
-                                                Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
-                                            </p>
-                                        </div>
+                            <div class="file-upload-wrapper">
+                                <label class="labelform">A one page essay explaining why you are the best
+                                    candidate</label>
+                                <div class="file-upload-box drop-zone">
+                                    <input type="file" name="essay_doc" class="file-input" />
+                                    <div class="file-instructions">
+                                        <p>
+                                            <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
+                                                    alt="image" /></span><br class="br" />
+                                            Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
+                                        </p>
                                     </div>
-                                    @error('cv_doc') <small class="text-error d-block">{{ $message }}</small> @enderror
                                 </div>
-                                {{--
-                            </form> --}}
+                                @error('essay_doc') <small class="text-error d-block">{{ $message }}</small>
+                                @enderror
+                            </div>
+
+                            <div class="file-upload-wrapper">
+                                <label class="labelform">Curriculum Vitae (CV)</label>
+                                <div class="file-upload-box drop-zone">
+                                    <input type="file" name="cv_doc" class="file-input" />
+                                    <div class="file-instructions">
+                                        <p>
+                                            <span><img src="{{ asset('web/assets/images/file-upload.svg') }}"
+                                                    alt="image" /></span><br class="br" />
+                                            Choose a file or drag and drop<br /><small>(Max file size: 5MB)</small>
+                                        </p>
+                                    </div>
+                                </div>
+                                @error('cv_doc') <small class="text-error d-block">{{ $message }}</small> @enderror
+                            </div>
+                            {{--
+
                         </div>
                     </div>
                 </div>
@@ -200,8 +200,36 @@
                         I confirm that the information provided is accurate and complete to the best of my knowledge.
                     </div>
                     <div class="accordrow">
-                        <input type="checkbox" name="application_consent" {{ old('application_consent') ? 'checked' : '' }} />
+                        <input type="checkbox" name="application_consent" {{ old('application_consent') ? 'checked' : '' }} required />
                         I agree to be contacted by Law Accent for updates regarding this application.
+                    </div>
+
+                    {{-- <div class="accordrow">
+                        <input type="checkbox" name="application_consent" {{ old('application_consent') ? 'checked' : '' }} />
+                        We value your privacy. Your information will be used solely
+                        to respond to your enquiry and, if you click the box above,
+                        to keep you informed about our products, services, and
+                        valuable content. You can withdraw your consent at any time.
+                        See our <a href="{{ route('privacy-notice') }}" target="_blank" class="view-privacy">Privacy
+                                    Notice</a>
+                                for details.
+                    </div> --}}
+
+
+                    <div class="accordrow">
+                        <div class=" d-flex align-items-start gap-4">
+                            <input type="checkbox" class="checks mt-1" name="checkbox" required />
+                            <p class="mb-0 privacy-consent text-small">
+                                We value your privacy. Your information will be used solely
+                                to respond to your enquiry and, if you click the box above,
+                                to keep you informed about our products, services, and
+                                valuable content. You can withdraw your consent at any time.
+                                See our
+                                <a href="{{ route('privacy-notice') }}" target="_blank" class="view-privacy">Privacy
+                                    Notice</a>
+                                for details.
+                            </p>
+                        </div>
                     </div>
                     <button type="submit" class="btn form-button">Submit Application Form</button>
                 </div>

@@ -32,6 +32,8 @@ class ConsultationsDataTable extends DataTable
 
                return str_replace('-', ' ', ucfirst($query->type));
 
+            })->addColumn('created_at', function ($query) {
+                return $query->created_at->format('d M Y');
             })->rawColumns(['action'])
             ->setRowId('id');
     }
@@ -77,6 +79,7 @@ class ConsultationsDataTable extends DataTable
             Column::make('name'),
             Column::make('email'),
             Column::make('type')->title('Consultation Type'),
+            Column::make('created_at')->title('Submitted On'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

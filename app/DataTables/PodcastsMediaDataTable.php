@@ -78,6 +78,7 @@ class PodcastsMediaDataTable extends DataTable
         return [
             Column::make('DT_RowIndex')->title('S/N')->searchable(false)->orderable(false)->width(10),
             Column::make('title'),
+            Column::make('description'),
             Column::make('audio'),
             Column::computed('action')
                   ->exportable(false)

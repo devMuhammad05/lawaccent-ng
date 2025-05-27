@@ -173,8 +173,8 @@
             </p>
 
             <p>
-              📩 For enquiries, contact us or visit our office. <br class="br" />
-              🚀 Apply now and take the next step toward a successful legal
+              For enquiries, contact us or visit our office. <br class="br" />
+              Apply now and take the next step toward a successful legal
               career!
             </p>
             <div class="businesscontactbutton">

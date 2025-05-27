@@ -22,17 +22,19 @@ class UnreadContactUsDataTable extends DataTable
         return (new EloquentDataTable($query))
             ->addIndexColumn()
             ->addColumn('action', function ($query) {
-                $view = "<a href='".route('admin.contact-us.show', $query->id)."' class='btn btn-danger mr-2'><i class='fas fa-eye'></i></a>";
+                $view = "<a href='" . route('admin.contact-us.show', $query->id) . "' class='btn btn-danger mr-2'><i class='fas fa-eye'></i></a>";
 
-                if (! $query->is_read) {
-                    $markAsRead = "<a href='".route('admin.contact-us.markAsRead', $query->id)."' class='btn btn-primary'>
+                if (!$query->is_read) {
+                    $markAsRead = "<a href='" . route('admin.contact-us.markAsRead', $query->id) . "' class='btn btn-primary'>
                             <i class='fas fa-check'></i>
                     </a>";
 
-                    return (string) $view.$markAsRead;
+                    return (string) $view . $markAsRead;
                 }
 
                 return $view;
+            })->addColumn('created_at', function ($query) {
+                return $query->created_at->format('d M Y');
             })->rawColumns(['action'])
             ->setRowId('id');
     }
@@ -57,14 +59,14 @@ class UnreadContactUsDataTable extends DataTable
             //->dom('Bfrtip')
             ->orderBy(1)
             ->selectStyleSingle();
-            // ->buttons([
-            //     Button::make('excel'),
-            //     Button::make('csv'),
-            //     Button::make('pdf'),
-            //     Button::make('print'),
-            //     Button::make('reset'),
-            //     Button::make('reload'),
-            // ]);
+        // ->buttons([
+        //     Button::make('excel'),
+        //     Button::make('csv'),
+        //     Button::make('pdf'),
+        //     Button::make('print'),
+        //     Button::make('reset'),
+        //     Button::make('reload'),
+        // ]);
     }
 
     /**
@@ -77,6 +79,7 @@ class UnreadContactUsDataTable extends DataTable
             Column::make('name'),
             Column::make('email'),
             Column::make('message'),
+            Column::make('created_at')->title('Submitted On'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)
@@ -90,6 +93,6 @@ class UnreadContactUsDataTable extends DataTable
      */
     protected function filename(): string
     {
-        return 'UnreadContactUs_'.date('YmdHis');
+        return 'UnreadContactUs_' . date('YmdHis');
     }
 }

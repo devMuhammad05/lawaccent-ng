@@ -36,7 +36,10 @@ class UnreadWebinarApplicationsDataTable extends DataTable
                 }
 
                 return $view;
-            })->rawColumns(['action'])
+            })->addColumn('created_at', function ($query) {
+                return $query->created_at->format('d M Y');
+            })
+            ->rawColumns(['action'])
             ->setRowId('id');
     }
 
@@ -82,6 +85,7 @@ class UnreadWebinarApplicationsDataTable extends DataTable
             Column::make('email'),
             Column::make('phone_number'),
             Column::make('question'),
+            Column::make('created_at')->title('Submitted On'),
             Column::computed('action')
                   ->exportable(false)
                   ->printable(false)

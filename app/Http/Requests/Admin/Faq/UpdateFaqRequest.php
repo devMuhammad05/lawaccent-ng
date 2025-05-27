@@ -26,6 +26,7 @@ class UpdateFaqRequest extends FormRequest
         return [
             'question' => ['required', 'string', new MaxWords(30)],
             'answer' => ['required', 'string', new MaxWords(200)],
+            'status' =>['required', Rule::in(['1', '0'])],
         ];
     }
 }

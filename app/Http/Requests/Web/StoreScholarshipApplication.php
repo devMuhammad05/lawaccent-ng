@@ -6,7 +6,7 @@ use App\Rules\EmailValidation;
 use App\Rules\PhoneNumberValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreConsultationRequest extends FormRequest
+class StoreScholarshipApplication extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,24 +24,21 @@ class StoreConsultationRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|min:3',
             'email' => ['required', 'email:rfc,dns,spoof', new EmailValidation],
             'phone_number' => ['required', 'string', 'max:15', new PhoneNumberValidationRule],
-            'type' => 'required|in:Virtual,In Person',
-            'legal_concerns' => 'nullable',
-            'date' => 'required|date|after_or_equal:today',
-            'additional_info' => 'nullable|string|max:1000',
-            'g-recaptcha-response' => 'required',
+            'eligibility_status' => 'required',
+            'graduation_date' => 'required|date',
+            'degree_classification' => 'required|string',
+            'cgpa' => 'required|numeric',
+            'previously_selected_for_scholarship' => 'required|string',
+            'scholarship_details' => 'nullable|max:150',
+            'transcript_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
+            'essay_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
+            'cv_doc' => 'required|file|mimes:pdf,doc,docx|max:5048',
+            'application_consent' => 'accepted',
+            'information_consent' => 'accepted',
             'checkbox' => 'accepted',
         ];
     }
-
-    public function messages(): array
-    {
-        return [
-            'g-recaptcha-response.required' => 'Please verify that you are not a robot.',
-            'g-recaptcha-response.recaptchav3' => 'ReCAPTCHA verification failed. Please try again.',
-        ];
-    }
 }
-

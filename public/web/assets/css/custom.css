@@ -1,3 +1,14 @@
+.view-privacy
+ {
+    color: #158C00 !important;
+    text-decoration: underline !important;
+    font-size: 13px !important;
+}
+
+.accordrow .privacy-consent {
+    font-size: 12px !important;
+}
+
 .form-group {
     margin-bottom: 1rem;
 }

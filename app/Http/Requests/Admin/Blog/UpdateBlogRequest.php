@@ -28,6 +28,7 @@ class UpdateBlogRequest extends FormRequest
             'title' => ['required', 'string'],
             'sub_heading' => ['required', 'string'],
             'thumbnail' => ['sometimes', 'image'],
+            'hero_image' => ['required', 'image'],
             'body' => ['required', 'string'],
             'status' => ['required', Rule::in([1, 0])],
         ];

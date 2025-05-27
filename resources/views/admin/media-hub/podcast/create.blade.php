@@ -20,6 +20,12 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Description</label>
+                        <input type='text' class='form-control' placeholder='Enter podcast description' name='description'
+                            value='{{ old('description') }}'>
+                    </div>
+
+                    <div class="form-group">
                         <label>Select media format</label>
                         <select id="mediaType" class="form-control">
                             <option value="">-- Choose media format --</option>
@@ -48,7 +54,7 @@
 
 @push('scripts')
     <script type="text/javascript">
-        bkLib.onDomLoaded(function() {
+        bkLib.onDomLoaded(function () {
             nicEditors.allTextAreas()
         });
 

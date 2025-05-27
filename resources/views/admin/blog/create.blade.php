@@ -45,15 +45,23 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label>Hero Image</label>
+                        <div id="image-preview" class="image-preview">
+                            <label for="image-upload" id="image-label">Choose File</label>
+                            <input type="file" name="thumbnail" id="image-upload" />
+                        </div>
+                    </div>
+
 
                     <div class="form-group">
                         <label>Body</label>
                         <textarea name="body" style="width: 100%; height: 200px;">
-                            {{ old('body') }}
-                        </textarea>
+                                {{ old('body') }}
+                            </textarea>
                     </div>
 
-                     <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
+                    <button class="btn btn-primary py-2 px-3" type="submit">Submit</button>
                 </form>
             </div>
         </div>
@@ -62,7 +70,7 @@
 
 @push('scripts')
     <script type="text/javascript">
-        bkLib.onDomLoaded(function() {
+        bkLib.onDomLoaded(function () {
             nicEditors.allTextAreas()
         });
     </script>

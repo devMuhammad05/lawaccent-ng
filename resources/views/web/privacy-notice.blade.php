@@ -4,8 +4,7 @@
         <div class="container">
           <div class="privacyrow">
             <h3>
-              Privacy Notice <br />
-              (Privacy Policy for Prospective Clients in Nigeria)
+              Privacy Notice
             </h3>
             <p>Effective Date: [<span id="currentDate">{{ $effectiveDate }}</span>]</p>
             <p>

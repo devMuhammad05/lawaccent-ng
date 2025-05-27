@@ -40,7 +40,10 @@ class UnreadConsultationsDataTable extends DataTable
 
                return str_replace('-', ' ', ucfirst($query->type));
 
-            })->rawColumns(['action'])
+            })->addColumn('created_at', function ($query) {
+                return $query->created_at->format('d M Y');
+            })
+            ->rawColumns(['action'])
             ->setRowId('id');
     }
 
@@ -85,6 +88,7 @@ class UnreadConsultationsDataTable extends DataTable
             Column::make('name'),
             Column::make('email'),
             Column::make('type')->title('Consultation Type'),
+            Column::make('created_at')->title('Submitted On'),
             Column::computed('action')
                 ->exportable(false)
                 ->printable(false)

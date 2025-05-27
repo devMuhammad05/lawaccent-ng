@@ -341,7 +341,7 @@ a:hover {
     color: white;
 }
 
-.chooseus {
+.chooseus, .faq-section {
     margin-top: 10px;
     padding-bottom: 30px;
 }
@@ -356,6 +356,11 @@ a:hover {
     color: #114906;
     padding-top: 20px;
     text-align: center;
+}
+
+.faq-section h2{
+     color: #114906;
+     text-align: center;
 }
 
 .chooseuscard {
@@ -2327,7 +2332,7 @@ hr {
 .form-step button:last-of-type {
     background: #114906;
     color: white;
-    width: 20%;
+    /* width: 20%; */
 }
 
 .progress-indicator {
@@ -2935,7 +2940,7 @@ input[type="radio"] {
 
 .accordrow {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 20px;
     font-size: 14px;
     color: black;
