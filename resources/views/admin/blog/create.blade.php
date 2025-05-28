@@ -45,13 +45,13 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label>Hero Image</label>
                         <div id="image-preview" class="image-preview">
-                            <label for="image-upload" id="image-label">Choose File</label>
-                            <input type="file" name="thumbnail" id="image-upload" />
+                            <label for="image-upload" id="image-label2">Choose File</label>
+                            <input type="file" name="hero_image" id="image-upload2" />
                         </div>
-                    </div>
+                    </div> --}}
 
 
                     <div class="form-group">

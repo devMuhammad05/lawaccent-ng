@@ -28,7 +28,7 @@ class StoreBlogRequest extends FormRequest
             'title' => ['required', 'string'],
             'sub_heading' => ['required', 'string'],
             'thumbnail' => ['required', 'image'],
-            'hero_image' => ['required', 'image'],
+            'hero_image' => ['nullable', 'image'],
             'body' => ['required', 'string'],
         ];
     }
